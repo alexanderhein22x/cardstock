@@ -70,122 +70,157 @@
     update();
   });
 
-  ///////////////////////////////////////////////////////////
+}());
 
-  var App = {
-    Models: {},
-    Views: {}
-  };
+///////////////////////////////////////////////////////////
 
-  App.Models.Configuration = Backbone.Model.extend({
-    defaults: {
-      material: 'Material 1',
-      model: 'Model 1',
-      size: 'Size 1',
-      extra1: '',
-      extra2: '',
-      extra3: '',
-      color1: 'Color1 Red',
-      color2: 'Color2 Red',
-      color3: 'Color3 Red'
-    }
-  });
+Handlebars.registerHelper("checkedIf", function(condition) {
+  return (condition) ? "checked" : "";
+});
 
-  App.Views.OptionsView = Backbone.View.extend({
-    el: '#options',
-    events: {
-      'click .remove': 'removeExtra'
-    },
-    initialize: function() {
-      console.log("created OptionsView ", this.el, this.model);
-      this.listenTo(this.model, 'change', this.render);
-    },
-    template: Handlebars.compile($('#optionsTpl').html()),
-    render: function() { this.$el.html(this.template(this.model.toJSON()));
-    },
+var App = {
+  Models: {},
+  Views: {},
+  MWST: 0.19
+};
 
-    removeExtra: function(e) {
-      e.preventDefault();
-      var item = $(e.target).data('item');
-      console.log("remove " + item)
-      this.model.set(item, null);
-    }
-  });
+App.Models.Configuration = Backbone.Model.extend({
+  defaults: {
+    quantity: 500
+  }
+});
 
-  App.Views.CostView = Backbone.View.extend({
-    el: '.calculation .quantity',
-    events: {
-      'click input[radio]': 'updateQuantity'
-    },
-    initialize: function() {
-      this.listenTo(this.model, 'change', this.render);
-    },
-    render: function() {},
-    updateQuantity: function(e) {
-      $(e.target);
-    }
-  });
+App.Views.OptionsView = Backbone.View.extend({
+  el: '#options',
+  events: {
+    'click .remove': 'removeExtra'
+  },
+  initialize: function() {
+    console.log("created OptionsView ", this.el, this.model);
+    this.listenTo(this.model, 'change', this.render);
+  },
+  template: Handlebars.compile($('#optionsTpl').html()),
+  render: function() { this.$el.html(this.template(this.model.toJSON()));
+  },
 
-  App.Views.AppView = Backbone.View.extend({
-    el: 'body',
-    events: {
-      'click #materialaa .gallery-cell': 'selectMaterial',
-      'click #model .gallery-cell': 'selectModel',
-      'click #size .gallery-cell': 'selectSize',
-      'click #extra1 .gallery-cell': 'selectExtra',
-      'click #extra2 .gallery-cell': 'selectExtra',
-      'click #extra3 .gallery-cell': 'selectExtra',
-      'click #color1 .gallery-cell': 'selectColor',
-      'click #color2 .gallery-cell': 'selectColor',
-      'click #color3 .gallery-cell': 'selectColor'
-    },
-    initialize: function() {
-      console.log("created AppView ", this.el, this.model);
-      this.optionsView = new App.Views.OptionsView({model: this.model});
-    },
+  removeExtra: function(e) {
+    e.preventDefault();
+    var item = $(e.target).data('item');
+    console.log("remove " + item)
+    this.model.set(item, null);
+  }
+});
 
-    render: function() {
-      this.optionsView.render();
-    },
+App.Views.CostView = Backbone.View.extend({
+  el: '.calculation',
+  events: {
+    'click label': 'updateQuantity'
+  },
+  quantities: [25, 100, 250, 500, 1000, 2500, 5000],
+  template: Handlebars.compile($('#costViewTpl').html()),
+  initialize: function() {
+    this.listenTo(this.model, 'change', this.render);
+  },
+  render: function() {
+    var data = this.computeTotal();
+    this.$el.html(this.template(data));
+  },
+  computePrices: function() {
+    var selectedQuantity = this.model.get("quantity");
 
-    selectMaterial: function(e) {
-      //console.log(e);
-      var material = $(e.target).data();
-      console.log(material);
-      if (material) this.model.set('material', material);
-    },
+    var unitPrice = this.model.values().reduce(function(sum, option) {
+      return sum + (_.has(option, "price") ? option.price : 0);
+    }, 0);
 
-    selectModel: function(e) {
-      //console.log(e);
-      var model = $(e.target).data();
-      console.log(model);
-      if (model) this.model.set('model', model);
-    },
+    return this.quantities.map(function(q) {
+      return {
+        quantity: q,
+        price: unitPrice * q,
+        selected: q == selectedQuantity
+      }
+    });
+  },
+  computeTotal: function() {
+    var prices = this.computePrices();
+    var index = _.findIndex(prices, function(p) {
+      return p.selected;
+    });
+    var net_total = prices[index].price;
+    return {
+      quantities: prices,
+      net_total: net_total,
+      sales_tax: net_total * App.MWST,
+      total: net_total * (1 + App.MWST)
+    };
+  },
+  updateQuantity: function(e) {
+    var selectedQuantity = $(e.target).prev().val();
+    this.model.set("quantity", selectedQuantity);
+  }
+});
 
-    selectSize: function(e) {
-      //console.log(e);
-      var size = $(e.target).data();
-      console.log(size);
-      if (size) this.model.set('size', size);
-    },
+App.Views.AppView = Backbone.View.extend({
+  el: 'body',
+  events: {
+    'click #materialaa .gallery-cell': 'selectMaterial',
+    'click #model .gallery-cell': 'selectModel',
+    'click #size .gallery-cell': 'selectSize',
+    'click #extra1 .gallery-cell': 'selectExtra',
+    'click #extra2 .gallery-cell': 'selectExtra',
+    'click #extra3 .gallery-cell': 'selectExtra',
+    'click #color1 .gallery-cell': 'selectColor',
+    'click #color2 .gallery-cell': 'selectColor',
+    'click #color3 .gallery-cell': 'selectColor'
+  },
+  initialize: function() {
+    console.log("created AppView ", this.el, this.model);
+    this.optionsView = new App.Views.OptionsView({model: this.model});
+    this.costView = new App.Views.CostView({model: this.model});
+  },
 
-    selectExtra: function(e) {
-      //console.log(e);
-      var section = $(e.target).parents('section').attr('id');
-      var extra = $(e.target).data();
-      console.log(section, extra);
-      if (extra) this.model.set(section, extra);
-    },
+  render: function() {
+    this.optionsView.render();
+    this.costView.render();
+  },
 
-    selectColor: function(e) {
-      //console.log(e);
-      var section = $(e.target).parents('section').attr('id');
-      var color = $(e.target).data();
-      console.log(section, color);
-      if (color) this.model.set(section, color);
-      console.log(this.model)
-    },
-  });
+  selectMaterial: function(e) {
+    //console.log(e);
+    var material = $(e.target).data();
+    console.log(material);
+    if (material) this.model.set('material', material);
+  },
+
+  selectModel: function(e) {
+    //console.log(e);
+    var model = $(e.target).data();
+    console.log(model);
+    if (model) this.model.set('model', model);
+  },
+
+  selectSize: function(e) {
+    //console.log(e);
+    var size = $(e.target).data();
+    console.log(size);
+    if (size) this.model.set('size', size);
+  },
+
+  selectExtra: function(e) {
+    //console.log(e);
+    var section = $(e.target).parents('section').attr('id');
+    var extra = $(e.target).data();
+    console.log(section, extra);
+    if (extra) this.model.set(section, extra);
+  },
+
+  selectColor: function(e) {
+    //console.log(e);
+    var section = $(e.target).parents('section').attr('id');
+    var color = $(e.target).data();
+    console.log(section, color);
+    if (color) this.model.set(section, color);
+    console.log(this.model)
+  },
+});
 
 var defaults = _.object(
   $(".is-selected input").map(function() { return $(this).parents("section").attr("id") }),
@@ -193,5 +228,3 @@ var defaults = _.object(
 var config = new App.Models.Configuration(defaults);
 var view = new App.Views.AppView({model: config});
 view.render();
-
-}());

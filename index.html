@@ -165,70 +165,36 @@
 
 
       <div class="calculation">
-        <span class="headline">2. Cost calculation</span>
-        <div class="price">
+        <template id="costViewTpl">
 
-          <!--quantity picker -->
-          <div class="quantity">
+          <span class="headline">2. Cost calculation</span>
+          <div class="price">
 
-            <span class="h1">quantity</span>
-            <span class="h2">netto</span>
+            <!--quantity picker -->
+            <div class="quantity">
+              <span class="h1">quantity</span>
+              <span class="h2">netto</span>
 
-            <input type="radio" id="quantity1" name="quantity" value="">
-            <label for="quantity1">
-              <span class="textleft">25</span>
-              <span id="25" class="textright">100,00 €</span>
-            </label>
+              {{#each quantities}}
+              <input type="radio" id="quantity{{@index}}" name="quantity" value="{{quantity}}">
+              <label for="quantity{{@index}}">
+                <span class="textleft">{{quantity}}</span>
+                <span id="25" class="textright">{{price}} €</span>
+              </label>
+              {{/each}}
+            </div>
 
-            <input type="radio" id="quantity2" name="quantity" value="">
-            <label for="quantity2">
-              <span class="textleft">100</span>
-              <span id="100" class="textright">300,00 €</span>
-            </label>
-
-            <input type="radio" id="quantity3" name="quantity" value="">
-            <label for="quantity3">
-              <span class="textleft">250</span>
-              <span id="250" class="textright">600,00 €</span>
-            </label>
-
-            <input type="radio" id="quantity4" name="quantity" value="" checked="">
-            <label for="quantity4">
-              <span class="textleft">500</span>
-              <span id="500" class="textright">1000,00 €</span>
-            </label>
-
-            <input type="radio" id="quantity5" name="quantity" value="">
-            <label for="quantity5">
-              <span class="textleft">1000</span>
-              <span id="1000" class="textright">1600,00 €</span>
-            </label>
-
-            <input type="radio" id="quantity6" name="quantity" value="">
-            <label for="quantity6">
-              <span class="textleft">2500</span>
-              <span id="2500" class="textright">3200,00 €</span>
-            </label>
-
-            <input type="radio" id="quantity7" name="quantity" value="">
-            <label for="quantity7">
-              <span class="textleft">5000</span>
-              <span id="5000" class="textright">5500,00 €</span>
-            </label>
+            <div class="total">
+              <span class="total-netto">Netto</span>
+              <span class="total-netto-price">{{net_total}} €</span>
+              <span class="mwst">MwSt. (19%)</span>
+              <span class="mwst-price">{{sales_tax}} €</span>
+              <span class="total-brutto">Gesamt</span>
+              <span class="total-brutto-price">{{total}} €</span>
+            </div>
 
           </div>
-
-          <div class="total">
-            <span class="total-netto">Netto</span>
-            <span class="total-netto-price">1000,00 €</span>
-            <span class="mwst">MwSt. (19%)</span>
-            <span class="mwst-price">190,00 €</span>
-            <span class="total-brutto">Gesamt</span>
-            <span class="total-brutto-price">1190,00 €</span>
-          </div>
-
-
-        </div>
+        </template>
       </div>
 
 
