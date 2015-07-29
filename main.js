@@ -154,7 +154,9 @@ App.Views.CostView = Backbone.View.extend({
     };
   },
   updateQuantity: function(e) {
-    var selectedQuantity = $(e.target).prev().val();
+    // handle clicking on span instead of label
+    var $target = e.target.tagName == "SPAN" ? $(e.target).parent() : $(e.target);
+    var selectedQuantity = $target.prev().val();
     this.model.set("quantity", selectedQuantity);
   }
 });
