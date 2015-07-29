@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardstock</title>
+<meta name="description" content="A simple content slider with depth-like zoom functionality" />
+<meta name="keywords" content="blueprint, template, slider, zoom, javascript, depth, 3d, css" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="favicon.ico">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="main.css" />
+
+<script src='js/lodash.min.js'></script>
+<script src='js/modernizr.min.js'></script>
+
+</head>
+
+<body>
+
+ 
+<div id="material1-theme" class="container">
+
+
+    <div class="header">
+    </div>
+
+
+  <nav class="navigation">
+    <ul>
+      <li>
+        <a class="number1" href="#tab1">
+          <span>Material</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="number2" href="#tab2">
+          <span>Model</span>
+        </a>
+      </li>
+      <li>
+        <a class="number3" href="#tab3">
+          <span>Size</span>
+        </a>
+      </li>
+      <li>
+        <a class="number4" href="#tab4">
+          <span>Extras</span>
+        </a>
+      </li>
+      <li>
+        <a class="number5" href="#tab5">
+          <span>Color</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <div class="grid">
+
+    <!--Visual Product -->
+
+    <div class="layout">
+      <div class="front sandgold-visual">
+
+        <div class="kit">
+          <div class="left">
+            <div class="cleft">
+            <div class="extra1a-visual"></div>
+            </div>
+          </div>
+          <div class="middle"></div>
+          <div class="right"></div>
+        </div>
+        <div class="colorinner"></div>
+
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="back sandgold-visual">
+
+      </div>
+    </div>
+
+
+    <div class="summary" style="display: none;">
+      <div class="selected-options">
+        <span class="headline">1. Selected options</span>
+        <p>Summary list of the selected options</p>
+        <div id="options">
+          
+        <template id="optionsTpl">
+          <!--summary list of selected options -->
+
+          <div class="examplecontainer">
+            <span class="title">Material</span>
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{material}}</a>
+            </div>
+          </div>
+
+          <div class="examplecontainer">
+            <span class="title">Model</span>
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{model}}</a>
+            </div>
+          </div>
+
+          <div class="examplecontainer">
+            <span class="title">Size</span>
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{size}}</a>
+            </div>
+          </div>
+
+          <div class="examplecontainer">
+            <span class="title">Extras</span>
+
+            {{#if extra1}}
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{extra1}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="extra1">remove option</a>
+            </div>
+            {{/if}}
+            
+            {{#if extra2}}
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{extra2}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="extra2">remove option</a>
+            </div>
+            {{/if}}
+            
+            {{#if extra3}}
+             <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{extra3}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="extra3">remove option</a>
+            </div>
+            {{/if}}
+          </div>
+
+          <div class="examplecontainer">
+            <span class="title">Color</span>
+            
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{color1}}</a>
+            </div>
+            
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{color2}}</a>
+            </div>
+            
+            <div class="example">
+              <a href="/" title="link to checked radio button" class="link">{{color3}}</a>
+            </div>
+          </template>
+
+        </div>
+      </div>
+      </template>
+
+
+      <div class="calculation">
+        <span class="headline">2. Cost calculation</span>
+        <div class="price">
+
+          <!--quantity picker -->
+          <div class="quantity">
+
+            <span class="h1">quantity</span>
+            <span class="h2">netto</span>
+
+            <input type="radio" id="quantity1" name="quantity" value="">
+            <label for="quantity1">
+              <span class="textleft">25</span>
+              <span id="25" class="textright">100,00 €</span>
+            </label>
+
+            <input type="radio" id="quantity2" name="quantity" value="">
+            <label for="quantity2">
+              <span class="textleft">100</span>
+              <span id="100" class="textright">300,00 €</span>
+            </label>
+
+            <input type="radio" id="quantity3" name="quantity" value="">
+            <label for="quantity3">
+              <span class="textleft">250</span>
+              <span id="250" class="textright">600,00 €</span>
+            </label>
+
+            <input type="radio" id="quantity4" name="quantity" value="" checked="">
+            <label for="quantity4">
+              <span class="textleft">500</span>
+              <span id="500" class="textright">1000,00 €</span>
+            </label>
+
+            <input type="radio" id="quantity5" name="quantity" value="">
+            <label for="quantity5">
+              <span class="textleft">1000</span>
+              <span id="1000" class="textright">1600,00 €</span>
+            </label>
+
+            <input type="radio" id="quantity6" name="quantity" value="">
+            <label for="quantity6">
+              <span class="textleft">2500</span>
+              <span id="2500" class="textright">3200,00 €</span>
+            </label>
+
+            <input type="radio" id="quantity7" name="quantity" value="">
+            <label for="quantity7">
+              <span class="textleft">5000</span>
+              <span id="5000" class="textright">5500,00 €</span>
+            </label>
+
+          </div>
+
+          <div class="total">
+            <span class="total-netto">Netto</span>
+            <span class="total-netto-price">1000,00 €</span>
+            <span class="mwst">MwSt. (19%)</span>
+            <span class="mwst-price">190,00 €</span>
+            <span class="total-brutto">Gesamt</span>
+            <span class="total-brutto-price">1190,00 €</span>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="delivery">
+        <span class="headline">3. Delivery time</span>
+        <div class="time">
+          <!-- delivery time  -->
+          <div>Delivery within <span id="day" class="day">4</span> working days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="configuration">
+
+    <div class="nav">
+      <button class="navback">Back</button>
+      <button class="navnext" title="Klicken Sie um fortzufahren.">Next</button>
+    </div>
+
+
+    <!-- TAB 1 -->
+    <div id="tab1" class="tab tab--current">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Material</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#material">Material</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Material</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="materialaa">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="material1" type="radio" data-name="Material 1" data-price="2.5" data-date="3" name="material" value="material1-visual" checked="checked" />
+                    <label for="material1">
+                      <img alt="material1" src="http://cardstock-test.de/img/feinleinen.png">
+                      <span>Material 1</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="material2" type="radio" data-name="Material 2" data-price="1.5" data-date="3" name="material" value="material2-visual" />
+                    <label for="material2">
+                      <img alt="material2" src="http://cardstock-test.de/img/bilderdruck.png">
+                      <span>Material 2</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 1 END -->
+
+
+    <!-- TAB 2 -->
+    <div id="tab2" class="tab">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Model</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#model">Model</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Model</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="model">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="model1" type="radio" data-name="Model 1" data-price="0.5" data-date="0" name="model" value="model1-visual" checked="checked" />
+                    <label for="model1">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Model 1</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="model2" type="radio" data-name="Model 2" data-price="0.5" data-date="0" name="model" value="model2-visual" />
+                    <label for="model2">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Model 2</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 2 END -->
+
+
+    <!-- TAB 3 -->
+    <div id="tab3" class="tab">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Size</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#size">Size</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Size</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="size">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="size1" type="radio" data-name="Size 1" data-price="0.5" data-date="0" name="size" value="size1-visual" checked="checked" />
+                    <label for="size1">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 1</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="size2" type="radio" data-name="Size 2" data-price="0.5" data-date="0" name="size" value="size2-visual" />
+                    <label for="size2">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 2</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="size3" type="radio" data-name="Size 3" data-price="0.5" data-date="0" name="size" value="size3-visual" />
+                    <label for="size3">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 3</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="size4" type="radio" data-name="Size 4" data-price="0.5" data-date="0" name="size" value="size4-visual" />
+                    <label for="size4">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 4</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="size5" type="radio" data-name="Size 5" data-price="1.5" data-date="1" name="size" value="size5-visual" />
+                    <label for="size5">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 5</span>
+                    </label>
+                  </div>
+
+
+                  <div class="gallery-cell">
+                    <input id="size6" type="radio" data-name="Size 6" data-price="2.5" data-date="1" name="size" value="size6-visual" />
+                    <label for="size6">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 6</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="size7" type="radio" data-name="Size 7" data-price="3.5" data-date="2" name="size" value="size7-visual" />
+                    <label for="size7">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 7</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="size8" type="radio" data-name="Size 8" data-price="4.5" data-date="2" name="size" value="size8-visual" />
+                    <label for="size8">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Size 8</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 3 END -->
+
+
+    <!-- TAB 4 -->
+    <div id="tab4" class="tab">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Extras</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#extra1">Extra 1</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Exta 1</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+                <li><a href="#extra2">Extra 2</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Extra 2</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+                <li><a href="#extra3">Extra 3</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Extra 3</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="extra1">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="none1" type="radio" name="extra1" value="none" checked="checked" />
+                    <label for="none1">
+                      <img alt="test" src="http://cardstock-test.de/img/none.png">
+                      <span>none</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="extra1a" type="radio" data-name="Extra 1a" data-price="0.5" data-date="0" name="extra1" value="extra1a-visual" />
+                    <label for="extra1a">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Extra 1a</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="extra1b" type="radio" data-name="Extra 1b" data-price="0.5" data-date="0" name="extra1" value="extra1b-visual" />
+                    <label for="extra1b">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Extra 1b</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="extra2">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="none2" type="radio" name="extra2" value="none" checked="checked" />
+                    <label for="none2">
+                      <img alt="test" src="http://cardstock-test.de/img/none.png">
+                      <span>none</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="extra2a" type="radio" data-name="Extra 2a" data-price="0.5" data-date="0" name="extra2" value="extra2a-visual" />
+                    <label for="extra2a">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Extra 2a</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="extra2b" type="radio" data-name="Extra 2b" data-price="0.5" data-date="0" name="extra2" value="extra2b-visual" />
+                    <label for="extra2b">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Extra 2b</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+
+              <section id="extra3">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="none3" type="radio" name="extra3" value="none" checked="checked" />
+                    <label for="none3">
+                      <img alt="test" src="http://cardstock-test.de/img/none.png">
+                      <span>none</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="extra3a" type="radio" data-name="Extra 3a" data-price="0.5" data-date="0" name="extra3" value="extra3a-visual" />
+                    <label for="extra3a">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Extra 3a</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="extra3b" type="radio" data-name="Extra 3b" data-price="0.5" data-date="0" name="extra3" value="extra3b-visual" />
+                    <label for="extra3b">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Extra 3b</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 4 END -->
+
+
+    <!-- TAB 5 -->
+    <div id="tab5" class="tab">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Color</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#color1">Color 1</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Color 1</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+                <li><a href="#color2">Color 2</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Color 2</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+                <li><a href="#color3">Color 3</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Color 3</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="color1">
+                <div class="gallery" data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
+
+                  <div class="gallery-cell">
+                    <input id="color1-kristall" type="radio" data-name="Color1 Kristall" data-price="0.5" data-date="0" name="color1" value="kristall-visual" checked="checked" />
+                    <label class="kristall-visual" for="color1-kristall">
+                      <span>Kristall</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color1-aluminium" type="radio" data-name="Color1 Aluminium" data-price="0.5" data-date="0" name="color1" value="aluminium-visual" />
+                    <label class="aluminium-visual" for="color1-aluminium">
+                      <span>Aluminium</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color1-mineral" type="radio" data-name="Color1 Mineral" data-price="0.5" data-date="0" name="color1" value="mineral-visual" />
+                    <label class="mineral-visual" for="color1-mineral">
+                      <span>Mineral</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color1-platin" type="radio" data-name="Color1 Platin" data-price="0.5" data-date="0" name="color1" value="platin-visual" />
+                    <label class="platin-visual" for="color1-platin">
+                      <span>Platin</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color1-polar" type="radio" data-name="Color1 Polar" data-price="0.5" data-date="0" name="color1" value="polar-visual" />
+                    <label class="polar-visual" for="color1-polar">
+                      <span>Polar</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color1-basalt" type="radio" data-name="Color1 Basalt" data-price="0.5" data-date="0" name="color1" value="basalt-visual" />
+                    <label class="basalt-visual" for="color1-basalt">
+                      <span>Basalt</span>
+                    </label>
+                  </div>
+
+
+                  <div class="gallery-cell">
+                    <input id="color1-patina" type="radio" data-name="Color1 Patina" data-price="0.5" data-date="0" name="color1" value="patina-visual" />
+                    <label class="patina-visual" for="color1-patina">
+                      <span>Patina</span>
+                    </label>
+                  </div>
+                                   
+                  
+                  <div class="gallery-cell">
+                    <input id="color1-sandgold" type="radio" data-name="Color1 Sandgold" data-price="0.5" data-date="0" name="color1" value="sandgold-visual" />
+                    <label class="sandgold-visual" for="color1-sandgold">
+                      <span>Sandgold</span>
+                    </label>
+                  </div>  
+
+                </div>
+              </section>
+
+
+              <section id="color2">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="color2-kristall" type="radio" data-name="Color2 Kristall" data-price="0.5" data-date="0" name="color2" value="kristall-visual" checked="checked" />
+                    <label class="kristall-visual" for="color2-kristall">
+                      <span>Kristall</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color2-aluminium" type="radio" data-name="Color2 Aluminium" data-price="0.5" data-date="0" name="color2" value="aluminium-visual" />
+                    <label class="aluminium-visual" for="color2-aluminium">
+                      <span>Aluminium</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color2-mineral" type="radio" data-name="Color2 Mineral" data-price="0.5" data-date="0" name="color2" value="mineral-visual" />
+                    <label class="mineral-visual" for="color2-mineral">
+                      <span>Mineral</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color2-platin" type="radio" data-name="Color2 Platin" data-price="0.5" data-date="0" name="color2" value="platin-visual" />
+                    <label class="platin-visual" for="color2-platin">
+                      <span>Platin</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color2-polar" type="radio" data-name="Color2 Polar" data-price="0.5" data-date="0" name="color2" value="polar-visual" />
+                    <label class="polar-visual" for="color2-polar">
+                      <span>Polar</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color2-basalt" type="radio" data-name="Color2 Basalt" data-price="0.5" data-date="0" name="color2" value="basalt-visual" />
+                    <label class="basalt-visual" for="color2-basalt">
+                      <span>Basalt</span>
+                    </label>
+                  </div>
+
+
+                  <div class="gallery-cell">
+                    <input id="color2-patina" type="radio" data-name="Color2 Patina" data-price="0.5" data-date="0" name="color2" value="patina-visual" />
+                    <label class="patina-visual" for="color2-patina">
+                      <span>Patina</span>
+                    </label>
+                  </div>
+                                   
+                  
+                  <div class="gallery-cell">
+                    <input id="color2-sandgold" type="radio" data-name="Color2 Sandgold" data-price="0.5" data-date="0" name="color2" value="sandgold-visual" />
+                    <label class="sandgold-visual" for="color2-sandgold">
+                      <span>Sandgold</span>
+                    </label>
+                  </div>  
+
+                </div>
+              </section>
+
+
+              <!--color3 is only active if option2a is checked  -->
+
+              <section id="color3">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="color3-kristall" type="radio" data-name="Color3 Kristall" data-price="0.5" data-date="0" name="color3" value="kristall-visual" checked="checked" />
+                    <label class="kristall-visual" for="color3-kristall">
+                      <span>Kristall</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color3-aluminium" type="radio" data-name="Color3 Aluminium" data-price="0.5" data-date="0" name="color3" value="aluminium-visual" />
+                    <label class="aluminium-visual" for="color3-aluminium">
+                      <span>Aluminium</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color3-mineral" type="radio" data-name="Color3 Mineral" data-price="0.5" data-date="0" name="color3" value="mineral-visual" />
+                    <label class="mineral-visual" for="color3-mineral">
+                      <span>Mineral</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color3-platin" type="radio" data-name="Color3 Platin" data-price="0.5" data-date="0" name="color3" value="platin-visual" />
+                    <label class="platin-visual" for="color3-platin">
+                      <span>Platin</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color3-polar" type="radio" data-name="Color3 Polar" data-price="0.5" data-date="0" name="color3" value="polar-visual" />
+                    <label class="polar-visual" for="color3-polar">
+                      <span>Polar</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="color3-basalt" type="radio" data-name="Color3 Basalt" data-price="0.5" data-date="0" name="color3" value="basalt-visual" />
+                    <label class="basalt-visual" for="color3-basalt">
+                      <span>Basalt</span>
+                    </label>
+                  </div>
+
+
+                  <div class="gallery-cell">
+                    <input id="color3-patina" type="radio" data-name="Color3 Patina" data-price="0.5" data-date="0" name="color3" value="patina-visual" />
+                    <label class="patina-visual" for="color3-patina">
+                      <span>Patina</span>
+                    </label>
+                  </div>
+                                   
+                  
+                  <div class="gallery-cell">
+                    <input id="color3-sandgold" type="radio" data-name="Color3 Sandgold" data-price="0.5" data-date="0" name="color3" value="sandgold-visual" />
+                    <label class="sandgold-visual" for="color3-sandgold">
+                      <span>Sandgold</span>
+                    </label>
+                  </div>                       
+                             
+
+                </div>
+              </section>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 4 END -->
+
+  </div>
+
+
+    <footer class="footer">
+
+      <span class="fsl">
+        <a href="">Werbeprogramme</a>
+        <a href="">Unternehmen</a>
+        <a href="">Über Cardstock</a>
+      </span>
+
+      <span class="fsr">
+        <a href="">Datenschutzerklärung</a>
+        <a href="">Nutzungsbedingungen</a>
+        <a href="">Impressum</a>
+      </span>
+
+    </footer>
+
+</div>
+
+    <style>
+    body:after {
+      display: none;
+      content: url(http://cardstock-test.de/configurator/schwarz.jpg) url(http://cardstock-test.de/configurator/weiss.jpg) url(http://cardstock-test.de/configurator/chamois.jpg) url(http://cardstock-test.de/configurator/beige.jpg) url(http://cardstock-test.de/configurator/sandbeige.jpg) url(http://cardstock-test.de/configurator/goldgelb.jpg) url(http://cardstock-test.de/configurator/maisgelb.jpg) url(http://cardstock-test.de/configurator/orange.jpg) url(http://cardstock-test.de/configurator/rotbraun.jpg) url(http://cardstock-test.de/configurator/sienabraun.jpg) url(http://cardstock-test.de/configurator/naturbraun.jpg) url(http://cardstock-test.de/configurator/nussbraun.jpg) url(http://cardstock-test.de/configurator/schokolade.jpg) url(http://cardstock-test.de/configurator/hellrot.jpg) url(http://cardstock-test.de/configurator/rot.jpg) url(http://cardstock-test.de/configurator/rosso.jpg) url(http://cardstock-test.de/configurator/kardinalrot.jpg) url(http://cardstock-test.de/configurator/weinrot.jpg) url(http://cardstock-test.de/configurator/altrosa.jpg) url(http://cardstock-test.de/configurator/beerenrot.jpg) url(http://cardstock-test.de/configurator/purpur.jpg) url(http://cardstock-test.de/configurator/silbergrau.jpg) url(http://cardstock-test.de/configurator/taubengrau.jpg) url(http://cardstock-test.de/configurator/titan.jpg) url(http://cardstock-test.de/configurator/braungrau.jpg) url(http://cardstock-test.de/configurator/grau.jpg) url(http://cardstock-test.de/configurator/anthrazit.jpg) url(http://cardstock-test.de/configurator/schiefergrau.jpg) url(http://cardstock-test.de/configurator/schwarzblau.jpg) url(http://cardstock-test.de/configurator/pariserblau.jpg) url(http://cardstock-test.de/configurator/opalblau.jpg) url(http://cardstock-test.de/configurator/hellblau.jpg) url(http://cardstock-test.de/configurator/mittelblau.jpg) url(http://cardstock-test.de/configurator/meerblau.jpg) url(http://cardstock-test.de/configurator/cyan.jpg) url(http://cardstock-test.de/configurator/tuerkis.jpg) url(http://cardstock-test.de/configurator/pistazie.jpg) url(http://cardstock-test.de/configurator/bambus.jpg) url(http://cardstock-test.de/configurator/lindgruen.jpg) url(http://cardstock-test.de/configurator/apfelgruen.jpg) url(http://cardstock-test.de/configurator/dunkelgruen.jpg)
+    }
+    </style>
+
+    <script src='js/tabs.js'></script>
+    <script src='js/classie.js'></script>
+    <script src='js/dynamics.min.js'></script>
+    <script src='js/configurator.js'></script>
+    <script src='js/flickity.pkgd.js'></script>
+    
+    <script src='js/jquery.min.js'></script>
+    <script src='js/backbone-min.js'></script>
+    <script src='js/handlebars.js'></script>
+                
+    <script src="main.js"></script>
+    
+</body>
+
+</html>
