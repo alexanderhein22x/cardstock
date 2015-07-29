@@ -162,7 +162,7 @@ App.Views.CostView = Backbone.View.extend({
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
   events: {
-    'click #materialaa .gallery-cell': 'selectMaterial',
+    'click #material .gallery-cell': 'selectMaterial',
     'click #model .gallery-cell': 'selectModel',
     'click #size .gallery-cell': 'selectSize',
     'click #extra1 .gallery-cell': 'selectExtra',
