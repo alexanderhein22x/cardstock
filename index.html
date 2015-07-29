@@ -20,7 +20,7 @@
 
 <body>
 
- 
+
 <div id="material1-theme" class="container">
 
 
@@ -88,33 +88,33 @@
     </div>
 
 
-    <div class="summary" style="display: none;">
+    <div class="summary">
       <div class="selected-options">
         <span class="headline">1. Selected options</span>
         <p>Summary list of the selected options</p>
         <div id="options">
-          
+
         <template id="optionsTpl">
           <!--summary list of selected options -->
 
           <div class="examplecontainer">
             <span class="title">Material</span>
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{material}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{material.name}}</a>
             </div>
           </div>
 
           <div class="examplecontainer">
             <span class="title">Model</span>
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{model}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{model.name}}</a>
             </div>
           </div>
 
           <div class="examplecontainer">
             <span class="title">Size</span>
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{size}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{size.name}}</a>
             </div>
           </div>
 
@@ -123,21 +123,21 @@
 
             {{#if extra1}}
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{extra1}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{extra1.name}}</a>
               <a href="/" title="remove option from summary list" class="remove" data-item="extra1">remove option</a>
             </div>
             {{/if}}
-            
+
             {{#if extra2}}
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{extra2}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{extra2.name}}</a>
               <a href="/" title="remove option from summary list" class="remove" data-item="extra2">remove option</a>
             </div>
             {{/if}}
-            
+
             {{#if extra3}}
              <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{extra3}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{extra3.name}}</a>
               <a href="/" title="remove option from summary list" class="remove" data-item="extra3">remove option</a>
             </div>
             {{/if}}
@@ -145,17 +145,17 @@
 
           <div class="examplecontainer">
             <span class="title">Color</span>
-            
+
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{color1}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{color1.name}}</a>
             </div>
-            
+
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{color2}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{color2.name}}</a>
             </div>
-            
+
             <div class="example">
-              <a href="/" title="link to checked radio button" class="link">{{color3}}</a>
+              <a href="/" title="link to checked radio button" class="link">{{color3.name}}</a>
             </div>
           </template>
 
@@ -287,7 +287,7 @@
 
             <div class="content-wrap">
 
-              <section id="materialaa">
+              <section id="material">
                 <div class="gallery">
 
                   <div class="gallery-cell">
@@ -765,14 +765,14 @@
                       <span>Patina</span>
                     </label>
                   </div>
-                                   
-                  
+
+
                   <div class="gallery-cell">
                     <input id="color1-sandgold" type="radio" data-name="Color1 Sandgold" data-price="0.5" data-date="0" name="color1" value="sandgold-visual" />
                     <label class="sandgold-visual" for="color1-sandgold">
                       <span>Sandgold</span>
                     </label>
-                  </div>  
+                  </div>
 
                 </div>
               </section>
@@ -830,14 +830,14 @@
                       <span>Patina</span>
                     </label>
                   </div>
-                                   
-                  
+
+
                   <div class="gallery-cell">
                     <input id="color2-sandgold" type="radio" data-name="Color2 Sandgold" data-price="0.5" data-date="0" name="color2" value="sandgold-visual" />
                     <label class="sandgold-visual" for="color2-sandgold">
                       <span>Sandgold</span>
                     </label>
-                  </div>  
+                  </div>
 
                 </div>
               </section>
@@ -897,15 +897,15 @@
                       <span>Patina</span>
                     </label>
                   </div>
-                                   
-                  
+
+
                   <div class="gallery-cell">
                     <input id="color3-sandgold" type="radio" data-name="Color3 Sandgold" data-price="0.5" data-date="0" name="color3" value="sandgold-visual" />
                     <label class="sandgold-visual" for="color3-sandgold">
                       <span>Sandgold</span>
                     </label>
-                  </div>                       
-                             
+                  </div>
+
 
                 </div>
               </section>
@@ -953,13 +953,13 @@
     <script src='js/dynamics.min.js'></script>
     <script src='js/configurator.js'></script>
     <script src='js/flickity.pkgd.js'></script>
-    
+
     <script src='js/jquery.min.js'></script>
     <script src='js/backbone-min.js'></script>
     <script src='js/handlebars.js'></script>
-                
+
     <script src="main.js"></script>
-    
+
 </body>
 
 </html>

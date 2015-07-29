@@ -69,14 +69,14 @@
 
     update();
   });
-  
+
   ///////////////////////////////////////////////////////////
-  
+
   var App = {
     Models: {},
     Views: {}
   };
-  
+
   App.Models.Configuration = Backbone.Model.extend({
     defaults: {
       material: 'Material 1',
@@ -90,7 +90,7 @@
       color3: 'Color3 Red'
     }
   });
-  
+
   App.Views.OptionsView = Backbone.View.extend({
     el: '#options',
     events: {
@@ -103,7 +103,7 @@
     template: Handlebars.compile($('#optionsTpl').html()),
     render: function() { this.$el.html(this.template(this.model.toJSON()));
     },
-    
+
     removeExtra: function(e) {
       e.preventDefault();
       var item = $(e.target).data('item');
@@ -111,7 +111,7 @@
       this.model.set(item, null);
     }
   });
-  
+
   App.Views.CostView = Backbone.View.extend({
     el: '.calculation .quantity',
     events: {
@@ -125,7 +125,7 @@
       $(e.target);
     }
   });
-  
+
   App.Views.AppView = Backbone.View.extend({
     el: 'body',
     events: {
@@ -143,51 +143,54 @@
       console.log("created AppView ", this.el, this.model);
       this.optionsView = new App.Views.OptionsView({model: this.model});
     },
-    
+
     render: function() {
       this.optionsView.render();
     },
-    
+
     selectMaterial: function(e) {
       //console.log(e);
-      var material = $(e.target).data('name');
+      var material = $(e.target).data();
       console.log(material);
       if (material) this.model.set('material', material);
     },
-    
+
     selectModel: function(e) {
       //console.log(e);
-      var model = $(e.target).data('name');
+      var model = $(e.target).data();
       console.log(model);
       if (model) this.model.set('model', model);
     },
-    
+
     selectSize: function(e) {
       //console.log(e);
-      var size = $(e.target).data('name');
+      var size = $(e.target).data();
       console.log(size);
       if (size) this.model.set('size', size);
     },
-    
+
     selectExtra: function(e) {
       //console.log(e);
       var section = $(e.target).parents('section').attr('id');
-      var extra = $(e.target).data('name');
+      var extra = $(e.target).data();
       console.log(section, extra);
       if (extra) this.model.set(section, extra);
     },
-     
+
     selectColor: function(e) {
       //console.log(e);
       var section = $(e.target).parents('section').attr('id');
-      var color = $(e.target).data('name');
+      var color = $(e.target).data();
       console.log(section, color);
       if (color) this.model.set(section, color);
       console.log(this.model)
     },
   });
 
-var config = new App.Models.Configuration();
+var defaults = _.object(
+  $(".is-selected input").map(function() { return $(this).parents("section").attr("id") }),
+  $(".is-selected input").map(function() { return $(this).data() }) );
+var config = new App.Models.Configuration(defaults);
 var view = new App.Views.AppView({model: config});
 view.render();
 

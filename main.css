@@ -340,7 +340,7 @@ p {
 .layout {
   position: relative;
   float: left;
-  width: 50%;
+  width: 40%;
   padding: 50px;
 }
 
@@ -610,7 +610,7 @@ p {
 .extra1a-visual{
   position: absolute;
   bottom: 20px;
-  left: 20px;  
+  left: 20px;
 }
 
 .extra1b-visual{}
@@ -685,56 +685,56 @@ p {
 
 
 .kristall-visual {
-	background: #d6d6da; 
+	background: #d6d6da;
 	background-image: url(configurator/metallic-kristall.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 	}
-	
+
 .aluminium-visual {
-	background: #b2b6bd; 
+	background: #b2b6bd;
 	background-image: url(configurator/metallic-aluminium.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 }
 
 .mineral-visual {
-	background: #909aa5; 
+	background: #909aa5;
 	background-image: url(configurator/metallic-mineral.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 }
 
 .platin-visual {
-	background: #3d424a; 
+	background: #3d424a;
 	background-image: url(configurator/metallic-platin.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 }
 
 .polar-visual {
-	background: #293443; 
+	background: #293443;
 	background-image: url(configurator/metallic-polar.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 }
 
 .basalt-visual {
-	background: #1e1f22; 
+	background: #1e1f22;
 	background-image: url(configurator/metallic-basalt.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 }
 
 .patina-visual {
-	background: #3b3130; 
+	background: #3b3130;
 	background-image: url(configurator/metallic-patina.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
 }
 
 .sandgold-visual {
-	background: #e3d7b9; 
+	background: #e3d7b9;
 	background-image: url(configurator/metallic-sandgold.jpg);
 	background-repeat: repeat-x;
 	background-size: 100px 100%;
