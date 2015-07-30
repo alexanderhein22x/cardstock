@@ -196,6 +196,22 @@ App.Views.AppView = Backbone.View.extend({
     console.log("created AppView ", this.el, this.model);
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
+    this.listenTo(this.model, "change", this.updateExtras);
+  },
+
+  updateExtras: function() {
+    _.each(["extra1", "extra2", "extra3"], function(extra) {
+      if (this.model.hasChanged(extra)) {
+        var selected = this.model.get(extra);
+        var $section = $("section#" + extra);
+        $section.find("input").prop("checked", false);
+        if (selected) {
+          $section.find("input[data-name='"+selected.name+"']").prop("checked", true);
+        } else {
+          $section.find("input[value='none']").prop("checked", true);
+        }
+      }
+    }.bind(this));
   },
 
   render: function() {
