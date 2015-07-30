@@ -1,0 +1,11 @@
+
+1. Cost calculation need a preselect.
+1.1 Change quantity select price to unit price.
+2. Extras need to sync with option view, if you remove a option.
+3. Handle selection of empty extras.
+4. Price formating and calculation.
+5. Calculate delivery time.
+
+
+
+//copy cost view

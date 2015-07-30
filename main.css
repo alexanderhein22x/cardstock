@@ -39,8 +39,13 @@ p {
   margin: 0px 0px 20px 0px;
 }
 
+.strong {
+font-weight: bold !important;
+}
 
-
+.left {
+text-align: left !important;
+}
 
 
 
@@ -183,20 +188,31 @@ p {
 }
 
 .quantity .h1 {
-  padding: 6px;
+  width: 33.33%;
+  padding: 10px 6px;
   float: left;
+  text-align: left;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .quantity .h2 {
-  padding: 6px;
-  float: right;
+  width: 33.33%;
+  padding: 10px 6px;
+  float: left;
+  text-align: right;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.quantity .h3 {
+  width: 33.33%;
+  padding: 10px 6px;
+  float: left;
   text-align: right;
   font-size: 13px;
   font-weight: bold;
 }
-
 .quantity input[type="radio"] {
   display: none;
 }
@@ -214,6 +230,12 @@ p {
   -webkit-transition: all .05s ease-out;
   transition: all .05s ease-out;
   overflow: hidden;
+}
+
+.quantity label span {
+width: 33.333%;
+float: left;
+text-align: right;
 }
 
 .quantity label:first-of-type {
@@ -280,16 +302,6 @@ p {
   color: #e31c18;
 }
 
-
-.textleft {
-  float: left;
-  text-align: left;
-}
-
-.textright {
-  float: right;
-  text-align: right;
-}
 
 /* Cost calculation */
 
@@ -437,6 +449,12 @@ p {
   z-index: 20;
 }
 
+.kit {
+  /* background-image: url(configurator/metallic.png); */
+  background-repeat: repeat;
+  background-size: 50px 50px;
+}
+
 .left {
   position: relative;
   width: 48%;
@@ -480,6 +498,69 @@ p {
   height: 100%;
   float: left;
 }
+
+.mechanik {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Mechaniken */
+
+.klemmmechanik {
+  background-image: url(configurator/klemmmechanik.png);
+  width: 49%;
+  top: 2%;
+  left: 25%;
+}
+
+.zwei-ring {
+  background-image: url(configurator/2ring.png);
+  height: 44%;
+  top: 27%;
+  left: 0%;
+}
+
+.vier-ring {
+  background-image: url(configurator/4ring.png);
+  height: 92%;
+  top: 5%;
+  left: 0%;
+}
+
+.hebelmechanik {
+  background-image: url(configurator/hebelmechanik.png);
+  width: 55%;
+  top: 2%;
+  left: 20%;
+}
+
+.klemmschiene {
+  background-image: url(configurator/klemmschiene.png);
+  width: 55%;
+  top: 2%;
+  left: 20%;
+}
+
+.buchschrauben {
+  background-image: url(configurator/buchschrauben.png);
+  width: 55%;
+  top: 2%;
+  left: 20%;
+}
+
+.schnellheftung {
+  background-image: url(configurator/schnellheftung.png);
+  width: 55%;
+  top: 2%;
+  left: 20%;
+}
+
+/* Mechaniken */
+
 
 /* Material */
 
@@ -636,48 +717,48 @@ p {
 /* Feinleinen */
 
 
-.feinleinen-schwarz-visual {background: #222222; background-image: url(configurator/feinleinen-schwarz.jpg);}
-.feinleinen-weiss-visual {background: #f8f8f8; background-image: url(configurator/feinleinen-weiss.jpg);}
-.feinleinen-chamois-visual {background: #EDE6D4; background-image: url(configurator/feinleinen-chamois.jpg);}
-.feinleinen-beige-visual {background: #E1D3B9; background-image: url(configurator/feinleinen-beige.jpg);}
-.feinleinen-sandbeige-visual {background: #D0C0B1; background-image: url(configurator/feinleinen-sandbeige.jpg);}
-.feinleinen-braunbeige-visual {background: #C7A575; background-image: url(configurator/feinleinen-braunbeige.jpg);}
-.feinleinen-goldgelb-visual {background: #F9D028; background-image: url(configurator/feinleinen-goldgelb.jpg);}
-.feinleinen-maisgelb-visual {background: #FEB501; background-image: url(configurator/feinleinen-maisgelb.jpg);}
-.feinleinen-orange-visual {background: #F55F01; background-image: url(configurator/feinleinen-orange.jpg);}
-.feinleinen-rotbraun-visual {background: #D34E13; background-image: url(configurator/feinleinen-rotbraun.jpg);}
-.feinleinen-sienabraun-visual {background: #BA4227; background-image: url(configurator/feinleinen-sienabraun.jpg);}
-.feinleinen-naturbraun-visual {background: #833832; background-image: url(configurator/feinleinen-naturbraun.jpg);}
-.feinleinen-nussbraun-visual {background: #735E43; background-image: url(configurator/feinleinen-nussbraun.jpg);}
-.feinleinen-schokolade-visual {background: #423735; background-image: url(configurator/feinleinen-schokolade.jpg);}
-.feinleinen-hellrot-visual {background: #E03A3A; background-image: url(configurator/feinleinen-hellrot.jpg);}
-.feinleinen-rot-visual {background: #B32F3C; background-image: url(configurator/feinleinen-rot.jpg);}
-.feinleinen-rosso-visual {background: #BC2F3F; background-image: url(configurator/feinleinen-rosso.jpg);}
-.feinleinen-kardinalrot-visual {background: #833245; background-image: url(configurator/feinleinen-kardinalrot.jpg);}
-.feinleinen-weinrot-visual {background: #743E4B; background-image: url(configurator/feinleinen-weinrot.jpg);}
-.feinleinen-altrosa-visual {background: #D1A49F; background-image: url(configurator/feinleinen-altrosa.jpg);}
-.feinleinen-beerenrot-visual {background: #CB5877; background-image: url(configurator/feinleinen-beerenrot.jpg);}
-.feinleinen-purpur-visual {background: #E34DA4; background-image: url(configurator/feinleinen-purpur.jpg);}
-.feinleinen-silbergrau-visual {background: #C5C0C6; background-image: url(configurator/feinleinen-silbergrau.jpg);}
-.feinleinen-taubengrau-visual {background: #AFB6BC; background-image: url(configurator/feinleinen-taubengrau.jpg);}
-.feinleinen-titan-visual {background: #BAB6B5; background-image: url(configurator/feinleinen-titan.jpg);}
-.feinleinen-braungrau-visual {background: #868581; background-image: url(configurator/feinleinen-braungrau.jpg);}
-.feinleinen-grau-visual {background: #656460; background-image: url(configurator/feinleinen-grau.jpg);}
-.feinleinen-anthrazit-visual {background: #3b3b3b; background-image: url(configurator/feinleinen-anthrazit.jpg);}
-.feinleinen-schiefergrau-visual {background: #2F2F37; background-image: url(configurator/feinleinen-schiefergrau.jpg);}
-.feinleinen-schwarzblau-visual {background: #1F1F2B; background-image: url(configurator/feinleinen-schwarzblau.jpg);}
-.feinleinen-pariserblau-visual {background: #353F58; background-image: url(configurator/feinleinen-pariserblau.jpg);}
-.feinleinen-opalblau-visual {background: #3A4595; background-image: url(configurator/feinleinen-opalblau.jpg);}
-.feinleinen-hellblau-visual {background: #A6B7D3; background-image: url(configurator/feinleinen-hellblau.jpg);}
-.feinleinen-mittelblau-visual {background: #0869AD; background-image: url(configurator/feinleinen-mittelblau.jpg);}
-.feinleinen-meerblau-visual {background: #6E95B6; background-image: url(configurator/feinleinen-meerblau.jpg);}
-.feinleinen-cyan-visual {background: #018AD2; background-image: url(configurator/feinleinen-cyan.jpg);}
-.feinleinen-tuerkis-visual {background: #0196AA; background-image: url(configurator/feinleinen-tuerkis.jpg);}
-.feinleinen-pistazie-visual {background: #C4E886; background-image: url(configurator/feinleinen-pistazie.jpg);}
-.feinleinen-bambus-visual {background: #D3CFAA; background-image: url(configurator/feinleinen-bambus.jpg);}
-.feinleinen-lindgruen-visual {background: #6D9E6F; background-image: url(configurator/feinleinen-lindgruen.jpg);}
-.feinleinen-apfelgruen-visual {background: #9EC46D; background-image: url(configurator/feinleinen-apfelgruen.jpg);}
-.feinleinen-dunkelgruen-visual {background: #234F42; background-image: url(configurator/feinleinen-dunkelgruen.jpg);}
+.feinleinen-schwarz-visual {background: #222222;}
+.feinleinen-weiss-visual {background: #f8f8f8;}
+.feinleinen-chamois-visual {background: #EDE6D4;}
+.feinleinen-beige-visual {background: #E1D3B9;}
+.feinleinen-sandbeige-visual {background: #D0C0B1;}
+.feinleinen-braunbeige-visual {background: #C7A575; }
+.feinleinen-goldgelb-visual {background: #F9D028; }
+.feinleinen-maisgelb-visual {background: #FEB501; }
+.feinleinen-orange-visual {background: #F55F01; }
+.feinleinen-rotbraun-visual {background: #D34E13; }
+.feinleinen-sienabraun-visual {background: #BA4227; }
+.feinleinen-naturbraun-visual {background: #833832; }
+.feinleinen-nussbraun-visual {background: #735E43; }
+.feinleinen-schokolade-visual {background: #423735; }
+.feinleinen-hellrot-visual {background: #E03A3A; }
+.feinleinen-rot-visual {background: #B32F3C; }
+.feinleinen-rosso-visual {background: #BC2F3F; }
+.feinleinen-kardinalrot-visual {background: #833245; }
+.feinleinen-weinrot-visual {background: #743E4B; }
+.feinleinen-altrosa-visual {background: #D1A49F; }
+.feinleinen-beerenrot-visual {background: #CB5877; }
+.feinleinen-purpur-visual {background: #E34DA4;}
+.feinleinen-silbergrau-visual {background: #C5C0C6; }
+.feinleinen-taubengrau-visual {background: #AFB6BC; }
+.feinleinen-titan-visual {background: #BAB6B5; }
+.feinleinen-braungrau-visual {background: #868581; }
+.feinleinen-grau-visual {background: #656460; }
+.feinleinen-anthrazit-visual {background: #3b3b3b; }
+.feinleinen-schiefergrau-visual {background: #2F2F37; }
+.feinleinen-schwarzblau-visual {background: #1F1F2B; }
+.feinleinen-pariserblau-visual {background: #353F58; }
+.feinleinen-opalblau-visual {background: #3A4595; }
+.feinleinen-hellblau-visual {background: #A6B7D3; }
+.feinleinen-mittelblau-visual {background: #0869AD; }
+.feinleinen-meerblau-visual {background: #6E95B6; }
+.feinleinen-cyan-visual {background: #018AD2; }
+.feinleinen-tuerkis-visual {background: #0196AA; }
+.feinleinen-pistazie-visual {background: #C4E886; }
+.feinleinen-bambus-visual {background: #D3CFAA; }
+.feinleinen-lindgruen-visual {background: #6D9E6F; }
+.feinleinen-apfelgruen-visual {background: #9EC46D; }
+.feinleinen-dunkelgruen-visual {background: #234F42; }
 
 
 
@@ -685,59 +766,99 @@ p {
 
 
 .kristall-visual {
-	background: #d6d6da;
-	background-image: url(configurator/metallic-kristall.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(251,251,253);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZiZmJmZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM1JSIgc3RvcC1jb2xvcj0iI2ZhZmFmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjN2NhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(251,251,253,1) 0%, rgba(250,250,252,1) 35%, rgba(199,202,207,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,251,253,1)), color-stop(35%,rgba(250,250,252,1)), color-stop(100%,rgba(199,202,207,1)));
+  background: -webkit-linear-gradient(top,  rgba(251,251,253,1) 0%,rgba(250,250,252,1) 35%,rgba(199,202,207,1) 100%);
+  background: -o-linear-gradient(top,  rgba(251,251,253,1) 0%,rgba(250,250,252,1) 35%,rgba(199,202,207,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(251,251,253,1) 0%,rgba(250,250,252,1) 35%,rgba(199,202,207,1) 100%);
+  background: linear-gradient(to bottom,  rgba(251,251,253,1) 0%,rgba(250,250,252,1) 35%,rgba(199,202,207,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfd', endColorstr='#c7cacf',GradientType=0 );
 	}
 
 .aluminium-visual {
-	background: #b2b6bd;
-	background-image: url(configurator/metallic-aluminium.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(239,240,245);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmZjBmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM1JSIgc3RvcC1jb2xvcj0iI2YyZjNmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNmFjYmEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(239,240,245,1) 0%, rgba(242,243,247,1) 35%, rgba(166,172,186,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,240,245,1)), color-stop(35%,rgba(242,243,247,1)), color-stop(100%,rgba(166,172,186,1)));
+  background: -webkit-linear-gradient(top,  rgba(239,240,245,1) 0%,rgba(242,243,247,1) 35%,rgba(166,172,186,1) 100%);
+  background: -o-linear-gradient(top,  rgba(239,240,245,1) 0%,rgba(242,243,247,1) 35%,rgba(166,172,186,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(239,240,245,1) 0%,rgba(242,243,247,1) 35%,rgba(166,172,186,1) 100%);
+  background: linear-gradient(to bottom,  rgba(239,240,245,1) 0%,rgba(242,243,247,1) 35%,rgba(166,172,186,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff0f5', endColorstr='#a6acba',GradientType=0 );
 }
 
 .mineral-visual {
-	background: #909aa5;
-	background-image: url(configurator/metallic-mineral.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(137,143,159);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg5OGY5ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM1JSIgc3RvcC1jb2xvcj0iIzhhOTBhMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0NDQ3NTAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(137,143,159,1) 0%, rgba(138,144,160,1) 35%, rgba(68,71,80,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,143,159,1)), color-stop(35%,rgba(138,144,160,1)), color-stop(100%,rgba(68,71,80,1)));
+  background: -webkit-linear-gradient(top,  rgba(137,143,159,1) 0%,rgba(138,144,160,1) 35%,rgba(68,71,80,1) 100%);
+  background: -o-linear-gradient(top,  rgba(137,143,159,1) 0%,rgba(138,144,160,1) 35%,rgba(68,71,80,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(137,143,159,1) 0%,rgba(138,144,160,1) 35%,rgba(68,71,80,1) 100%);
+  background: linear-gradient(to bottom,  rgba(137,143,159,1) 0%,rgba(138,144,160,1) 35%,rgba(68,71,80,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898f9f', endColorstr='#444750',GradientType=0 );
 }
 
 .platin-visual {
-	background: #3d424a;
-	background-image: url(configurator/metallic-platin.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(72,74,86);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ4NGE1NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM1JSIgc3RvcC1jb2xvcj0iIzRjNGU1YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMzI0MjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(72,74,86,1) 0%, rgba(76,78,90,1) 35%, rgba(35,36,40,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(72,74,86,1)), color-stop(35%,rgba(76,78,90,1)), color-stop(100%,rgba(35,36,40,1)));
+  background: -webkit-linear-gradient(top,  rgba(72,74,86,1) 0%,rgba(76,78,90,1) 35%,rgba(35,36,40,1) 100%);
+  background: -o-linear-gradient(top,  rgba(72,74,86,1) 0%,rgba(76,78,90,1) 35%,rgba(35,36,40,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(72,74,86,1) 0%,rgba(76,78,90,1) 35%,rgba(35,36,40,1) 100%);
+  background: linear-gradient(to bottom,  rgba(72,74,86,1) 0%,rgba(76,78,90,1) 35%,rgba(35,36,40,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484a56', endColorstr='#232428',GradientType=0 );
 }
 
 .polar-visual {
-	background: #293443;
-	background-image: url(configurator/metallic-polar.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(53,57,69);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM1Mzk0NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM1JSIgc3RvcC1jb2xvcj0iIzM5M2M0YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxODFiMjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(53,57,69,1) 0%, rgba(57,60,74,1) 35%, rgba(24,27,32,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(53,57,69,1)), color-stop(35%,rgba(57,60,74,1)), color-stop(100%,rgba(24,27,32,1)));
+  background: -webkit-linear-gradient(top,  rgba(53,57,69,1) 0%,rgba(57,60,74,1) 35%,rgba(24,27,32,1) 100%);
+  background: -o-linear-gradient(top,  rgba(53,57,69,1) 0%,rgba(57,60,74,1) 35%,rgba(24,27,32,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(53,57,69,1) 0%,rgba(57,60,74,1) 35%,rgba(24,27,32,1) 100%);
+  background: linear-gradient(to bottom,  rgba(53,57,69,1) 0%,rgba(57,60,74,1) 35%,rgba(24,27,32,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353945', endColorstr='#181b20',GradientType=0 );
 }
 
 .basalt-visual {
-	background: #1e1f22;
-	background-image: url(configurator/metallic-basalt.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(53,53,53);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM1MzUzNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM0JSIgc3RvcC1jb2xvcj0iIzM2MzYzNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxODE4MTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(53,53,53,1) 0%, rgba(54,54,54,1) 34%, rgba(24,24,24,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(53,53,53,1)), color-stop(34%,rgba(54,54,54,1)), color-stop(100%,rgba(24,24,24,1)));
+  background: -webkit-linear-gradient(top,  rgba(53,53,53,1) 0%,rgba(54,54,54,1) 34%,rgba(24,24,24,1) 100%);
+  background: -o-linear-gradient(top,  rgba(53,53,53,1) 0%,rgba(54,54,54,1) 34%,rgba(24,24,24,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(53,53,53,1) 0%,rgba(54,54,54,1) 34%,rgba(24,24,24,1) 100%);
+  background: linear-gradient(to bottom,  rgba(53,53,53,1) 0%,rgba(54,54,54,1) 34%,rgba(24,24,24,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353535', endColorstr='#181818',GradientType=0 );
 }
 
 .patina-visual {
-	background: #3b3130;
-	background-image: url(configurator/metallic-patina.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(71,64,64);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ3NDA0MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM0JSIgc3RvcC1jb2xvcj0iIzRkNDQ0NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMjFlMWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(71,64,64,1) 0%, rgba(77,68,68,1) 34%, rgba(34,30,29,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(71,64,64,1)), color-stop(34%,rgba(77,68,68,1)), color-stop(100%,rgba(34,30,29,1)));
+  background: -webkit-linear-gradient(top,  rgba(71,64,64,1) 0%,rgba(77,68,68,1) 34%,rgba(34,30,29,1) 100%);
+  background: -o-linear-gradient(top,  rgba(71,64,64,1) 0%,rgba(77,68,68,1) 34%,rgba(34,30,29,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(71,64,64,1) 0%,rgba(77,68,68,1) 34%,rgba(34,30,29,1) 100%);
+  background: linear-gradient(to bottom,  rgba(71,64,64,1) 0%,rgba(77,68,68,1) 34%,rgba(34,30,29,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474040', endColorstr='#221e1d',GradientType=0 );
 }
 
 .sandgold-visual {
-	background: #e3d7b9;
-	background-image: url(configurator/metallic-sandgold.jpg);
-	background-repeat: repeat-x;
-	background-size: 100px 100%;
+  background: rgb(233,213,149);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U5ZDU5NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM0JSIgc3RvcC1jb2xvcj0iI2VkZGQ5YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNDhhNWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(233,213,149,1) 0%, rgba(237,221,156,1) 34%, rgba(164,138,90,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(233,213,149,1)), color-stop(34%,rgba(237,221,156,1)), color-stop(100%,rgba(164,138,90,1)));
+  background: -webkit-linear-gradient(top,  rgba(233,213,149,1) 0%,rgba(237,221,156,1) 34%,rgba(164,138,90,1) 100%);
+  background: -o-linear-gradient(top,  rgba(233,213,149,1) 0%,rgba(237,221,156,1) 34%,rgba(164,138,90,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(233,213,149,1) 0%,rgba(237,221,156,1) 34%,rgba(164,138,90,1) 100%);
+  background: linear-gradient(to bottom,  rgba(233,213,149,1) 0%,rgba(237,221,156,1) 34%,rgba(164,138,90,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9d595', endColorstr='#a48a5a',GradientType=0 );
 }
 
 
@@ -1123,7 +1244,6 @@ p {
 .gallery-cell label {
   border-radius: 5px 5px 0px 0px;
   cursor: pointer;
-  background-image: none;
   position: relative;
   display: block;
   float: left;
@@ -1256,7 +1376,6 @@ p {
   position: relative;
   float: left;
   width: 100%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
 
@@ -1376,7 +1495,7 @@ p {
   left: 0;
   width: 100%;
   height: 4px;
-  background: rgba(255, 255, 141, 1);
+  background: #fff;
   content: '';
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;

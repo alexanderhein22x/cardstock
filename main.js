@@ -52,11 +52,14 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    var radioButtons = _.flatten([_.slice(document.getElementsByName('size')), _.slice(document.getElementsByName('color2'))]),
+    var materialRadioButtons = document.getElementsByName('material'),
+      radioButtons = _.flatten([_.slice(document.getElementsByName('size')), _.slice(document.getElementsByName('color1'))]),
       colorRadioButtons = document.getElementsByName('color1'),
+      materialRadioButtons = document.getElementsByName('material'),
       cleftRadioButtons = _.flatten([_.slice(document.getElementsByName('model')), _.slice(document.getElementsByName('color1'))]);
 
     function update() {
+      updateParagraph(materialRadioButtons, 'container');
       updateParagraph(radioButtons, 'front');
       updateParagraph(radioButtons, 'back');
       updateParagraph(colorRadioButtons, 'colorinner');
