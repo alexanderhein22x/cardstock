@@ -114,7 +114,8 @@ App.Views.OptionsView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
   template: Handlebars.compile($('#optionsTpl').html()),
-  render: function() { this.$el.html(this.template(this.model.toJSON()));
+  render: function() {
+    this.$el.html(this.template(this.model.toJSON()));
   },
 
   removeExtra: function(e) {
@@ -228,7 +229,7 @@ App.Views.AppView = Backbone.View.extend({
     var section = $(e.target).parents('section').attr('id');
     var extra = $(e.target).data();
     console.log(section, extra);
-    if (extra) this.model.set(section, extra);
+    this.model.set(section, falseIfEmpty(extra));
   },
 
   selectColor: function(e) {
@@ -241,9 +242,13 @@ App.Views.AppView = Backbone.View.extend({
   },
 });
 
+function falseIfEmpty(data) {
+  return _.keys(data).length == 0 ? false : data;
+}
+
 var defaults = _.object(
   $(".is-selected input").map(function() { return $(this).parents("section").attr("id") }),
-  $(".is-selected input").map(function() { return $(this).data() }) );
+  $(".is-selected input").map(function() { return falseIfEmpty($(this).data()); }) );
 var config = new App.Models.Configuration(defaults);
 var view = new App.Views.AppView({model: config});
 view.render();
