@@ -182,28 +182,20 @@ App.Views.CostView = Backbone.View.extend({
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
   events: {
-    'click #material .gallery-cell': 'selectMaterial',
-    'click #model .gallery-cell': 'selectModel',
-    'click #size .gallery-cell': 'selectSize',
-    'click #extra1 .gallery-cell': 'selectExtra',
-    'click #extra2 .gallery-cell': 'selectExtra',
-    'click #extra3 .gallery-cell': 'selectExtra',
-    'click #color1 .gallery-cell': 'selectColor',
-    'click #color2 .gallery-cell': 'selectColor',
-    'click #color3 .gallery-cell': 'selectColor'
+    'click .gallery-cell': 'handleSelection'
   },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
-    this.listenTo(this.model, "change", this.updateExtras);
+    this.listenTo(this.model, "change", this.updateSelection);
   },
 
-  updateExtras: function() {
-    _.each(["extra1", "extra2", "extra3"], function(extra) {
-      if (this.model.hasChanged(extra)) {
-        var selected = this.model.get(extra);
-        var $section = $("section#" + extra);
+  updateSelection: function() {
+    _.each(this.model.keys(), function(attribute) {
+      if (this.model.hasChanged(attribute)) {
+        var selected = this.model.get(attribute);
+        var $section = $("section#" + attribute);
         $section.find("input").prop("checked", false);
         if (selected) {
           $section.find("input[data-name='"+selected.name+"']").prop("checked", true);
@@ -219,43 +211,16 @@ App.Views.AppView = Backbone.View.extend({
     this.costView.render();
   },
 
-  selectMaterial: function(e) {
+  handleSelection: function(e) {
     //console.log(e);
-    var material = $(e.target).data();
-    console.log(material);
-    if (material) this.model.set('material', material);
-  },
-
-  selectModel: function(e) {
-    //console.log(e);
-    var model = $(e.target).data();
-    console.log(model);
-    if (model) this.model.set('model', model);
-  },
-
-  selectSize: function(e) {
-    //console.log(e);
-    var size = $(e.target).data();
-    console.log(size);
-    if (size) this.model.set('size', size);
-  },
-
-  selectExtra: function(e) {
-    //console.log(e);
-    var section = $(e.target).parents('section').attr('id');
-    var extra = $(e.target).data();
-    console.log(section, extra);
-    this.model.set(section, falseIfEmpty(extra));
-  },
-
-  selectColor: function(e) {
-    //console.log(e);
-    var section = $(e.target).parents('section').attr('id');
-    var color = $(e.target).data();
-    console.log(section, color);
-    if (color) this.model.set(section, color);
-    console.log(this.model)
-  },
+    var $target = $(e.target);
+    var section = $target.parents('section').attr('id');
+    if ($target.prop("tagName") == "INPUT") {
+      var data = $(e.target).data();
+      console.log(data);
+      this.model.set(section, falseIfEmpty(data));
+    }
+  }
 });
 
 function falseIfEmpty(data) {
