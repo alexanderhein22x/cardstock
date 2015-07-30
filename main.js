@@ -130,7 +130,6 @@ App.Views.CostView = Backbone.View.extend({
   events: {
     'click label': 'updateQuantity'
   },
-  quantities: [25, 100, 250, 500, 1000, 2500, 5000],
   template: Handlebars.compile($('#costViewTpl').html()),
   initialize: function() {
     this.listenTo(this.model, 'change', this.render);
@@ -141,16 +140,19 @@ App.Views.CostView = Backbone.View.extend({
   },
   computePrices: function() {
     var selectedQuantity = this.model.get("quantity");
+    var quantityDiscount = this.model.get("material").quantityDiscount;
+    var quantities = _.keys(quantityDiscount);
 
     var unitPrice = this.model.values().reduce(function(sum, option) {
       return sum + (_.has(option, "price") ? option.price : 0);
     }, 0);
 
-    return this.quantities.map(function(q) {
+    return quantities.map(function(q) {
+      var netUnitPrice = unitPrice * quantityDiscount[q];
       return {
         quantity: q,
-        netUnitPrice: unitPrice,
-        unitPrice: unitPrice * (1 + App.MWST),
+        netUnitPrice: netUnitPrice,
+        unitPrice: netUnitPrice * (1 + App.MWST),
         selected: q == selectedQuantity
       }
     });
