@@ -2,7 +2,7 @@
 
 	'use strict';
 
-	var bodyEl = document.body, 
+	var bodyEl = document.body,
 		docElem = window.document.documentElement,
 		support = { transitions: Modernizr.csstransitions },
 		// transition end event name
@@ -58,22 +58,23 @@
 		};
 	}
 
-	function init() { 
+	function init() {
     if(window.location.hash){
       activateTabByHref(window.location.hash);
     } else {
       activateTabByHref(items[0].getAttribute('id'));
     }
-    
+
     toggleNavButtonState(0);
 		initEvents();
-	} 
+	}
 
+  window.locatePosByHref = locatePosByHref;
   function locatePosByHref(href){
     if(!href){
-      return;  
+      return;
     }
-    
+
     var i = 0;
 
     for(;i<itemsTotal;i++){
@@ -81,14 +82,14 @@
         return i;
       }
     }
-    
+
     return -1;
   }
-  
+
   function activateTabByHref(href){
     if(!href) return;
     href = href[0] === '#' ? href.substring(1) : href;
-    
+
     links.forEach(function(link, pos){
       if(link.getAttribute('href').substring(1) === href){
         classie.add(link.parentNode, 'navigation-current');
@@ -97,7 +98,7 @@
       }
     });
   }
-  
+
   function toggleNavButtonState(current){
     if(current === 0){
       navLeftCtrl.disabled = true;
@@ -116,13 +117,13 @@
       classie.remove(navRightCtrl, 'navigation-disabled');
     }
   }
-  
+
 	// event binding
 	function initEvents() {
 		// left/right navigation
 		navRightCtrl.addEventListener('click', function() { navigate('right'); });
 		navLeftCtrl.addEventListener('click', function() { navigate('left'); });
-    
+
     // tab navigation
     links.forEach(function(link, pos){
       link.addEventListener('click', function(ev) {
@@ -143,7 +144,7 @@
 				dynamics.css(el, { translateX: el.offsetWidth });
 			});
 		}, 10));
-		
+
 
 		// keyboard navigation events
 		document.addEventListener( 'keydown', function( ev ) {
@@ -157,9 +158,10 @@
 					break;
 			}
 		} );
-				
+
 	}
 
+  window.navigate = navigate; // export navigate function
 	// navigate the slider
 	function navigate(dir) {
 		var itemCurrent = items[current],
@@ -170,7 +172,7 @@
 
 		// update new current value
 		if( typeof dir === 'string' && dir === 'right' ) {
-      // if we can go right, go right. 
+      // if we can go right, go right.
       // otherwise just stop
       if(current < itemsTotal-1){
   			current = current + 1;
@@ -179,10 +181,10 @@
       }
 		}
 		else if( typeof dir === 'string' && dir === 'left' ) {
-      // if we can go left, go left. 
+      // if we can go left, go left.
       // otherwise just stop
       if(current > 0){
-  			current = current - 1;        
+  			current = current - 1;
       } else {
         return;
       }
@@ -191,7 +193,7 @@
     } else {
       return;
     }
-    
+
 		var itemNext = items[current],
 			nextFadeheader = itemNext.querySelector('.fadeheader'),
 			nextEl = itemNext.querySelector('.tab__content'),
@@ -199,7 +201,7 @@
 
     activateTabByHref(itemNext.getAttribute('id'));
     toggleNavButtonState(current);
-		
+
 		// animate the current Fadeheader out
 		dynamics.animate(currentFadeheader, { opacity: 0 }, {
 			duration: 300,
@@ -207,7 +209,7 @@
 				dynamics.css(itemCurrent, { opacity: 0, visibility: 'hidden' });
 			}
 		});
-			
+
 
 		// animate the current title out
 		dynamics.animate(currentTitleEl, { translateX: dir === 'right' ? -250 : 250, opacity: 0 }, {
@@ -215,7 +217,7 @@
 			points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
 			duration: 450
 		});
-		
+
 		// animate the current element out
 		dynamics.animate(currentEl, { opacity: 0, translateX: dir === 'right' ? -1*currentEl.offsetWidth/2 : currentEl.offsetWidth/2 }, {
 			type: dynamics.spring,
@@ -227,7 +229,7 @@
 		dynamics.css(itemNext, { opacity: 1, visibility: 'visible' });
 		dynamics.css(nextFadeheader, { opacity: 1});
 		dynamics.css(nextEl, { opacity: 0, translateX: dir === 'right' ? nextEl.offsetWidth/2 : -1*nextEl.offsetWidth/2 });
-		
+
 		// animate the next Fadeheader in
 		dynamics.animate(nextFadeheader, { opacity: 1 }, {
 			duration: 300,
@@ -236,7 +238,7 @@
 				classie.add(itemNext, 'tab--current');
 			}
 		});
-		
+
 		// animate the next element in
 		dynamics.animate(nextEl, { opacity: 1, translateX: 0 }, {
 			type: dynamics.spring,
@@ -257,7 +259,3 @@
 	init();
 
 })(window);
-
-
-
-

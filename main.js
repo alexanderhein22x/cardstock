@@ -5,6 +5,7 @@
     tabs = document.querySelectorAll('.subtabs'),
     tabsList = [],
     flickityList = [];
+    window.tabsList = tabsList;
 
   _.each(galleries, function(gallery) {
     var flkty = new Flickity(gallery, {
@@ -107,7 +108,8 @@ App.Models.Configuration = Backbone.Model.extend({
 App.Views.OptionsView = Backbone.View.extend({
   el: '#options',
   events: {
-    'click .remove': 'removeExtra'
+    'click .remove': 'removeExtra',
+    'click .link': 'handleLink'
   },
   initialize: function() {
     console.log("created OptionsView ", this.el, this.model);
@@ -123,6 +125,17 @@ App.Views.OptionsView = Backbone.View.extend({
     var item = $(e.target).data('item');
     console.log("remove " + item)
     this.model.set(item, null);
+  },
+
+  handleLink: function(e) {
+    var href = $(e.target).attr("href").split("/");
+    var tabIndex = locatePosByHref(href[0]);
+    // open subtab if appropriate
+    if (href[1]) {
+      tabsList[tabIndex]._show(href[1]);
+    }
+    navigate(tabIndex);
+    e.preventDefault();
   }
 });
 
@@ -222,6 +235,17 @@ App.Views.AppView = Backbone.View.extend({
     }
   }
 });
+ 
+// App.Router = Backbone.Router.extend({
+//   routes: {
+//     ':section': 'viewSection',
+//     ':section/:tab': 'viewTab'
+//   },
+//
+//   viewSection: function(section) {
+//
+//   }
+// });
 
 function falseIfEmpty(data) {
   return _.keys(data).length == 0 ? false : data;
