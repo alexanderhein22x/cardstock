@@ -182,19 +182,19 @@
               <input type="radio" id="quantity{{@index}}" name="quantity" value="{{quantity}}">
               <label for="quantity{{@index}}">
                 <span class="left">{{quantity}} Stk.</span>
-                <span>{{price}} €</span>
-                <span class="strong">400 €</span>
+                <span>{{formatMoney netUnitPrice}}</span>
+                <span class="strong">{{formatMoney unitPrice}}</span>
               </label>
               {{/each}}
             </div>
 
             <div class="total">
               <span class="total-netto">Summe Netto:</span>
-              <span class="total-netto-price">{{net_total}} EUR</span>
+              <span class="total-netto-price">{{formatMoney net_total}}</span>
               <span class="mwst">MwSt. (19%):</span>
-              <span class="mwst-price">{{sales_tax}} EUR</span>
+              <span class="mwst-price">{{formatMoney sales_tax}}</span>
               <span class="total-brutto">Gesamtsumme Brutto:</span>
-              <span class="total-brutto-price">{{total}} EUR</span>
+              <span class="total-brutto-price">{{formatMoney total}}</span>
             </div>
 
           </div>
@@ -1170,6 +1170,7 @@
     <script src='js/jquery.min.js'></script>
     <script src='js/backbone-min.js'></script>
     <script src='js/handlebars.js'></script>
+    <script src='js/accounting.min.js'></script>
 
     <script src="main.js"></script>
 

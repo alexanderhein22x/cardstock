@@ -81,6 +81,17 @@ Handlebars.registerHelper("checkedIf", function(condition) {
   return (condition) ? "checked" : "";
 });
 
+Handlebars.registerHelper("formatMoney", function(amount) {
+  var options = {
+  	symbol : "€",
+  	decimal : ",",
+  	thousand: ".",
+  	precision : 2,
+  	format: "%v %s"
+  };
+  return accounting.formatMoney(amount, options); // 4.999,99 €
+});
+
 var App = {
   Models: {},
   Views: {},
@@ -138,7 +149,8 @@ App.Views.CostView = Backbone.View.extend({
     return this.quantities.map(function(q) {
       return {
         quantity: q,
-        price: unitPrice * q,
+        netUnitPrice: unitPrice,
+        unitPrice: unitPrice * (1 + App.MWST),
         selected: q == selectedQuantity
       }
     });
@@ -148,7 +160,7 @@ App.Views.CostView = Backbone.View.extend({
     var index = _.findIndex(prices, function(p) {
       return p.selected;
     });
-    var net_total = prices[index].price;
+    var net_total = prices[index].netUnitPrice * prices[index].quantity;
     return {
       quantities: prices,
       net_total: net_total,
