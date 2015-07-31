@@ -38,42 +38,6 @@
 
   resizeSliders();
 
-  function updateParagraphClasslist(radioButtons, paragraph) {
-    _.each(radioButtons, function(radioButton) {
-      if (radioButton.checked) {
-        paragraph.classList.add(radioButton.value);
-      }
-    });
-  }
-
-  function updateParagraph(radioButtons, className) {
-    var paragraph = document.querySelector('.' + className);
-    paragraph.className = className;
-    updateParagraphClasslist(radioButtons, paragraph);
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var materialRadioButtons = document.getElementsByName('material'),
-      radioButtons = _.flatten([_.slice(document.getElementsByName('size')), _.slice(document.getElementsByName('color1'))]),
-      colorRadioButtons = document.getElementsByName('color1'),
-      materialRadioButtons = document.getElementsByName('material'),
-      cleftRadioButtons = _.flatten([_.slice(document.getElementsByName('model')), _.slice(document.getElementsByName('color1'))]);
-
-    function update() {
-      updateParagraph(materialRadioButtons, 'container');
-      updateParagraph(radioButtons, 'front');
-      updateParagraph(radioButtons, 'back');
-      updateParagraph(colorRadioButtons, 'colorinner');
-      updateParagraph(cleftRadioButtons, 'cleft');
-    }
-
-    _.each(radioButtons, function (radioButton) {
-      radioButton.addEventListener('change', update, false);
-    });
-
-    update();
-  });
-
 }());
 
 ///////////////////////////////////////////////////////////
@@ -102,6 +66,38 @@ var App = {
 App.Models.Configuration = Backbone.Model.extend({
   defaults: {
     quantity: 500
+  }
+});
+
+App.Views.Preview = Backbone.View.extend({
+  el: "#preview",
+  initialize: function() {
+    this.listenTo(this.model, "change", this.update);
+  },
+  update: function() {
+    var materialRadioButtons = document.getElementsByName('material'),
+      radioButtons = _.flatten([_.slice(document.getElementsByName('size')), _.slice(document.getElementsByName('color1'))]),
+      colorRadioButtons = document.getElementsByName('color1'),
+      materialRadioButtons = document.getElementsByName('material'),
+      cleftRadioButtons = _.flatten([_.slice(document.getElementsByName('model')), _.slice(document.getElementsByName('color1'))]);
+
+    this._updateParagraph(materialRadioButtons, 'container');
+    this._updateParagraph(radioButtons, 'front');
+    this._updateParagraph(radioButtons, 'back');
+    this._updateParagraph(colorRadioButtons, 'colorinner');
+    this._updateParagraph(cleftRadioButtons, 'cleft');
+  },
+  _updateParagraph: function(radioButtons, className) {
+    var paragraph = document.querySelector('.' + className);
+    paragraph.className = className;
+    this._updateParagraphClasslist(radioButtons, paragraph);
+  },
+  _updateParagraphClasslist: function(radioButtons, paragraph) {
+    _.each(radioButtons, function(radioButton) {
+      if (radioButton.checked) {
+        paragraph.classList.add(radioButton.value);
+      }
+    });
   }
 });
 
@@ -199,6 +195,7 @@ App.Views.AppView = Backbone.View.extend({
   },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
+    this.previewView = new App.Views.Preview({model: this.model});
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
     this.listenTo(this.model, "change", this.updateSelection);
@@ -220,6 +217,7 @@ App.Views.AppView = Backbone.View.extend({
   },
 
   render: function() {
+    this.previewView.update();
     this.optionsView.render();
     this.costView.render();
   },
