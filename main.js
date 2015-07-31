@@ -235,7 +235,7 @@ App.Views.AppView = Backbone.View.extend({
     }
   }
 });
- 
+
 // App.Router = Backbone.Router.extend({
 //   routes: {
 //     ':section': 'viewSection',

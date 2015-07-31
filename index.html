@@ -92,8 +92,7 @@
 
     <div class="summary">
       <div class="selected-options">
-        <span class="headline">1. Selected options</span>
-        <p>Summary list of the selected options</p>
+        <span class="headline">Meine Mappe</span>
         <div id="options">
 
         <template id="optionsTpl">
@@ -101,62 +100,56 @@
 
           <div class="examplecontainer">
             <span class="title">Material</span>
-            <div class="example">
               <a href="#tab1" title="link to checked radio button" class="link">{{material.name}}</a>
-            </div>
           </div>
 
           <div class="examplecontainer">
             <span class="title">Model</span>
-            <div class="example">
               <a href="#tab2" title="link to checked radio button" class="link">{{model.name}}</a>
-            </div>
           </div>
 
           <div class="examplecontainer">
             <span class="title">Size</span>
-            <div class="example">
               <a href="#tab3" title="link to checked radio button" class="link">{{size.name}}</a>
-            </div>
           </div>
 
-          <div class="examplecontainer">
-            <span class="title">Extras</span>
 
             {{#if extra1}}
-            <div class="example">
+            <div class="examplecontainer">
+              <span class="title">Extras</span>
               <a href="#tab4/0" title="link to checked radio button" class="link">{{extra1.name}}</a>
-              <a href="/" title="remove option from summary list" class="remove" data-item="extra1">remove option</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="extra1">x</a>
             </div>
             {{/if}}
 
             {{#if extra2}}
-            <div class="example">
+            <div class="examplecontainer">
+              <span class="title">Extras</span>
               <a href="#tab4/1" title="link to checked radio button" class="link">{{extra2.name}}</a>
-              <a href="/" title="remove option from summary list" class="remove" data-item="extra2">remove option</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="extra2">x</a>
             </div>
             {{/if}}
 
             {{#if extra3}}
-             <div class="example">
+            <div class="examplecontainer">
+              <span class="title">Extras</span>
               <a href="#tab4/2" title="link to checked radio button" class="link">{{extra3.name}}</a>
-              <a href="/" title="remove option from summary list" class="remove" data-item="extra3">remove option</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="extra3">x</a>
             </div>
             {{/if}}
-          </div>
 
-          <div class="examplecontainer">
-            <span class="title">Color</span>
-
-            <div class="example">
+            <div class="examplecontainer">
+              <span class="title">Color</span>
               <a href="#tab5/0" title="link to checked radio button" class="link">{{color1.name}}</a>
             </div>
 
-            <div class="example">
+            <div class="examplecontainer">
+              <span class="title">Color</span>
               <a href="#tab5/1" title="link to checked radio button" class="link">{{color2.name}}</a>
             </div>
 
-            <div class="example">
+            <div class="examplecontainer">
+              <span class="title">Color</span>
               <a href="#tab5/2" title="link to checked radio button" class="link">{{color3.name}}</a>
             </div>
           </template>
@@ -169,7 +162,6 @@
       <div class="calculation">
         <template id="costViewTpl">
 
-          <span class="headline">2. Cost calculation</span>
           <div class="price">
 
             <!--quantity picker -->
@@ -182,8 +174,8 @@
               <input type="radio" id="quantity{{@index}}" name="quantity" value="{{quantity}}">
               <label for="quantity{{@index}}">
                 <span class="left">{{quantity}} Stk.</span>
-                <span>{{formatMoney netUnitPrice}}</span>
-                <span class="strong">{{formatMoney unitPrice}}</span>
+                <span class="strong">{{formatMoney netUnitPrice}}</span>
+                <span>{{formatMoney unitPrice}}</span>
               </label>
               {{/each}}
             </div>
@@ -196,19 +188,14 @@
               <span class="total-brutto">Gesamtsumme Brutto:</span>
               <span class="total-brutto-price">{{formatMoney total}}</span>
             </div>
+              <div class="time">
+                <div>Delivery within <span id="day" class="day">4</span> working days</div>
+              </div>
 
           </div>
         </template>
       </div>
 
-
-      <div class="delivery">
-        <span class="headline">3. Delivery time</span>
-        <div class="time">
-          <!-- delivery time  -->
-          <div>Delivery within <span id="day" class="day">4</span> working days</div>
-        </div>
-      </div>
     </div>
   </div>
 
