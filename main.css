@@ -21,6 +21,30 @@ button {
 }
 
 
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?d1b9wq');
+	src:url('../fonts/icomoon.eot?#iefixd1b9wq') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?d1b9wq') format('truetype'),
+		url('../fonts/icomoon.woff?d1b9wq') format('woff'),
+		url('../fonts/icomoon.svg?d1b9wq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
 a {
   text-decoration: none;
 }
@@ -549,7 +573,7 @@ text-align: right;
 .vier-ring {
   background-image: url(configurator/4ring.png);
   height: 92%;
-  top: 5%;
+  top: 4%;
   left: 0%;
 }
 
@@ -576,9 +600,9 @@ text-align: right;
 
 .schnellheftung {
   background-image: url(configurator/schnellheftung.png);
-  width: 55%;
-  top: 2%;
-  left: 20%;
+  height: 82%;
+  top: 10%;
+  left: 0%;
 }
 
 /* Mechaniken */
