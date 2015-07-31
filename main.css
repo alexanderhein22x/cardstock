@@ -379,9 +379,15 @@ text-align: right;
   position: relative;
   float: left;
   width: 100%;
+  padding: 0px 24px 24px 24px;
+}
+
+.time div {
+  position: relative;
+  float: left;
+  width: 100%;
   padding: 24px 12px;
   background-color: #eee;
-  margin-bottom: 24px;
 }
 
 .time .day {
