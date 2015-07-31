@@ -151,10 +151,6 @@
               <a href="#tab5/1" title="link to checked radio button" class="link">{{color2.name}}</a>
             </div>
 
-            <div class="examplecontainer">
-              <span class="title">Color</span>
-              <a href="#tab5/2" title="link to checked radio button" class="link">{{color3.name}}</a>
-            </div>
           </template>
 
         </div>
@@ -163,9 +159,9 @@
 
 
       <div class="calculation">
-        <template id="costViewTpl">
 
-          <div class="price">
+        <div class="price">
+          <template id="costViewTpl">
 
             <!--quantity picker -->
             <div class="quantity">
@@ -191,12 +187,13 @@
               <span class="total-brutto">Gesamtsumme Brutto:</span>
               <span class="total-brutto-price">{{formatMoney total}}</span>
             </div>
-              <div class="time">
-                <div>Delivery within <span id="day" class="day">4</span> working days</div>
-              </div>
 
-          </div>
-        </template>
+          </template>
+        </div>
+
+        <div class="time">
+          <div>Delivery within <span id="day" class="day">4</span> working days</div>
+        </div>
       </div>
 
     </div>
@@ -251,7 +248,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="material1" type="radio" data-name="Material 1" data-price="2.5" data-date="3" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="material1-visual" name="material" value="" checked="checked" />
+                    <input id="material1" type="radio" data-name="Material 1" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="material1-visual" name="material" value="" checked="checked" />
                     <label for="material1">
                       <img alt="material1" src="http://cardstock-test.de/img/feinleinen.png">
                       <span>Material 1</span>
@@ -319,7 +316,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model1" type="radio" data-name="Model 1" data-price="0.5" data-date="0" data-visual="model1-visual" name="model" value="" checked="checked" />
+                    <input id="model1" type="radio" data-name="Model 1" data-price="0.5" data-date="2" data-visual="model1-visual" name="model" value="" checked="checked" />
                     <label for="model1">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Model 1</span>

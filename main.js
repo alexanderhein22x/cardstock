@@ -136,7 +136,7 @@ App.Views.OptionsView = Backbone.View.extend({
 });
 
 App.Views.CostView = Backbone.View.extend({
-  el: '.calculation',
+  el: '.calculation .price',
   events: {
     'click label': 'updateQuantity'
   },
@@ -188,6 +188,21 @@ App.Views.CostView = Backbone.View.extend({
   }
 });
 
+App.Views.DeliveryTimeView = Backbone.View.extend({
+  el: '.calculation .time',
+  initialize: function() {
+    this.listenTo(this.model, 'change', this.render);
+  },
+  render: function() {
+    this.$el.find("#day").html(this.calculateDeliveryTime());
+  },
+  calculateDeliveryTime: function() {
+    return this.model.values().reduce(function(sum, option) {
+      return sum + (_.has(option, "date") ? option.date : 0);
+    }, 0);
+  }
+});
+
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
   events: {
@@ -198,6 +213,7 @@ App.Views.AppView = Backbone.View.extend({
     this.previewView = new App.Views.Preview({model: this.model});
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
+    this.deliveryTimeView = new App.Views.DeliveryTimeView({model: this.model});
     this.listenTo(this.model, "change", this.updateSelection);
   },
 
@@ -220,6 +236,7 @@ App.Views.AppView = Backbone.View.extend({
     this.previewView.update();
     this.optionsView.render();
     this.costView.render();
+    this.deliveryTimeView.render();
   },
 
   handleSelection: function(e) {
