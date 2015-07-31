@@ -565,8 +565,8 @@ text-align: right;
 
 .zwei-ring {
   background-image: url(configurator/2ring.png);
-  height: 44%;
-  top: 27%;
+  height: 49%;
+  top: 26%;
   left: 0%;
 }
 
@@ -606,6 +606,25 @@ text-align: right;
 }
 
 /* Mechaniken */
+
+
+/* Register */
+
+.register{
+ position: absolute;
+ background: #fff;
+ bottom: 10px;
+ left: 8%;
+ right: 10px;
+ top: 10px;
+ z-index: 50;
+ box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+ display: none;
+}
+
+
+/* Register */
+
 
 
 /* Material */
