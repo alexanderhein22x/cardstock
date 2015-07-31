@@ -71,8 +71,13 @@ font-weight: bold !important;
 text-align: left !important;
 }
 
+.show {
+display: block !important;
+}
 
-
+.hide {
+display: none !important;
+}
 
 
 .summary {

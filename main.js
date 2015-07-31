@@ -75,27 +75,27 @@ App.Views.Preview = Backbone.View.extend({
     this.listenTo(this.model, "change", this.update);
   },
   update: function() {
-    var materialRadioButtons = document.getElementsByName('material'),
-      radioButtons = _.flatten([_.slice(document.getElementsByName('size')), _.slice(document.getElementsByName('color1'))]),
-      colorRadioButtons = document.getElementsByName('color1'),
-      materialRadioButtons = document.getElementsByName('material'),
-      cleftRadioButtons = _.flatten([_.slice(document.getElementsByName('model')), _.slice(document.getElementsByName('color1'))]);
+    var
+      format   = [this.model.get("size"), this.model.get("color1")],
+      color    = [this.model.get("color1")],
+      material = [this.model.get('material')],
+      cleft    = [this.model.get('model'), this.model.get('color1')];
 
-    this._updateParagraph(materialRadioButtons, 'container');
-    this._updateParagraph(radioButtons, 'front');
-    this._updateParagraph(radioButtons, 'back');
-    this._updateParagraph(colorRadioButtons, 'colorinner');
-    this._updateParagraph(cleftRadioButtons, 'cleft');
+    this._updateParagraph(material, 'container');
+    this._updateParagraph(format, 'front');
+    this._updateParagraph(format, 'back');
+    this._updateParagraph(color, 'colorinner');
+    this._updateParagraph(cleft, 'cleft');
   },
-  _updateParagraph: function(radioButtons, className) {
+  _updateParagraph: function(settings, className) {
     var paragraph = document.querySelector('.' + className);
     paragraph.className = className;
-    this._updateParagraphClasslist(radioButtons, paragraph);
+    this._updateParagraphClasslist(settings, paragraph);
   },
-  _updateParagraphClasslist: function(radioButtons, paragraph) {
-    _.each(radioButtons, function(radioButton) {
-      if (radioButton.checked) {
-        paragraph.classList.add(radioButton.value);
+  _updateParagraphClasslist: function(settings, paragraph) {
+    _.each(settings, function(setting) {
+      if (_.has(setting, "visual")) {
+        paragraph.classList.add(setting.visual);
       }
     });
   }
@@ -227,7 +227,7 @@ App.Views.AppView = Backbone.View.extend({
     var $target = $(e.target);
     var section = $target.parents('section').attr('id');
     if ($target.prop("tagName") == "INPUT") {
-      var data = $(e.target).data();
+      var data = $target.data();
       console.log(data);
       this.model.set(section, falseIfEmpty(data));
     }
