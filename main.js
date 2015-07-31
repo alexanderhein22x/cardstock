@@ -222,11 +222,36 @@ App.Views.AppView = Backbone.View.extend({
       if (this.model.hasChanged(attribute)) {
         var selected = this.model.get(attribute);
         var $section = $("section#" + attribute);
+        // check selected option
         $section.find("input").prop("checked", false);
         if (selected) {
           $section.find("input[data-name='"+selected.name+"']").prop("checked", true);
         } else {
           $section.find("input[value='none']").prop("checked", true);
+        }
+        //  show/hide available options
+        if (_.has(selected, "availableOptions")) {
+          var self = this;
+          _.each(_.keys(selected.availableOptions), function(option) {
+            var available = selected.availableOptions[option];
+            var $options = $("section#" + option + " input[type='radio']");
+            $options.each(function() {
+              if (available.indexOf($(this).prop("id")) < 0) {
+                $(this).parent().addClass("hide");
+              } else {
+                $(this).parent().removeClass("hide");
+              }
+            });
+            // if current selection no longer available, set to first available option
+            var availableOptionNames = $options.filter(function() {
+              return !$(this).parent().hasClass("hide");
+            }).map(function() {
+              return $(this).data("name");
+            });
+            if (_.indexOf(availableOptionNames, self.model.get(option).name) < 0) {
+              self.model.set(option, falseIfEmpty($options.filter("#"+available[0]).data()));
+            }
+          });
         }
       }
     }.bind(this));
@@ -266,9 +291,14 @@ function falseIfEmpty(data) {
   return _.keys(data).length == 0 ? false : data;
 }
 
+// read default configuration from DOM
 var defaults = _.object(
   $(".is-selected input").map(function() { return $(this).parents("section").attr("id") }),
   $(".is-selected input").map(function() { return falseIfEmpty($(this).data()); }) );
-var config = new App.Models.Configuration(defaults);
+
+var config = new App.Models.Configuration();
 var view = new App.Views.AppView({model: config});
+
+// set defaults after initializing event listeners
+config.set(defaults);
 view.render();

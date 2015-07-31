@@ -151,6 +151,11 @@
               <a href="#tab5/1" title="link to checked radio button" class="link">{{color2.name}}</a>
             </div>
 
+            <div class="examplecontainer">
+              <span class="title">Color</span>
+              <a href="#tab5/2" title="link to checked radio button" class="link">{{color3.name}}</a>
+            </div>
+
           </template>
 
         </div>
@@ -316,7 +321,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model1" type="radio" data-name="Model 1" data-price="0.5" data-date="2" data-visual="model1-visual" name="model" value="" checked="checked" />
+                    <input id="model1" type="radio" data-name="Model 1" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3"]}' name="model" value="" checked="checked" />
                     <label for="model1">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Model 1</span>
@@ -324,7 +329,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model2" type="radio" data-name="Model 2" data-price="0.5" data-date="0" data-visual="model2-visual" name="model" value="" />
+                    <input id="model2" type="radio" data-name="Model 2" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size4", "size5", "size6", "size7", "size8"]}' name="model" value="" />
                     <label for="model2">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Model 2</span>
