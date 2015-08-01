@@ -131,6 +131,10 @@ App.Views.OptionsView = Backbone.View.extend({
     // open subtab if appropriate
     if (href[1]) {
       tabsList[tabIndex]._show(href[1]);
+    } else {
+      // find subtab with checked input 
+      var subtab = $(href[0]).find("input:checked").parents("section").index();
+      tabsList[tabIndex]._show(subtab);
     }
     navigate(tabIndex);
     e.preventDefault();
