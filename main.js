@@ -5,7 +5,9 @@
     tabs = document.querySelectorAll('.subtabs'),
     tabsList = [],
     flickityList = [];
-    window.tabsList = tabsList;
+
+  window.tabsList = tabsList;
+  window.flickityList = flickityList;
 
   _.each(galleries, function(gallery) {
     var flkty = new Flickity(gallery, {
@@ -130,12 +132,22 @@ App.Views.OptionsView = Backbone.View.extend({
     var tabIndex = locatePosByHref(href[0]);
     // open subtab if appropriate
     if (href[1]) {
+      var subtab = $(href[0]).find("section")[href[1]];
       tabsList[tabIndex]._show(href[1]);
     } else {
-      // find subtab with checked input 
-      var subtab = $(href[0]).find("input:checked").parents("section").index();
-      tabsList[tabIndex]._show(subtab);
+      // find subtab with checked input
+      subtab = $(href[0]).find("input:checked").parents("section");
+      tabsList[tabIndex]._show(subtab.index());
     }
+    // scroll selected element into view
+    var flickityElement = $(subtab).find(".gallery")[0];
+    var flickity = _.findWhere(flickityList, { element: flickityElement });
+    var itemIndex = $(subtab).find("input:checked").parents(".gallery-cell").index();
+    setTimeout(function() {
+      flickity.resize();
+      flickity.select(itemIndex);
+    }, 100);
+    // navigate to selected tab
     navigate(tabIndex);
     e.preventDefault();
   }
