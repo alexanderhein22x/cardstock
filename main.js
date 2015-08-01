@@ -223,20 +223,20 @@ App.Views.AppView = Backbone.View.extend({
     _.each(this.model.keys(), function(attribute) {
       if (this.model.hasChanged(attribute)) {
         var selected = this.model.get(attribute);
-        var $section = $("section#" + attribute);
+        var $inputs = $("input[name='"+selected.name+"']");
         // check selected option
-        $section.find("input").prop("checked", false);
+        $inputs.prop("checked", false);
         if (selected) {
-          $section.find("input[data-name='"+selected.name+"']").prop("checked", true);
+          $inputs.filter("[data-name='"+selected.name+"']").prop("checked", true);
         } else {
-          $section.find("input[value='none']").prop("checked", true);
+          $inputs.filter("[value='none']").prop("checked", true);
         }
         //  show/hide available options
         if (_.has(selected, "availableOptions")) {
           var self = this;
           _.each(_.keys(selected.availableOptions), function(option) {
             var available = selected.availableOptions[option];
-            var $options = $("section#" + option + " input[type='radio']");
+            var $options = $("input[name='" + option + "']");
             $options.each(function() {
               if (available.indexOf($(this).prop("id")) < 0) {
                 $(this).parent().addClass("hide");
@@ -269,11 +269,11 @@ App.Views.AppView = Backbone.View.extend({
   handleSelection: function(e) {
     //console.log(e);
     var $target = $(e.target);
-    var section = $target.parents('section').attr('id');
     if ($target.prop("tagName") == "INPUT") {
+      var name = $target.attr("name");
       var data = $target.data();
       console.log(data);
-      this.model.set(section, falseIfEmpty(data));
+      this.model.set(name, falseIfEmpty(data));
     }
   }
 });
@@ -295,8 +295,8 @@ function falseIfEmpty(data) {
 
 // read default configuration from DOM
 var defaults = _.object(
-  $(".is-selected input").map(function() { return $(this).parents("section").attr("id") }),
-  $(".is-selected input").map(function() { return falseIfEmpty($(this).data()); }) );
+  $("input:checked").map(function() { return $(this).attr("name"); }),
+  $("input:checked").map(function() { return falseIfEmpty($(this).data()); }) );
 
 var config = new App.Models.Configuration();
 var view = new App.Views.AppView({model: config});
