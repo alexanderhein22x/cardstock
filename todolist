@@ -1,31 +1,9 @@
-
-1. Cost calculation need a preselect.
-
-3. Handle selection of empty extras.
-5. Calculate delivery time.
-6. Enable / disable options on select
+1. Enable / disable options on select
+2. Cost calculation need a preselect.
+3. move slider to checked radio button.
 
 
 
-//copy cost view
-
-
-
-Material 1's quantity discount:
-
-(25 * total sum) *     1
-(100 * total sum) *    0.95
-(250 * total sum) *    0.9
-(500 * total sum) *    0.85
-(1000 * total sum) *   0.8
-(2500 * total sum) *   0.75
-(5000 * total sum) *   0.7
-
-Material 2's quantity discount:
-
-
-(300 * total sum) *    1
-(500 * total sum) *    0.7
-(1000 * total sum) *   0.65
-(2500 * total sum) *   0.6
-(5000 * total sum) *   0.55
+1. größe ist von model abhängig.
+2. extras sind vom model abhängig.
+3. farben sind vom extras und material abhängig.

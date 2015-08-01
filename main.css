@@ -245,7 +245,7 @@ display: none !important;
 
 .quantity {
   float: left;
-  display: block;
+  display: none;
   width: 100%;
   font-size: 13px;
   font-weight: normal;
@@ -406,11 +406,24 @@ text-align: right;
   background-color: #eee;
 }
 
+#preview{
+  position: relative;
+  float: left;
+  width: 80%;
+}
+
 .layout {
   position: relative;
   float: left;
+  width: 60%;
+  padding: 25px;
+}
+
+.layout2 {
+  position: relative;
+  float: left;
   width: 40%;
-  padding: 50px;
+  padding: 25px;
 }
 
 @media only screen and (max-width:1300px) {
@@ -470,7 +483,7 @@ text-align: right;
 .back {
   float: left;
   position: relative;
-  width: 50%;
+  width: 77.5%;
   background-repeat: repeat;
   box-shadow: 0 40px 77px 0 rgba(0, 0, 0, 0.22), 0 27px 24px 0 rgba(0, 0, 0, 0.2), inset 4px 0px 0px 0px rgba(0, 0, 0, 0.35);
   border-radius: 1px;
@@ -567,49 +580,49 @@ text-align: right;
 
 /* Mechaniken */
 
-.klemmmechanik {
+.klemmmechanik-visual {
   background-image: url(configurator/klemmmechanik.png);
   width: 49%;
   top: 2%;
   left: 25%;
 }
 
-.zwei-ring {
+.zwei-ring-visual {
   background-image: url(configurator/2ring.png);
   height: 49%;
   top: 26%;
   left: 0%;
 }
 
-.vier-ring {
+.vier-ring-visual {
   background-image: url(configurator/4ring.png);
   height: 92%;
   top: 4%;
   left: 0%;
 }
 
-.hebelmechanik {
+.hebelmechanik-visual {
   background-image: url(configurator/hebelmechanik.png);
   width: 55%;
   top: 2%;
   left: 20%;
 }
 
-.klemmschiene {
+.klemmschiene-visual {
   background-image: url(configurator/klemmschiene.png);
   width: 55%;
   top: 2%;
   left: 20%;
 }
 
-.buchschrauben {
+.buchschrauben-visual {
   background-image: url(configurator/buchschrauben.png);
   width: 55%;
   top: 2%;
   left: 20%;
 }
 
-.schnellheftung {
+.schnellheftung-visual {
   background-image: url(configurator/schnellheftung.png);
   height: 82%;
   top: 10%;
@@ -686,7 +699,7 @@ text-align: right;
     bottom: -2px;
     top: -2px;
     width: 5%;
-    background: #555;
+    background: #222;
     background-image: url(http://cardstock-test.de/configurator/band_structure_h.png);
     border-radius: 1px;
     box-shadow: 5px 3px 10px -3px rgba(0,0,0,0.32), inset 0px 4px 4px -3px rgba(0,0,0,0.85), inset 0px -4px 4px -3px rgba(0,0,0,0.85);
@@ -1587,26 +1600,36 @@ text-align: right;
 }
 
 .navigation li:first-child.navigation-current ~ li:last-child::before {
+  -webkit-transform: translate3d(-600%, 0, 0);
+  transform: translate3d(-600%, 0, 0);
+}
+
+.navigation li:nth-child(2).navigation-current ~ li:last-child::before {
+  -webkit-transform: translate3d(-500%, 0, 0);
+  transform: translate3d(-500%, 0, 0);
+}
+
+.navigation li:nth-child(3).navigation-current ~ li:last-child::before {
   -webkit-transform: translate3d(-400%, 0, 0);
   transform: translate3d(-400%, 0, 0);
 }
 
-.navigation li:nth-child(2).navigation-current ~ li:last-child::before {
+.navigation li:nth-child(4).navigation-current ~ li:last-child::before {
   -webkit-transform: translate3d(-300%, 0, 0);
   transform: translate3d(-300%, 0, 0);
 }
 
-.navigation li:nth-child(3).navigation-current ~ li:last-child::before {
+.navigation li:nth-child(5).navigation-current ~ li:last-child::before {
   -webkit-transform: translate3d(-200%, 0, 0);
   transform: translate3d(-200%, 0, 0);
 }
 
-.navigation li:nth-child(4).navigation-current ~ li:last-child::before {
+.navigation li:nth-child(6).navigation-current ~ li:last-child::before {
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
 }
 
-.navigation li:nth-child(5).navigation-current ~ li:last-child::before {
+.navigation li:nth-child(7).navigation-current ~ li:last-child::before {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }

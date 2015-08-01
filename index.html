@@ -38,22 +38,32 @@
 
       <li>
         <a class="number2" href="#tab2">
-          <span>Model</span>
+          <span>Mappentyp</span>
         </a>
       </li>
       <li>
         <a class="number3" href="#tab3">
-          <span>Size</span>
+          <span>Format</span>
         </a>
       </li>
       <li>
         <a class="number4" href="#tab4">
-          <span>Extras</span>
+          <span>Ausstattung</span>
         </a>
       </li>
       <li>
         <a class="number5" href="#tab5">
-          <span>Color</span>
+          <span>Design</span>
+        </a>
+      </li>
+      <li>
+        <a class="number6" href="#tab6">
+          <span>Versand</span>
+        </a>
+      </li>
+      <li>
+        <a class="number7" href="#tab7">
+          <span>Bestellung</span>
         </a>
       </li>
     </ul>
@@ -85,7 +95,7 @@
       </div>
     </div>
 
-    <div class="layout">
+    <div class="layout2">
       <div class="back gradient sandgold-visual">
           <div class="kit"></div>
       </div>
@@ -107,12 +117,17 @@
           </div>
 
           <div class="examplecontainer">
-            <span class="title">Model</span>
-              <a href="#tab2" title="link to checked radio button" class="link">{{model.name}}</a>
+            <span class="title">Mechanik</span>
+              <a href="#tab2" title="link to checked radio button" class="link">{{mechanik.name}}</a>
           </div>
 
           <div class="examplecontainer">
-            <span class="title">Size</span>
+            <span class="title">Ablagefach</span>
+              <a href="#tab2" title="link to checked radio button" class="link">{{ablagefach.name}}</a>
+          </div>
+
+          <div class="examplecontainer">
+            <span class="title">Format</span>
               <a href="#tab3" title="link to checked radio button" class="link">{{size.name}}</a>
           </div>
 
@@ -253,18 +268,58 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="material1" type="radio" data-name="Material 1" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="material1-visual" name="material" value="" checked="checked" />
+                    <input id="material1" type="radio" data-name="Feinleinen" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="material1-visual" name="material" value="" checked="checked" />
                     <label for="material1">
                       <img alt="material1" src="http://cardstock-test.de/img/feinleinen.png">
-                      <span>Material 1</span>
+                      <span>Feinleinen</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="material2" type="radio" data-name="Material 2" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <input id="material2" type="radio" data-name="Bilderdruck" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
                     <label for="material2">
                       <img alt="material2" src="http://cardstock-test.de/img/bilderdruck.png">
-                      <span>Material 2</span>
+                      <span>Bilderdruck</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="material3" type="radio" data-name="Lederfaser" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <label for="material3">
+                      <img alt="material3" src="http://cardstock-test.de/img/lederfaser.png">
+                      <span>Lederfaser</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="material4" type="radio" data-name="Chromokarton" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <label for="material4">
+                      <img alt="material4" src="http://cardstock-test.de/img/chromokarton.png">
+                      <span>Chromokarton</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="material5" type="radio" data-name="Metallic" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <label for="material5">
+                      <img alt="material5" src="http://cardstock-test.de/img/metallic.png">
+                      <span>Metallic</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="material6" type="radio" data-name="Transparent" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <label for="material6">
+                      <img alt="material6" src="http://cardstock-test.de/img/transparent.png">
+                      <span>Transparent</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="material7" type="radio" data-name="Liniar" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <label for="material7">
+                      <img alt="material7" src="http://cardstock-test.de/img/liniar.png">
+                      <span>Liniar</span>
                     </label>
                   </div>
 
@@ -286,7 +341,7 @@
       <div class="fadeheader">
 
         <div class="tab__title">
-          <span class="hero">Model</span>
+          <span class="hero">Mappentyp</span>
         </div>
 
         <div class="tab__content">
@@ -301,15 +356,26 @@
             <nav>
               <ul>
 
-                <li><a href="#model">Model</a>
+                <li><a href="#ordner">Ordner & Ringmappen</a>
                   <div class="tooltip">
                     <span class="tooltip-item">i</span>
                     <span class="tooltip-content">
                         <span class="tooltip-text">
-                          <span class="strong">Model</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                          <span class="strong">Mechanik</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                     </span>
                   </div>
                 </li>
+
+                <li><a href="#mappen">Mappen</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Ablagefach</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
 
               </ul>
             </nav>
@@ -317,22 +383,85 @@
 
             <div class="content-wrap">
 
-              <section id="model">
+              <section id="ordner">
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model1" type="radio" data-name="Model 1" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3"]}' name="model" value="" checked="checked" />
-                    <label for="model1">
+                    <input id="mechanik1" type="radio" data-name="Mechanik 1" data-price="0.5" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" checked="checked" />
+                    <label for="mechanik1">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Model 1</span>
+                      <span>Mechanik 1</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model2" type="radio" data-name="Model 2" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size4", "size5", "size6", "size7", "size8"]}' name="model" value="" />
-                    <label for="model2">
+                    <input id="mechanik2" type="radio" data-name="Mechanik 2" data-price="0.5" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" />
+                    <label for="mechanik2">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Model 2</span>
+                      <span>Mechanik 2</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="mechanik3" type="radio" data-name="Mechanik 3" data-price="0.5" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" checked="checked" />
+                    <label for="mechanik3">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Mechanik 3</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="mechanik4" type="radio" data-name="Mechanik 4" data-price="0.5" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" />
+                    <label for="mechanik4">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Mechanik 4</span>
+                    </label>
+                  </div>
+
+
+                  <div class="gallery-cell">
+                    <input id="mechanik5" type="radio" data-name="Mechanik 5" data-price="0.5" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" />
+                    <label for="mechanik5">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Mechanik 5</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="mechanik6" type="radio" data-name="Mechanik 6" data-price="0.5" data-date="2" data-visual="buchschrauben-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" checked="checked" />
+                    <label for="mechanik6">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Mechanik 6</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="mechanik7" type="radio" data-name="Mechanik 7" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="mechanik" value="" />
+                    <label for="mechanik7">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Mechanik 7</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="mappen">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="ablagefach1" type="radio" data-name="Ablagefach 1" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="ablagefach" value="" checked="checked" />
+                    <label for="ablagefach1">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Ablagefach 1</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="ablagefach2" type="radio" data-name="Ablagefach 2" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="ablagefach" value="" />
+                    <label for="ablagefach2">
+                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
+                      <span>Ablagefach 2</span>
                     </label>
                   </div>
 
@@ -354,7 +483,7 @@
       <div class="fadeheader">
 
         <div class="tab__title">
-          <span class="hero">Size</span>
+          <span class="hero">Format</span>
         </div>
 
         <div class="tab__content">
@@ -369,7 +498,7 @@
             <nav>
               <ul>
 
-                <li><a href="#size">Size</a>
+                <li><a href="#size">Format</a>
                   <div class="tooltip">
                     <span class="tooltip-item">i</span>
                     <span class="tooltip-content">
@@ -389,67 +518,34 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="size1" type="radio" data-name="Size 1" data-price="0.5" data-date="0" data-visual="size1-visual" name="size" value="" checked="checked" />
+                    <input id="size1" type="radio" data-name="DIN A4 (hoch)" data-price="0.5" data-date="0" data-visual="size1-visual" name="size" value="" checked="checked" />
                     <label for="size1">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 1</span>
+                      <span>DIN A4 (hoch)</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="size2" type="radio" data-name="Size 2" data-price="0.5" data-date="0" data-visual="size2-visual" name="size" value="" />
+                    <input id="size2" type="radio" data-name="DIN A4 (quer)" data-price="0.5" data-date="0" data-visual="size2-visual" name="size" value="" />
                     <label for="size2">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 2</span>
+                      <span>DIN A4 (quer)</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="size3" type="radio" data-name="Size 3" data-price="0.5" data-date="0" data-visual="size3-visual" name="size" value="" />
+                    <input id="size3" type="radio" data-name="DIN A5 (hoch)" data-price="0.5" data-date="0" data-visual="size3-visual" name="size" value="" />
                     <label for="size3">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 3</span>
+                      <span>DIN A5 (hoch)</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="size4" type="radio" data-name="Size 4" data-price="0.5" data-date="0" data-visual="size4-visual" name="size" value="" />
+                    <input id="size4" type="radio" data-name="DIN A5 (quer)" data-price="0.5" data-date="0" data-visual="size4-visual" name="size" value="" />
                     <label for="size4">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 4</span>
-                    </label>
-                  </div>
-
-                  <div class="gallery-cell">
-                    <input id="size5" type="radio" data-name="Size 5" data-price="1.5" data-date="1" data-visual="size5-visual" name="size" value="" />
-                    <label for="size5">
-                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 5</span>
-                    </label>
-                  </div>
-
-
-                  <div class="gallery-cell">
-                    <input id="size6" type="radio" data-name="Size 6" data-price="2.5" data-date="1" data-visual="size6-visual" name="size" value="" />
-                    <label for="size6">
-                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 6</span>
-                    </label>
-                  </div>
-
-                  <div class="gallery-cell">
-                    <input id="size7" type="radio" data-name="Size 7" data-price="3.5" data-date="2" data-visual="size7-visual" name="size" value="" />
-                    <label for="size7">
-                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 7</span>
-                    </label>
-                  </div>
-
-                  <div class="gallery-cell">
-                    <input id="size8" type="radio" data-name="Size 8" data-price="4.5" data-date="2" data-visual="size8-visual" name="size" value="" />
-                    <label for="size8">
-                      <img alt="test" src="http://cardstock-test.de/img/icon.png">
-                      <span>Size 8</span>
+                      <span>DIN A5 (quer)</span>
                     </label>
                   </div>
 
@@ -471,7 +567,7 @@
       <div class="fadeheader">
 
         <div class="tab__title">
-          <span class="hero">Extras</span>
+          <span class="hero">Ausstattung</span>
         </div>
 
         <div class="tab__content">
@@ -626,7 +722,7 @@
       <div class="fadeheader">
 
         <div class="tab__title">
-          <span class="hero">Color</span>
+          <span class="hero">Design</span>
         </div>
 
         <div class="tab__content">
@@ -801,7 +897,159 @@
         </div>
       </div>
     </div>
-    <!-- TAB 4 END -->
+    <!-- TAB 5 END -->
+
+
+    <!-- TAB 6 -->
+    <div id="tab6" class="tab">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Versand</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#verpackung">Verpackung</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Verpackung</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#versand">Versand</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Versand</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="verpackung">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="verpackung1" type="radio" data-name="Standard Verpackung" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="" name="verpackung" value="" checked="checked" />
+                    <label for="verpackung1">
+                      <img alt="verpackung1" src="http://cardstock-test.de/img/feinleinen.png">
+                      <span>Standard Verpackung</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="verpackung2" type="radio" data-name="Neutrale Verpackung" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="verpackung" value="" />
+                    <label for="verpackung2">
+                      <img alt="verpackung2" src="http://cardstock-test.de/img/bilderdruck.png">
+                      <span>Neutrale Verpackung</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="versand">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="versand1" type="radio" data-name="Standard Versand" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="" name="Versand" value="" checked="checked" />
+                    <label for="versand1">
+                      <img alt="versand1" src="http://cardstock-test.de/img/feinleinen.png">
+                      <span>Standard Versand</span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="versand2" type="radio" data-name="Klimafreundlicher Versand" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="" name="Versand" value="" />
+                    <label for="versand2">
+                      <img alt="versand2" src="http://cardstock-test.de/img/bilderdruck.png">
+                      <span>Klimafreundlicher Versand</span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 6 END -->
+
+
+
+    <!-- TAB 7 -->
+    <div id="tab7" class="tab">
+      <div class="fadeheader">
+
+        <div class="tab__title">
+          <span class="hero">Bestellung</span>
+        </div>
+
+        <div class="tab__content">
+
+          <div class="tab__text">
+            <span>Headline</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+          </div>
+
+          <div class="subtabs">
+
+            <nav>
+              <ul>
+
+                <li><a href="#bestellung">Bestellung</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item">i</span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Bestellung</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
+
+
+            <div class="content-wrap">
+
+              <section id="bestellung">
+                content here
+              </section>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- TAB 7 END -->
 
   </div>
 
