@@ -15,7 +15,7 @@
       cellAlign: 'left',
       accessibility: false,
       pageDots: false,
-      prevNextButtons: false,
+      prevNextButtons: true,
       contain: true
     });
 

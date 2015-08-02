@@ -161,16 +161,15 @@
               <a href="#tab5/1" title="link to checked radio button" class="link">{{color2.name}}</a>
             </div>
 
-            <div class="examplecontainer">
-              <span class="title">Color</span>
-              <a href="#tab5/2" title="link to checked radio button" class="link">{{color3.name}}</a>
-            </div>
-
           </template>
 
         </div>
+
+        <div class="progressbar">
+          <div><span></span></div>
+        </div>
+
       </div>
-      </template>
 
 
       <div class="calculation">
@@ -178,11 +177,15 @@
         <div class="price">
           <template id="costViewTpl">
 
-            <!--quantity picker -->
-            <div class="quantity">
+            <div class="quantity-headline">
               <span class="h1">Menge</span>
               <span class="h2">netto</span>
               <span class="h3">brutto</span>
+            </div>
+
+            <!--quantity picker -->
+
+            <div class="quantity">
 
               {{#each quantities}}
               <input type="radio" id="quantity{{@index}}" name="quantity" value="{{quantity}}">
@@ -206,9 +209,7 @@
           </template>
         </div>
 
-        <div class="time">
-          <div>Delivery within <span id="day" class="day">4</span> working days</div>
-        </div>
+          <div class="time"><span class="day">Lieferbar</span> innerhalb von <span id="day">4</span> Werktagen</div>
       </div>
 
     </div>
@@ -218,8 +219,8 @@
   <div class="configuration">
 
     <div class="nav">
-      <button class="navback">Back</button>
-      <button class="navnext" title="Klicken Sie um fortzufahren.">Next</button>
+      <button class="navback">Zurück</button>
+      <button class="navnext" title="Klicken Sie um fortzufahren.">Weiter</button>
     </div>
 
 
@@ -227,15 +228,13 @@
     <div id="tab1" class="tab tab--current">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Material</span>
-        </div>
-
         <div class="tab__content">
 
-          <div id="tabs" class="subtabs">
+          <div class="subtabs">
 
-            <nav>
+            <nav class="tab__title">
+              <span class="hero">Material</span>
+              <span class="respo-hero">1. Material</span>
               <ul>
 
                 <li><a href="#material">Material</a>
@@ -251,64 +250,63 @@
               </ul>
             </nav>
 
-
             <div class="content-wrap">
 
               <section id="material">
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="material1" type="radio" data-name="Feinleinen" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="material1-visual" name="material" value="" checked="checked" />
+                    <input id="material1" type="radio" data-name="Feinleinen" data-price="0" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.95,"200":0.9,"300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material1-visual" name="material" value="" checked="checked" />
                     <label for="material1">
-                      <img alt="material1" src="http://cardstock-test.de/img/feinleinen.png">
+                      <img alt="material1" src="/img/feinleinen.png">
                       <span>Feinleinen</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="material2" type="radio" data-name="Bilderdruck" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <input id="material2" type="radio" data-name="Bilderdruck" data-price="0" data-date="3" data-quantity-discount='{"25":1,"50":1,"100":0.95,"200":0.9,"300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material2-visual" name="material" value="" />
                     <label for="material2">
-                      <img alt="material2" src="http://cardstock-test.de/img/bilderdruck.png">
+                      <img alt="material2" src="/img/bilderdruck.png">
                       <span>Bilderdruck</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="material3" type="radio" data-name="Lederfaser" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <input id="material3" type="radio" data-name="Lederfaser" data-price="0" data-date="3" data-quantity-discount='{"25":1,"50":1,"100":0.95,"200":0.9,"300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material2-visual" name="material" value="" />
                     <label for="material3">
-                      <img alt="material3" src="http://cardstock-test.de/img/lederfaser.png">
+                      <img alt="material3" src="/img/lederfaser.png">
                       <span>Lederfaser</span>
                     </label>
                   </div>
 
-                  <div class="gallery-cell">
-                    <input id="material4" type="radio" data-name="Chromokarton" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                  <!-- <div class="gallery-cell">
+                    <input id="material4" type="radio" data-name="Chromokarton" data-price="0" data-date="3" data-quantity-discount='{300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material2-visual" name="material" value="" />
                     <label for="material4">
-                      <img alt="material4" src="http://cardstock-test.de/img/chromokarton.png">
+                      <img alt="material4" src="/img/chromokarton.png">
                       <span>Chromokarton</span>
                     </label>
-                  </div>
+                  </div> -->
 
                   <div class="gallery-cell">
-                    <input id="material5" type="radio" data-name="Metallic" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <input id="material5" type="radio" data-name="Metallic" data-price="1" data-date="3" data-quantity-discount='{"25":1,"50":1,"100":0.95,"200":0.9,"300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material2-visual" name="material" value="" />
                     <label for="material5">
-                      <img alt="material5" src="http://cardstock-test.de/img/metallic.png">
+                      <img alt="material5" src="/img/metallic.png">
                       <span>Metallic</span>
                     </label>
                   </div>
 
-                  <div class="gallery-cell">
-                    <input id="material6" type="radio" data-name="Transparent" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                  <!-- <div class="gallery-cell">
+                    <input id="material6" type="radio" data-name="Transparent" data-price="-0.70" data-date="3" data-quantity-discount='{"25":1,"50":1,"100":0.95,"200":0.9,"300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material2-visual" name="material" value="" />
                     <label for="material6">
-                      <img alt="material6" src="http://cardstock-test.de/img/transparent.png">
+                      <img alt="material6" src="/img/transparent.png">
                       <span>Transparent</span>
                     </label>
-                  </div>
+                  </div> -->
 
                   <div class="gallery-cell">
-                    <input id="material7" type="radio" data-name="Liniar" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="material" value="" />
+                    <input id="material7" type="radio" data-name="Liniar" data-price="-0.40" data-date="3" data-quantity-discount='{"25":1,"50":1,"100":0.95,"200":0.9,"300":0.85,"500":0.8,"750":0.75,"1000":0.7,"1500":0.65,"2000":0.6,"2500":0.55,"3000":0.5,"3500":0.45,"4000":0.4,"4500":0.35,"5000":0.3}' data-visual="material2-visual" name="material" value="" />
                     <label for="material7">
-                      <img alt="material7" src="http://cardstock-test.de/img/liniar.png">
+                      <img alt="material7" src="/img/liniar.png">
                       <span>Liniar</span>
                     </label>
                   </div>
@@ -330,15 +328,14 @@
     <div id="tab2" class="tab">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Mappentyp</span>
-        </div>
 
         <div class="tab__content">
 
           <div class="subtabs">
 
-            <nav>
+            <nav class="tab__title">
+              <span class="hero">Mappentyp</span>
+              <span class="respo-hero">2. Mappentyp</span>
               <ul>
 
                 <li><a href="#ordner">Ordner & Ringmappen</a>
@@ -404,105 +401,140 @@
               </ul>
             </nav>
 
-
             <div class="content-wrap">
 
               <section id="ordner">
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model1" type="radio" data-name="model1" data-price="0.5" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" checked="checked" />
+                    <input id="model1" type="radio" data-name="Ringmappe 1" data-price="16.95" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" checked="checked" />
                     <label for="model1">
                       <img alt="test" src="/products/ordner/product1.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 1</span>
+                      <span class="description">2 Ring-Mechanik</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model2" type="radio" data-name="model2" data-price="0.5" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model2" type="radio" data-name="Ringmappe 2" data-price="17.95" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model2">
                       <img alt="test" src="/products/ordner/product2.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 2</span>
+                      <span class="description">2 Ring-Mechanik und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model3" type="radio" data-name="model3" data-price="0.5" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model3" type="radio" data-name="Ringmappe 3" data-price="18.75" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model3">
                       <img alt="test" src="/products/ordner/product3.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 3</span>
+                      <span class="description">2 Ring-Mechanik und Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model4" type="radio" data-name="model4" data-price="0.5" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model4" type="radio" data-name="Ringmappe 4" data-price="18.75" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model4">
                       <img alt="test" src="/products/ordner/product4.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 4</span>
+                      <span class="description">2 Ring-Mechanik und Fach hoch</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model5" type="radio" data-name="model5" data-price="0.5" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model5" type="radio" data-name="Ringmappe 5" data-price="17.45" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model5">
                       <img alt="test" src="/products/ordner/product5.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 5</span>
+                      <span class="description">2 Ring-Mechanik</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model6" type="radio" data-name="model6" data-price="0.5" data-date="2" data-visual="buchschrauben-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model6" type="radio" data-name="Ringmappe 6" data-price="18.45" data-date="2" data-visual="buchschrauben-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model6">
                       <img alt="test" src="/products/ordner/product6.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 6</span>
+                      <span class="description">4 Ring-Mechanik und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model7" type="radio" data-name="model7" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model7" type="radio" data-name="Ringmappe 7" data-price="19.25" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model7">
                       <img alt="test" src="/products/ordner/product7.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 7</span>
+                      <span class="description">4 Ring-Mechanik und Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model8" type="radio" data-name="Mechanik 7" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model8" type="radio" data-name="Ringmappe 8" data-price="19.25" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model8">
                       <img alt="test" src="/products/ordner/product8.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ringmappe 8</span>
+                      <span class="description">4 Ring-Mechanik und Fach hoch</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model9" type="radio" data-name="model9" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model9" type="radio" data-name="Ordner 1" data-price="16.95" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model9">
                       <img alt="test" src="/products/ordner/product9.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ordner 1</span>
+                      <span class="description">Hebelmechanik</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model10" type="radio" data-name="model10" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model10" type="radio" data-name="Ordner 2" data-price="17.95" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model10">
                       <img alt="test" src="/products/ordner/product10.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ordner 2</span>
+                      <span class="description">Hebelmechanik und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model11" type="radio" data-name="model11" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model11" type="radio" data-name="Ordner 3" data-price="19.75" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model11">
                       <img alt="test" src="/products/ordner/product11.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ordner 3</span>
+                      <span class="description">Hebelmechanik und Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model12" type="radio" data-name="model12" data-price="0.5" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model12" type="radio" data-name="Ordner 4" data-price="19.75" data-date="0" data-visual="schnellheftung-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model12">
                       <img alt="test" src="/products/ordner/product12.jpg">
-                      <span>Ordner</span>
+                      <span class="gallery-text">
+                      <span class="title">Ordner 4</span>
+                      <span class="description">Hebelmechanik und Fach hoch</span>
+                      </span>
                     </label>
                   </div>
 
@@ -513,122 +545,167 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model13" type="radio" data-name="model13" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model13" type="radio" data-name="Präsentationsmappe 1" data-price="14.95" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model13">
                       <img alt="test" src="/products/mappen/product1.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 1</span>
+                      <span class="description">Mappe mit Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model14" type="radio" data-name="model14" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model14" type="radio" data-name="Präsentationsmappe 2" data-price="15.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model14">
                       <img alt="test" src="/products/mappen/product2.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 2</span>
+                      <span class="description">Mappe mit zwei Eckfächer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model15" type="radio" data-name="model15" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model15" type="radio" data-name="Präsentationsmappe 3" data-price="14.95" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model15">
                       <img alt="test" src="/products/mappen/product3.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 3</span>
+                      <span class="description">Mappe mit vier transparenten Ecken</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model16" type="radio" data-name="model16" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model16" type="radio" data-name="Präsentationsmappe 4" data-price="13.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model16">
                       <img alt="test" src="/products/mappen/product4.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 4</span>
+                      <span class="description">Mappe mit transparenter Klemmschiene</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model17" type="radio" data-name="model17" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model17" type="radio" data-name="Präsentationsmappe 5" data-price="15.95" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model17">
                       <img alt="test" src="/products/mappen/product5.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 5</span>
+                      <span class="description">Mappe mit transparenter Klemmschiene und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model18" type="radio" data-name="model18" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model18" type="radio" data-name="Präsentationsmappe 6" data-price="18.45" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model18">
                       <img alt="test" src="/products/mappen/product6.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 6</span>
+                      <span class="description">Mappe mit Ablagefach und Magnetverschluss</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model19" type="radio" data-name="model19" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model19" type="radio" data-name="Präsentationsmappe 7" data-price="18.75" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model19">
                       <img alt="test" src="/products/mappen/product7.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 7</span>
+                      <span class="description">Mappe mit drei Laschen</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model20" type="radio" data-name="model20" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model20" type="radio" data-name="Präsentationsmappe 8" data-price="18.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model20">
                       <img alt="test" src="/products/mappen/product8.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 8</span>
+                      <span class="description">Mappe mit Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model21" type="radio" data-name="model21" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model21" type="radio" data-name="Präsentationsmappe 9" data-price="20.95" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model21">
                       <img alt="test" src="/products/mappen/product9.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 9</span>
+                      <span class="description">Mappe mit zwei Fächern quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model22" type="radio" data-name="model22" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model22" type="radio" data-name="Präsentationsmappe 10" data-price="19.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model22">
                       <img alt="test" src="/products/mappen/product10.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 10</span>
+                      <span class="description">Mappe mit Fach quer und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model23" type="radio" data-name="model23" data-price="0.5" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model23" type="radio" data-name="Präsentationsmappe 11" data-price="18.95" data-date="2" data-visual="model1-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model23">
                       <img alt="test" src="/products/mappen/product11.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 11</span>
+                      <span class="description">Mappe mit Fach hoch</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model24" type="radio" data-name="model24" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model24" type="radio" data-name="Präsentationsmappe 12" data-price="20.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model24">
                       <img alt="test" src="/products/mappen/product12.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 12</span>
+                      <span class="description">Mappe mit zwei Fächern hoch</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model25" type="radio" data-name="model25" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model25" type="radio" data-name="Präsentationsmappe 13" data-price="24.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model25">
                       <img alt="test" src="/products/mappen/product13.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 13</span>
+                      <span class="description">Dreiteilige Mappe mit Eckfach, Klemmschiene und Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model26" type="radio" data-name="model26" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model26" type="radio" data-name="Präsentationsmappe 14" data-price="25.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model26">
                       <img alt="test" src="/products/mappen/product14.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 14</span>
+                      <span class="description">Dreiteilige Mappe mit Eckfach und zwei Fächern quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model27" type="radio" data-name="model27" data-price="0.5" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model27" type="radio" data-name="Präsentationsmappe 15" data-price="27.95" data-date="0" data-visual="model2-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model27">
                       <img alt="test" src="/products/mappen/product15.jpg">
-                      <span>Mappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Präsentationsmappe 15</span>
+                      <span class="description">Dreiteilige Mappe mit drei Fächer quer</span>
+                      </span>
                     </label>
                   </div>
 
@@ -639,42 +716,57 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model28" type="radio" data-name="model28" data-price="0.5" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model28" type="radio" data-name="Schnellhefter 1" data-price="15.95" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model28">
                       <img alt="test" src="/products/schnellhefter/product1.jpg">
-                      <span>Schnellhefter</span>
+                      <span class="gallery-text">
+                      <span class="title">Schnellhefter 1</span>
+                      <span class="description">Mappe mit Metall-Schnellheftung</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model29" type="radio" data-name="model29" data-price="0.5" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model29" type="radio" data-name="Schnellhefter 2" data-price="16.95" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model29">
                       <img alt="test" src="/products/schnellhefter/product2.jpg">
-                      <span>Schnellhefter</span>
+                      <span class="gallery-text">
+                      <span class="title">Schnellhefter 2</span>
+                      <span class="description">Mappe mit Schnellheftung und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model30" type="radio" data-name="model30" data-price="0.5" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model30" type="radio" data-name="Schnellhefter 3" data-price="17.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model30">
                       <img alt="test" src="/products/schnellhefter/product3.jpg">
-                      <span>Schnellhefter</span>
+                      <span class="gallery-text">
+                      <span class="title">Schnellhefter 3</span>
+                      <span class="description">Mappe mit Schnellheftung und Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model31" type="radio" data-name="model31" data-price="0.5" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model31" type="radio" data-name="Schnellhefter 4" data-price="17.95" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model31">
                       <img alt="test" src="/products/schnellhefter/product4.jpg">
-                      <span>Schnellhefter</span>
+                      <span class="gallery-text">
+                      <span class="title">Schnellhefter 4</span>
+                      <span class="description">Mappe mit Schnellheftung und Fach hoch</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model32" type="radio" data-name="model32" data-price="0.5" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model32" type="radio" data-name="Schnellhefter 5" data-price="27.95" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model32">
                       <img alt="test" src="/products/schnellhefter/product5.jpg">
-                      <span>Schnellhefter</span>
+                      <span class="gallery-text">
+                      <span class="title">Schnellhefter 5</span>
+                      <span class="description">Dreiteilige Mappe mit Schnellheftung und zwei Fächer</span>
+                      </span>
                     </label>
                   </div>
 
@@ -685,42 +777,57 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model33" type="radio" data-name="model33" data-price="0.5" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model33" type="radio" data-name="Schreibmappe 1" data-price="15.95" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model33">
                       <img alt="test" src="/products/schreibmappen/product1.jpg">
-                      <span>Schreibmappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Schreibmappe 1</span>
+                      <span class="description">Mappe mit Klemmmechanik</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model34" type="radio" data-name="model34" data-price="0.5" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model34" type="radio" data-name="Schreibmappe 2" data-price="16.95" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model34">
                       <img alt="test" src="/products/schreibmappen/product2.jpg">
-                      <span>Schreibmappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Schreibmappe 2</span>
+                      <span class="description">Mappe mit Klemmmechanik und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model35" type="radio" data-name="model35" data-price="0.5" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value=""  />
+                    <input id="model35" type="radio" data-name="Schreibmappe 3" data-price="17.75" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value=""  />
                     <label for="model35">
                       <img alt="test" src="/products/schreibmappen/product3.jpg">
-                      <span>Schreibmappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Schreibmappe 3</span>
+                      <span class="description">Mappe mit Klemmmechanik und Fach quer</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model36" type="radio" data-name="model36" data-price="0.5" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model36" type="radio" data-name="Schreibmappe 4" data-price="17.75" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model36">
                       <img alt="test" src="/products/schreibmappen/product4.jpg">
-                      <span>Schreibmappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Schreibmappe 4</span>
+                      <span class="description">Mappe mit Klemmmechanik und Fach hoch</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model37" type="radio" data-name="model37" data-price="0.5" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model37" type="radio" data-name="Schreibmappe 5" data-price="27.95" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model37">
                       <img alt="test" src="/products/schreibmappen/product5.jpg">
-                      <span>Schreibmappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Schreibmappe 5</span>
+                      <span class="description">Dreiteilige Mappe mit Klemmmechanik und zwei Fächer</span>
+                      </span>
                     </label>
                   </div>
 
@@ -731,10 +838,13 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model38" type="radio" data-name="model38" data-price="0.5" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model38" type="radio" data-name="Klemmbrett 1" data-price="14.95" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model38">
                       <img alt="test" src="/products/klemmbretter/product1.jpg">
-                      <span>Klemmmbretter</span>
+                      <span class="gallery-text">
+                      <span class="title">Klemmbrett 1</span>
+                      <span class="description">Klemmbrett mit Klemmmechanik</span>
+                      </span>
                     </label>
                   </div>
 
@@ -745,42 +855,57 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="model39" type="radio" data-name="model39" data-price="0.5" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model39" type="radio" data-name="Mustermappe 1" data-price="79" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model39">
                       <img alt="test" src="/products/mustermappen/product1.jpg">
-                      <span>Mustermappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Mustermappe 1</span>
+                      <span class="description">Mustermappe mit Schaumeinlage und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model40" type="radio" data-name="model40" data-price="0.5" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model40" type="radio" data-name="Mustermappe 2" data-price="84.50" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model40">
                       <img alt="test" src="/products/mustermappen/product2.jpg">
-                      <span>Mustermappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Mustermappe 2</span>
+                      <span class="description">Mustermappe mit zwei Schaumeinlagen</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model41" type="radio" data-name="model41" data-price="0.5" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value=""  />
+                    <input id="model41" type="radio" data-name="Mustermappe 3" data-price="89" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value=""  />
                     <label for="model41">
                       <img alt="test" src="/products/mustermappen/product3.jpg">
-                      <span>Mustermappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Mustermappe 3</span>
+                      <span class="description">Dreiteilige Mustermappe mit zwei Schaumeinlagen und Eckfach</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model42" type="radio" data-name="model42" data-price="0.5" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model42" type="radio" data-name="Mustermappe 4" data-price="94.50" data-date="0" data-visual="hebelmechanik-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model42">
                       <img alt="test" src="/products/mustermappen/product4.jpg">
-                      <span>Mustermappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Mustermappe 4</span>
+                      <span class="description">Dreiteilige Mustermappe mit drei Schaumeinlagen</span>
+                      </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="model43" type="radio" data-name="model43" data-price="0.5" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
+                    <input id="model43" type="radio" data-name="Mustermappe 5" data-price="99" data-date="0" data-visual="klemmschiene-visual" data-available-options='{"size":["size1", "size2", "size3", "size4"]}' name="model" value="" />
                     <label for="model43">
                       <img alt="test" src="/products/mustermappen/product5.jpg">
-                      <span>Mustermappen</span>
+                      <span class="gallery-text">
+                      <span class="title">Mustermappe 5</span>
+                      <span class="description">Vierteilige Mustermappe mit vier Schaumeinlagen</span>
+                      </span>
                     </label>
                   </div>
 
@@ -801,15 +926,13 @@
     <div id="tab3" class="tab">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Format</span>
-        </div>
-
         <div class="tab__content">
 
           <div class="subtabs">
 
-            <nav>
+            <nav class="tab__title">
+              <span class="hero">Format</span>
+              <span class="respo-hero">3. Format</span>
               <ul>
 
                 <li><a href="#size">Format</a>
@@ -832,7 +955,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="size1" type="radio" data-name="DIN A4 (hoch)" data-price="0.5" data-date="0" data-visual="size1-visual" name="size" value="" checked="checked" />
+                    <input id="size1" type="radio" data-name="DIN A4 (hoch)" data-price="0" data-date="0" data-visual="size1-visual" name="size" value="" checked="checked" />
                     <label for="size1">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>DIN A4 (hoch)</span>
@@ -840,7 +963,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="size2" type="radio" data-name="DIN A4 (quer)" data-price="0.5" data-date="0" data-visual="size2-visual" name="size" value="" />
+                    <input id="size2" type="radio" data-name="DIN A4 (quer)" data-price="0" data-date="0" data-visual="size2-visual" name="size" value="" />
                     <label for="size2">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>DIN A4 (quer)</span>
@@ -848,7 +971,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="size3" type="radio" data-name="DIN A5 (hoch)" data-price="0.5" data-date="0" data-visual="size3-visual" name="size" value="" />
+                    <input id="size3" type="radio" data-name="DIN A5 (hoch)" data-price="0" data-date="0" data-visual="size3-visual" name="size" value="" />
                     <label for="size3">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>DIN A5 (hoch)</span>
@@ -856,7 +979,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="size4" type="radio" data-name="DIN A5 (quer)" data-price="0.5" data-date="0" data-visual="size4-visual" name="size" value="" />
+                    <input id="size4" type="radio" data-name="DIN A5 (quer)" data-price="0" data-date="0" data-visual="size4-visual" name="size" value="" />
                     <label for="size4">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>DIN A5 (quer)</span>
@@ -880,15 +1003,14 @@
     <div id="tab4" class="tab">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Ausstattung</span>
-        </div>
-
         <div class="tab__content">
 
           <div class="subtabs">
 
-            <nav>
+
+            <nav class="tab__title">
+              <span class="hero">Ausstattung</span>
+              <span class="respo-hero">4. Ausstattung</span>
               <ul>
 
                 <li><a href="#extra1">Extra 1</a>
@@ -936,7 +1058,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="extra1a" type="radio" data-name="Extra 1a" data-price="0.5" data-date="0" data-visual="extra1a-visual" name="extra1" value="" />
+                    <input id="extra1a" type="radio" data-name="Extra 1a" data-price="0" data-date="0" data-visual="extra1a-visual" name="extra1" value="" />
                     <label for="extra1a">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Extra 1a</span>
@@ -944,7 +1066,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="extra1b" type="radio" data-name="Extra 1b" data-price="0.5" data-date="0" data-visual="extra1b-visual" name="extra1" value="" />
+                    <input id="extra1b" type="radio" data-name="Extra 1b" data-price="0" data-date="0" data-visual="extra1b-visual" name="extra1" value="" />
                     <label for="extra1b">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Extra 1b</span>
@@ -966,7 +1088,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="extra2a" type="radio" data-name="Extra 2a" data-price="0.5" data-date="0" data-visual="none" name="extra2" value="" />
+                    <input id="extra2a" type="radio" data-name="Extra 2a" data-price="0" data-date="0" data-visual="none" name="extra2" value="" />
                     <label for="extra2a">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Extra 2a</span>
@@ -974,7 +1096,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="extra2b" type="radio" data-name="Extra 2b" data-price="0.5" data-date="0" data-visual="extra2b-visual" name="extra2" value="" />
+                    <input id="extra2b" type="radio" data-name="Extra 2b" data-price="0" data-date="0" data-visual="extra2b-visual" name="extra2" value="" />
                     <label for="extra2b">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Extra 2b</span>
@@ -997,7 +1119,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="extra3a" type="radio" data-name="Extra 3a" data-price="0.5" data-date="0" data-visual="extra3a-visual" name="extra3" value="" />
+                    <input id="extra3a" type="radio" data-name="Extra 3a" data-price="0" data-date="0" data-visual="extra3a-visual" name="extra3" value="" />
                     <label for="extra3a">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Extra 3a</span>
@@ -1005,7 +1127,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="extra3b" type="radio" data-name="Extra 3b" data-price="0.5" data-date="0" data-visual="extra3b-visual" name="extra3" value="" />
+                    <input id="extra3b" type="radio" data-name="Extra 3b" data-price="0" data-date="0" data-visual="extra3b-visual" name="extra3" value="" />
                     <label for="extra3b">
                       <img alt="test" src="http://cardstock-test.de/img/icon.png">
                       <span>Extra 3b</span>
@@ -1030,15 +1152,16 @@
     <div id="tab5" class="tab">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Design</span>
-        </div>
-
         <div class="tab__content">
 
           <div class="subtabs">
 
-            <nav>
+
+
+
+            <nav class="tab__title">
+              <span class="hero">Design</span>
+              <span class="respo-hero">5. Design</span>
               <ul>
 
                 <li><a href="#color1">Color 1</a>
@@ -1069,42 +1192,42 @@
                 <div class="gallery" data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
 
                   <div class="gallery-cell">
-                    <input id="color1-kristall" type="radio" data-name="Color1 Kristall" data-price="0.5" data-date="0" data-visual="kristall-visual" name="color1" value="" checked="checked" />
+                    <input id="color1-kristall" type="radio" data-name="Color1 Kristall" data-price="0" data-date="0" data-visual="kristall-visual" name="color1" value="" checked="checked" />
                     <label class="kristall-visual" for="color1-kristall">
                       <span>Kristall</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color1-aluminium" type="radio" data-name="Color1 Aluminium" data-price="0.5" data-date="0" data-visual="aluminium-visual" name="color1" value="" />
+                    <input id="color1-aluminium" type="radio" data-name="Color1 Aluminium" data-price="0" data-date="0" data-visual="aluminium-visual" name="color1" value="" />
                     <label class="aluminium-visual" for="color1-aluminium">
                       <span>Aluminium</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color1-mineral" type="radio" data-name="Color1 Mineral" data-price="0.5" data-date="0" data-visual="mineral-visual" name="color1" value="" />
+                    <input id="color1-mineral" type="radio" data-name="Color1 Mineral" data-price="0" data-date="0" data-visual="mineral-visual" name="color1" value="" />
                     <label class="mineral-visual" for="color1-mineral">
                       <span>Mineral</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color1-platin" type="radio" data-name="Color1 Platin" data-price="0.5" data-date="0" data-visual="platin-visual" name="color1" value="" />
+                    <input id="color1-platin" type="radio" data-name="Color1 Platin" data-price="0" data-date="0" data-visual="platin-visual" name="color1" value="" />
                     <label class="platin-visual" for="color1-platin">
                       <span>Platin</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color1-polar" type="radio" data-name="Color1 Polar" data-price="0.5" data-date="0" data-visual="polar-visual" name="color1" value="" />
+                    <input id="color1-polar" type="radio" data-name="Color1 Polar" data-price="0" data-date="0" data-visual="polar-visual" name="color1" value="" />
                     <label class="polar-visual" for="color1-polar">
                       <span>Polar</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color1-basalt" type="radio" data-name="Color1 Basalt" data-price="0.5" data-date="0" data-visual="basalt-visual" name="color1" value="" />
+                    <input id="color1-basalt" type="radio" data-name="Color1 Basalt" data-price="0" data-date="0" data-visual="basalt-visual" name="color1" value="" />
                     <label class="basalt-visual" for="color1-basalt">
                       <span>Basalt</span>
                     </label>
@@ -1112,7 +1235,7 @@
 
 
                   <div class="gallery-cell">
-                    <input id="color1-patina" type="radio" data-name="Color1 Patina" data-price="0.5" data-date="0" data-visual="patina-visual" name="color1" value="" />
+                    <input id="color1-patina" type="radio" data-name="Color1 Patina" data-price="0" data-date="0" data-visual="patina-visual" name="color1" value="" />
                     <label class="patina-visual" for="color1-patina">
                       <span>Patina</span>
                     </label>
@@ -1120,7 +1243,7 @@
 
 
                   <div class="gallery-cell">
-                    <input id="color1-sandgold" type="radio" data-name="Color1 Sandgold" data-price="0.5" data-date="0" data-visual="sandgold-visual" name="color1" value="" />
+                    <input id="color1-sandgold" type="radio" data-name="Color1 Sandgold" data-price="0" data-date="0" data-visual="sandgold-visual" name="color1" value="" />
                     <label class="sandgold-visual" for="color1-sandgold">
                       <span>Sandgold</span>
                     </label>
@@ -1134,42 +1257,42 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="color2-kristall" type="radio" data-name="Color2 Kristall" data-price="0.5" data-date="0" data-visual="kristall-visual" name="color2" value="" checked="checked" />
+                    <input id="color2-kristall" type="radio" data-name="Color2 Kristall" data-price="0" data-date="0" data-visual="kristall-visual" name="color2" value="" checked="checked" />
                     <label class="kristall-visual" for="color2-kristall">
                       <span>Kristall</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color2-aluminium" type="radio" data-name="Color2 Aluminium" data-price="0.5" data-date="0" data-visual="aluminium-visual" name="color2" value="" />
+                    <input id="color2-aluminium" type="radio" data-name="Color2 Aluminium" data-price="0" data-date="0" data-visual="aluminium-visual" name="color2" value="" />
                     <label class="aluminium-visual" for="color2-aluminium">
                       <span>Aluminium</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color2-mineral" type="radio" data-name="Color2 Mineral" data-price="0.5" data-date="0" data-visual="mineral-visual" name="color2" value="" />
+                    <input id="color2-mineral" type="radio" data-name="Color2 Mineral" data-price="0" data-date="0" data-visual="mineral-visual" name="color2" value="" />
                     <label class="mineral-visual" for="color2-mineral">
                       <span>Mineral</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color2-platin" type="radio" data-name="Color2 Platin" data-price="0.5" data-date="0" data-visual="platin-visual" name="color2" value="" />
+                    <input id="color2-platin" type="radio" data-name="Color2 Platin" data-price="0" data-date="0" data-visual="platin-visual" name="color2" value="" />
                     <label class="platin-visual" for="color2-platin">
                       <span>Platin</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color2-polar" type="radio" data-name="Color2 Polar" data-price="0.5" data-date="0" data-visual="polar-visual" name="color2" value="" />
+                    <input id="color2-polar" type="radio" data-name="Color2 Polar" data-price="0" data-date="0" data-visual="polar-visual" name="color2" value="" />
                     <label class="polar-visual" for="color2-polar">
                       <span>Polar</span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="color2-basalt" type="radio" data-name="Color2 Basalt" data-price="0.5" data-date="0" data-visual="basalt-visual" name="color2" value="" />
+                    <input id="color2-basalt" type="radio" data-name="Color2 Basalt" data-price="0" data-date="0" data-visual="basalt-visual" name="color2" value="" />
                     <label class="basalt-visual" for="color2-basalt">
                       <span>Basalt</span>
                     </label>
@@ -1177,7 +1300,7 @@
 
 
                   <div class="gallery-cell">
-                    <input id="color2-patina" type="radio" data-name="Color2 Patina" data-price="0.5" data-date="0" data-visual="patina-visual" name="color2" value="" />
+                    <input id="color2-patina" type="radio" data-name="Color2 Patina" data-price="0" data-date="0" data-visual="patina-visual" name="color2" value="" />
                     <label class="patina-visual" for="color2-patina">
                       <span>Patina</span>
                     </label>
@@ -1185,7 +1308,7 @@
 
 
                   <div class="gallery-cell">
-                    <input id="color2-sandgold" type="radio" data-name="Color2 Sandgold" data-price="0.5" data-date="0" data-visual="sandgold-visual" name="color2" value="" />
+                    <input id="color2-sandgold" type="radio" data-name="Color2 Sandgold" data-price="0" data-date="0" data-visual="sandgold-visual" name="color2" value="" />
                     <label class="sandgold-visual" for="color2-sandgold">
                       <span>Sandgold</span>
                     </label>
@@ -1208,15 +1331,14 @@
     <div id="tab6" class="tab">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Versand</span>
-        </div>
-
         <div class="tab__content">
 
           <div class="subtabs">
 
-            <nav>
+
+            <nav class="tab__title">
+              <span class="hero">Versand</span>
+              <span class="respo-hero">6. Versand</span>
               <ul>
 
                 <li><a href="#verpackung">Verpackung</a>
@@ -1249,7 +1371,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="verpackung1" type="radio" data-name="Standard Verpackung" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="" name="verpackung" value="" checked="checked" />
+                    <input id="verpackung1" type="radio" data-name="Standard Verpackung" data-price="0" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="" name="verpackung" value="" checked="checked" />
                     <label for="verpackung1">
                       <img alt="verpackung1" src="http://cardstock-test.de/img/feinleinen.png">
                       <span>Standard Verpackung</span>
@@ -1257,7 +1379,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="verpackung2" type="radio" data-name="Neutrale Verpackung" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="verpackung" value="" />
+                    <input id="verpackung2" type="radio" data-name="Neutrale Verpackung" data-price="0" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="material2-visual" name="verpackung" value="" />
                     <label for="verpackung2">
                       <img alt="verpackung2" src="http://cardstock-test.de/img/bilderdruck.png">
                       <span>Neutrale Verpackung</span>
@@ -1271,7 +1393,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="versand1" type="radio" data-name="Standard Versand" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="" name="Versand" value="" checked="checked" />
+                    <input id="versand1" type="radio" data-name="Standard Versand" data-price="0" data-date="4" data-quantity-discount='{"25":1,"100":0.95,"250":0.9,"500":0.85,"1000":0.8,"2500":0.75,"5000":0.7}' data-visual="" name="Versand" value="" checked="checked" />
                     <label for="versand1">
                       <img alt="versand1" src="http://cardstock-test.de/img/feinleinen.png">
                       <span>Standard Versand</span>
@@ -1279,7 +1401,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="versand2" type="radio" data-name="Klimafreundlicher Versand" data-price="1.5" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="" name="Versand" value="" />
+                    <input id="versand2" type="radio" data-name="Klimafreundlicher Versand" data-price="0" data-date="3" data-quantity-discount='{"300":1,"500":0.7,"1000":0.65,"2500":0.6,"5000":0.55}' data-visual="" name="Versand" value="" />
                     <label for="versand2">
                       <img alt="versand2" src="http://cardstock-test.de/img/bilderdruck.png">
                       <span>Klimafreundlicher Versand</span>
@@ -1305,15 +1427,13 @@
     <div id="tab7" class="tab">
       <div class="fadeheader">
 
-        <div class="tab__title">
-          <span class="hero">Bestellung</span>
-        </div>
-
         <div class="tab__content">
 
           <div class="subtabs">
 
-            <nav>
+            <nav class="tab__title">
+              <span class="hero">Bestellung</span>
+              <span class="respo-hero">7. Bestellung</span>
               <ul>
 
                 <li><a href="#bestellung">Bestellung</a>
