@@ -15,12 +15,13 @@
       cellAlign: 'left',
       accessibility: false,
       pageDots: false,
-      prevNextButtons: true,
+      prevNextButtons: false,
       contain: true
     });
 
     flickityList.push(flkty);
   });
+
 
   function resizeSliders() {
     setTimeout(function() {
@@ -41,6 +42,7 @@
   resizeSliders();
 
 }());
+
 
 ///////////////////////////////////////////////////////////
 

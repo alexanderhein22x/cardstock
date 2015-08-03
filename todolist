@@ -4,3 +4,4 @@
 1. größe ist von model abhängig.
 2. extras sind vom model abhängig.
 3. farben sind vom extras und material abhängig.
+4. modelle sind von material abhängig.
