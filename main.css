@@ -638,16 +638,6 @@ text-align: right;
 
 
 
-/* Material */
-
-.material1-visual {
-  background: #222222;
-}
-
-.material2-visual {
-  background: #F55F01;
-}
-
 
 /* model */
 
@@ -737,29 +727,27 @@ text-align: right;
 
 /* Size */
 
-.front.size1-visual:before{display: block; margin-top: 70.3%; content:"";}
-.back.size1-visual:before{display: block; margin-top: 140.3%; content:"";}
+.front.dina4-hoch-visual:before{display: block; margin-top: 70.3%; content:"";}
+.back.dina4-hoch-visual:before{display: block; margin-top: 140.3%; content:"";}
 
-.front.size2-visual:before{display: block; margin-top: 36%; content:"";}
-.back.size2-visual:before{display: block; margin-top: 72%; content:"";}
+.front.dina4-quer-visual:before{display: block; margin-top: 36%; content:"";}
+.back.dina4-quer-visual:before{display: block; margin-top: 72%; content:"";}
 
-.front.size3-visual:before{display: block; margin-top: 70.3%; content:"";}
-.back.size3-visual:before{display: block; margin-top: 140.3%; content:"";}
+.front.dina5-hoch-visual:before{display: block; margin-top: 70.3%; content:"";}
+.back.dina5-hoch-visual:before{display: block; margin-top: 140.3%; content:"";}
 
-.front.size4-visual:before{display: block; margin-top: 36%; content:"";}
-.back.size4-visual:before{display: block; margin-top: 72%; content:"";}
+.front.dina5-quer-visual:before{display: block; margin-top: 36%; content:"";}
+.back.dina5-quer-visual:before{display: block; margin-top: 72%; content:"";}
 
-.front.size5-visual:before{display: block; margin-top: 50%; content:"";}
-.back.size5-visual:before{display: block; margin-top: 100%; content:"";}
+.front.dina3-hoch-visual:before{display: block; margin-top: 50%; content:"";}
+.back.dina3-hoch-visual:before{display: block; margin-top: 100%; content:"";}
 
-.front.size6-visual:before{display: block; margin-top: 70.3%; content:"";}
-.back.size6-visual:before{display: block; margin-top: 140.3%; content:"";}
+.front.dina3-quer-visual:before{display: block; margin-top: 70.3%; content:"";}
+.back.dina3-quer-visual:before{display: block; margin-top: 140.3%; content:"";}
 
-.front.size7-visual:before{display: block; margin-top: 36%; content:"";}
-.back.size7-visual:before{display: block; margin-top: 72%; content:"";}
+.front.quadrat-visual:before{display: block; margin-top: 36%; content:"";}
+.back.quadrat-visual:before{display: block; margin-top: 72%; content:"";}
 
-.front.size8-visual:before{display: block; margin-top: 50%; content:"";}
-.back.size8-visual:before{display: block; margin-top: 100%; content:"";}
 
 /* Extras */
 

@@ -84,7 +84,7 @@ App.Views.Preview = Backbone.View.extend({
       color    = [this.model.get("color1")],
       material = [this.model.get('material')],
       cleft    = [this.model.get('ablagefach'), this.model.get('color1')],
-      cright    = [this.model.get('mechanik')];
+      cright    = [this.model.get('model')];
 
     this._updateParagraph(material, 'container');
     this._updateParagraph(format, 'front');
