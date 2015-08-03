@@ -150,7 +150,7 @@ display: none !important;
   font-weight: bold;
   cursor: pointer;
   padding: 0 12px;
-  width: 150px;
+  width: 190px;
   height: 30px;
   line-height: 30px;
   border-radius: 3px;
@@ -169,8 +169,8 @@ display: none !important;
   position: absolute;
   background: #dcdcdc;
   color: #212121;
-  right: 17px;
-  top: 17px;
+  right: 30px;
+  top: 18px;
   font-size: 13px;
   font-weight: bold;
   cursor: pointer;
@@ -745,9 +745,17 @@ text-align: right;
 .front.dina3-quer-visual:before{display: block; margin-top: 70.3%; content:"";}
 .back.dina3-quer-visual:before{display: block; margin-top: 140.3%; content:"";}
 
-.front.quadrat-visual:before{display: block; margin-top: 36%; content:"";}
-.back.quadrat-visual:before{display: block; margin-top: 72%; content:"";}
+.front.dina2-hoch-visual:before{display: block; margin-top: 50%; content:"";}
+.back.dina2-hoch-visual:before{display: block; margin-top: 100%; content:"";}
 
+.front.dina2-quer-visual:before{display: block; margin-top: 70.3%; content:"";}
+.back.dina2-quer-visual:before{display: block; margin-top: 140.3%; content:"";}
+
+.front.quadrat-21-visual:before{display: block; margin-top: 36%; content:"";}
+.back.quadrat-21-visual:before{display: block; margin-top: 72%; content:"";}
+
+.front.quadrat-32-visual:before{display: block; margin-top: 36%; content:"";}
+.back.quadrat-32-visual:before{display: block; margin-top: 72%; content:"";}
 
 /* Extras */
 
