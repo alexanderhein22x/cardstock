@@ -69,7 +69,7 @@ var App = {
 
 App.Models.Configuration = Backbone.Model.extend({
   defaults: {
-    quantity: 500
+    quantity: 300
   }
 });
 
@@ -165,8 +165,14 @@ App.Views.CostView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
   render: function() {
+    // save scroll position
+    var scrollTop = this.$(".quantity").prop("scrollTop");
+    // update data / template
     var data = this.computeTotal();
     this.$el.html(this.template(data));
+    // restore scroll position
+    this.$(".quantity").prop("scrollTop", scrollTop);
+    // check selected quantity
     var quantityIdx = _.findIndex(data.quantities, { selected: true });
     this.$("#quantity" + quantityIdx).prop("checked", true);
   },
