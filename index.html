@@ -130,9 +130,44 @@
 
           <div class="examplecontainer">
             <span class="title">Format</span>
-              <a href="#tab3" title="link to checked radio button" class="link">{{size.name}}</a>
+              <a href="#tab3/0" title="link to checked radio button" class="link">{{size.name}}</a>
           </div>
 
+          {{#if filling-height}}
+          <div class="examplecontainer">
+            <span class="title">Füllhöhe</span>
+            <a href="#tab3/1" title="link to checked radio button" class="link">{{filling-height.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-2ring}}
+          <div class="examplecontainer">
+            <span class="title">2-Ring Mechanik</span>
+            <a href="#tab3/2" title="link to checked radio button" class="link">{{filling-height-2ring.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-4ring}}
+          <div class="examplecontainer">
+            <span class="title">4-Ring Mechanik</span>
+            <a href="#tab3/3" title="link to checked radio button" class="link">{{filling-height-4ring.name}}</a>
+          </div>
+          {{/if}}
+
+
+          {{#if filling-height-lever-mechanism}}
+          <div class="examplecontainer">
+            <span class="title">Hebelmechanik</span>
+            <a href="#tab3/4" title="link to checked radio button" class="link">{{filling-height-lever-mechanism.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-bag}}
+          <div class="examplecontainer">
+            <span class="title">Ablagefach</span>
+            <a href="#tab3/4" title="link to checked radio button" class="link">{{filling-height-bag.name}}</a>
+          </div>
+          {{/if}}
 
             {{#if usb-holder}}
             <div class="examplecontainer">
@@ -165,6 +200,55 @@
               <a href="/" title="remove option from summary list" class="remove" data-item="business-card-holder">x</a>
             </div>
             {{/if}}
+
+            {{#if triangle-bag}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/4" title="link to checked radio button" class="link">{{triangle-bag.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="triangle-bag">x</a>
+            </div>
+            {{/if}}
+
+            {{#if metal-protector}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/5" title="link to checked radio button" class="link">{{metal-protector.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="metal-protector">x</a>
+            </div>
+            {{/if}}
+
+            {{#if transparent-folder-bag}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/6" title="link to checked radio button" class="link">{{transparent-folder-bag.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="transparent-folder-bag">x</a>
+            </div>
+            {{/if}}
+
+            {{#if fingerhole}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/7" title="link to checked radio button" class="link">{{fingerhole.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="fingerhole">x</a>
+            </div>
+            {{/if}}
+
+            {{#if closure}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/8" title="link to checked radio button" class="link">{{closure.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="closure">x</a>
+            </div>
+            {{/if}}
+
+            {{#if window-punch}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/9" title="link to checked radio button" class="link">{{window-punch.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="window-punch">x</a>
+            </div>
+            {{/if}}
+
 
 
             <div class="examplecontainer">
@@ -469,7 +553,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="armin" type="radio" data-name="Armin" data-price="16.95" data-date="2" data-visual="klemmmechanik-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" checked="checked" />
+                    <input id="armin" type="radio" data-name="Armin" data-price="16.95" data-date="2" data-visual="clamp-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" checked="checked" />
                     <label for="armin">
                       <img alt="test" src="/products/armin.jpg">
                       <span class="gallery-text">
@@ -480,7 +564,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="arnold" type="radio" data-name="Arnold" data-price="17.95" data-date="0" data-visual="zwei-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="arnold" type="radio" data-name="Arnold" data-price="17.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="arnold">
                       <img alt="test" src="/products/arnold.jpg">
                       <span class="gallery-text">
@@ -491,7 +575,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="artur" type="radio" data-name="Artur" data-price="18.75" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="artur" type="radio" data-name="Artur" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="artur">
                       <img alt="test" src="/products/artur.jpg">
                       <span class="gallery-text">
@@ -502,7 +586,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="baldur" type="radio" data-name="Baldur" data-price="18.75" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="baldur" type="radio" data-name="Baldur" data-price="18.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="baldur">
                       <img alt="test" src="/products/baldur.jpg">
                       <span class="gallery-text">
@@ -513,7 +597,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="baldwin" type="radio" data-name="Baldwin" data-price="17.45" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="baldwin" type="radio" data-name="Baldwin" data-price="17.45" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="baldwin">
                       <img alt="test" src="/products/baldwin.jpg">
                       <span class="gallery-text">
@@ -524,7 +608,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="bernhard" type="radio" data-name="Bernhard" data-price="18.45" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="bernhard" type="radio" data-name="Bernhard" data-price="18.45" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="bernhard">
                       <img alt="test" src="/products/bernhard.jpg">
                       <span class="gallery-text">
@@ -535,7 +619,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dagobert" type="radio" data-name="Dagobert" data-price="19.25" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="dagobert" type="radio" data-name="Dagobert" data-price="19.25" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="dagobert">
                       <img alt="test" src="/products/dagobert.jpg">
                       <span class="gallery-text">
@@ -546,7 +630,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="detlef" type="radio" data-name="Detlef" data-price="19.25" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="detlef" type="radio" data-name="Detlef" data-price="19.25" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="detlef">
                       <img alt="test" src="/products/detlef.jpg">
                       <span class="gallery-text">
@@ -557,7 +641,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dietmar" type="radio" data-name="Dietmar" data-price="16.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="dietmar" type="radio" data-name="Dietmar" data-price="16.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="dietmar">
                       <img alt="test" src="/products/dietmar.jpg">
                       <span class="gallery-text">
@@ -568,7 +652,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dietrich" type="radio" data-name="Dietrich" data-price="17.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="dietrich" type="radio" data-name="Dietrich" data-price="17.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="dietrich">
                       <img alt="test" src="/products/dietrich.jpg">
                       <span class="gallery-text">
@@ -579,7 +663,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="eckart" type="radio" data-name="Eckart" data-price="19.75" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="eckart" type="radio" data-name="Eckart" data-price="19.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="eckart">
                       <img alt="test" src="/products/eckart.jpg">
                       <span class="gallery-text">
@@ -590,7 +674,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="egmont" type="radio" data-name="Egmont" data-price="19.75" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="egmont" type="radio" data-name="Egmont" data-price="19.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="egmont">
                       <img alt="test" src="/products/egmont.jpg">
                       <span class="gallery-text">
@@ -607,7 +691,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="einar" type="radio" data-name="Einar" data-price="14.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="einar" type="radio" data-name="Einar" data-price="14.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="einar">
                       <img alt="test" src="/products/einar.jpg">
                       <span class="gallery-text">
@@ -618,7 +702,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="elmar" type="radio" data-name="Elmar" data-price="15.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="elmar" type="radio" data-name="Elmar" data-price="15.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="elmar">
                       <img alt="test" src="/products/elmar.jpg">
                       <span class="gallery-text">
@@ -629,7 +713,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="erwin" type="radio" data-name="Erwin" data-price="14.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="erwin" type="radio" data-name="Erwin" data-price="14.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="erwin">
                       <img alt="test" src="/products/erwin.jpg">
                       <span class="gallery-text">
@@ -640,7 +724,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="falko" type="radio" data-name="Falko" data-price="13.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="falko" type="radio" data-name="Falko" data-price="13.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="falko">
                       <img alt="test" src="/products/falko.jpg">
                       <span class="gallery-text">
@@ -651,7 +735,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="gustav" type="radio" data-name="Gustav" data-price="15.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="gustav" type="radio" data-name="Gustav" data-price="15.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="gustav">
                       <img alt="test" src="/products/gustav.jpg">
                       <span class="gallery-text">
@@ -662,7 +746,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="peter" type="radio" data-name="Peter" data-price="18.45" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="peter" type="radio" data-name="Peter" data-price="18.45" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="peter">
                       <img alt="test" src="/products/peter.jpg">
                       <span class="gallery-text">
@@ -673,7 +757,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="harald" type="radio" data-name="Harald" data-price="18.45" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="harald" type="radio" data-name="Harald" data-price="18.45" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="harald">
                       <img alt="test" src="/products/harald.jpg">
                       <span class="gallery-text">
@@ -684,7 +768,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="helmut" type="radio" data-name="Helmut" data-price="18.75" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "dina2-hoch", "dina2-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
+                    <input id="helmut" type="radio" data-name="Helmut" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "dina2-hoch", "dina2-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
                     <label for="helmut">
                       <img alt="test" src="/products/helmut.jpg">
                       <span class="gallery-text">
@@ -695,7 +779,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="joachim" type="radio" data-name="Joachim" data-price="18.75" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "dina2-hoch", "dina2-quer", "quadrat-21", "quadrat-32"]]}' name="model" value="" />
+                    <input id="joachim" type="radio" data-name="Joachim" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "dina2-hoch", "dina2-quer", "quadrat-21", "quadrat-32"]]}' name="model" value="" />
                     <label for="joachim">
                       <img alt="test" src="/products/joachim.jpg">
                       <span class="gallery-text">
@@ -706,7 +790,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="holger" type="radio" data-name="Holger" data-price="18.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="holger" type="radio" data-name="Holger" data-price="18.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="holger">
                       <img alt="test" src="/products/holger.jpg">
                       <span class="gallery-text">
@@ -717,7 +801,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="hubert" type="radio" data-name="Hubert" data-price="20.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="hubert" type="radio" data-name="Hubert" data-price="20.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="hubert">
                       <img alt="test" src="/products/hubert.jpg">
                       <span class="gallery-text">
@@ -728,7 +812,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="igor" type="radio" data-name="Igor" data-price="19.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="igor" type="radio" data-name="Igor" data-price="19.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="igor">
                       <img alt="test" src="/products/igor.jpg">
                       <span class="gallery-text">
@@ -739,7 +823,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="konrad" type="radio" data-name="Konrad" data-price="18.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="konrad" type="radio" data-name="Konrad" data-price="18.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="konrad">
                       <img alt="test" src="/products/konrad.jpg">
                       <span class="gallery-text">
@@ -750,7 +834,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="kurt" type="radio" data-name="Kurt" data-price="20.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="kurt" type="radio" data-name="Kurt" data-price="20.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="kurt">
                       <img alt="test" src="/products/kurt.jpg">
                       <span class="gallery-text">
@@ -761,7 +845,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="leopold" type="radio" data-name="Leopold" data-price="24.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="leopold" type="radio" data-name="Leopold" data-price="24.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="leopold">
                       <img alt="test" src="/products/leopold.jpg">
                       <span class="gallery-text">
@@ -772,7 +856,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="malte" type="radio" data-name="Malte" data-price="25.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="malte" type="radio" data-name="Malte" data-price="25.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="malte">
                       <img alt="test" src="/products/malte.jpg">
                       <span class="gallery-text">
@@ -783,7 +867,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="norbert" type="radio" data-name="Norbert" data-price="27.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="norbert" type="radio" data-name="Norbert" data-price="27.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="norbert">
                       <img alt="test" src="/products/norbert.jpg">
                       <span class="gallery-text">
@@ -800,7 +884,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="oskar" type="radio" data-name="Oskar" data-price="15.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="oskar" type="radio" data-name="Oskar" data-price="15.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="oskar">
                       <img alt="test" src="/products/oskar.jpg">
                       <span class="gallery-text">
@@ -811,7 +895,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="oswald" type="radio" data-name="Oswald" data-price="16.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="oswald" type="radio" data-name="Oswald" data-price="16.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="oswald">
                       <img alt="test" src="/products/oswald.jpg">
                       <span class="gallery-text">
@@ -822,7 +906,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="rainer" type="radio" data-name="Rainer" data-price="17.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="rainer" type="radio" data-name="Rainer" data-price="17.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="rainer">
                       <img alt="test" src="/products/rainer.jpg">
                       <span class="gallery-text">
@@ -833,7 +917,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="richard" type="radio" data-name="Richard" data-price="17.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="richard" type="radio" data-name="Richard" data-price="17.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="richard">
                       <img alt="test" src="/products/richard.jpg">
                       <span class="gallery-text">
@@ -844,7 +928,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="robert" type="radio" data-name="Robert" data-price="27.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="robert" type="radio" data-name="Robert" data-price="27.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "quadrat-21"]}' name="model" value="" />
                     <label for="robert">
                       <img alt="test" src="/products/robert.jpg">
                       <span class="gallery-text">
@@ -861,7 +945,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="ronald" type="radio" data-name="Ronald" data-price="15.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
+                    <input id="ronald" type="radio" data-name="Ronald" data-price="15.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
                     <label for="ronald">
                       <img alt="test" src="/products/ronald.jpg">
                       <span class="gallery-text">
@@ -872,7 +956,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="rudolf" type="radio" data-name="Rudolf" data-price="16.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
+                    <input id="rudolf" type="radio" data-name="Rudolf" data-price="16.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
                     <label for="rudolf">
                       <img alt="test" src="/products/rudolf.jpg">
                       <span class="gallery-text">
@@ -883,7 +967,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="siegmund" type="radio" data-name="Siegmund" data-price="17.75" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value=""  />
+                    <input id="siegmund" type="radio" data-name="Siegmund" data-price="17.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value=""  />
                     <label for="siegmund">
                       <img alt="test" src="/products/siegmund.jpg">
                       <span class="gallery-text">
@@ -894,7 +978,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="sigmar" type="radio" data-name="Sigmar" data-price="17.75" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
+                    <input id="sigmar" type="radio" data-name="Sigmar" data-price="17.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
                     <label for="sigmar">
                       <img alt="test" src="/products/sigmar.jpg">
                       <span class="gallery-text">
@@ -905,7 +989,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="sven" type="radio" data-name="Sven" data-price="27.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
+                    <input id="sven" type="radio" data-name="Sven" data-price="27.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "quadrat-21"]}' name="model" value="" />
                     <label for="sven">
                       <img alt="test" src="/products/sven.jpg">
                       <span class="gallery-text">
@@ -922,7 +1006,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="thorsten" type="radio" data-name="Thorsten" data-price="14.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "dina3-hoch", "dina3-quer", "quadrat-32"]}' name="model" value="" />
+                    <input id="thorsten" type="radio" data-name="Thorsten" data-price="14.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina5-hoch", "dina3-hoch", "dina3-quer", "quadrat-32"]}' name="model" value="" />
                     <label for="thorsten">
                       <img alt="test" src="/products/thorsten.jpg">
                       <span class="gallery-text">
@@ -939,7 +1023,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="uland" type="radio" data-name="Uland" data-price="39.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
+                    <input id="uland" type="radio" data-name="Uland" data-price="39.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
                     <label for="uland">
                       <img alt="test" src="/products/uland.jpg">
                       <span class="gallery-text">
@@ -950,7 +1034,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="ulbert" type="radio" data-name="Ulbert" data-price="49.75" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
+                    <input id="ulbert" type="radio" data-name="Ulbert" data-price="49.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
                     <label for="ulbert">
                       <img alt="test" src="/products/ulbert.jpg">
                       <span class="gallery-text">
@@ -961,7 +1045,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="ulf" type="radio" data-name="Ulf" data-price="59.95" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value=""  />
+                    <input id="ulf" type="radio" data-name="Ulf" data-price="59.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value=""  />
                     <label for="ulf">
                       <img alt="test" src="/products/ulf.jpg">
                       <span class="gallery-text">
@@ -972,7 +1056,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="ulrich" type="radio" data-name="Ulrich" data-price="64.75" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
+                    <input id="ulrich" type="radio" data-name="Ulrich" data-price="64.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
                     <label for="ulrich">
                       <img alt="test" src="/products/ulrich.jpg">
                       <span class="gallery-text">
@@ -983,7 +1067,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="volker" type="radio" data-name="Volker" data-price="74.95" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
+                    <input id="volker" type="radio" data-name="Volker" data-price="74.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
                     <label for="volker">
                       <img alt="test" src="/products/volker.jpg">
                       <span class="gallery-text">
@@ -1000,7 +1084,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="annaeus" type="radio" data-name="Annaeus" data-price="2.19" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="annaeus" type="radio" data-name="Annaeus" data-price="2.19" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="annaeus">
                       <img alt="test" src="/products/annaeus.jpg">
                       <span class="gallery-text">
@@ -1011,7 +1095,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="aponius" type="radio" data-name="Aponius" data-price="1.29" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer"]}' name="model" value="" />
+                    <input id="aponius" type="radio" data-name="Aponius" data-price="1.29" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer"]}' name="model" value="" />
                     <label for="aponius">
                       <img alt="test" src="/products/aponius.jpg">
                       <span class="gallery-text">
@@ -1022,7 +1106,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="flavius" type="radio" data-name="Flavius" data-price="2.19" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="flavius" type="radio" data-name="Flavius" data-price="2.19" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="flavius">
                       <img alt="test" src="/products/flavius.jpg">
                       <span class="gallery-text">
@@ -1033,7 +1117,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="gavius" type="radio" data-name="Gavius" data-price="2.39" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="gavius" type="radio" data-name="Gavius" data-price="2.39" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="gavius">
                       <img alt="test" src="/products/gavius.jpg">
                       <span class="gallery-text">
@@ -1044,7 +1128,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="mamilius" type="radio" data-name="Mamilius" data-price="2.19" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="mamilius" type="radio" data-name="Mamilius" data-price="2.19" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="mamilius">
                       <img alt="test" src="/products/mamilius.jpg">
                       <span class="gallery-text">
@@ -1055,7 +1139,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="claudius" type="radio" data-name="Claudius" data-price="3.11" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="claudius" type="radio" data-name="Claudius" data-price="3.11" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="claudius">
                       <img alt="test" src="/products/claudius.jpg">
                       <span class="gallery-text">
@@ -1066,7 +1150,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="sempronius" type="radio" data-name="Sempronius" data-price="3.97" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="sempronius" type="radio" data-name="Sempronius" data-price="3.97" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="sempronius">
                       <img alt="test" src="/products/sempronius.jpg">
                       <span class="gallery-text">
@@ -1077,7 +1161,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="caecilius" type="radio" data-name="Caecilius" data-price="3.29" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
+                    <input id="caecilius" type="radio" data-name="Caecilius" data-price="3.29" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
                     <label for="caecilius">
                       <img alt="test" src="/products/caecilius.jpg">
                       <span class="gallery-text">
@@ -1088,7 +1172,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="valerius" type="radio" data-name="Valerius" data-price="2.39" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
+                    <input id="valerius" type="radio" data-name="Valerius" data-price="2.39" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
                     <label for="valerius">
                       <img alt="test" src="/products/valerius.jpg">
                       <span class="gallery-text">
@@ -1099,7 +1183,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="licinius" type="radio" data-name="Licinius" data-price="2.79" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="licinius" type="radio" data-name="Licinius" data-price="2.79" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="licinius">
                       <img alt="test" src="/products/licinius.jpg">
                       <span class="gallery-text">
@@ -1118,7 +1202,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="cornelius" type="radio" data-name="Cornelius" data-price="2.49" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="cornelius" type="radio" data-name="Cornelius" data-price="2.49" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="cornelius">
                       <img alt="test" src="/products/cornelius.jpg">
                       <span class="gallery-text">
@@ -1129,7 +1213,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="pompeius" type="radio" data-name="Pompeius" data-price="2.97" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
+                    <input id="pompeius" type="radio" data-name="Pompeius" data-price="2.97" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
                     <label for="pompeius">
                       <img alt="test" src="/products/pompeius.jpg">
                       <span class="gallery-text">
@@ -1140,7 +1224,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="calpurnius" type="radio" data-name="Calpurnius" data-price="2.49" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="calpurnius" type="radio" data-name="Calpurnius" data-price="2.49" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="calpurnius">
                       <img alt="test" src="/products/calpurnius.jpg">
                       <span class="gallery-text">
@@ -1151,7 +1235,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="hortensius" type="radio" data-name="Hortensius" data-price="2.97" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="hortensius" type="radio" data-name="Hortensius" data-price="2.97" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="hortensius">
                       <img alt="test" src="/products/hortensius.jpg">
                       <span class="gallery-text">
@@ -1162,7 +1246,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="iulius" type="radio" data-name="Iulius" data-price="2.69" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="iulius" type="radio" data-name="Iulius" data-price="2.69" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="iulius">
                       <img alt="test" src="/products/iulius.jpg">
                       <span class="gallery-text">
@@ -1173,7 +1257,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="caesar" type="radio" data-name="Caesar" data-price="2.89" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="caesar" type="radio" data-name="Caesar" data-price="2.89" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="caesar">
                       <img alt="test" src="/products/caesar.jpg">
                       <span class="gallery-text">
@@ -1184,7 +1268,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="cicero" type="radio" data-name="Cicero" data-price="3.09" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="cicero" type="radio" data-name="Cicero" data-price="3.09" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="cicero">
                       <img alt="test" src="/products/cicero.jpg">
                       <span class="gallery-text">
@@ -1195,7 +1279,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="crispus" type="radio" data-name="Crispus" data-price="2.89" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="crispus" type="radio" data-name="Crispus" data-price="2.89" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="crispus">
                       <img alt="test" src="/products/crispus.jpg">
                       <span class="gallery-text">
@@ -1206,7 +1290,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="hibrida" type="radio" data-name="Hibrida" data-price="2.89" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="hibrida" type="radio" data-name="Hibrida" data-price="2.89" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="hibrida">
                       <img alt="test" src="/products/hibrida.jpg">
                       <span class="gallery-text">
@@ -1217,7 +1301,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="metellus" type="radio" data-name="Metellus" data-price="2.89" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="metellus" type="radio" data-name="Metellus" data-price="2.89" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="metellus">
                       <img alt="test" src="/products/metellus.jpg">
                       <span class="gallery-text">
@@ -1234,7 +1318,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="nobilior" type="radio" data-name="Nobilior" data-price="3.49" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="nobilior" type="radio" data-name="Nobilior" data-price="3.49" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="nobilior">
                       <img alt="test" src="/products/nobilior.jpg">
                       <span class="gallery-text">
@@ -1245,7 +1329,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="piso" type="radio" data-name="Piso" data-price="2.19" data-date="2" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
+                    <input id="piso" type="radio" data-name="Piso" data-price="2.19" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value=""  />
                     <label for="piso">
                       <img alt="test" src="/products/piso.jpg">
                       <span class="gallery-text">
@@ -1256,7 +1340,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="scipio" type="radio" data-name="Scipio" data-price="2.99" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="scipio" type="radio" data-name="Scipio" data-price="2.99" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="scipio">
                       <img alt="test" src="/products/scipio.jpg">
                       <span class="gallery-text">
@@ -1267,7 +1351,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="seneca" type="radio" data-name="Seneca" data-price="3.09" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="seneca" type="radio" data-name="Seneca" data-price="3.09" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="seneca">
                       <img alt="test" src="/products/seneca.jpg">
                       <span class="gallery-text">
@@ -1278,7 +1362,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="sulla" type="radio" data-name="Sulla" data-price="3.97" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="sulla" type="radio" data-name="Sulla" data-price="3.97" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="sulla">
                       <img alt="test" src="/products/sulla.jpg">
                       <span class="gallery-text">
@@ -1289,7 +1373,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="julian" type="radio" data-name="Julian" data-price="2.97" data-date="0" data-visual="vier-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="julian" type="radio" data-name="Julian" data-price="2.97" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
                     <label for="julian">
                       <img alt="test" src="/products/julian.jpg">
                       <span class="gallery-text">
@@ -1326,6 +1410,56 @@
                     <span class="tooltip-content">
                         <span class="tooltip-text">
                           <span class="strong">Size</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#filling-height">Füllhöhe</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Füllhöhe</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#filling-height-2ring">Füllhöhe 2-Ring Mechanik</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Füllhöhe 2-Ring Mechanik</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#filling-height-4ring">Füllhöhe 4-Ring Mechanik</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Füllhöhe 2-Ring Mechanik</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#filling-height-lever-mechanism">Füllhöhe Hebelmechanik</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Füllhöhe Hebelmechanik</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#filling-height-bag">Füllhöhe Ablagefach</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Füllhöhe Ablagefach</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                     </span>
                   </div>
                 </li>
@@ -1452,6 +1586,289 @@
                 </div>
               </section>
 
+              <section id="filling-height">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-1" type="radio" data-name="1 mm (max. 10 Blatt)" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="filling-height" value="" checked="checked" />
+                    <label for="filling-height-1">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 1 mm</span>
+                      <span class="description">Max. 10 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-5" type="radio" data-name="5 mm (max. 50 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height" value="" />
+                    <label for="filling-height-5">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 5 mm</span>
+                      <span class="description">Max. 50 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-10" type="radio" data-name="10 mm (max. 100 Blatt)" data-price="-1" data-date="0" data-visual="dina5-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-10">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 10 mm</span>
+                      <span class="description">Max. 100 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-15" type="radio" data-name="15 mm (max. 150 Blatt)" data-price="-1" data-date="0" data-visual="dina5-quer-visual" name="filling-height" value="" />
+                    <label for="filling-height-15">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 15 mm</span>
+                      <span class="description">Max. 150 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-20" type="radio" data-name="20 mm (max. 200 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-20">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 20 mm</span>
+                      <span class="description">Max. 200 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="filling-height-2ring">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-2ring-16" type="radio" data-name="16 mm (max. 160 Blatt)" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="filling-height-2ring" value="" checked="checked" />
+                    <label for="filling-height-2ring-16">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 16 mm</span>
+                      <span class="description">Max. 160 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-2ring-20" type="radio" data-name="20 mm (max. 200 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height-2ring" value="" />
+                    <label for="filling-height-2ring-20">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 20 mm</span>
+                      <span class="description">Max. 200 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-2ring-25" type="radio" data-name="25 mm (max. 250 Blatt)" data-price="0" data-date="0" data-visual="dina5-hoch-visual" name="filling-height-2ring" value="" />
+                    <label for="filling-height-2ring-25">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 25 mm</span>
+                      <span class="description">Max. 250 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-2ring-30" type="radio" data-name="30 mm (max. 300 Blatt)" data-price="0" data-date="0" data-visual="dina5-quer-visual" name="filling-height-2ring" value="" />
+                    <label for="filling-height-2ring-30">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 30 mm</span>
+                      <span class="description">Max. 300 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-2ring-40" type="radio" data-name="40 mm (max. 400 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height-2ring" value="" />
+                    <label for="filling-height-2ring-40">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 40 mm</span>
+                      <span class="description">Max. 400 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-2ring-50" type="radio" data-name="50 mm (max. 500 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height-2ring" value="" />
+                    <label for="filling-height-2ring-50">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 50 mm</span>
+                      <span class="description">Max. 500 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="filling-height-4ring">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-4ring-16" type="radio" data-name="16 mm (max. 160 Blatt)" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="filling-height-4ring" value="" checked="checked" />
+                    <label for="filling-height-4ring-16">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 16 mm</span>
+                      <span class="description">Max. 160 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-4ring-20" type="radio" data-name="20 mm (max. 200 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height-4ring" value="" />
+                    <label for="filling-height-4ring-20">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 20 mm</span>
+                      <span class="description">Max. 200 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-4ring-25" type="radio" data-name="25 mm (max. 250 Blatt)" data-price="0" data-date="0" data-visual="dina5-hoch-visual" name="filling-height-4ring" value="" />
+                    <label for="filling-height-4ring-25">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 25 mm</span>
+                      <span class="description">Max. 250 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-4ring-30" type="radio" data-name="30 mm (max. 300 Blatt)" data-price="0" data-date="0" data-visual="dina5-quer-visual" name="filling-height-4ring" value="" />
+                    <label for="filling-height-4ring-30">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 30 mm</span>
+                      <span class="description">Max. 300 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-4ring-40" type="radio" data-name="40 mm (max. 400 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height-4ring" value="" />
+                    <label for="filling-height-4ring-40">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 40 mm</span>
+                      <span class="description">Max. 400 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-4ring-50" type="radio" data-name="50 mm (max. 500 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height-4ring" value="" />
+                    <label for="filling-height-4ring-50">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 50 mm</span>
+                      <span class="description">Max. 500 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="filling-height-lever-mechanism">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-lever-mechanism-30" type="radio" data-name="30 mm (max. 300 Blatt)" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="filling-height-lever-mechanism" value="" checked="checked" />
+                    <label for="filling-height-lever-mechanism-30">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 30 mm</span>
+                      <span class="description">Max. 300 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-lever-mechanism-55" type="radio" data-name="55 mm (max. 550 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height-lever-mechanism" value="" />
+                    <label for="filling-height-lever-mechanism-55">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 55 mm</span>
+                      <span class="description">Max. 550 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="filling-height-bag">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-bag-5" type="radio" data-name="5 mm (max. 50 Blatt)" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="filling-height-bag" value="" checked="checked" />
+                    <label for="filling-height-bag-5">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 5 mm</span>
+                      <span class="description">Max. 50 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-bag-10" type="radio" data-name="10 mm (max. 100 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height-bag" value="" />
+                    <label for="filling-height-bag-10">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 10 mm</span>
+                      <span class="description">Max. 100 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-bag-15" type="radio" data-name="15 mm (max. 150 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height-bag" value="" />
+                    <label for="filling-height-bag-15">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 15 mm</span>
+                      <span class="description">Max. 150 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-bag-20" type="radio" data-name="20 mm (max. 200 Blatt)" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="filling-height-bag" value="" />
+                    <label for="filling-height-bag-20">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Füllhöhe 20 mm</span>
+                      <span class="description">Max. 200 Blatt</span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
             </div>
 
 
@@ -1505,7 +1922,77 @@
                     <span class="tooltip-item"></span>
                     <span class="tooltip-content">
                         <span class="tooltip-text">
-                          <span class="strong">CD Halterung</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                          <span class="strong">CD Halterung</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#triangle-bag">Dreiecktasche</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Dreiecktasche</span>Kantenlänge 17 x 17 cm, Breitseite offen, transparent, selbstklebend. Eingeklebte PVC-Tasche für zusätzliche Unterlagen. Die Dreiecktasche kann an beliebiger Stelle nach Absprache passgenau aufgeklebt werden. Die Mappen werden gebrauchsfertig geliefert.</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#metal-protector">Metall Schutzecken</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Metall Schutzecken</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#transparent-folder-bag">Rückenschildtasche</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Rückenschildtasche</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#fingerhole">Griffloch</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Griffloch</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#edge-protector">Kantenschoner</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Kantenschoner</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#closure">Verschlusstechnik</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Verschlusstechnik</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#window-punch">Fensterstanzung</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Fensterstanzung</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                     </span>
                   </div>
                 </li>
@@ -1531,19 +2018,41 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="usb-stick-holder" type="radio" data-name="USB-Stick Halterung" data-price="0" data-date="0" data-visual="extra1a-visual" name="usb-holder" value="" />
-                    <label for="usb-stick-holder">
+                    <input id="felxible-usb-stick-holder" type="radio" data-name="USB-Stick Halterung" data-price="0" data-date="0" data-visual="extra1a-visual" name="usb-holder" value="" />
+                    <label for="felxible-usb-stick-holder">
                       <img alt="test" src="/img/icon.png">
                       <span class="gallery-text">
-                      <span class="title">USB-Stick Halterung</span>
-                      <span class="description">Flexible Halterung für USB-Stick</span>
+                      <span class="title">Flexible USB-Stick Halterung</span>
+                      <span class="description"></span>
                       </span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="usb-card-holder" type="radio" data-name="USB-Karten Halterung" data-price="0" data-date="0" data-visual="extra1b-visual" name="usb-holder" value="" />
-                    <label for="usb-card-holder">
+                    <input id="usb-stick-bag-vertical" type="radio" data-name="USB-Stick Tasche (Hoch)" data-price="0" data-date="0" data-visual="extra1a-visual" name="usb-holder" value="" />
+                    <label for="usb-stick-bag-vertical">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">USB-Stick Tasche</span>
+                      <span class="description">(Hoch)</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="usb-stick-bag-horizontal" type="radio" data-name="USB-Stick Tasche (Quer)" data-price="0" data-date="0" data-visual="extra1a-visual" name="usb-holder" value="" />
+                    <label for="usb-stick-bag-horizontal">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">USB-Stick Tasche</span>
+                      <span class="description">(Quer)</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="felxible-usb-card-holder" type="radio" data-name="USB-Karten Halterung" data-price="0" data-date="0" data-visual="extra1b-visual" name="usb-holder" value="" />
+                    <label for="felxible-usb-card-holder">
                       <img alt="test" src="/img/icon.png">
                       <span class="gallery-text">
                       <span class="title">USB-Karte Halterung</span>
@@ -1594,7 +2103,6 @@
                 </div>
               </section>
 
-
               <section id="cd-holder">
                 <div class="gallery">
 
@@ -1631,16 +2139,26 @@
                     </label>
                   </div>
 
+                  <div class="gallery-cell">
+                    <input id="cd-bag" type="radio" data-name="CD Tasche" data-price="0" data-date="0" data-visual="extra1a-visual" name="cd-holder" value="" />
+                    <label for="cd-bag">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">CD Tasche</span>
+                      <span class="description">(Hoch)</span>
+                      </span>
+                    </label>
+                  </div>
+
                 </div>
               </section>
-
 
               <section id="business-card-holder">
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="no-business-card-holder" type="radio" name="business-card-holder" value="none" checked="checked" />
-                    <label for="no-business-card-holder">
+                    <input id="no-business-card" type="radio" name="business-card-holder" value="none" checked="checked" />
+                    <label for="no-business-card">
                       <img alt="test" src="/img/icon.png">
                       <span class="gallery-text">
                       <span class="title">Ohne Visitenkartenfach</span>
@@ -1650,8 +2168,19 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="standard-business-card-holder" type="radio" data-name="Stanzung für Visitenkarte" data-price="0" data-date="0" data-visual="extra3a-visual" name="business-card-holder" value="" />
-                    <label for="standard-business-card-holder">
+                    <input id="business-card-slots" type="radio" data-name="Visitenkartenschlitze" data-price="0" data-date="0" data-visual="extra3a-visual" name="business-card-holder" value="" />
+                    <label for="business-card-slots">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Visitenkartenschlitze</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="business-card-punch" type="radio" data-name="Stanzung für Visitenkarte" data-price="0" data-date="0" data-visual="extra3a-visual" name="business-card-holder" value="" />
+                    <label for="business-card-punch">
                       <img alt="test" src="/img/icon.png">
                       <span class="gallery-text">
                       <span class="title">Stanzung für Visitenkarte</span>
@@ -1661,8 +2190,8 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="deluxe-business-card-holder" type="radio" data-name="Fach für Visitenkarte" data-price="0" data-date="0" data-visual="extra3b-visual" name="business-card-holder" value="" />
-                    <label for="deluxe-business-card-holder">
+                    <input id="business-card-pocket" type="radio" data-name="Fach für Visitenkarte" data-price="0" data-date="0" data-visual="extra3b-visual" name="business-card-holder" value="" />
+                    <label for="business-card-pocket">
                       <img alt="test" src="/img/icon.png">
                       <span class="gallery-text">
                       <span class="title">Fach für Visitenkarte</span>
@@ -1672,11 +2201,101 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="transparent-business-card-holder" type="radio" data-name="Transparentes Visitenkartenfach" data-price="0" data-date="0" data-visual="extra3b-visual" name="business-card-holder" value="" />
-                    <label for="transparent-business-card-holder">
+                    <input id="business-card-bag-horizontal" type="radio" data-name="Visitenkarten-Tasche (Quer)" data-price="0" data-date="0" data-visual="extra3b-visual" name="business-card-holder" value="" />
+                    <label for="business-card-bag-horizontal">
                       <img alt="test" src="/img/icon.png">
                       <span class="gallery-text">
-                      <span class="title">Transparentes Visitenkartenfach</span>
+                      <span class="title">Visitenkarten-Tasche (Quer)</span>
+                      <span class="description">Querformat 95 x 60 mm</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="business-card-bag-vertical" type="radio" data-name="Visitenkarten-Tasche (Hoch)" data-price="0" data-date="0" data-visual="extra3b-visual" name="business-card-holder" value="" />
+                    <label for="business-card-bag-vertical">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Visitenkarten-Tasche (Hoch)</span>
+                      <span class="description">Hochformat 60 x 95 mm</span>
+                      </span>
+                    </label>
+                  </div>
+
+
+                </div>
+              </section>
+
+              <section id="triangle-bag">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-triangle-bag" type="radio" name="triangle-bag" value="none" checked="checked" />
+                    <label for="no-triangle-bag">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Dreiecktasche</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="standard-triangle-bag" type="radio" data-name="Dreiecktasche" data-price="0" data-date="0" data-visual="extra3a-visual" name="triangle-bag" value="" />
+                    <label for="standard-triangle-bag">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Mit Dreiecktasche</span>
+                      <span class="description">Tranparente Tasche für zusätzliche Unterlagen.</span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="metal-protector">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-metal-protector" type="radio" name="metal-protector" value="none" checked="checked" />
+                    <label for="no-metal-protector">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Metallecken</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="silver-metal-protector" type="radio" data-name="Metallecken Silber" data-price="0" data-date="0" data-visual="extra3a-visual" name="metal-protector" value="" />
+                    <label for="silver-metal-protector">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Metallecken Silber</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="gold-metal-protector" type="radio" data-name="Metallecken Gold" data-price="0" data-date="0" data-visual="extra3a-visual" name="metal-protector" value="" />
+                    <label for="gold-metal-protector">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Metallecken Gold</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="black-metal-protector" type="radio" data-name="Metallecken Schwarz" data-price="0" data-date="0" data-visual="extra3a-visual" name="metal-protector" value="" />
+                    <label for="black-metal-protector">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Metallecken Schwarz</span>
                       <span class="description"></span>
                       </span>
                     </label>
@@ -1685,7 +2304,189 @@
                 </div>
               </section>
 
+              <section id="transparent-folder-bag">
+                <div class="gallery">
 
+                  <div class="gallery-cell">
+                    <input id="no-transparent-folder-bag" type="radio" name="transparent-folder-bag" value="none" checked="checked" />
+                    <label for="no-transparent-folder-bag">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Rückenschildtasche</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="standard-transparent-folder-bag" type="radio" data-name="Rückenschildtasche" data-price="0" data-date="0" data-visual="extra3a-visual" name="transparent-folder-bag" value="" />
+                    <label for="standard-transparent-folder-bag">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Mit Rückenschildtasche</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="fingerhole">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-fingerhole" type="radio" name="fingerhole" value="none" checked="checked" />
+                    <label for="no-fingerhole">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Griffloch</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="standard-fingerhole" type="radio" data-name="Griffloch" data-price="0" data-date="0" data-visual="extra3a-visual" name="fingerhole" value="" />
+                    <label for="standard-fingerhole">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Mit Griffloch</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="edge-protector">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-edge-protector" type="radio" name="edge-protector" value="none" checked="checked" />
+                    <label for="no-edge-protector">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Kantenschoner</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="standard-edge-protector" type="radio" data-name="Kantenschoner" data-price="0" data-date="0" data-visual="extra3a-visual" name="edge-protector" value="" />
+                    <label for="standard-edge-protector">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Mit Kantenschoner</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="closure">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-closure" type="radio" name="closure" value="none" checked="checked" />
+                    <label for="no-closure">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Verschluss</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="magnetic-closure" type="radio" data-name="Magnetverschluss" data-price="0" data-date="0" data-visual="extra3a-visual" name="closure" value="" />
+                    <label for="magnetic-closure">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Magnetverschluss</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="velcro-closure" type="radio" data-name="Klettverschluss" data-price="0" data-date="0" data-visual="extra3a-visual" name="closure" value="" />
+                    <label for="velcro-closure">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Klettverschluss</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="snap-closure" type="radio" data-name="Druckknopfverschluss" data-price="0" data-date="0" data-visual="extra3a-visual" name="closure" value="" />
+                    <label for="snap-closure">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Druckknopfverschluss</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="elastic-closure" type="radio" data-name="Gummizugverschluss" data-price="0" data-date="0" data-visual="extra3a-visual" name="closure" value="" />
+                    <label for="elastic-closure">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Gummizugverschluss</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="twist-closure" type="radio" data-name="Dreh-Verschluss" data-price="0" data-date="0" data-visual="extra3a-visual" name="closure" value="" />
+                    <label for="twist-closure">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Dreh-Verschluss</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="window-punch">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-window-punch" type="radio" name="window-punch" value="none" checked="checked" />
+                    <label for="no-window-punch">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Ohne Fensterstanzung</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="standard-window-punch" type="radio" data-name="Fensterstanzung" data-price="0" data-date="0" data-visual="extra3a-visual" name="window-punch" value="" />
+                    <label for="standard-window-punch">
+                      <img alt="test" src="/img/icon.png">
+                      <span class="gallery-text">
+                      <span class="title">Mit Fensterstanzung</span>
+                      <span class="description"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
 
             </div>
 
@@ -1705,21 +2506,22 @@
               <span class="respo-hero">5. Design</span>
               <ul>
 
-                <li><a href="#color1">Color 1</a>
+                <li><a href="#metallic-inside">Innenfarbe</a>
                   <div class="tooltip">
                     <span class="tooltip-item"></span>
                     <span class="tooltip-content">
                         <span class="tooltip-text">
-                          <span class="strong">Color 1</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                          <span class="strong">Innenfarbe</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                     </span>
                   </div>
                 </li>
-                <li><a href="#color2">Color 2</a>
+
+                <li><a href="#metallic-outside">Außenfarbe</a>
                   <div class="tooltip">
                     <span class="tooltip-item"></span>
                     <span class="tooltip-content">
                         <span class="tooltip-text">
-                          <span class="strong">Color 2</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                          <span class="strong">Außenfarbe</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                     </span>
                   </div>
                 </li>
@@ -1729,8 +2531,8 @@
 
             <div class="content-wrap">
 
-              <section id="color1">
-                <div class="gallery" data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
+              <section id="metallic-inside">
+                <div class="gallery">
 
                   <div class="gallery-cell">
                     <input id="color1-kristall" type="radio" data-name="Color1 Kristall" data-price="0" data-date="0" data-visual="kristall-visual" name="color1" value="" checked="checked" />
@@ -1826,7 +2628,7 @@
               </section>
 
 
-              <section id="color2">
+              <section id="metallic-outside">
                 <div class="gallery">
 
                   <div class="gallery-cell">

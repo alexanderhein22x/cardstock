@@ -88,9 +88,26 @@ display: none !important;
 }
 
 #options {
-  width: 100%;
   float: left;
+  width: 100%;
+  height: 300px;
   padding: 12px 0px;
+  font-size: 13px;
+  font-weight: normal;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#options::-webkit-scrollbar {
+    width: 15px;
+}
+
+#options::-webkit-scrollbar-track {
+    background: #cacbcd;
+}
+
+#options::-webkit-scrollbar-thumb {
+    background: #444;
 }
 
 
@@ -150,7 +167,7 @@ display: none !important;
   font-weight: bold;
   cursor: pointer;
   padding: 0 12px;
-  width: 190px;
+  width: 180px;
   height: 30px;
   line-height: 30px;
   border-radius: 3px;
@@ -258,7 +275,7 @@ display: none !important;
 .quantity {
   float: left;
   width: 100%;
-  height: 250px;
+  height: 160px;
   font-size: 13px;
   font-weight: normal;
   overflow-y: scroll;
@@ -616,49 +633,49 @@ a.btn-zoomout {
 
 /* Mechaniken */
 
-.klemmmechanik-visual {
+.clamp-visual {
   background-image: url(configurator/klemmmechanik.png);
   width: 49%;
   top: 2%;
   left: 25%;
 }
 
-.zwei-ring-visual {
+.two-ring-visual {
   background-image: url(configurator/2ring.png);
   height: 49%;
   top: 26%;
   left: 0%;
 }
 
-.vier-ring-visual {
+.four-ring-visual {
   background-image: url(configurator/4ring.png);
   height: 92%;
   top: 4%;
   left: 0%;
 }
 
-.hebelmechanik-visual {
+.lever-mechanism-visual {
   background-image: url(configurator/hebelmechanik.png);
   width: 55%;
   top: 2%;
   left: 20%;
 }
 
-.klemmschiene-visual {
+.clamping-rail-visual {
   background-image: url(configurator/klemmschiene.png);
   width: 55%;
   top: 2%;
   left: 20%;
 }
 
-.buchschrauben-visual {
+.binder-screw-visual {
   background-image: url(configurator/buchschrauben.png);
   width: 55%;
   top: 2%;
   left: 20%;
 }
 
-.schnellheftung-visual {
+.fast-mechanism-visual {
   background-image: url(configurator/schnellheftung.png);
   height: 82%;
   top: 10%;
