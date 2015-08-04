@@ -159,6 +159,7 @@ display: none !important;
 
 .examplecontainer .link:hover {
   background-color: #e8e8e8;
+  text-decoration: underline;
 }
 
 .remove {
@@ -293,6 +294,7 @@ display: none !important;
   transition: all .05s ease-out;
   overflow: hidden;
 }
+
 .quantity label:nth-of-type(even) {background: #fff;}
 .quantity label:nth-of-type(odd) {background: #f9f9f9;}
 
@@ -389,14 +391,26 @@ text-align: right;
   position: relative;
   width: 100%;
   float: left;
-  padding: 50px;
+  padding: 24px;
   background-color: #dae1e6;
 }
 
-#preview{
+.perspective{
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 60px;
+  height: 200px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+#preview {
   position: relative;
   float: left;
   width: 70%;
+  padding-left: 200px;
+  padding-top: 100px;
 }
 
 .layout {
@@ -454,10 +468,10 @@ text-align: right;
 .colorinner {
   background-repeat: repeat;
   position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
+  left: 0.7%;
+  right: 0.7%;;
+  top: 0.7%;
+  bottom: 0.7%;
   border-radius: 1px;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
@@ -960,7 +974,6 @@ text-align: right;
   width: 100%;
   float: left;
   margin: 0 auto;
-  background: #fff;
 }
 
 .tab {
@@ -986,6 +999,14 @@ text-align: right;
   z-index: 100;
 }
 
+.subnav {
+  width: 100%;
+  float: left;
+  position: relative;
+  height: 64px;
+  background-color: #f5f5f5;
+}
+
 .tab__title {
   float: left;
   width: 100%;
@@ -1000,6 +1021,7 @@ text-align: right;
   color: #4985f7;
   margin-left: 50px;
   margin-right: 24px;
+  display: none;
 }
 
 .tab__title .respo-hero {
@@ -1012,8 +1034,8 @@ text-align: right;
 
 .configuration .nav {
   position: absolute;
-  top: 0px;
-  right: 50px;
+  top: 0;
+  right: 24px;
   z-index: 10000;
 }
 
@@ -1121,11 +1143,6 @@ text-align: right;
     padding-left: 0px;
     display: block;
   }
-}
-
-.subtabs {
-  float: left;
-  width: 100%;
 }
 
 .tooltip {
@@ -1242,8 +1259,8 @@ text-align: right;
 }
 
 .gallery-cell:first-child {
-    left: 50px !important;
-    margin-right: 74px;
+    left: 24px !important;
+    margin-right: 44px;
 }
 
 .gallery-cell:active {
@@ -1313,18 +1330,18 @@ text-align: right;
     font-weight: 500;
 }
 
-.subtabs nav ul {
+.tab__content nav ul {
   margin: 0 auto;
   padding: 0;
   list-style: none;
   text-align: center;
-  background: #f2f2f2;
+  background: #f5f5f5;
   width: 100%;
   height: 64px;
   line-height: 64px;
 }
 
-.subtabs nav ul li {
+.tab__content nav ul li {
   z-index: 1;
   display: block;
   margin: 0;
@@ -1335,29 +1352,29 @@ text-align: right;
   display: block;
   font-weight: 500;
   font-size: 14px;
-  padding: 0 50px;
+  padding: 0 24px;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 
-.subtabs nav ul li:first-child {
+.tab__content nav ul li:first-child {
 }
 
-.subtabs nav a {
+.tab__content nav a {
   float: left;
   height: 100%;
   color: #777;
 }
 
-.subtabs nav li:hover a {
+.tab__content nav li:hover a {
   color: #212121;
 }
 
-.subtabs nav li.tab-current {
+.tab__content nav li.tab-current {
   background: #fff;
 }
 
-.subtabs nav li.tab-current a {
+.tab__content nav li.tab-current a {
   color: #212121;
 }
 
@@ -1365,6 +1382,7 @@ text-align: right;
   position: relative;
   background-color: #fff;
   width: 100%;
+  z-index: 99;
   float: left;
 }
 
@@ -1382,7 +1400,7 @@ text-align: right;
   position: relative;
   float: left;
   width: 100%;
-  background-color: #fff;
+  background-color: #4985f7;
   height: 60px;
 }
 
@@ -1392,6 +1410,7 @@ text-align: right;
   width: 100%;
   z-index: 1;
   background: #f5f5f5;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
 }
 
 .navigation ul {
@@ -1570,11 +1589,6 @@ text-align: right;
   -webkit-overflow-scrolling: touch;
 }
 
-.fadeheader {
-  position: relative;
-  z-index: 99;
-}
-
 .flickity-enabled {
   position: relative;
 }
@@ -1680,7 +1694,7 @@ text-align: right;
   height: 50px;
   line-height: 50px;
   padding: 0px 23px;
-  background-color: #f2f2f2;
+  background-color: #f5f5f5;
 }
 
 .footer a {

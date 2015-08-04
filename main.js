@@ -1,27 +1,13 @@
 (function() {
   'use strict';
 
-  var galleries = document.querySelectorAll('.gallery'),
-    tabs = document.querySelectorAll('.subtabs'),
+  var tabs = document.querySelectorAll('.tab__content'),
+    galleries = document.querySelectorAll('.gallery'),
     tabsList = [],
     flickityList = [];
 
   window.tabsList = tabsList;
   window.flickityList = flickityList;
-
-  _.each(galleries, function(gallery) {
-    var flkty = new Flickity(gallery, {
-      // options
-      cellAlign: 'left',
-      accessibility: false,
-      pageDots: false,
-      prevNextButtons: false,
-      contain: true
-    });
-
-    flickityList.push(flkty);
-  });
-
 
   function resizeSliders() {
     setTimeout(function() {
@@ -40,6 +26,20 @@
   });
 
   resizeSliders();
+
+  _.each(galleries, function(gallery) {
+    var flkty = new Flickity(gallery, {
+      // options
+      cellAlign: 'left',
+      accessibility: false,
+      pageDots: false,
+      prevNextButtons: false,
+      contain: true,
+      freeScroll: true
+    });
+
+    flickityList.push(flkty);
+  });
 
 }());
 

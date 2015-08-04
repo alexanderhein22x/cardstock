@@ -24,7 +24,7 @@
 
 	CBPFWTabs.prototype._init = function() {
 		// tabs elems
-		this.tabs = [].slice.call( this.el.querySelectorAll( 'div.subtabs > nav > ul > li' ) );
+		this.tabs = [].slice.call( this.el.querySelectorAll( 'div.subnav > nav > ul > li' ) );
 		// content items
 		this.items = [].slice.call( this.el.querySelectorAll( '.content-wrap > section' ) );
 		// current index

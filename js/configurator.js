@@ -165,8 +165,8 @@
 	// navigate the slider
 	function navigate(dir) {
 		var itemCurrent = items[current],
-			currentFadeheader = itemCurrent.querySelector('.fadeheader'),
-			currentEl = itemCurrent.querySelector('.tab__content'),
+			currentFadeheader = itemCurrent.querySelector('.tab__content'),
+			currentEl = itemCurrent.querySelector('.content-wrap'),
 			currentTitleEl = itemCurrent.querySelector('.tab__title');
 
 
@@ -195,14 +195,14 @@
     }
 
 		var itemNext = items[current],
-			nextFadeheader = itemNext.querySelector('.fadeheader'),
-			nextEl = itemNext.querySelector('.tab__content'),
+			nextFadeheader = itemNext.querySelector('.tab__content'),
+			nextEl = itemNext.querySelector('.content-wrap'),
 			nextTitleEl = itemNext.querySelector('.tab__title');
 
     activateTabByHref(itemNext.getAttribute('id'));
     toggleNavButtonState(current);
 
-		// animate the current Fadeheader out
+		// animate the current content out
 		dynamics.animate(currentFadeheader, { opacity: 0 }, {
 			duration: 300,
 			complete: function() {
@@ -212,9 +212,7 @@
 
 
 		// animate the current title out
-		dynamics.animate(currentTitleEl, { translateX: dir === 'right' ? -250 : 250, opacity: 0 }, {
-			type: dynamics.bezier,
-			points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
+		dynamics.animate(currentTitleEl, { opacity: 0 }, {
 			duration: 450
 		});
 
@@ -230,7 +228,7 @@
 		dynamics.css(nextFadeheader, { opacity: 1});
 		dynamics.css(nextEl, { opacity: 0, translateX: dir === 'right' ? nextEl.offsetWidth/2 : -1*nextEl.offsetWidth/2 });
 
-		// animate the next Fadeheader in
+		// animate the next content in
 		dynamics.animate(nextFadeheader, { opacity: 1 }, {
 			duration: 300,
 			complete: function() {
@@ -247,11 +245,9 @@
 		});
 
 		// set the right properties for the next title to come in
-		dynamics.css(nextTitleEl, { translateX: dir === 'right' ? 250 : -250, opacity: 0 });
+		dynamics.css(nextTitleEl, { opacity: 0 });
 		// animate the next title in
-		dynamics.animate(nextTitleEl, { translateX: 0, opacity: 1 }, {
-			type: dynamics.bezier,
-			points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
+		dynamics.animate(nextTitleEl, { opacity: 1 }, {
 			duration: 650
 		});
 	}
