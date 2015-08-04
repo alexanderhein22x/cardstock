@@ -400,10 +400,45 @@ text-align: right;
   left: 24px;
   top: 24px;
   width: 60px;
-  height: 200px;
   border-radius: 4px;
   background-color: #fff;
+  z-index: 10;
 }
+
+a.btn-zoomin, a.btn-zoomout {
+  width: 60px;
+  height: 61px;
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+a.btn-zoomin {
+  border-bottom: 1px #f5f5f5 solid;
+  border-radius: 3px 3px 0 0;
+}
+
+a.btn-zoomout {
+  border-top: 1px #f5f5f5 solid;
+  border-radius: 0 0 3px 3px;
+}
+
+.perspective a:hover {
+  background-color: #f7f7f7;
+}
+.icon-plus, .icon-minus {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 60px;
+  text-align: center;
+  float: left;
+  color: #212121;
+}
+
+.icon-plus:before{content: "\e615";}
+.icon-minus:before{content: "\e616";}
 
 #preview {
   position: relative;
@@ -1350,11 +1385,9 @@ text-align: right;
   float: left;
   cursor: pointer;
   display: block;
-  font-weight: 500;
-  font-size: 14px;
   padding: 0 24px;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
 
 .tab__content nav ul li:first-child {
@@ -1364,6 +1397,10 @@ text-align: right;
   float: left;
   height: 100%;
   color: #777;
+  font-size: 15px;
+  font-weight: bold;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
 }
 
 .tab__content nav li:hover a {
@@ -1375,7 +1412,7 @@ text-align: right;
 }
 
 .tab__content nav li.tab-current a {
-  color: #212121;
+  color: #4985f7;
 }
 
 .content-wrap {
