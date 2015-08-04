@@ -299,10 +299,10 @@ App.Router = Backbone.Router.extend({
     if (subTab) {
       if (subTab === "selected") {
         // find subtab with checked input
-        subtabEl = $('#' + tab).find("input:checked").parents("section");
+        subtabEl = $('[data-tab-id=' + tab + ']').find("input:checked").parents("section");
         window.tabsList[tabIndex]._show(subtabEl.index());
       } else {
-        var subtabEl = $('#' + tab).find("section")[subTab];
+        var subtabEl = $('[data-tab-id=' + tab + ']').find("section")[subTab];
         window.tabsList[tabIndex]._show(subTab);
       }
       // scroll selected element into view

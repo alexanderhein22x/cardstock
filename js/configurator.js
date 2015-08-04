@@ -62,7 +62,7 @@
     if(window.location.hash){
       activateTabByHref(window.location.hash);
     } else {
-      activateTabByHref(items[0].getAttribute('id'));
+      activateTabByHref(items[0].getAttribute('data-tab-id'));
     }
 
     toggleNavButtonState(0);
@@ -78,7 +78,7 @@
     var i = 0;
 
     for(;i<itemsTotal;i++){
-      if(href && href.length && items[i].getAttribute('id') === href.substring(1)){
+      if(href && href.length && items[i].getAttribute('data-tab-id') === href.substring(1)){
         return i;
       }
     }
@@ -200,7 +200,7 @@
 			nextEl = itemNext.querySelector('.content-wrap'),
 			nextTitleEl = itemNext.querySelector('.tab__title');
 
-    activateTabByHref(itemNext.getAttribute('id'));
+    activateTabByHref(itemNext.getAttribute('data-tab-id'));
     toggleNavButtonState(current);
 
 		// animate the current content out
