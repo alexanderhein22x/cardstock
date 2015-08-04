@@ -110,8 +110,7 @@ App.Views.Preview = Backbone.View.extend({
 App.Views.OptionsView = Backbone.View.extend({
   el: '#options',
   events: {
-    'click .remove': 'removeExtra',
-    'click .link': 'handleLink'
+    'click .remove': 'removeExtra'
   },
   initialize: function() {
     console.log("created OptionsView ", this.el, this.model);
@@ -127,31 +126,6 @@ App.Views.OptionsView = Backbone.View.extend({
     var item = $(e.target).data('item');
     console.log("remove " + item)
     this.model.set(item, null);
-  },
-
-  handleLink: function(e) {
-    var href = $(e.target).attr("href").split("/");
-    var tabIndex = locatePosByHref(href[0]);
-    // open subtab if appropriate
-    if (href[1]) {
-      var subtab = $(href[0]).find("section")[href[1]];
-      tabsList[tabIndex]._show(href[1]);
-    } else {
-      // find subtab with checked input
-      subtab = $(href[0]).find("input:checked").parents("section");
-      tabsList[tabIndex]._show(subtab.index());
-    }
-    // scroll selected element into view
-    var flickityElement = $(subtab).find(".gallery")[0];
-    var flickity = _.findWhere(flickityList, { element: flickityElement });
-    var itemIndex = $(subtab).find("input:checked").parents(".gallery-cell").index();
-    setTimeout(function() {
-      flickity.resize();
-      flickity.select(itemIndex);
-    }, 100);
-    // navigate to selected tab
-    navigate(tabIndex);
-    e.preventDefault();
   }
 });
 
@@ -270,10 +244,20 @@ App.Views.AppView = Backbone.View.extend({
                 $(this).parent().removeClass("hide");
               }
             });
-            // if current selection no longer available, set to first available option
-            var availableOptionNames = $options.filter(function() {
+            // compute remaining available options
+            var $availableOptions = $options.filter(function() {
               return !$(this).parent().hasClass("hide");
-            }).map(function() {
+            });
+            // hide subtab if no options available
+            // var availableSections = $availableOptions.map(function(option) {
+            //   return $(option).parents("section").attr("id");
+            // });
+            // ).addClass("hide");
+            // $availableSections.each(function (section) {
+            //   $(section).removeClass("hide");
+            // });
+            // if current selection no longer available, set to first available option
+            var availableOptionNames = $availableOptions.map(function() {
               return $(this).data("name");
             });
             if (_.indexOf(availableOptionNames, self.model.get(option).name) < 0) {
@@ -304,16 +288,40 @@ App.Views.AppView = Backbone.View.extend({
   }
 });
 
-// App.Router = Backbone.Router.extend({
-//   routes: {
-//     ':section': 'viewSection',
-//     ':section/:tab': 'viewTab'
-//   },
-//
-//   viewSection: function(section) {
-//
-//   }
-// });
+App.Router = Backbone.Router.extend({
+  routes: {
+    ':tab(/:subTab)': 'viewTab'
+  },
+
+  viewTab: function(tab, subTab) {
+    var tabIndex = window.locatePosByHref('#' + tab);
+    // open subtab if appropriate
+    if (subTab) {
+      if (subTab === "selected") {
+        // find subtab with checked input
+        subtabEl = $('#' + tab).find("input:checked").parents("section");
+        window.tabsList[tabIndex]._show(subtabEl.index());
+      } else {
+        var subtabEl = $('#' + tab).find("section")[subTab];
+        window.tabsList[tabIndex]._show(subTab);
+      }
+      // scroll selected element into view
+      var flickityElement = $(subtabEl).find(".gallery")[0];
+      var flickity = _.findWhere(window.flickityList, { element: flickityElement });
+      var itemIndex = $(subtabEl).find("input:checked").parents(".gallery-cell").index();
+      setTimeout(function() {
+        flickity.resize();
+        flickity.select(itemIndex);
+      }, 100);
+    }
+    // navigate to selected tab
+    navigate(tabIndex);
+  }
+});
+var router = new App.Router();
+
+// start routing
+Backbone.history.start();
 
 function falseIfEmpty(data) {
   return _.keys(data).length == 0 ? false : data;

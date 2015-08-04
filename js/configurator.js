@@ -88,10 +88,11 @@
 
   function activateTabByHref(href){
     if(!href) return;
-    href = href[0] === '#' ? href.substring(1) : href;
+    href = href[0] === '#' ? href : '#' + href;
+		window.location.hash = href;
 
     links.forEach(function(link, pos){
-      if(link.getAttribute('href').substring(1) === href){
+      if(link.getAttribute('href') === href){
         classie.add(link.parentNode, 'navigation-current');
       } else {
         classie.remove(link.parentNode, 'navigation-current');
