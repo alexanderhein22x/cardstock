@@ -167,6 +167,8 @@ App.Views.CostView = Backbone.View.extend({
   render: function() {
     var data = this.computeTotal();
     this.$el.html(this.template(data));
+    var quantityIdx = _.findIndex(data.quantities, { selected: true });
+    this.$("#quantity" + quantityIdx).prop("checked", true);
   },
   computePrices: function() {
     var selectedQuantity = this.model.get("quantity");
