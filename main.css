@@ -1303,8 +1303,6 @@ a.btn-zoomout {
 .gallery-cell label img {
   height: 260px;
   display: block;
-  opacity: 0.80;
-  filter: alpha(opacity=80);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-border-radius: 1px;
