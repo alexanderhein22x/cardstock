@@ -254,16 +254,23 @@ App.Views.AppView = Backbone.View.extend({
             });
             // compute remaining available options
             var $availableOptions = $options.filter(function() {
-              return !$(this).parent().hasClass("hide");
+              return available.indexOf($(this).prop("id")) >= 0;
             });
             // hide subtab if no options available
-            // var availableSections = $availableOptions.map(function(option) {
-            //   return $(option).parents("section").attr("id");
-            // });
-            // ).addClass("hide");
-            // $availableSections.each(function (section) {
-            //   $(section).removeClass("hide");
-            // });
+            var availableSectionIds = $availableOptions.map(function() {
+              return $(this).parents("section").attr("id");
+            });
+            var $tab = $($options[0]).parents("[data-tab-id]");
+            var $subtabHeaders = $tab.find("nav li");
+            // hide all subtabs
+            $subtabHeaders.addClass("hide");
+            // show only subtab headers with available options
+            var $availableSubtabs = $subtabHeaders.filter(function() {
+              return _.indexOf(availableSectionIds,
+                $(this).find("a").attr("href").substring(1)
+              ) >= 0;
+            });
+            $availableSubtabs.removeClass("hide");
             // if current selection no longer available, set to first available option
             var availableOptionNames = $availableOptions.map(function() {
               return $(this).data("name");
