@@ -250,6 +250,7 @@ display: none !important;
   float: left;
   width: 100%;
   padding: 24px;
+  display: none;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -277,6 +278,7 @@ display: none !important;
   float: left;
   width: 100%;
   height: 260px;
+  display: none;
   font-size: 13px;
   font-weight: normal;
   overflow-y: scroll;
@@ -854,48 +856,48 @@ a.btn-zoomout {
 /* Feinleinen */
 
 
-.feinleinen-schwarz-visual {background: #222222;}
-.feinleinen-weiss-visual {background: #f8f8f8;}
-.feinleinen-chamois-visual {background: #EDE6D4;}
-.feinleinen-beige-visual {background: #E1D3B9;}
-.feinleinen-sandbeige-visual {background: #D0C0B1;}
-.feinleinen-braunbeige-visual {background: #C7A575; }
-.feinleinen-goldgelb-visual {background: #F9D028; }
-.feinleinen-maisgelb-visual {background: #FEB501; }
-.feinleinen-orange-visual {background: #F55F01; }
-.feinleinen-rotbraun-visual {background: #D34E13; }
-.feinleinen-sienabraun-visual {background: #BA4227; }
-.feinleinen-naturbraun-visual {background: #833832; }
-.feinleinen-nussbraun-visual {background: #735E43; }
-.feinleinen-schokolade-visual {background: #423735; }
-.feinleinen-hellrot-visual {background: #E03A3A; }
-.feinleinen-rot-visual {background: #B32F3C; }
-.feinleinen-rosso-visual {background: #BC2F3F; }
-.feinleinen-kardinalrot-visual {background: #833245; }
-.feinleinen-weinrot-visual {background: #743E4B; }
-.feinleinen-altrosa-visual {background: #D1A49F; }
-.feinleinen-beerenrot-visual {background: #CB5877; }
-.feinleinen-purpur-visual {background: #E34DA4;}
-.feinleinen-silbergrau-visual {background: #C5C0C6; }
-.feinleinen-taubengrau-visual {background: #AFB6BC; }
-.feinleinen-titan-visual {background: #BAB6B5; }
-.feinleinen-braungrau-visual {background: #868581; }
-.feinleinen-grau-visual {background: #656460; }
-.feinleinen-anthrazit-visual {background: #3b3b3b; }
-.feinleinen-schiefergrau-visual {background: #2F2F37; }
-.feinleinen-schwarzblau-visual {background: #1F1F2B; }
-.feinleinen-pariserblau-visual {background: #353F58; }
-.feinleinen-opalblau-visual {background: #3A4595; }
-.feinleinen-hellblau-visual {background: #A6B7D3; }
-.feinleinen-mittelblau-visual {background: #0869AD; }
-.feinleinen-meerblau-visual {background: #6E95B6; }
-.feinleinen-cyan-visual {background: #018AD2; }
-.feinleinen-tuerkis-visual {background: #0196AA; }
-.feinleinen-pistazie-visual {background: #C4E886; }
-.feinleinen-bambus-visual {background: #D3CFAA; }
-.feinleinen-lindgruen-visual {background: #6D9E6F; }
-.feinleinen-apfelgruen-visual {background: #9EC46D; }
-.feinleinen-dunkelgruen-visual {background: #234F42; }
+.feinleinen-schwarz-visual {background: #222222; background-image: url(../configurator/schwarz.jpg);}
+.feinleinen-weiss-visual {background: #f8f8f8; background-image: url(../configurator/weiss.jpg);}
+.feinleinen-chamois-visual {background: #EDE6D4; background-image: url(../configurator/chamois.jpg);}
+.feinleinen-beige-visual {background: #E1D3B9; background-image: url(../configurator/beige.jpg);}
+.feinleinen-sandbeige-visual {background: #D0C0B1; background-image: url(../configurator/sandbeige.jpg);}
+.feinleinen-braunbeige-visual {background: #C7A575; background-image: url(../configurator/braunbeige.jpg);}
+.feinleinen-goldgelb-visual {background: #F9D028; background-image: url(../configurator/goldgelb.jpg);}
+.feinleinen-maisgelb-visual {background: #FEB501; background-image: url(../configurator/maisgelb.jpg);}
+.feinleinen-orange-visual {background: #F55F01; background-image: url(../configurator/orange.jpg);}
+.feinleinen-rotbraun-visual {background: #D34E13; background-image: url(../configurator/rotbraun.jpg);}
+.feinleinen-sienabraun-visual {background: #BA4227; background-image: url(../configurator/sienabraun.jpg);}
+.feinleinen-naturbraun-visual {background: #833832; background-image: url(../configurator/naturbraun.jpg);}
+.feinleinen-nussbraun-visual {background: #735E43; background-image: url(../configurator/nussbraun.jpg);}
+.feinleinen-schokolade-visual {background: #423735; background-image: url(../configurator/schokolade.jpg);}
+.feinleinen-hellrot-visual {background: #E03A3A; background-image: url(../configurator/hellrot.jpg);}
+.feinleinen-rot-visual {background: #B32F3C; background-image: url(../configurator/rot.jpg);}
+.feinleinen-rosso-visual {background: #BC2F3F; background-image: url(../configurator/rosso.jpg);}
+.feinleinen-kardinalrot-visual {background: #833245; background-image: url(../configurator/kardinalrot.jpg);}
+.feinleinen-weinrot-visual {background: #743E4B; background-image: url(../configurator/weinrot.jpg);}
+.feinleinen-altrosa-visual {background: #D1A49F; background-image: url(../configurator/altrosa.jpg);}
+.feinleinen-beerenrot-visual {background: #CB5877; background-image: url(../configurator/beerenrot.jpg);}
+.feinleinen-purpur-visual {background: #E34DA4; background-image: url(../configurator/purpur.jpg);}
+.feinleinen-silbergrau-visual {background: #C5C0C6; background-image: url(../configurator/silbergrau.jpg);}
+.feinleinen-taubengrau-visual {background: #AFB6BC; background-image: url(../configurator/taubengrau.jpg);}
+.feinleinen-titan-visual {background: #BAB6B5; background-image: url(../configurator/titan.jpg);}
+.feinleinen-braungrau-visual {background: #868581; background-image: url(../configurator/braungrau.jpg);}
+.feinleinen-grau-visual {background: #656460; background-image: url(../configurator/grau.jpg);}
+.feinleinen-anthrazit-visual {background: #3b3b3b; background-image: url(../configurator/anthrazit.jpg);}
+.feinleinen-schiefergrau-visual {background: #2F2F37; background-image: url(../configurator/schiefergrau.jpg);}
+.feinleinen-schwarzblau-visual {background: #1F1F2B; background-image: url(../configurator/schwarzblau.jpg);}
+.feinleinen-pariserblau-visual {background: #353F58; background-image: url(../configurator/pariserblau.jpg);}
+.feinleinen-opalblau-visual {background: #3A4595; background-image: url(../configurator/opalblau.jpg);}
+.feinleinen-hellblau-visual {background: #A6B7D3; background-image: url(../configurator/hellblau.jpg);}
+.feinleinen-mittelblau-visual {background: #0869AD; background-image: url(../configurator/mittelblau.jpg);}
+.feinleinen-meerblau-visual {background: #6E95B6; background-image: url(../configurator/meerblau.jpg);}
+.feinleinen-cyan-visual {background: #018AD2; background-image: url(../configurator/cyan.jpg);}
+.feinleinen-tuerkis-visual {background: #0196AA; background-image: url(../configurator/tuerkis.jpg);}
+.feinleinen-pistazie-visual {background: #C4E886; background-image: url(../configurator/pistazie.jpg);}
+.feinleinen-bambus-visual {background: #D3CFAA; background-image: url(../configurator/bambus.jpg);}
+.feinleinen-lindgruen-visual {background: #6D9E6F; background-image: url(../configurator/lindgruen.jpg);}
+.feinleinen-apfelgruen-visual {background: #9EC46D; background-image: url(../configurator/apfelgruen.jpg);}
+.feinleinen-dunkelgruen-visual {background: #234F42; background-image: url(../configurator/dunkelgruen.jpg);}
 
 
 
@@ -1002,13 +1004,41 @@ a.btn-zoomout {
 /* Lederfaser */
 
 
-.leather-schwarz-visual {background: #222222;}
-.leather-weiss-visual {background: #f8f8f8;}
-.leather-chamois-visual {background: #EDE6D4;}
-.leather-dunkelbraun-visual {background: #2D211C;}
-.leather-dunkelrot-visual {background: #591F29;}
-.leather-dunkelgruen-visual {background: #234F42;}
-.leather-dunkelblau-visual {background: #252B4D;}
+.leather-schwarz-visual {
+  background-image: url(configurator/leather-schwarz.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+.leather-weiss-visual {
+  background-image: url(configurator/leather-weiss.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+.leather-chamois-visual {
+  background-image: url(configurator/leather-chamois.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+.leather-dunkelbraun-visual {
+  background-image: url(configurator/leather-dunkelbraun.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+.leather-dunkelrot-visual {
+  background-image: url(configurator/leather-dunkelrot.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+.leather-dunkelgruen-visual {
+  background-image: url(configurator/leather-dunkelgruen.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+.leather-dunkelblau-visual {
+  background-image: url(configurator/leather-dunkelblau.jpg);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
 
 
 
@@ -1198,7 +1228,7 @@ a.btn-zoomout {
 }
 
 .gallery-cell {
-  height: 320px;
+  height: 220px;
   min-width: 200px;
   margin-right: 24px;
   margin-top: 5px;
@@ -1221,7 +1251,7 @@ a.btn-zoomout {
 }
 
 .gallery-cell label img {
-  height: 260px;
+  height: 180px;
   display: block;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -1247,11 +1277,16 @@ a.btn-zoomout {
 }
 
 .gallery-text {
-  position: relative;
-  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+  color: #fff;
+  padding-left: 12px;
   width: 100%;
   height: 60px;
-  padding-top: 20px;
+  line-height: 60px;
 }
 
 .gallery-cell input:checked + label .gallery-text {
@@ -1268,13 +1303,6 @@ a.btn-zoomout {
     display: block;
     font-size: 13px;
     font-weight: 600;
-}
-
-.gallery-text .description{
-    width: 100%;
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
 }
 
 .tab__content nav ul {
