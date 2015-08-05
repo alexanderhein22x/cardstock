@@ -38,6 +38,12 @@
       freeScroll: true
     });
 
+    flkty.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
+      if ( typeof cellIndex == 'number' ) {
+        flkty.select( cellIndex );
+      }
+    });
+
     flickityList.push(flkty);
   });
 
