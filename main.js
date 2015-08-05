@@ -1,56 +1,3 @@
-(function() {
-  'use strict';
-
-  var tabs = document.querySelectorAll('.tab__content'),
-    galleries = document.querySelectorAll('.gallery'),
-    tabsList = [],
-    flickityList = [];
-
-  window.tabsList = tabsList;
-  window.flickityList = flickityList;
-
-  function resizeSliders() {
-    setTimeout(function() {
-      _.each(flickityList, function(flktyItem) {
-        flktyItem.resize();
-      });
-    }, 0);
-  };
-
-  _.each(tabs, function(tabElement) {
-    var tab = new CBPFWTabs(tabElement);
-    tabElement.addEventListener('click', function() {
-      resizeSliders();
-    });
-    tabsList.push(tab);
-  });
-
-  resizeSliders();
-
-  _.each(galleries, function(gallery) {
-    var flkty = new Flickity(gallery, {
-      // options
-      cellAlign: 'left',
-      accessibility: false,
-      pageDots: false,
-      prevNextButtons: false,
-      contain: true,
-      freeScroll: true
-    });
-
-    flkty.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
-      if ( typeof cellIndex == 'number' ) {
-        flkty.select( cellIndex );
-      }
-    });
-
-    flickityList.push(flkty);
-  });
-
-}());
-
-
-///////////////////////////////////////////////////////////
 
 Handlebars.registerHelper("checkedIf", function(condition) {
   return (condition) ? "checked" : "";
@@ -76,6 +23,124 @@ var App = {
 App.Models.Configuration = Backbone.Model.extend({
   defaults: {
     quantity: 300
+  }
+});
+
+App.Views.TabView = Backbone.View.extend({
+  events: {
+    "click nav li": "resizeContent"
+  },
+  initialize: function() {
+    this.tab = new CBPFWTabs(this.el);
+
+    this.$tabs = this.$("nav li a");
+
+    // create model and listen for changes
+    this.model = new Backbone.Model({
+      available: this.$tabs.map(function() {
+        return $(this).attr("href");
+      })
+    });
+    this.listenTo(this.model, "change:available", this.render);
+
+    _.each(this.collection, function(contentView) {
+      this.listenTo(contentView.model, "change:visible", this.visibleChanged);
+    }, this);
+  },
+  render: function() {
+    var available = this.model.get("available"), first;
+    this.$tabs.each(function() {
+      if (available.indexOf($(this).attr("href")) < 0) {
+        $(this).parent().addClass("hide");
+      } else {
+        $(this).parent().removeClass("hide");
+        if (!first) first = this;
+      }
+    });
+    // show first available tab
+    this.show(this.$tabs.index(first));
+  },
+  show: function(tabIndex) {
+    this.tab._show(tabIndex);
+    this.resizeContent(tabIndex);
+  },
+  visibleChanged: function(model, visibleOptions) {
+    var available = this.model.get("available");
+    var tabIndex = _.reduce(this.collection, function(tabIndex, view, index) {
+      return view.model == model ? index : tabIndex;
+    }, null);
+    var tabId = $(this.$tabs[tabIndex]).attr("href");
+
+    if (visibleOptions.length === 0) {
+      this.model.set("available", _.without(available, tabId));
+    } else {
+      this.model.set("available", _.union(available, [tabId]));
+    }
+  },
+  resizeContent: function(e) {
+    if (typeof e === "number") {
+      var tabIndex = e;
+    } else {
+      tabIndex = this.$tabs.index( $(e.target).parents("li").find("a") );
+    }
+
+    this.collection[tabIndex].resize();
+  }
+});
+
+App.Views.GalleryView = Backbone.View.extend({
+  initialize: function() {
+    var flkty = this.flkty = new Flickity(this.el, {
+      // options
+      cellAlign: 'left',
+      accessibility: false,
+      pageDots: false,
+      prevNextButtons: false,
+      contain: true,
+      freeScroll: true
+    });
+
+    this.flkty.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
+      if ( typeof cellIndex == 'number' ) {
+        flkty.select( cellIndex );
+      }
+    });
+
+    setTimeout(function() {
+      flkty.resize();
+    }, 100);
+
+    this.$options = this.$("input");
+    this.name = this.$options.attr("name");
+
+    // create model and listen to changes
+    this.model = new Backbone.Model({
+      available: this.$options.map(function() {
+        return $(this).attr("id");
+      })
+    });
+    this.listenTo(this.model, "change:available", this.render);
+  },
+  render: function() {
+    var available = this.model.get("available");
+    var $visibleOptions = this.$options.filter(function() {
+      return available.indexOf($(this).attr("id")) >= 0;
+    });
+    this.$options.each(function() {
+      $(this).parent().addClass("hide");
+    });
+    $visibleOptions.each(function()  {
+      $(this).parent().removeClass("hide");
+    });
+    // notify Flickity that gallery elements have changed
+    this.flkty.resize();
+    // save currently visible options to model
+    this.model.set("visible", $visibleOptions.map(function() {
+      return $(this).attr("id");
+    }));
+  },
+  resize: function() {
+    this.flkty.resize();
   }
 });
 
@@ -220,10 +285,28 @@ App.Views.AppView = Backbone.View.extend({
   },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
+    var self = this;
+
     this.previewView = new App.Views.Preview({model: this.model});
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
     this.deliveryTimeView = new App.Views.DeliveryTimeView({model: this.model});
+
+    this.galleryViews = _.object(
+      this.$("section").map(function() {
+        return $(this).attr("id");
+      }),
+      this.$(".gallery").map(function() {
+        return new App.Views.GalleryView({el: this});
+      })
+    );
+    this.tabViews = this.$(".tab__content").map(function() {
+      var contentViews = $(this).find("section").map(function() {
+        return self.galleryViews[$(this).attr("id")];
+      });
+      return new App.Views.TabView({el: this, collection: contentViews});
+    });
+
     this.listenTo(this.model, "change", this.updateSelection);
   },
 
@@ -244,40 +327,9 @@ App.Views.AppView = Backbone.View.extend({
           var self = this;
           _.each(_.keys(selected.availableOptions), function(option) {
             var available = selected.availableOptions[option];
-            var $options = $("input[name='" + option + "']");
-            $options.each(function() {
-              if (available.indexOf($(this).prop("id")) < 0) {
-                $(this).parent().addClass("hide");
-              } else {
-                $(this).parent().removeClass("hide");
-              }
+            _.each(_.where(self.galleryViews, {name: option}), function(view) {
+              view.model.set("available", available);
             });
-            // compute remaining available options
-            var $availableOptions = $options.filter(function() {
-              return available.indexOf($(this).prop("id")) >= 0;
-            });
-            // hide subtab if no options available
-            var availableSectionIds = $availableOptions.map(function() {
-              return $(this).parents("section").attr("id");
-            });
-            var $tab = $($options[0]).parents("[data-tab-id]");
-            var $subtabHeaders = $tab.find("nav li");
-            // hide all subtabs
-            $subtabHeaders.addClass("hide");
-            // show only subtab headers with available options
-            var $availableSubtabs = $subtabHeaders.filter(function() {
-              return _.indexOf(availableSectionIds,
-                $(this).find("a").attr("href").substring(1)
-              ) >= 0;
-            });
-            $availableSubtabs.removeClass("hide");
-            // if current selection no longer available, set to first available option
-            var availableOptionNames = $availableOptions.map(function() {
-              return $(this).data("name");
-            });
-            if (_.indexOf(availableOptionNames, self.model.get(option).name) < 0) {
-              self.model.set(option, falseIfEmpty($options.filter("#"+available[0]).data()));
-            }
           });
         }
       }
