@@ -250,7 +250,6 @@ display: none !important;
   float: left;
   width: 100%;
   padding: 24px;
-  display: none;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -277,8 +276,7 @@ display: none !important;
 .quantity {
   float: left;
   width: 100%;
-  height: 260px;
-  display: none;
+  height: 100px;
   font-size: 13px;
   font-weight: normal;
   overflow-y: scroll;
@@ -530,15 +528,12 @@ a.btn-zoomout {
   background-repeat: repeat;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   border-radius: 2px;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+  background-color: #fff;
 }
 
 .front:before {
   display: block;
   content: "";
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
 }
 
 .colorinner {
@@ -549,8 +544,6 @@ a.btn-zoomout {
   top: 0.7%;
   bottom: 0.7%;
   border-radius: 1px;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-left: 1px solid rgba(0, 0, 0, 0.05);
@@ -564,15 +557,12 @@ a.btn-zoomout {
   background-repeat: repeat;
   box-shadow: 0 40px 77px 0 rgba(0, 0, 0, 0.22), 0 27px 24px 0 rgba(0, 0, 0, 0.2), inset 4px 0px 0px 0px rgba(0, 0, 0, 0.35);
   border-radius: 1px;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+  background-color: #fff;
 }
 
 .back:before {
   display: block;
   content: "";
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
 }
 
 .back:after {
@@ -709,6 +699,39 @@ a.btn-zoomout {
 /* Mechaniken */
 
 
+/* Prägung */
+
+.embossing {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.blind-embossing:before {
+  content: "Logo";
+  position: absolute;
+  right: 10%;
+  bottom: 7%;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 28px;
+  text-align: center;
+}
+
+.foil-embossing:before {
+  content: "Logo";
+  position: absolute;
+  right: 10%;
+  bottom: 7%;
+  color: #fff;
+  font-size: 28px;
+  text-align: center;
+}
+}
+
+/* Prägung */
+
+
 /* Register */
 
 .register{
@@ -736,6 +759,7 @@ a.btn-zoomout {
   border-radius: 1px;
   -webkit-transition: background .3s ease-out;
   transition: background .3s ease-out;
+  background-color: #fff;
 }
 
 /* Variables Ablagefach (hoch) - links */
@@ -856,51 +880,53 @@ a.btn-zoomout {
 /* Feinleinen */
 
 
-.feinleinen-schwarz-visual {background: #222222; background-image: url(../configurator/schwarz.jpg);}
-.feinleinen-weiss-visual {background: #f8f8f8; background-image: url(../configurator/weiss.jpg);}
-.feinleinen-chamois-visual {background: #EDE6D4; background-image: url(../configurator/chamois.jpg);}
-.feinleinen-beige-visual {background: #E1D3B9; background-image: url(../configurator/beige.jpg);}
-.feinleinen-sandbeige-visual {background: #D0C0B1; background-image: url(../configurator/sandbeige.jpg);}
-.feinleinen-braunbeige-visual {background: #C7A575; background-image: url(../configurator/braunbeige.jpg);}
-.feinleinen-goldgelb-visual {background: #F9D028; background-image: url(../configurator/goldgelb.jpg);}
-.feinleinen-maisgelb-visual {background: #FEB501; background-image: url(../configurator/maisgelb.jpg);}
-.feinleinen-orange-visual {background: #F55F01; background-image: url(../configurator/orange.jpg);}
-.feinleinen-rotbraun-visual {background: #D34E13; background-image: url(../configurator/rotbraun.jpg);}
-.feinleinen-sienabraun-visual {background: #BA4227; background-image: url(../configurator/sienabraun.jpg);}
-.feinleinen-naturbraun-visual {background: #833832; background-image: url(../configurator/naturbraun.jpg);}
-.feinleinen-nussbraun-visual {background: #735E43; background-image: url(../configurator/nussbraun.jpg);}
-.feinleinen-schokolade-visual {background: #423735; background-image: url(../configurator/schokolade.jpg);}
-.feinleinen-hellrot-visual {background: #E03A3A; background-image: url(../configurator/hellrot.jpg);}
-.feinleinen-rot-visual {background: #B32F3C; background-image: url(../configurator/rot.jpg);}
-.feinleinen-rosso-visual {background: #BC2F3F; background-image: url(../configurator/rosso.jpg);}
-.feinleinen-kardinalrot-visual {background: #833245; background-image: url(../configurator/kardinalrot.jpg);}
-.feinleinen-weinrot-visual {background: #743E4B; background-image: url(../configurator/weinrot.jpg);}
-.feinleinen-altrosa-visual {background: #D1A49F; background-image: url(../configurator/altrosa.jpg);}
-.feinleinen-beerenrot-visual {background: #CB5877; background-image: url(../configurator/beerenrot.jpg);}
-.feinleinen-purpur-visual {background: #E34DA4; background-image: url(../configurator/purpur.jpg);}
-.feinleinen-silbergrau-visual {background: #C5C0C6; background-image: url(../configurator/silbergrau.jpg);}
-.feinleinen-taubengrau-visual {background: #AFB6BC; background-image: url(../configurator/taubengrau.jpg);}
-.feinleinen-titan-visual {background: #BAB6B5; background-image: url(../configurator/titan.jpg);}
-.feinleinen-braungrau-visual {background: #868581; background-image: url(../configurator/braungrau.jpg);}
-.feinleinen-grau-visual {background: #656460; background-image: url(../configurator/grau.jpg);}
-.feinleinen-anthrazit-visual {background: #3b3b3b; background-image: url(../configurator/anthrazit.jpg);}
-.feinleinen-schiefergrau-visual {background: #2F2F37; background-image: url(../configurator/schiefergrau.jpg);}
-.feinleinen-schwarzblau-visual {background: #1F1F2B; background-image: url(../configurator/schwarzblau.jpg);}
-.feinleinen-pariserblau-visual {background: #353F58; background-image: url(../configurator/pariserblau.jpg);}
-.feinleinen-opalblau-visual {background: #3A4595; background-image: url(../configurator/opalblau.jpg);}
-.feinleinen-hellblau-visual {background: #A6B7D3; background-image: url(../configurator/hellblau.jpg);}
-.feinleinen-mittelblau-visual {background: #0869AD; background-image: url(../configurator/mittelblau.jpg);}
-.feinleinen-meerblau-visual {background: #6E95B6; background-image: url(../configurator/meerblau.jpg);}
-.feinleinen-cyan-visual {background: #018AD2; background-image: url(../configurator/cyan.jpg);}
-.feinleinen-tuerkis-visual {background: #0196AA; background-image: url(../configurator/tuerkis.jpg);}
-.feinleinen-pistazie-visual {background: #C4E886; background-image: url(../configurator/pistazie.jpg);}
-.feinleinen-bambus-visual {background: #D3CFAA; background-image: url(../configurator/bambus.jpg);}
-.feinleinen-lindgruen-visual {background: #6D9E6F; background-image: url(../configurator/lindgruen.jpg);}
-.feinleinen-apfelgruen-visual {background: #9EC46D; background-image: url(../configurator/apfelgruen.jpg);}
-.feinleinen-dunkelgruen-visual {background: #234F42; background-image: url(../configurator/dunkelgruen.jpg);}
+.feinleinen-schwarz-visual {background-color: #222222;}
+.feinleinen-weiss-visual {background-color: #fff;}
+.feinleinen-chamois-visual {background-color: #EDE6D4;}
+.feinleinen-beige-visual {background-color: #E1D3B9;}
+.feinleinen-sandbeige-visual {background-color: #D0C0B1;}
+.feinleinen-braunbeige-visual {background-color: #C7A575; }
+.feinleinen-goldgelb-visual {background-color: #F9D028; }
+.feinleinen-maisgelb-visual {background-color: #FEB501; }
+.feinleinen-orange-visual {background-color: #F55F01; }
+.feinleinen-rotbraun-visual {background-color: #D34E13; }
+.feinleinen-sienabraun-visual {background-color: #BA4227; }
+.feinleinen-naturbraun-visual {background-color: #833832; }
+.feinleinen-nussbraun-visual {background-color: #735E43; }
+.feinleinen-schokolade-visual {background-color: #423735; }
+.feinleinen-hellrot-visual {background-color: #E03A3A; }
+.feinleinen-rot-visual {background-color: #B32F3C; }
+.feinleinen-rosso-visual {background-color: #BC2F3F; }
+.feinleinen-kardinalrot-visual {background-color: #833245; }
+.feinleinen-weinrot-visual {background-color: #743E4B; }
+.feinleinen-altrosa-visual {background-color: #D1A49F; }
+.feinleinen-beerenrot-visual {background-color: #CB5877; }
+.feinleinen-purpur-visual {background-color: #E34DA4;}
+.feinleinen-silbergrau-visual {background-color: #C5C0C6; }
+.feinleinen-taubengrau-visual {background-color: #AFB6BC; }
+.feinleinen-titan-visual {background-color: #BAB6B5; }
+.feinleinen-braungrau-visual {background-color: #868581; }
+.feinleinen-grau-visual {background-color: #656460; }
+.feinleinen-anthrazit-visual {background-color: #3b3b3b; }
+.feinleinen-schiefergrau-visual {background-color: #2F2F37; }
+.feinleinen-schwarzblau-visual {background-color: #1F1F2B; }
+.feinleinen-pariserblau-visual {background-color: #353F58; }
+.feinleinen-opalblau-visual {background-color: #3A4595; }
+.feinleinen-hellblau-visual {background-color: #A6B7D3; }
+.feinleinen-mittelblau-visual {background-color: #0869AD; }
+.feinleinen-meerblau-visual {background-color: #6E95B6; }
+.feinleinen-cyan-visual {background-color: #018AD2; }
+.feinleinen-tuerkis-visual {background-color: #0196AA; }
+.feinleinen-pistazie-visual {background-color: #C4E886; }
+.feinleinen-bambus-visual {background-color: #D3CFAA; }
+.feinleinen-lindgruen-visual {background-color: #6D9E6F; }
+.feinleinen-apfelgruen-visual {background-color: #9EC46D; }
+.feinleinen-dunkelgruen-visual {background-color: #234F42; }
 
-
-
+.gallery-cell label .img.feinleinen-weiss-visual,
+.gallery-cell label .img.leather-weiss-visual {
+  border: 2px solid #f5f5f5;
+}
 /* Metallic */
 
 
@@ -1003,43 +1029,13 @@ a.btn-zoomout {
 
 /* Lederfaser */
 
-
-.leather-schwarz-visual {
-  background-image: url(configurator/leather-schwarz.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-.leather-weiss-visual {
-  background-image: url(configurator/leather-weiss.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-.leather-chamois-visual {
-  background-image: url(configurator/leather-chamois.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-.leather-dunkelbraun-visual {
-  background-image: url(configurator/leather-dunkelbraun.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-.leather-dunkelrot-visual {
-  background-image: url(configurator/leather-dunkelrot.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-.leather-dunkelgruen-visual {
-  background-image: url(configurator/leather-dunkelgruen.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-.leather-dunkelblau-visual {
-  background-image: url(configurator/leather-dunkelblau.jpg);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-}
-
+.leather-schwarz-visual {background: #222222;}
+.leather-weiss-visual {background: #fff;}
+.leather-chamois-visual {background: #EDE6D4;}
+.leather-dunkelbraun-visual {background: #2D211C;}
+.leather-dunkelrot-visual {background: #591F29;}
+.leather-dunkelgruen-visual {background: #234F42;}
+.leather-dunkelblau-visual {background: #252B4D;}
 
 
 
@@ -1251,16 +1247,6 @@ a.btn-zoomout {
   display: none;
 }
 
-.gallery-cell label img {
-  height: 180px;
-  display: block;
-  -moz-transition: opacity 0.15s linear;
-  -webkit-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear;
-  padding: 24px;
-  background-color: #f2f2f2;
-}
-
 .gallery-cell label {
   cursor: pointer;
   position: relative;
@@ -1270,14 +1256,18 @@ a.btn-zoomout {
   height: 100%;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -webkit-border-radius: 1px;
 }
 
-.gallery-cell label:hover img {
-  opacity: 0.65;
-  filter: alpha(opacity=65);
+.gallery-cell label img {
+  height: 180px;
+  display: block;
+  border-radius: 0px 0px 3px 3px;
+}
+
+.gallery-cell label .img {
+  height: 180px;
+  display: block;
+  border-radius: 0px 0px 3px 3px;
 }
 
 .gallery-cell label .title{
@@ -1288,20 +1278,14 @@ a.btn-zoomout {
   line-height: 50px;
   font-weight: bold;
   padding-left: 12px;
-  background-color: #444;
-  color: #fff;
+  background-color: #f5f5f5;
+  color: #343434;
   border-radius: 3px 3px 0px 0px;
-  }
-
+}
 
 .gallery-cell input:checked + label .title {
   color: #fff;
-  background-color: #4985f7;
-}
-
-.gallery-cell input:checked + label img {
-  opacity: 1;
-  filter: alpha(opacity=100);
+  background-color: #343434;
 }
 
 .tab__content nav ul {
@@ -1327,9 +1311,6 @@ a.btn-zoomout {
   padding: 0 24px;
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
-}
-
-.tab__content nav ul li:first-child {
 }
 
 .tab__content nav a {

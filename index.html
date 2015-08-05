@@ -106,7 +106,9 @@
 
     <div class="layout2">
       <div class="back gradient sandgold-visual">
-          <div class="kit"></div>
+          <div class="kit">
+            <div class="embossing"></div>
+          </div>
       </div>
     </div>
 
@@ -138,6 +140,21 @@
               <a href="#tab3/0" title="link to checked radio button" class="link">{{size.name}}</a>
           </div>
 
+
+          {{#if lamination}}
+          <div class="examplecontainer">
+            <span class="title">Veredelung</span>
+            <a href="#tab5/2" title="link to checked radio button" class="link">{{lamination.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if embossing}}
+          <div class="examplecontainer">
+            <span class="title">Logoprägung</span>
+            <a href="#tab5/3" title="link to checked radio button" class="link">{{embossing.name}}</a>
+          </div>
+          {{/if}}
+
           {{#if filling-height}}
           <div class="examplecontainer">
             <span class="title">Füllhöhe</span>
@@ -158,7 +175,6 @@
             <a href="#tab3/3" title="link to checked radio button" class="link">{{filling-height-4ring.name}}</a>
           </div>
           {{/if}}
-
 
           {{#if filling-height-lever-mechanism}}
           <div class="examplecontainer">
@@ -363,31 +379,31 @@
                     <input id="material1" type="radio" data-name="Feinleinen" data-price="1" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold", "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"], "color-inside":["ci-feinleinen-schwarz", "ci-feinleinen-weiss", "ci-feinleinen-chamois", "ci-feinleinen-beige", "ci-feinleinen-sandbeige", "ci-feinleinen-braunbeige", "ci-feinleinen-goldgelb", "ci-feinleinen-maisgelb", "ci-feinleinen-orange", "ci-feinleinen-rotbraun", "ci-feinleinen-sienabraun", "ci-feinleinen-naturbraun", "ci-feinleinen-nussbraun", "ci-feinleinen-schokolade", "ci-feinleinen-hellrot", "ci-feinleinen-rot", "ci-feinleinen-rosso", "ci-feinleinen-kardinalrot", "ci-feinleinen-weinrot", "ci-feinleinen-altrosa", "ci-feinleinen-beerenrot", "ci-feinleinen-purpur", "ci-feinleinen-silbergrau", "ci-feinleinen-taubengrau", "ci-feinleinen-titan", "ci-feinleinen-braungrau", "ci-feinleinen-grau", "ci-feinleinen-anthrazit", "ci-feinleinen-schiefergrau", "ci-feinleinen-schwarzblau", "ci-feinleinen-pariserblau", "ci-feinleinen-opalblau", "ci-feinleinen-hellblau", "ci-feinleinen-mittelblau", "ci-feinleinen-meerblau", "ci-feinleinen-cyan", "ci-feinleinen-tuerkis", "ci-feinleinen-pistazie", "ci-feinleinen-bambus", "ci-feinleinen-lindgruen", "ci-feinleinen-apfelgruen", "ci-feinleinen-dunkelgruen"], "color-outside":["co-feinleinen-schwarz", "co-feinleinen-weiss", "co-feinleinen-chamois", "co-feinleinen-beige", "co-feinleinen-sandbeige", "co-feinleinen-braunbeige", "co-feinleinen-goldgelb", "co-feinleinen-maisgelb", "co-feinleinen-orange", "co-feinleinen-rotbraun", "co-feinleinen-sienabraun", "co-feinleinen-naturbraun", "co-feinleinen-nussbraun", "co-feinleinen-schokolade", "co-feinleinen-hellrot", "co-feinleinen-rot", "co-feinleinen-rosso", "co-feinleinen-kardinalrot", "co-feinleinen-weinrot", "co-feinleinen-altrosa", "co-feinleinen-beerenrot", "co-feinleinen-purpur", "co-feinleinen-silbergrau", "co-feinleinen-taubengrau", "co-feinleinen-titan", "co-feinleinen-braungrau", "co-feinleinen-grau", "co-feinleinen-anthrazit", "co-feinleinen-schiefergrau", "co-feinleinen-schwarzblau", "co-feinleinen-pariserblau", "co-feinleinen-opalblau", "co-feinleinen-hellblau", "co-feinleinen-mittelblau", "co-feinleinen-meerblau", "co-feinleinen-cyan", "co-feinleinen-tuerkis", "co-feinleinen-pistazie", "co-feinleinen-bambus", "co-feinleinen-lindgruen", "co-feinleinen-apfelgruen", "co-feinleinen-dunkelgruen"]}' name="material" value="" checked="checked" />
                     <label for="material1">
                       <span class="title">Feinleinen</span>
-                      <img alt="material1" src="/img/icon.png">
+                      <img alt="material1" src="/img/feinleinen.png">
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="material2" type="radio" data-name="Bilderdruck" data-price="0" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold",  "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"]}' name="material" value="" />
+                    <input id="material2" type="radio" data-name="Bilderdruck" data-price="0" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold", "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"], "lamination":["lamination-matt", "lamination-matt-scratch-resistant", "lamination-glossy"]}' name="material" value="" />
                     <label for="material2">
                       <span class="title">Bilderdruck</span>
-                      <img alt="material2" src="/img/icon.png">
+                      <img alt="material2" src="/img/bilderdruck.png">
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="material3" type="radio" data-name="Lederfaser" data-price="5" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold", "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"], "color-inside":["ci-feinleinen-schwarz", "ci-feinleinen-weiss", "ci-feinleinen-chamois", "ci-feinleinen-beige", "ci-feinleinen-sandbeige", "ci-feinleinen-braunbeige", "ci-feinleinen-goldgelb", "ci-feinleinen-maisgelb", "ci-feinleinen-orange", "ci-feinleinen-rotbraun", "ci-feinleinen-sienabraun", "ci-feinleinen-naturbraun", "ci-feinleinen-nussbraun", "ci-feinleinen-schokolade", "ci-feinleinen-hellrot", "ci-feinleinen-rot", "ci-feinleinen-rosso", "ci-feinleinen-kardinalrot", "ci-feinleinen-weinrot", "ci-feinleinen-altrosa", "ci-feinleinen-beerenrot", "ci-feinleinen-purpur", "ci-feinleinen-silbergrau", "ci-feinleinen-taubengrau", "ci-feinleinen-titan", "ci-feinleinen-braungrau", "ci-feinleinen-grau", "ci-feinleinen-anthrazit", "ci-feinleinen-schiefergrau", "ci-feinleinen-schwarzblau", "ci-feinleinen-pariserblau", "ci-feinleinen-opalblau", "ci-feinleinen-hellblau", "ci-feinleinen-mittelblau", "ci-feinleinen-meerblau", "ci-feinleinen-cyan", "ci-feinleinen-tuerkis", "ci-feinleinen-pistazie", "ci-feinleinen-bambus", "ci-feinleinen-lindgruen", "ci-feinleinen-apfelgruen", "ci-feinleinen-dunkelgruen"], "color-outside":["co-leather-schwarz", "co-leather-weiss", "co-leather-chamois", "co-leather-dunkelbraun", "co-leather-dunkelrot", "co-leather-dunkelgruen", "co-leather-dunkelblau"]}' name="material" value="" checked="checked" />
+                    <input id="material3" type="radio" data-name="Lederfaser" data-price="5" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold", "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"], "color-inside":["ci-feinleinen-schwarz", "ci-feinleinen-weiss", "ci-feinleinen-chamois", "ci-feinleinen-beige", "ci-feinleinen-sandbeige", "ci-feinleinen-braunbeige", "ci-feinleinen-goldgelb", "ci-feinleinen-maisgelb", "ci-feinleinen-orange", "ci-feinleinen-rotbraun", "ci-feinleinen-sienabraun", "ci-feinleinen-naturbraun", "ci-feinleinen-nussbraun", "ci-feinleinen-schokolade", "ci-feinleinen-hellrot", "ci-feinleinen-rot", "ci-feinleinen-rosso", "ci-feinleinen-kardinalrot", "ci-feinleinen-weinrot", "ci-feinleinen-altrosa", "ci-feinleinen-beerenrot", "ci-feinleinen-purpur", "ci-feinleinen-silbergrau", "ci-feinleinen-taubengrau", "ci-feinleinen-titan", "ci-feinleinen-braungrau", "ci-feinleinen-grau", "ci-feinleinen-anthrazit", "ci-feinleinen-schiefergrau", "ci-feinleinen-schwarzblau", "ci-feinleinen-pariserblau", "ci-feinleinen-opalblau", "ci-feinleinen-hellblau", "ci-feinleinen-mittelblau", "ci-feinleinen-meerblau", "ci-feinleinen-cyan", "ci-feinleinen-tuerkis", "ci-feinleinen-pistazie", "ci-feinleinen-bambus", "ci-feinleinen-lindgruen", "ci-feinleinen-apfelgruen", "ci-feinleinen-dunkelgruen"], "color-outside":["co-leather-schwarz", "co-leather-weiss", "co-leather-chamois", "co-leather-dunkelbraun", "co-leather-dunkelrot", "co-leather-dunkelgruen", "co-leather-dunkelblau"]}' name="material" value="" />
                     <label for="material3">
                       <span class="title">Lederfaser</span>
-                      <img alt="material3" src="/img/icon.png">
+                      <img alt="material3" src="/img/lederfaser.png">
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="material4" type="radio" data-name="Chromokarton" data-price="0" data-date="3" data-quantity-discount='{"300":1,"500":0.65,"750":0.50,"1000":0.41,"1500":0.39,"2000":0.37,"2500":0.35,"3000":0.34,"3500":0.33,"4000":0.32,"4500":0.31,"5000":0.30}' data-visual="material2-visual" data-available-options='{"model":["annaeus", "aponius", "flavius", "gavius", "mamilius", "claudius", "sempronius", "caecilius", "valerius", "licinius", "cornelius", "pompeius", "calpurnius", "hortensius", "iulius", "caesar", "cicero", "crispus", "hibrida", "metellus", "nobilior", "piso", "scipio", "seneca", "sulla", "julian"]}' name="material" value="" />
+                    <input id="material4" type="radio" data-name="Chromokarton" data-price="0" data-date="3" data-quantity-discount='{"300":1,"500":0.65,"750":0.50,"1000":0.41,"1500":0.39,"2000":0.37,"2500":0.35,"3000":0.34,"3500":0.33,"4000":0.32,"4500":0.31,"5000":0.30}' data-visual="material2-visual" data-available-options='{"model":["annaeus", "aponius", "flavius", "gavius", "mamilius", "claudius", "sempronius", "caecilius", "valerius", "licinius", "cornelius", "pompeius", "calpurnius", "hortensius", "iulius", "caesar", "cicero", "crispus", "hibrida", "metellus", "nobilior", "piso", "scipio", "seneca", "sulla", "julian"], "lamination":["no-lamination", "lamination-matt", "lamination-matt-scratch-resistant", "lamination-glossy"]}' name="material" value="" />
                     <label for="material4">
                       <span class="title">Chromokarton</span>
-                      <img alt="material4" src="/img/icon.png">
+                      <img alt="material4" src="/img/chromokarton.png">
                     </label>
                   </div>
 
@@ -395,7 +411,7 @@
                     <input id="material5" type="radio" data-name="Metallic" data-price="2.5" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold", "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"], "color-inside":["ci-metallic-kristall", "ci-metallic-aluminium", "ci-metallic-mineral", "ci-metallic-platin", "ci-metallic-polar", "ci-metallic-basalt", "ci-metallic-patina", "ci-metallic-sandgold"], "color-outside":["co-metallic-kristall", "co-metallic-aluminium", "co-metallic-mineral", "co-metallic-platin", "co-metallic-polar", "co-metallic-basalt", "co-metallic-patina", "co-metallic-sandgold"]}' name="material" value="" />
                     <label for="material5">
                       <span class="title">Metallic</span>
-                      <img alt="material5" src="/img/icon.png">
+                      <img alt="material5" src="/img/metallic.png">
                     </label>
                   </div>
 
@@ -403,7 +419,7 @@
                     <input id="material6" type="radio" data-name="Transparent" data-price="0" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "baldwin", "dietmar", "einar", "erwin", "falko", "peter", "helmut", "joachim", "oskar", "thorsten"]}' name="material" value="" />
                     <label for="material6">
                       <span class="title">Transparent</span>
-                      <img alt="material6" src="/img/icon.png">
+                      <img alt="material6" src="/img/transparent.png">
                     </label>
                   </div>
 
@@ -411,7 +427,7 @@
                     <input id="material7" type="radio" data-name="Liniar" data-price="0.5" data-date="4" data-quantity-discount='{"25":1,"50":0.74,"100":0.50,"200":0.49,"300":0.33,"500":0.29,"750":0.27,"1000":0.25,"1500":0.245,"2000":0.24,"2500":0.235,"3000":0.23,"3500":0.229,"4000":0.227,"4500":0.225,"5000":0.22}' data-visual="material1-visual" data-available-options='{"model":["armin", "arnold", "artur", "baldur", "baldwin", "bernhard", "dagobert", "detlef", "dietmar", "dietrich", "eckart", "egmont", "einar", "elmar", "erwin", "falko", "gustav", "harald", "helmut", "joachim", "holger", "hubert", "igor", "konrad", "kurt", "leopold", "malte", "norbert", "oskar", "oswald", "rainer", "richard", "robert", "ronald", "rudolf", "siegmund", "sigmar", "sven", "thorsten", "uland", "ulbert", "ulf", "ulrich", "volker"]}' name="material" value="" />
                     <label for="material7">
                       <span class="title">Liniar</span>
-                      <img alt="material7" src="/img/icon.png">
+                      <img alt="material7" src="/img/liniar.png">
                     </label>
                   </div>
 
@@ -2078,6 +2094,27 @@
                     </span>
                   </div>
                 </li>
+
+                <li><a href="#lamination">Veredelung</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Veredelung</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
+                <li><a href="#embossing">Logoprägung</a>
+                  <div class="tooltip">
+                    <span class="tooltip-item"></span>
+                    <span class="tooltip-content">
+                        <span class="tooltip-text">
+                          <span class="strong">Logoprägung</span> Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                    </span>
+                  </div>
+                </li>
+
               </ul>
             </nav>
           </div>
@@ -2090,10 +2127,10 @@
                   <!-- Metallic -->
 
                   <div class="gallery-cell">
-                    <input id="ci-metallic-kristall" type="radio" data-name="Kristall" data-price="0" data-date="0" data-visual="metallic-kristall-visual" name="color-inside" value="" checked="checked" />
+                    <input id="ci-metallic-kristall" type="radio" data-name="Kristall" data-price="0" data-date="0" data-visual="metallic-kristall-visual" name="color-inside" value="" checked="checked"/>
                     <label for="ci-metallic-kristall">
                       <span class="title">Kristall</span>
-                      <img class="metallic-kristall-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-kristall-visual"></span>
                     </label>
                   </div>
 
@@ -2101,7 +2138,7 @@
                     <input id="ci-metallic-aluminium" type="radio" data-name="Aluminium" data-price="0" data-date="0" data-visual="metallic-aluminium-visual" name="color-inside" value="" />
                     <label for="ci-metallic-aluminium">
                       <span class="title">Aluminium</span>
-                      <img class="metallic-aluminium-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-aluminium-visual"></span>
                     </label>
                   </div>
 
@@ -2109,7 +2146,7 @@
                     <input id="ci-metallic-mineral" type="radio" data-name="Mineral" data-price="0" data-date="0" data-visual="metallic-mineral-visual" name="color-inside" value="" />
                     <label for="ci-metallic-mineral">
                       <span class="title">Mineral</span>
-                      <img class="metallic-mineral-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-mineral-visual"></span>
                     </label>
                   </div>
 
@@ -2117,7 +2154,7 @@
                     <input id="ci-metallic-platin" type="radio" data-name="Platin" data-price="0" data-date="0" data-visual="metallic-platin-visual" name="color-inside" value="" />
                     <label for="ci-metallic-platin">
                       <span class="title">Platin</span>
-                      <img class="metallic-platin-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-platin-visual"></span>
                     </label>
                   </div>
 
@@ -2125,7 +2162,7 @@
                     <input id="ci-metallic-polar" type="radio" data-name="Polar" data-price="0" data-date="0" data-visual="metallic-polar-visual" name="color-inside" value="" />
                     <label for="ci-metallic-polar">
                       <span class="title">Polar</span>
-                      <img class="metallic-polar-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-polar-visual"></span>
                     </label>
                   </div>
 
@@ -2133,7 +2170,7 @@
                     <input id="ci-metallic-basalt" type="radio" data-name="Basalt" data-price="0" data-date="0" data-visual="metallic-basalt-visual" name="color-inside" value="" />
                     <label for="ci-metallic-basalt">
                       <span class="title">Basalt</span>
-                      <img class="metallic-basalt-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-basalt-visual"></span>
                     </label>
                   </div>
 
@@ -2142,7 +2179,7 @@
                     <input id="ci-metallic-patina" type="radio" data-name="Patina" data-price="0" data-date="0" data-visual="metallic-patina-visual" name="color-inside" value="" />
                     <label for="ci-metallic-patina">
                       <span class="title">Patina</span>
-                      <img class="metallic-patina-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-patina-visual"></span>
                     </label>
                   </div>
 
@@ -2151,7 +2188,7 @@
                     <input id="ci-metallic-sandgold" type="radio" data-name="Sandgold" data-price="0" data-date="0" data-visual="metallic-sandgold-visual" name="color-inside" value="" />
                     <label for="ci-metallic-sandgold">
                       <span class="title">Sandgold</span>
-                      <img class="metallic-sandgold-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-sandgold-visual"></span>
                     </label>
                   </div>
 
@@ -2161,7 +2198,7 @@
                     <input id="ci-feinleinen-schwarz" type="radio" data-name="Schwarz" data-price="0" data-date="0" data-visual="feinleinen-schwarz-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-schwarz">
                       <span class="title">Schwarz</span>
-                      <img class="feinleinen-schwarz-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schwarz-visual"></span>
                     </label>
                   </div>
 
@@ -2169,7 +2206,7 @@
                     <input id="ci-feinleinen-weiss" type="radio" data-name="Weiss" data-price="0" data-date="0" data-visual="feinleinen-weiss-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-weiss">
                       <span class="title">Weiss</span>
-                      <img class="feinleinen-weiss-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-weiss-visual"></span>
                     </label>
                   </div>
 
@@ -2177,7 +2214,7 @@
                     <input id="ci-feinleinen-chamois" type="radio" data-name="Chamois" data-price="0" data-date="0" data-visual="feinleinen-chamois-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-chamois">
                       <span class="title">Chamois</span>
-                      <img class="feinleinen-chamois-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-chamois-visual"></span>
                     </label>
                   </div>
 
@@ -2185,7 +2222,7 @@
                     <input id="ci-feinleinen-beige" type="radio" data-name="Beige" data-price="0" data-date="0" data-visual="feinleinen-beige-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-beige">
                       <span class="title">Beige</span>
-                      <img class="feinleinen-beige-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-beige-visual"></span>
                     </label>
                   </div>
 
@@ -2193,7 +2230,7 @@
                     <input id="ci-feinleinen-sandbeige" type="radio" data-name="Sandbeige" data-price="0" data-date="0" data-visual="feinleinen-sandbeige-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-sandbeige">
                       <span class="title">Sandbeige</span>
-                      <img class="feinleinen-sandbeige-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-sandbeige-visual"></span>
                     </label>
                   </div>
 
@@ -2201,7 +2238,7 @@
                     <input id="ci-feinleinen-braunbeige" type="radio" data-name="Braunbeige" data-price="0" data-date="0" data-visual="feinleinen-braunbeige-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-braunbeige">
                       <span class="title">Braunbeige</span>
-                      <img class="feinleinen-braunbeige-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-braunbeige-visual"></span>
                     </label>
                   </div>
 
@@ -2210,7 +2247,7 @@
                     <input id="ci-feinleinen-goldgelb" type="radio" data-name="Goldgelb" data-price="0" data-date="0" data-visual="feinleinen-goldgelb-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-goldgelb">
                       <span class="title">Goldgelb</span>
-                      <img class="feinleinen-goldgelb-visual" alt="test" src="/img/blanc.png">
+                        <span class="img feinleinen-goldgelb-visual"></span>
                     </label>
                   </div>
 
@@ -2218,7 +2255,7 @@
                     <input id="ci-feinleinen-maisgelb" type="radio" data-name="Maisgelb" data-price="0" data-date="0" data-visual="feinleinen-maisgelb-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-maisgelb">
                       <span class="title">Maisgelb</span>
-                      <img class="feinleinen-maisgelb-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-maisgelb-visual"></span>
                     </label>
                   </div>
 
@@ -2227,7 +2264,7 @@
                     <input id="ci-feinleinen-orange" type="radio" data-name="Orange" data-price="0" data-date="0" data-visual="feinleinen-orange-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-orange">
                       <span class="title">Orange</span>
-                      <img class="feinleinen-orange-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-orange-visual"></span>
                     </label>
                   </div>
 
@@ -2235,7 +2272,7 @@
                     <input id="ci-feinleinen-rotbraun" type="radio" data-name="Rotbraun" data-price="0" data-date="0" data-visual="feinleinen-rotbraun-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-rotbraun">
                       <span class="title">Rotbraun</span>
-                      <img class="feinleinen-rotbraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-rotbraun-visual"></span>
                     </label>
                   </div>
 
@@ -2243,7 +2280,7 @@
                     <input id="ci-feinleinen-sienabraun" type="radio" data-name="Sienabraun" data-price="0" data-date="0" data-visual="feinleinen-sienabraun-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-sienabraun">
                       <span class="title">Sienabraun</span>
-                      <img class="feinleinen-sienabraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-sienabraun-visual"></span>
                     </label>
                   </div>
 
@@ -2251,7 +2288,7 @@
                     <input id="ci-feinleinen-naturbraun" type="radio" data-name="Naturbraun" data-price="0" data-date="0" data-visual="feinleinen-naturbraun-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-naturbraun">
                       <span class="title">Naturbraun</span>
-                      <img class="feinleinen-naturbraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-naturbraun-visual"></span>
                     </label>
                   </div>
 
@@ -2259,7 +2296,7 @@
                     <input id="ci-feinleinen-nussbraun" type="radio" data-name="Nussbraun" data-price="0" data-date="0" data-visual="feinleinen-nussbraun-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-nussbraun">
                       <span class="title">Nussbraun</span>
-                      <img class="feinleinen-nussbraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-nussbraun-visual"></span>
                     </label>
                   </div>
 
@@ -2267,7 +2304,7 @@
                     <input id="ci-feinleinen-schokolade" type="radio" data-name="Schokolade" data-price="0" data-date="0" data-visual="feinleinen-schokolade-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-schokolade">
                       <span class="title">Schokolade</span>
-                      <img class="feinleinen-schokolade-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schokolade-visual"></span>
                     </label>
                   </div>
 
@@ -2275,7 +2312,7 @@
                     <input id="ci-feinleinen-hellrot" type="radio" data-name="Hellrot" data-price="0" data-date="0" data-visual="feinleinen-hellrot-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-hellrot">
                       <span class="title">Hellrot</span>
-                      <img class="feinleinen-hellrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-hellrot-visual"></span>
                     </label>
                   </div>
 
@@ -2284,7 +2321,7 @@
                     <input id="ci-feinleinen-rot" type="radio" data-name="Rot" data-price="0" data-date="0" data-visual="feinleinen-rot-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-rot">
                       <span class="title">Rot</span>
-                      <img class="feinleinen-rot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-rot-visual"></span>
                     </label>
                   </div>
 
@@ -2292,7 +2329,7 @@
                     <input id="ci-feinleinen-rosso" type="radio" data-name="Rosso" data-price="0" data-date="0" data-visual="feinleinen-rosso-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-rosso">
                       <span class="title">Rosso</span>
-                      <img class="feinleinen-rosso-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-rosso-visual"></span>
                     </label>
                   </div>
 
@@ -2300,7 +2337,7 @@
                     <input id="ci-feinleinen-kardinalrot" type="radio" data-name="Kardinalrot" data-price="0" data-date="0" data-visual="feinleinen-kardinalrot-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-kardinalrot">
                       <span class="title">Kardinalrot</span>
-                      <img class="feinleinen-kardinalrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-kardinalrot-visual"></span>
                     </label>
                   </div>
 
@@ -2308,7 +2345,7 @@
                     <input id="ci-feinleinen-weinrot" type="radio" data-name="Weinrot" data-price="0" data-date="0" data-visual="feinleinen-weinrot-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-weinrot">
                       <span class="title">Weinrot</span>
-                      <img class="feinleinen-weinrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-weinrot-visual"></span>
                     </label>
                   </div>
 
@@ -2316,7 +2353,7 @@
                     <input id="ci-feinleinen-altrosa" type="radio" data-name="Altrosa" data-price="0" data-date="0" data-visual="feinleinen-altrosa-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-altrosa">
                       <span class="title">Altrosa</span>
-                      <img class="feinleinen-altrosa-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-altrosa-visual"></span>
                     </label>
                   </div>
 
@@ -2324,7 +2361,7 @@
                     <input id="ci-feinleinen-beerenrot" type="radio" data-name="Beerenrot" data-price="0" data-date="0" data-visual="feinleinen-beerenrot-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-beerenrot">
                       <span class="title">Beerenrot</span>
-                      <img class="feinleinen-beerenrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-beerenrot-visual"></span>
                     </label>
                   </div>
 
@@ -2332,7 +2369,7 @@
                     <input id="ci-feinleinen-purpur" type="radio" data-name="Purpur" data-price="0" data-date="0" data-visual="feinleinen-purpur-visual" name="color-inside" value=""  />
                     <label for="ci-feinleinen-purpur">
                       <span class="title">Purpur</span>
-                      <img class="feinleinen-purpur-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-purpur-visual"></span>
                     </label>
                   </div>
 
@@ -2340,7 +2377,7 @@
                     <input id="ci-feinleinen-silbergrau" type="radio" data-name="Silbergrau" data-price="0" data-date="0" data-visual="feinleinen-silbergrau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-silbergrau">
                       <span class="title">Silbergrau</span>
-                      <img class="feinleinen-silbergrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-silbergrau-visual"></span>
                     </label>
                   </div>
 
@@ -2348,7 +2385,7 @@
                     <input id="ci-feinleinen-taubengrau" type="radio" data-name="Taubengrau" data-price="0" data-date="0" data-visual="feinleinen-taubengrau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-taubengrau">
                       <span class="title">taubengrau</span>
-                      <img class="feinleinen-taubengrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-taubengrau-visual"></span>
                     </label>
                   </div>
 
@@ -2356,7 +2393,7 @@
                     <input id="ci-feinleinen-titan" type="radio" data-name="Titan" data-price="0" data-date="0" data-visual="feinleinen-titan-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-titan">
                       <span class="title">Titan</span>
-                      <img class="feinleinen-titan-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-titan-visual"></span>
                     </label>
                   </div>
 
@@ -2364,7 +2401,7 @@
                     <input id="ci-feinleinen-braungrau" type="radio" data-name="Braungrau" data-price="0" data-date="0" data-visual="feinleinen-braungrau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-braungrau">
                       <span class="title">Braungrau</span>
-                      <img class="feinleinen-braungrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-braungrau-visual"></span>
                     </label>
                   </div>
 
@@ -2372,7 +2409,7 @@
                     <input id="ci-feinleinen-grau" type="radio" data-name="Grau" data-price="0" data-date="0" data-visual="feinleinen-grau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-grau">
                       <span class="title">Grau</span>
-                      <img class="feinleinen-grau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-grau-visual"></span>
                     </label>
                   </div>
 
@@ -2380,7 +2417,7 @@
                     <input id="ci-feinleinen-anthrazit" type="radio" data-name="Anthrazit" data-price="0" data-date="0" data-visual="feinleinen-anthrazit-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-anthrazit">
                       <span class="title">Anthrazit</span>
-                      <img class="feinleinen-anthrazit-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-anthrazit-visual"></span>
                     </label>
                   </div>
 
@@ -2388,7 +2425,7 @@
                     <input id="ci-feinleinen-schiefergrau" type="radio" data-name="Schiefergrau" data-price="0" data-date="0" data-visual="feinleinen-schiefergrau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-schiefergrau">
                       <span class="title">Schiefergrau</span>
-                      <img class="feinleinen-schiefergrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schiefergrau-visual"></span>
                     </label>
                   </div>
 
@@ -2396,7 +2433,7 @@
                     <input id="ci-feinleinen-schwarzblau" type="radio" data-name="Schwarzblau" data-price="0" data-date="0" data-visual="feinleinen-schwarzblau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-schwarzblau">
                       <span class="title">Schwarzblau</span>
-                      <img class="feinleinen-schwarzblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schwarzblau-visual"></span>
                     </label>
                   </div>
 
@@ -2405,7 +2442,7 @@
                     <input id="ci-feinleinen-pariserblau" type="radio" data-name="Pariserblau" data-price="0" data-date="0" data-visual="feinleinen-pariserblau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-pariserblau">
                       <span class="title">Pariserblau</span>
-                      <img class="feinleinen-pariserblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-pariserblau-visual"></span>
                     </label>
                   </div>
 
@@ -2414,7 +2451,7 @@
                     <input id="ci-feinleinen-opalblau" type="radio" data-name="Opalblau" data-price="0" data-date="0" data-visual="feinleinen-opalblau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-opalblau">
                       <span class="title">Opalblau</span>
-                      <img class="feinleinen-opalblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-opalblau-visual"></span>
                     </label>
                   </div>
 
@@ -2422,7 +2459,7 @@
                     <input id="ci-feinleinen-hellblau" type="radio" data-name="Hellblau" data-price="0" data-date="0" data-visual="feinleinen-hellblau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-hellblau">
                       <span class="title">Hellblau</span>
-                      <img class="feinleinen-hellblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-hellblau-visual"></span>
                     </label>
                   </div>
 
@@ -2430,7 +2467,7 @@
                     <input id="ci-feinleinen-mittelblau" type="radio" data-name="Mittelblau" data-price="0" data-date="0" data-visual="feinleinen-mittelblau-visual" name="color-inside" value=""/>
                     <label for="ci-feinleinen-mittelblau">
                       <span class="title">Mittelblau</span>
-                      <img class="feinleinen-mittelblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-mittelblau-visual"></span>
                     </label>
                   </div>
 
@@ -2438,7 +2475,7 @@
                     <input id="ci-feinleinen-meerblau" type="radio" data-name="Meerblau" data-price="0" data-date="0" data-visual="feinleinen-meerblau-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-meerblau">
                       <span class="title">Meerblau</span>
-                      <img class="feinleinen-meerblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-meerblau-visual"></span>
                     </label>
                   </div>
 
@@ -2446,7 +2483,7 @@
                     <input id="ci-feinleinen-cyan" type="radio" data-name="Cyan" data-price="0" data-date="0" data-visual="feinleinen-cyan-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-cyan">
                       <span class="title">Cyan</span>
-                      <img class="feinleinen-cyan-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-cyan-visual"></span>
                     </label>
                   </div>
 
@@ -2454,7 +2491,7 @@
                     <input id="ci-feinleinen-tuerkis" type="radio" data-name="Türkis" data-price="0" data-date="0" data-visual="feinleinen-tuerkis-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-tuerkis">
                       <span class="title">Türkis</span>
-                      <img class="feinleinen-tuerkis-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-tuerkis-visual"></span>
                     </label>
                   </div>
 
@@ -2462,7 +2499,7 @@
                     <input id="ci-feinleinen-pistazie" type="radio" data-name="Pistazie" data-price="0" data-date="0" data-visual="feinleinen-pistazie-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-pistazie">
                       <span class="title">Pistazie</span>
-                      <img class="feinleinen-pistazie-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-pistazie-visual"></span>
                     </label>
                   </div>
 
@@ -2471,7 +2508,7 @@
                     <input id="ci-feinleinen-bambus" type="radio" data-name="Bambus" data-price="0" data-date="0" data-visual="feinleinen-bambus-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-bambus">
                       <span class="title">Bambus</span>
-                      <img class="feinleinen-bambus-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-bambus-visual"></span>
                     </label>
                   </div>
 
@@ -2480,7 +2517,7 @@
                     <input id="ci-feinleinen-lindgruen" type="radio" data-name="Lindgrün" data-price="0" data-date="0" data-visual="feinleinen-lindgruen-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-lindgruen">
                       <span class="title">Lindgrün</span>
-                      <img class="feinleinen-lindgruen-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-lindgruen-visual"></span>
                     </label>
                   </div>
 
@@ -2488,7 +2525,7 @@
                     <input id="ci-feinleinen-apfelgruen" type="radio" data-name="Apfelgrün" data-price="0" data-date="0" data-visual="feinleinen-apfelgruen-visual" name="color-inside" value=""  />
                     <label for="ci-feinleinen-apfelgruen">
                       <span class="title">Apfelgrün</span>
-                      <img class="feinleinen-apfelgruen-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-apfelgruen-visual"></span>
                     </label>
                   </div>
 
@@ -2497,14 +2534,13 @@
                     <input id="ci-feinleinen-dunkelgruen" type="radio" data-name="Dunkelgrün" data-price="0" data-date="0" data-visual="feinleinen-dunkelgruen-visual" name="color-inside" value="" />
                     <label for="ci-feinleinen-dunkelgruen">
                       <span class="title">Dunkelgrün</span>
-                      <img class="feinleinen-dunkelgruen-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-dunkelgruen-visual"></span>
                     </label>
                   </div>
 
 
                 </div>
               </section>
-
 
               <section id="color-outside">
                 <div class="gallery">
@@ -2515,7 +2551,7 @@
                     <input id="co-metallic-kristall" type="radio" data-name="Kristall" data-price="0" data-date="0" data-visual="metallic-kristall-visual" name="color-outside" value="" checked="checked" />
                     <label for="co-metallic-kristall">
                       <span class="title">Kristall</span>
-                      <img class="metallic-kristall-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-kristall-visual"></span>
                     </label>
                   </div>
 
@@ -2523,7 +2559,7 @@
                     <input id="co-metallic-aluminium" type="radio" data-name="Aluminium" data-price="0" data-date="0" data-visual="metallic-aluminium-visual" name="color-outside" value="" />
                     <label for="co-metallic-aluminium">
                       <span class="title">Aluminium</span>
-                      <img class="metallic-aluminium-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-aluminium-visual"></span>
                     </label>
                   </div>
 
@@ -2531,7 +2567,7 @@
                     <input id="co-metallic-mineral" type="radio" data-name="Mineral" data-price="0" data-date="0" data-visual="metallic-mineral-visual" name="color-outside" value="" />
                     <label for="co-metallic-mineral">
                       <span class="title">Mineral</span>
-                      <img class="metallic-mineral-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-mineral-visual"></span>
                     </label>
                   </div>
 
@@ -2539,7 +2575,7 @@
                     <input id="co-metallic-platin" type="radio" data-name="Platin" data-price="0" data-date="0" data-visual="metallic-platin-visual" name="color-outside" value="" />
                     <label for="co-metallic-platin">
                       <span class="title">Platin</span>
-                      <img class="metallic-platin-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-platin-visual"></span>
                     </label>
                   </div>
 
@@ -2547,7 +2583,7 @@
                     <input id="co-metallic-polar" type="radio" data-name="Polar" data-price="0" data-date="0" data-visual="metallic-polar-visual" name="color-outside" value="" />
                     <label for="co-metallic-polar">
                       <span class="title">Polar</span>
-                      <img class="metallic-polar-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-polar-visual"></span>
                     </label>
                   </div>
 
@@ -2555,7 +2591,7 @@
                     <input id="co-metallic-basalt" type="radio" data-name="Basalt" data-price="0" data-date="0" data-visual="metallic-basalt-visual" name="color-outside" value="" />
                     <label for="co-metallic-basalt">
                       <span class="title">Basalt</span>
-                      <img class="metallic-basalt-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-basalt-visual"></span>
                     </label>
                   </div>
 
@@ -2564,7 +2600,7 @@
                     <input id="co-metallic-patina" type="radio" data-name="Patina" data-price="0" data-date="0" data-visual="metallic-patina-visual" name="color-outside" value="" />
                     <label for="co-metallic-patina">
                       <span class="title">Patina</span>
-                      <img class="metallic-patina-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-patina-visual"></span>
                     </label>
                   </div>
 
@@ -2573,7 +2609,7 @@
                     <input id="co-metallic-sandgold" type="radio" data-name="Sandgold" data-price="0" data-date="0" data-visual="metallic-sandgold-visual" name="color-outside" value="" />
                     <label for="co-metallic-sandgold">
                       <span class="title">Sandgold</span>
-                      <img class="metallic-sandgold-visual" alt="test" src="/img/blanc.png">
+                      <span class="img metallic-sandgold-visual"></span>
                     </label>
                   </div>
 
@@ -2583,7 +2619,7 @@
                     <input id="co-feinleinen-schwarz" type="radio" data-name="Schwarz" data-price="0" data-date="0" data-visual="feinleinen-schwarz-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-schwarz">
                       <span class="title">Schwarz</span>
-                      <img class="feinleinen-schwarz-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schwarz-visual"></span>
                     </label>
                   </div>
 
@@ -2591,7 +2627,7 @@
                     <input id="co-feinleinen-weiss" type="radio" data-name="Weiss" data-price="0" data-date="0" data-visual="feinleinen-weiss-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-weiss">
                       <span class="title">Weiss</span>
-                      <img class="feinleinen-weiss-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-weiss-visual"></span>
                     </label>
                   </div>
 
@@ -2599,7 +2635,7 @@
                     <input id="co-feinleinen-chamois" type="radio" data-name="Chamois" data-price="0" data-date="0" data-visual="feinleinen-chamois-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-chamois">
                       <span class="title">Chamois</span>
-                      <img class="feinleinen-chamois-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-chamois-visual"></span>
                     </label>
                   </div>
 
@@ -2607,7 +2643,7 @@
                     <input id="co-feinleinen-beige" type="radio" data-name="Beige" data-price="0" data-date="0" data-visual="feinleinen-beige-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-beige">
                       <span class="title">Beige</span>
-                      <img class="feinleinen-beige-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-beige-visual"></span>
                     </label>
                   </div>
 
@@ -2615,7 +2651,7 @@
                     <input id="co-feinleinen-sandbeige" type="radio" data-name="Sandbeige" data-price="0" data-date="0" data-visual="feinleinen-sandbeige-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-sandbeige">
                       <span class="title">Sandbeige</span>
-                      <img class="feinleinen-sandbeige-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-sandbeige-visual"></span>
                     </label>
                   </div>
 
@@ -2623,7 +2659,7 @@
                     <input id="co-feinleinen-braunbeige" type="radio" data-name="Braunbeige" data-price="0" data-date="0" data-visual="feinleinen-braunbeige-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-braunbeige">
                       <span class="title">Braunbeige</span>
-                      <img class="feinleinen-braunbeige-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-braunbeige-visual"></span>
                     </label>
                   </div>
 
@@ -2632,7 +2668,7 @@
                     <input id="co-feinleinen-goldgelb" type="radio" data-name="Goldgelb" data-price="0" data-date="0" data-visual="feinleinen-goldgelb-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-goldgelb">
                       <span class="title">Goldgelb</span>
-                      <img class="feinleinen-goldgelb-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-goldgelb-visual"></span>
                     </label>
                   </div>
 
@@ -2640,7 +2676,7 @@
                     <input id="co-feinleinen-maisgelb" type="radio" data-name="Maisgelb" data-price="0" data-date="0" data-visual="feinleinen-maisgelb-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-maisgelb">
                       <span class="title">Maisgelb</span>
-                      <img class="feinleinen-maisgelb-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-maisgelb-visual"></span>
                     </label>
                   </div>
 
@@ -2649,7 +2685,7 @@
                     <input id="co-feinleinen-orange" type="radio" data-name="Orange" data-price="0" data-date="0" data-visual="feinleinen-orange-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-orange">
                       <span class="title">Orange</span>
-                      <img class="feinleinen-orange-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-orange-visual"></span>
                     </label>
                   </div>
 
@@ -2657,7 +2693,7 @@
                     <input id="co-feinleinen-rotbraun" type="radio" data-name="Rotbraun" data-price="0" data-date="0" data-visual="feinleinen-rotbraun-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-rotbraun">
                       <span class="title">Rotbraun</span>
-                      <img class="feinleinen-rotbraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-rotbraun-visual"></span>
                     </label>
                   </div>
 
@@ -2665,7 +2701,7 @@
                     <input id="co-feinleinen-sienabraun" type="radio" data-name="Sienabraun" data-price="0" data-date="0" data-visual="feinleinen-sienabraun-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-sienabraun">
                       <span class="title">Sienabraun</span>
-                      <img class="feinleinen-sienabraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-sienabraun-visual"></span>
                     </label>
                   </div>
 
@@ -2673,7 +2709,7 @@
                     <input id="co-feinleinen-naturbraun" type="radio" data-name="Naturbraun" data-price="0" data-date="0" data-visual="feinleinen-naturbraun-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-naturbraun">
                       <span class="title">Naturbraun</span>
-                      <img class="feinleinen-naturbraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-naturbraun-visual"></span>
                     </label>
                   </div>
 
@@ -2681,7 +2717,7 @@
                     <input id="co-feinleinen-nussbraun" type="radio" data-name="Nussbraun" data-price="0" data-date="0" data-visual="feinleinen-nussbraun-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-nussbraun">
                       <span class="title">Nussbraun</span>
-                      <img class="feinleinen-nussbraun-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-nussbraun-visual"></span>
                     </label>
                   </div>
 
@@ -2689,7 +2725,7 @@
                     <input id="co-feinleinen-schokolade" type="radio" data-name="Schokolade" data-price="0" data-date="0" data-visual="feinleinen-schokolade-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-schokolade">
                       <span class="title">Schokolade</span>
-                      <img class="feinleinen-schokolade-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schokolade-visual"></span>
                     </label>
                   </div>
 
@@ -2697,7 +2733,7 @@
                     <input id="co-feinleinen-hellrot" type="radio" data-name="Hellrot" data-price="0" data-date="0" data-visual="feinleinen-hellrot-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-hellrot">
                       <span class="title">Hellrot</span>
-                      <img class="feinleinen-hellrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-hellrot-visual"></span>
                     </label>
                   </div>
 
@@ -2706,7 +2742,7 @@
                     <input id="co-feinleinen-rot" type="radio" data-name="Rot" data-price="0" data-date="0" data-visual="feinleinen-rot-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-rot">
                       <span class="title">Rot</span>
-                      <img class="feinleinen-rot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-rot-visual"></span>
                     </label>
                   </div>
 
@@ -2714,7 +2750,7 @@
                     <input id="co-feinleinen-rosso" type="radio" data-name="Rosso" data-price="0" data-date="0" data-visual="feinleinen-rosso-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-rosso">
                       <span class="title">Rosso</span>
-                      <img class="feinleinen-rosso-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-rosso-visual"></span>
                     </label>
                   </div>
 
@@ -2722,7 +2758,7 @@
                     <input id="co-feinleinen-kardinalrot" type="radio" data-name="Kardinalrot" data-price="0" data-date="0" data-visual="feinleinen-kardinalrot-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-kardinalrot">
                       <span class="title">Kardinalrot</span>
-                      <img class="feinleinen-kardinalrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-kardinalrot-visual"></span>
                     </label>
                   </div>
 
@@ -2730,7 +2766,7 @@
                     <input id="co-feinleinen-weinrot" type="radio" data-name="Weinrot" data-price="0" data-date="0" data-visual="feinleinen-weinrot-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-weinrot">
                       <span class="title">Weinrot</span>
-                      <img class="feinleinen-weinrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-weinrot-visual"></span>
                     </label>
                   </div>
 
@@ -2738,7 +2774,7 @@
                     <input id="co-feinleinen-altrosa" type="radio" data-name="Altrosa" data-price="0" data-date="0" data-visual="feinleinen-altrosa-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-altrosa">
                       <span class="title">Altrosa</span>
-                      <img class="feinleinen-altrosa-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-altrosa-visual"></span>
                     </label>
                   </div>
 
@@ -2746,7 +2782,7 @@
                     <input id="co-feinleinen-beerenrot" type="radio" data-name="Beerenrot" data-price="0" data-date="0" data-visual="feinleinen-beerenrot-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-beerenrot">
                       <span class="title">Beerenrot</span>
-                      <img class="feinleinen-beerenrot-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-beerenrot-visual"></span>
                     </label>
                   </div>
 
@@ -2754,7 +2790,7 @@
                     <input id="co-feinleinen-purpur" type="radio" data-name="Purpur" data-price="0" data-date="0" data-visual="feinleinen-purpur-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-purpur">
                       <span class="title">Purpur</span>
-                      <img class="feinleinen-purpur-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-purpur-visual"></span>
                     </label>
                   </div>
 
@@ -2762,7 +2798,7 @@
                     <input id="co-feinleinen-silbergrau" type="radio" data-name="Silbergrau" data-price="0" data-date="0" data-visual="feinleinen-silbergrau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-silbergrau">
                       <span class="title">Silbergrau</span>
-                      <img class="feinleinen-silbergrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-silbergrau-visual"></span>
                     </label>
                   </div>
 
@@ -2770,7 +2806,7 @@
                     <input id="co-feinleinen-taubengrau" type="radio" data-name="Taubengrau" data-price="0" data-date="0" data-visual="feinleinen-taubengrau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-taubengrau">
                       <span class="title">taubengrau</span>
-                      <img class="feinleinen-taubengrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-taubengrau-visual"></span>
                     </label>
                   </div>
 
@@ -2778,7 +2814,7 @@
                     <input id="co-feinleinen-titan" type="radio" data-name="Titan" data-price="0" data-date="0" data-visual="feinleinen-titan-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-titan">
                       <span class="title">Titan</span>
-                      <img class="feinleinen-titan-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-titan-visual"></span>
                     </label>
                   </div>
 
@@ -2786,7 +2822,7 @@
                     <input id="co-feinleinen-braungrau" type="radio" data-name="Braungrau" data-price="0" data-date="0" data-visual="feinleinen-braungrau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-braungrau">
                       <span class="title">Braungrau</span>
-                      <img class="feinleinen-braungrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-braungrau-visual"></span>
                     </label>
                   </div>
 
@@ -2794,7 +2830,7 @@
                     <input id="co-feinleinen-grau" type="radio" data-name="Grau" data-price="0" data-date="0" data-visual="feinleinen-grau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-grau">
                       <span class="title">Grau</span>
-                      <img class="feinleinen-grau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-grau-visual"></span>
                     </label>
                   </div>
 
@@ -2802,7 +2838,7 @@
                     <input id="co-feinleinen-anthrazit" type="radio" data-name="Anthrazit" data-price="0" data-date="0" data-visual="feinleinen-anthrazit-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-anthrazit">
                       <span class="title">Anthrazit</span>
-                      <img class="feinleinen-anthrazit-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-anthrazit-visual"></span>
                     </label>
                   </div>
 
@@ -2810,7 +2846,7 @@
                     <input id="co-feinleinen-schiefergrau" type="radio" data-name="Schiefergrau" data-price="0" data-date="0" data-visual="feinleinen-schiefergrau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-schiefergrau">
                       <span class="title">Schiefergrau</span>
-                      <img class="feinleinen-schiefergrau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schiefergrau-visual"></span>
                     </label>
                   </div>
 
@@ -2818,7 +2854,7 @@
                     <input id="co-feinleinen-schwarzblau" type="radio" data-name="Schwarzblau" data-price="0" data-date="0" data-visual="feinleinen-schwarzblau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-schwarzblau">
                       <span class="title">Schwarzblau</span>
-                      <img class="feinleinen-schwarzblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-schwarzblau-visual"></span>
                     </label>
                   </div>
 
@@ -2827,7 +2863,7 @@
                     <input id="co-feinleinen-pariserblau" type="radio" data-name="Pariserblau" data-price="0" data-date="0" data-visual="feinleinen-pariserblau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-pariserblau">
                       <span class="title">Pariserblau</span>
-                      <img class="feinleinen-pariserblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-pariserblau-visual"></span>
                     </label>
                   </div>
 
@@ -2836,7 +2872,7 @@
                     <input id="co-feinleinen-opalblau" type="radio" data-name="Opalblau" data-price="0" data-date="0" data-visual="feinleinen-opalblau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-opalblau">
                       <span class="title">Opalblau</span>
-                      <img class="feinleinen-opalblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-opalblau-visual"></span>
                     </label>
                   </div>
 
@@ -2844,7 +2880,7 @@
                     <input id="co-feinleinen-hellblau" type="radio" data-name="Hellblau" data-price="0" data-date="0" data-visual="feinleinen-hellblau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-hellblau">
                       <span class="title">Hellblau</span>
-                      <img class="feinleinen-hellblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-hellblau-visual"></span>
                     </label>
                   </div>
 
@@ -2852,7 +2888,7 @@
                     <input id="co-feinleinen-mittelblau" type="radio" data-name="Mittelblau" data-price="0" data-date="0" data-visual="feinleinen-mittelblau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-mittelblau">
                       <span class="title">Mittelblau</span>
-                      <img class="feinleinen-mittelblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-mittelblau-visual"></span>
                     </label>
                   </div>
 
@@ -2860,7 +2896,7 @@
                     <input id="co-feinleinen-meerblau" type="radio" data-name="Meerblau" data-price="0" data-date="0" data-visual="feinleinen-meerblau-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-meerblau">
                       <span class="title">Meerblau</span>
-                      <img class="feinleinen-meerblau-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-meerblau-visual"></span>
                     </label>
                   </div>
 
@@ -2868,7 +2904,7 @@
                     <input id="co-feinleinen-cyan" type="radio" data-name="Cyan" data-price="0" data-date="0" data-visual="feinleinen-cyan-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-cyan">
                       <span class="title">Cyan</span>
-                      <img class="feinleinen-cyan-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-cyan-visual"></span>
                     </label>
                   </div>
 
@@ -2876,7 +2912,7 @@
                     <input id="co-feinleinen-tuerkis" type="radio" data-name="Türkis" data-price="0" data-date="0" data-visual="feinleinen-tuerkis-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-tuerkis">
                       <span class="title">Türkis</span>
-                      <img class="feinleinen-tuerkis-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-tuerkis-visual"></span>
                     </label>
                   </div>
 
@@ -2884,7 +2920,7 @@
                     <input id="co-feinleinen-pistazie" type="radio" data-name="Pistazie" data-price="0" data-date="0" data-visual="feinleinen-pistazie-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-pistazie">
                       <span class="title">Pistazie</span>
-                      <img class="feinleinen-pistazie-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-pistazie-visual"></span>
                     </label>
                   </div>
 
@@ -2893,7 +2929,7 @@
                     <input id="co-feinleinen-bambus" type="radio" data-name="Bambus" data-price="0" data-date="0" data-visual="feinleinen-bambus-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-bambus">
                       <span class="title">Bambus</span>
-                      <img class="feinleinen-bambus-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-bambus-visual"></span>
                     </label>
                   </div>
 
@@ -2902,7 +2938,7 @@
                     <input id="co-feinleinen-lindgruen" type="radio" data-name="Lindgrün" data-price="0" data-date="0" data-visual="feinleinen-lindgruen-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-lindgruen">
                       <span class="title">Lindgrün</span>
-                      <img class="feinleinen-lindgruen-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-lindgruen-visual"></span>
                     </label>
                   </div>
 
@@ -2910,7 +2946,7 @@
                     <input id="co-feinleinen-apfelgruen" type="radio" data-name="Apfelgrün" data-price="0" data-date="0" data-visual="feinleinen-apfelgruen-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-apfelgruen">
                       <span class="title">Apfelgrün</span>
-                      <img class="feinleinen-apfelgruen-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-apfelgruen-visual"></span>
                     </label>
                   </div>
 
@@ -2919,7 +2955,7 @@
                     <input id="co-feinleinen-dunkelgruen" type="radio" data-name="Dunkelgrün" data-price="0" data-date="0" data-visual="feinleinen-dunkelgruen-visual" name="color-outside" value="" />
                     <label for="co-feinleinen-dunkelgruen">
                       <span class="title">Dunkelgrün</span>
-                      <img class="feinleinen-dunkelgruen-visual" alt="test" src="/img/blanc.png">
+                      <span class="img feinleinen-dunkelgruen-visual"></span>
                     </label>
                   </div>
 
@@ -2930,57 +2966,125 @@
                    <input id="co-leather-schwarz" type="radio" data-name="Schwarz" data-price="0" data-date="0" data-visual="leather-schwarz-visual" name="color-outside" value="" />
                    <label for="co-leather-schwarz">
                      <span class="title">Schwarz</span>
-                     <img class="leather-schwarz-visual" alt="test" src="/img/blanc.png">
+                     <span class="img leather-schwarz-visual"></span>
                    </label>
                  </div>
 
                  <div class="gallery-cell">
                    <input id="co-leather-weiss" type="radio" data-name="Weiss" data-price="0" data-date="0" data-visual="leather-weiss-visual" name="color-outside" value="" />
                    <label for="co-leather-weiss">
-                     <span class="title">Weiss</span>
-                     <img class="leather-weiss-visual" alt="test" src="/img/blanc.png">
+                    <span class="title">Weiss</span>
+                    <span class="img leather-weiss-visual"></span>
                    </label>
                  </div>
 
                  <div class="gallery-cell">
                    <input id="co-leather-chamois" type="radio" data-name="Chamois" data-price="0" data-date="0" data-visual="leather-chamois-visual" name="color-outside" value="" />
                    <label for="co-leather-chamois">
-                     <span class="title">Chamois</span>
-                     <img class="leather-chamois-visual" alt="test" src="/img/blanc.png">
+                    <span class="title">Chamois</span>
+                    <span class="img leather-chamois-visual"></span>
                    </label>
                  </div>
 
                  <div class="gallery-cell">
                    <input id="co-leather-dunkelbraun" type="radio" data-name="Dunkelbraun" data-price="0" data-date="0" data-visual="leather-dunkelbraun-visual" name="color-outside" value="" />
                    <label for="co-leather-dunkelbraun">
-                     <span class="title">Dunkelbraun</span>
-                     <img class="leather-dunkelbraun-visual" alt="test" src="/img/blanc.png">
+                    <span class="title">Dunkelbraun</span>
+                    <span class="img leather-dunkelbraun-visual"></span>
                    </label>
                  </div>
 
                  <div class="gallery-cell">
                    <input id="co-leather-dunkelrot" type="radio" data-name="Dunkelrot" data-price="0" data-date="0" data-visual="leather-dunkelrot-visual" name="color-outside" value="" />
                    <label for="co-leather-dunkelrot">
-                     <span class="title">Dunkelrot</span>
-                     <img class="leather-dunkelrot-visual" alt="test" src="/img/blanc.png">
+                    <span class="title">Dunkelrot</span>
+                    <span class="img leather-dunkelrot-visual"></span>
                    </label>
                  </div>
 
                  <div class="gallery-cell">
                    <input id="co-leather-dunkelgruen" type="radio" data-name="Dunkelgrün" data-price="0" data-date="0" data-visual="leather-dunkelgruen-visual" name="color-outside" value="" />
                    <label for="co-leather-dunkelgruen">
-                     <span class="title">Dunkelgrün</span>
-                     <img class="leather-dunkelgruen-visual" alt="test" src="/img/blanc.png">
+                    <span class="title">Dunkelgrün</span>
+                    <span class="img leather-dunkelgruen-visual"></span>
                    </label>
                  </div>
 
                  <div class="gallery-cell">
                    <input id="co-leather-dunkelblau" type="radio" data-name="Dunkelblau" data-price="0" data-date="0" data-visual="leather-dunkelblau-visual" name="color-outside" value="" />
                    <label for="co-leather-dunkelblau">
-                     <span class="title">Dunkelblau</span>
-                     <img class="leather-dunkelblau-visual" alt="test" src="/img/blanc.png">
+                    <span class="title">Dunkelblau</span>
+                    <span class="img leather-dunkelblau-visual"></span>
                    </label>
                  </div>
+
+                </div>
+              </section>
+
+              <section id="lamination">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-lamination" type="radio" data-name="Ohne Veredelung" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="lamination" value="none" checked="checked" />
+                    <label for="no-lamination">
+                      <span class="title">Ohne Veredelung</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="lamination-matt" type="radio" data-name="Matt" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="lamination" value="" />
+                    <label for="lamination-matt">
+                      <span class="title">Matt</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="lamination-matt-scratch-resistant" type="radio" data-name="Matt/Kratzfest" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="lamination" value="" />
+                    <label for="lamination-matt-scratch-resistant">
+                      <span class="title">Matt/Kratzfest</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="lamination-glossy" type="radio" data-name="Glanz" data-price="0" data-date="0" data-visual="dina5-hoch-visual" name="lamination" value="" />
+                    <label for="lamination-glossy">
+                      <span class="title">Glanz</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
+
+                </div>
+              </section>
+
+              <section id="embossing">
+                <div class="gallery">
+
+                  <div class="gallery-cell">
+                    <input id="no-embossing" type="radio" data-name="Ohne Logoprägung" data-price="0" data-date="0" data-visual="no-embossing" name="embossing" value="none" />
+                    <label for="no-embossing">
+                      <span class="title">Ohne Logoprägung</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="blind-embossing" type="radio" data-name="Blindprägung" data-price="0" data-date="0" data-visual="blind-embossing" name="embossing" value="" />
+                    <label for="blind-embossing">
+                      <span class="title">Blindprägung</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="foil-embossing" type="radio" data-name="Heißfolienprägung" data-price="0" data-date="0" data-visual="foil-embossing" name="embossing" value="" checked="checked"/>
+                    <label for="foil-embossing">
+                      <span class="title">Heißfolienprägung</span>
+                      <span class="img feinleinen-lindgruen-visual"></span>
+                    </label>
+                  </div>
 
                 </div>
               </section>
