@@ -22,7 +22,19 @@ var App = {
 
 App.Models.Configuration = Backbone.Model.extend({
   defaults: {
-    quantity: 300
+    quantity: "300"
+  },
+  initialize: function() {
+    this.on("change:material", this.materialChanged);
+  },
+  materialChanged: function() {
+    var quantity = this.get("quantity");
+    var quantityDiscount = this.get("material").quantityDiscount;
+    var quantities = _.keys(quantityDiscount);
+
+    if (quantities.indexOf(quantity) < 0) {
+      this.set("quantity", quantities[0]);
+    }
   }
 });
 
@@ -321,7 +333,7 @@ App.Views.AppView = Backbone.View.extend({
 
   updateSelection: function() {
     _.each(this.model.keys(), function(attribute) {
-      if (this.model.hasChanged(attribute)) {
+      if (this.model.hasChanged(attribute) && attribute !== "quantity") {
         var selected = this.model.get(attribute);
         var $inputs = $("input[name='"+ attribute +"']");
         // check selected option
