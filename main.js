@@ -151,12 +151,12 @@ App.Views.Preview = Backbone.View.extend({
   },
   update: function() {
     var
-      format   = [this.model.get("size"), this.model.get("color")],
-      color    = [this.model.get("color")],
+      format   = [this.model.get("size"), this.model.get("color-outside")],
+      color    = [this.model.get("color-inside")],
       material = [this.model.get('material')],
       lamination = [this.model.get('lamination')],
       logo = [this.model.get('embossing')],
-      cleft    = [this.model.get('ablagefach'), this.model.get('color')],
+      cleft    = [this.model.get('ablagefach'), this.model.get('color-outside')],
       cright    = [this.model.get('model')];
 
     this._updateParagraph(material, 'container');
@@ -317,11 +317,11 @@ App.Views.AppView = Backbone.View.extend({
     _.each(this.model.keys(), function(attribute) {
       if (this.model.hasChanged(attribute)) {
         var selected = this.model.get(attribute);
-        var $inputs = $("input[name='"+selected.name+"']");
+        var $inputs = $("input[name='"+ attribute +"']");
         // check selected option
         $inputs.prop("checked", false);
         if (selected) {
-          $inputs.filter("[data-name='"+selected.name+"']").prop("checked", true);
+          $inputs.filter("#"+selected.id).prop("checked", true);
         } else {
           $inputs.filter("[value='none']").prop("checked", true);
         }
@@ -333,6 +333,16 @@ App.Views.AppView = Backbone.View.extend({
             _.each(_.where(self.galleryViews, {name: option}), function(view) {
               view.model.set("available", available);
             });
+            var current = self.model.get(option);
+            if (!current || _.indexOf(available, current.id) < 0) {
+              if (available.length > 0) {
+                var $input = $("input#" + available[0]);
+                var newValue = _.extend($input.data(), {id: $input.attr("id")});
+              } else {
+                newValue = false;
+              }
+              self.model.set(option, falseIfEmpty(newValue));
+            }
           });
         }
       }
@@ -351,7 +361,7 @@ App.Views.AppView = Backbone.View.extend({
     var $target = $(e.target);
     if ($target.prop("tagName") == "INPUT") {
       var name = $target.attr("name");
-      var data = $target.data();
+      var data = _.extend($target.data(), {id: $target.attr("id")});
       console.log(data);
       this.model.set(name, falseIfEmpty(data));
     }
@@ -394,13 +404,15 @@ var router = new App.Router();
 Backbone.history.start();
 
 function falseIfEmpty(data) {
-  return _.keys(data).length == 0 ? false : data;
+  // we consider a data object empty if it has nothing but
+  // an 'id' attribute
+  return _.keys(data).length == 1 && _.has(data, 'id') ? false : data;
 }
 
 // read default configuration from DOM
 var defaults = _.object(
   $("input:checked").map(function() { return $(this).attr("name"); }),
-  $("input:checked").map(function() { return falseIfEmpty($(this).data()); }) );
+  $("input:checked").map(function() { return falseIfEmpty(_.extend($(this).data(), {id: $(this).attr("id")})); }) );
 
 var config = new App.Models.Configuration();
 var view = new App.Views.AppView({model: config});
