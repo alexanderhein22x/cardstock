@@ -92,7 +92,7 @@ App.Views.GalleryView = Backbone.View.extend({
   initialize: function() {
     var flkty = this.flkty = new Flickity(this.el, {
       // options
-      cellAlign: 'left',
+      cellAlign: 'center',
       accessibility: false,
       pageDots: false,
       prevNextButtons: false,
@@ -154,6 +154,7 @@ App.Views.Preview = Backbone.View.extend({
       format   = [this.model.get("size"), this.model.get("color-outside")],
       color    = [this.model.get("color-inside")],
       material = [this.model.get('material')],
+      lamination = [this.model.get('lamination')],
       logo = [this.model.get('embossing')],
       cleft    = [this.model.get('ablagefach'), this.model.get('color-inside')],
       cright    = [this.model.get('model')];
@@ -161,6 +162,8 @@ App.Views.Preview = Backbone.View.extend({
     this._updateParagraph(material, 'container');
     this._updateParagraph(format, 'front');
     this._updateParagraph(format, 'back');
+    this._updateParagraph(lamination, 'kit-front');
+    this._updateParagraph(lamination, 'kit-back');
     this._updateParagraph(logo, 'embossing');
     this._updateParagraph(color, 'colorinner');
     this._updateParagraph(cleft, 'cleft');

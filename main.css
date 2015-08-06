@@ -96,6 +96,9 @@ display: none !important;
   font-weight: normal;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #options::-webkit-scrollbar {
@@ -250,6 +253,7 @@ display: none !important;
   float: left;
   width: 100%;
   padding: 24px;
+  display: none;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -277,10 +281,14 @@ display: none !important;
   float: left;
   width: 100%;
   height: 100px;
+  display: none;
   font-size: 13px;
   font-weight: normal;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .quantity::-webkit-scrollbar {
@@ -352,7 +360,9 @@ text-align: right;
   float: left;
   text-align: right;
   font-weight: bold;
-  color: #4985f7;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+  color: #00bcd4;
 }
 
 .mwst {
@@ -423,27 +433,6 @@ text-align: right;
   z-index: 10;
 }
 
-.tip{
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  width: 60px;
-  height: 60px;
-  border-radius: 4px;
-  background-color: #fff;
-  z-index: 10;
-  color: #323232;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 60px;
-  cursor: pointer;
-}
-
-.tip:hover{
-  background-color: #f5f5f5;
-}
-
 a.btn-zoomin, a.btn-zoomout {
   width: 60px;
   height: 61px;
@@ -451,6 +440,7 @@ a.btn-zoomin, a.btn-zoomout {
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
+  position: relative;
 }
 
 a.btn-zoomin {
@@ -478,6 +468,65 @@ a.btn-zoomout {
 
 .icon-plus:before{content: "\e615";}
 .icon-minus:before{content: "\e616";}
+
+.perspective .tooltip-text {
+  float: left;
+  width: 100%;
+  padding: 13px 30px;
+  color: #343434;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.perspective .tooltip-content {
+  position: absolute;
+  z-index: 1000;
+  width: 145px;
+  left: 100%;
+  margin: 0 0 5px 24px;
+  bottom: 0;
+  text-align: left;
+  font-size: 13px;
+  line-height: 24px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15);
+  background: #fff;
+  border-radius: 4px;
+  visibility: hidden;
+  cursor: default;
+  pointer-events: none;
+}
+
+.perspective .tooltip-content::after {
+  content: '';
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 12px;
+  border-style: solid;
+  border-width: 15px 20px 15px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.tip{
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #fff;
+  z-index: 10;
+  color: #323232;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+.tip:hover{
+  background-color: #f5f5f5;
+}
 
 #preview {
   position: relative;
@@ -576,7 +625,7 @@ a.btn-zoomout {
   box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
 }
 
-.kit {
+.kit-front, .kit-back {
   position: absolute;
   border-radius: 1px;
   top: 0;
@@ -584,12 +633,6 @@ a.btn-zoomout {
   left: 0;
   right: 0;
   z-index: 20;
-}
-
-.kit {
-  /* background-image: url(configurator/metallic.png); */
-  background-repeat: repeat;
-  background-size: 50px 50px;
 }
 
 .left {
@@ -730,6 +773,7 @@ a.btn-zoomout {
 }
 
 /* Prägung */
+
 
 
 /* Register */
@@ -880,53 +924,70 @@ a.btn-zoomout {
 /* Feinleinen */
 
 
-.feinleinen-schwarz-visual {background-color: #222222;}
-.feinleinen-weiss-visual {background-color: #fff;}
-.feinleinen-chamois-visual {background-color: #EDE6D4;}
-.feinleinen-beige-visual {background-color: #E1D3B9;}
-.feinleinen-sandbeige-visual {background-color: #D0C0B1;}
-.feinleinen-braunbeige-visual {background-color: #C7A575; }
-.feinleinen-goldgelb-visual {background-color: #F9D028; }
-.feinleinen-maisgelb-visual {background-color: #FEB501; }
-.feinleinen-orange-visual {background-color: #F55F01; }
-.feinleinen-rotbraun-visual {background-color: #D34E13; }
-.feinleinen-sienabraun-visual {background-color: #BA4227; }
-.feinleinen-naturbraun-visual {background-color: #833832; }
-.feinleinen-nussbraun-visual {background-color: #735E43; }
-.feinleinen-schokolade-visual {background-color: #423735; }
-.feinleinen-hellrot-visual {background-color: #E03A3A; }
-.feinleinen-rot-visual {background-color: #B32F3C; }
-.feinleinen-rosso-visual {background-color: #BC2F3F; }
-.feinleinen-kardinalrot-visual {background-color: #833245; }
-.feinleinen-weinrot-visual {background-color: #743E4B; }
-.feinleinen-altrosa-visual {background-color: #D1A49F; }
-.feinleinen-beerenrot-visual {background-color: #CB5877; }
-.feinleinen-purpur-visual {background-color: #E34DA4;}
-.feinleinen-silbergrau-visual {background-color: #C5C0C6; }
-.feinleinen-taubengrau-visual {background-color: #AFB6BC; }
-.feinleinen-titan-visual {background-color: #BAB6B5; }
-.feinleinen-braungrau-visual {background-color: #868581; }
-.feinleinen-grau-visual {background-color: #656460; }
-.feinleinen-anthrazit-visual {background-color: #3b3b3b; }
-.feinleinen-schiefergrau-visual {background-color: #2F2F37; }
-.feinleinen-schwarzblau-visual {background-color: #1F1F2B; }
-.feinleinen-pariserblau-visual {background-color: #353F58; }
-.feinleinen-opalblau-visual {background-color: #3A4595; }
-.feinleinen-hellblau-visual {background-color: #A6B7D3; }
-.feinleinen-mittelblau-visual {background-color: #0869AD; }
-.feinleinen-meerblau-visual {background-color: #6E95B6; }
-.feinleinen-cyan-visual {background-color: #018AD2; }
-.feinleinen-tuerkis-visual {background-color: #0196AA; }
-.feinleinen-pistazie-visual {background-color: #C4E886; }
-.feinleinen-bambus-visual {background-color: #D3CFAA; }
-.feinleinen-lindgruen-visual {background-color: #6D9E6F; }
-.feinleinen-apfelgruen-visual {background-color: #9EC46D; }
-.feinleinen-dunkelgruen-visual {background-color: #234F42; }
+.schwarz-visual {background-color: #222222;}
+.weiss-visual {background-color: #fff;}
+.chamois-visual {background-color: #EDE6D4;}
+.beige-visual {background-color: #E1D3B9;}
+.sandbeige-visual {background-color: #D0C0B1;}
+.braunbeige-visual {background-color: #C7A575; }
+.goldgelb-visual {background-color: #F9D028; }
+.maisgelb-visual {background-color: #FEB501; }
+.orange-visual {background-color: #F55F01; }
+.rotbraun-visual {background-color: #D34E13; }
+.sienabraun-visual {background-color: #BA4227; }
+.naturbraun-visual {background-color: #833832; }
+.nussbraun-visual {background-color: #735E43; }
+.schokolade-visual {background-color: #423735; }
+.hellrot-visual {background-color: #E03A3A; }
+.rot-visual {background-color: #B32F3C; }
+.rosso-visual {background-color: #BC2F3F; }
+.kardinalrot-visual {background-color: #833245; }
+.weinrot-visual {background-color: #743E4B; }
+.altrosa-visual {background-color: #D1A49F; }
+.beerenrot-visual {background-color: #CB5877; }
+.purpur-visual {background-color: #E34DA4;}
+.silbergrau-visual {background-color: #C5C0C6; }
+.taubengrau-visual {background-color: #AFB6BC; }
+.titan-visual {background-color: #BAB6B5; }
+.braungrau-visual {background-color: #868581; }
+.grau-visual {background-color: #656460; }
+.anthrazit-visual {background-color: #3b3b3b; }
+.schiefergrau-visual {background-color: #2F2F37; }
+.schwarzblau-visual {background-color: #1F1F2B; }
+.pariserblau-visual {background-color: #353F58; }
+.opalblau-visual {background-color: #3A4595; }
+.hellblau-visual {background-color: #A6B7D3; }
+.mittelblau-visual {background-color: #0869AD; }
+.meerblau-visual {background-color: #6E95B6; }
+.cyan-visual {background-color: #018AD2; }
+.tuerkis-visual {background-color: #0196AA; }
+.pistazie-visual {background-color: #C4E886; }
+.bambus-visual {background-color: #D3CFAA; }
+.lindgruen-visual {background-color: #6D9E6F; }
+.apfelgruen-visual {background-color: #9EC46D; }
+.dunkelgruen-visual {background-color: #234F42; }
 
-.gallery-cell label .img.feinleinen-weiss-visual,
-.gallery-cell label .img.leather-weiss-visual {
-  border: 2px solid #f5f5f5;
+
+/* Bilderdruck */
+
+.print-image-visual {
+background-image: url(configurator/print.jpg);
+background-repeat: no-repeat;
+background-size: cover;
 }
+
+
+/* Lederfaser */
+
+.leather-schwarz-visual {background: #222222;}
+.leather-weiss-visual {background: #fff;}
+.leather-chamois-visual {background: #EDE6D4;}
+.leather-dunkelbraun-visual {background: #2D211C;}
+.leather-dunkelrot-visual {background: #591F29;}
+.leather-dunkelgruen-visual {background: #234F42;}
+.leather-dunkelblau-visual {background: #252B4D;}
+
+
 /* Metallic */
 
 
@@ -1027,20 +1088,45 @@ a.btn-zoomout {
 }
 
 
-/* Lederfaser */
+/* Transparent */
 
-.leather-schwarz-visual {background: #222222;}
-.leather-weiss-visual {background: #fff;}
-.leather-chamois-visual {background: #EDE6D4;}
-.leather-dunkelbraun-visual {background: #2D211C;}
-.leather-dunkelrot-visual {background: #591F29;}
-.leather-dunkelgruen-visual {background: #234F42;}
-.leather-dunkelblau-visual {background: #252B4D;}
+.transparent-weiss-visual {background-color: rgba(255, 255, 255, .9);}
+.transparent-frosted-visual  {background-color: rgba(255, 255, 255, .6);}
 
 
+/* Liniar */
 
-/* Visual */
+.liniar-schwarz-visual {background: #222222;}
+.liniar-polarweiss-visual  {background: #fff;}
+.liniar-silber-visual  {background: #f5f5f5;}
+.liniar-ultramarin-visual  {background: #3A4595;}
 
+
+/* white color Fix */
+.gallery-cell label .img.weiss-visual,
+.gallery-cell label .img.leather-weiss-visual,
+.gallery-cell label .img.liniar-polarweiss-visual {
+  border: 2px solid #f5f5f5;
+}
+
+
+
+/* Veredelung */
+
+.lamination-glossy-visual {
+  background-image: url(configurator/glossy.png);
+  background-size: cover;
+}
+
+/* Veredelung */
+
+
+/* Rules */
+
+.back.print-image-visual .embossing {
+  display: none !important;
+}
+/* Rules */
 
 
 /* Configuratrion */
@@ -1123,6 +1209,8 @@ a.btn-zoomout {
   text-align: center;
   padding: 0px 20px;
   text-transform: uppercase;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
 }
 
 .nav button:hover {
@@ -1130,7 +1218,7 @@ a.btn-zoomout {
 }
 
 .nav button.navnext {
-  background: #4985f7;
+  background: #00bcd4;
 }
 
 .nav button.navnext:after {
@@ -1465,12 +1553,22 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   display: block;
 }
 
+.feinleinen-visual .header {background-color: #00bcd4;}
+.bilderdruck-visual .header {background-color: #03a9f4;}
+.lederfaser-visual .header {background-color: #9c27b0;}
+.chromokarton-visual .header {background-color: #ff9800;}
+.metallic-visual .header {background-color: #009688;}
+.transparent-visual .header {background-color: #c2185b;}
+.liniar-visual .header {background-color: #3f51b5;}
+
+
 .header {
   position: relative;
   float: left;
   width: 100%;
-  background-color: #4985f7;
   height: 60px;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
 }
 
 .navigation {
@@ -1595,11 +1693,11 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 }
 
 .navigation li.navigation-current a:before {
-  background-color: #4985f7;
+  background-color: #00bcd4;
 }
 
 .navigation li.navigation-current a {
-  color: #4985f7;
+  color: #00bcd4;
 }
 
 .navigation li:last-child::before {
@@ -1608,8 +1706,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #4985f7;
   content: '';
+  background-color: #00bcd4;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
@@ -1794,21 +1892,64 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 
 /* footer */
 
+
+
+
+
 /* THEMES */
 
-/*#material1-theme .navigation {
-  background-color: #00bcd4;
-}
+.feinleinen-visual .navigation li.navigation-current a:before  {background-color: #00bcd4;}
+.feinleinen-visual .navigation li:last-child::before {background-color: #00bcd4;}
+.feinleinen-visual .navigation li.navigation-current a {color: #00bcd4;}
+.feinleinen-visual .nav button.navnext {background-color: #00bcd4;}
+.feinleinen-visual .tab__content nav li.tab-current a {color: #00bcd4;}
+.feinleinen-visual .total-netto-price {color: #00bcd4;}
+.feinleinen-visual .footer a:active {color: #00bcd4;}
 
-#material2-theme .navigation {
-  background-color: #03a9f4;
-}*/
+.bilderdruck-visual .navigation li.navigation-current a:before  {background-color: #03a9f4;}
+.bilderdruck-visual .navigation li:last-child::before  {background-color: #03a9f4;}
+.bilderdruck-visual .navigation li.navigation-current a {color: #03a9f4;}
+.bilderdruck-visual .nav button.navnext  {background-color: #03a9f4;}
+.bilderdruck-visual .tab__content nav li.tab-current a {color: #03a9f4;}
+.bilderdruck-visual .total-netto-price {color: #03a9f4;}
+.bilderdruck-visual .footer a:active {color: #03a9f4;}
 
+.lederfaser-visual .navigation li.navigation-current a:before  {background-color: #9c27b0;}
+.lederfaser-visual .navigation li:last-child::before {background-color: #9c27b0;}
+.lederfaser-visual .navigation li.navigation-current a {color: #9c27b0;}
+.lederfaser-visual .nav button.navnext {background-color: #9c27b0;}
+.lederfaser-visual .tab__content nav li.tab-current a {color: #9c27b0;}
+.lederfaser-visual .total-netto-price {color: #9c27b0;}
+.lederfaser-visual .footer a:active {color: #9c27b0;}
 
-#material1-theme .footer a:active {
-  color: #00bcd4;
-}
+.chromokarton-visual .navigation li.navigation-current a:before  {background-color: #ff9800;}
+.chromokarton-visual .navigation li:last-child::before  {background-color: #ff9800;}
+.chromokarton-visual .navigation li.navigation-current a {color: #ff9800;}
+.chromokarton-visual .nav button.navnext  {background-color: #ff9800;}
+.chromokarton-visual .tab__content nav li.tab-current a {color: #ff9800;}
+.chromokarton-visual .total-netto-price {color: #ff9800;}
+.chromokarton-visual .footer a:active {color: #ff9800;}
 
-#material2-theme .footer a:active {
-  color: #03a9f4;
-}
+.metallic-visual .navigation li.navigation-current a:before  {background-color: #009688;}
+.metallic-visual .navigation li:last-child::before {background-color: #009688;}
+.metallic-visual .navigation li.navigation-current a {color: #009688;}
+.metallic-visual .nav button.navnext {background-color: #009688;}
+.metallic-visual .tab__content nav li.tab-current a {color: #009688;}
+.metallic-visual .total-netto-price {color: #009688;}
+.metallic-visual .footer a:active {color: #009688;}
+
+.transparent-visual .navigation li.navigation-current a:before  {background-color: #c2185b;}
+.transparent-visual .navigation li:last-child::before  {background-color: #c2185b;}
+.transparent-visual .navigation li.navigation-current a {color: #c2185b;}
+.transparent-visual .nav button.navnext  {background-color: #c2185b;}
+.transparent-visual .tab__content nav li.tab-current a {color: #c2185b;}
+.transparent-visual .total-netto-price {color: #c2185b;}
+.transparent-visual .footer a:active {color: #c2185b;}
+
+.liniar-visual .navigation li.navigation-current a:before  {background-color: #3f51b5;}
+.liniar-visual .navigation li:last-child::before  {background-color: #3f51b5;}
+.liniar-visual .navigation li.navigation-current a {color: #3f51b5;}
+.liniar-visual .nav button.navnext  {background-color: #3f51b5;}
+.liniar-visual .tab__content nav li.tab-current a {color: #3f51b5;}
+.liniar-visual .total-netto-price {color: #3f51b5;}
+.liniar-visual .footer a:active {color: #3f51b5;}
