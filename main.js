@@ -151,12 +151,12 @@ App.Views.Preview = Backbone.View.extend({
   },
   update: function() {
     var
-      format   = [this.model.get("size"), this.model.get("color-outside")],
-      color    = [this.model.get("color-inside")],
+      format   = [this.model.get("size"), this.model.get("color")],
+      color    = [this.model.get("color")],
       material = [this.model.get('material')],
       lamination = [this.model.get('lamination')],
       logo = [this.model.get('embossing')],
-      cleft    = [this.model.get('ablagefach'), this.model.get('color-inside')],
+      cleft    = [this.model.get('ablagefach'), this.model.get('color')],
       cright    = [this.model.get('model')];
 
     this._updateParagraph(material, 'container');

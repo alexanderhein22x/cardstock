@@ -1096,16 +1096,17 @@ background-size: cover;
 
 /* Liniar */
 
-.liniar-schwarz-visual {background: #222222;}
-.liniar-polarweiss-visual  {background: #fff;}
-.liniar-silber-visual  {background: #f5f5f5;}
-.liniar-ultramarin-visual  {background: #3A4595;}
+.liniar-schwarz-visual {background-color: #222222;}
+.liniar-polarweiss-visual  {background-color: #fff;}
+.liniar-silber-visual  {background-color: #f5f5f5;}
+.liniar-ultramarin-visual  {background-color: #3A4595;}
 
 
 /* white color Fix */
 .gallery-cell label .img.weiss-visual,
 .gallery-cell label .img.leather-weiss-visual,
-.gallery-cell label .img.liniar-polarweiss-visual {
+.gallery-cell label .img.liniar-polarweiss-visual,
+.gallery-cell label img.transparent-weiss-visual {
   border: 2px solid #f5f5f5;
 }
 
@@ -1126,6 +1127,17 @@ background-size: cover;
 .back.print-image-visual .embossing {
   display: none !important;
 }
+
+.back.print-image-visual .embossing {
+  display: none !important;
+}
+
+.liniar-visual .kit-back {
+  background-image: url(configurator/liniar.png);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
 /* Rules */
 
 
