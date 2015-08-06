@@ -292,17 +292,26 @@
             </div>
             {{/if}}
 
-
-
+            {{#if color-inside}}
             <div class="examplecontainer">
-              <span class="title">Innenfarbe</span>
+              <span class="title">color inside</span>
               <a href="#tab5/0" title="link to checked radio button" class="link">{{color-inside.name}}</a>
             </div>
+            {{/if}}
 
+            {{#if color-outside}}
             <div class="examplecontainer">
-              <span class="title">Außefarbe</span>
+              <span class="title">color outside</span>
               <a href="#tab5/1" title="link to checked radio button" class="link">{{color-outside.name}}</a>
             </div>
+            {{/if}}
+
+            {{#if color}}
+            <div class="examplecontainer">
+              <span class="title">color</span>
+              <a href="#tab5/2" title="link to checked radio button" class="link">{{color.name}}</a>
+            </div>
+            {{/if}}
 
           </template>
 

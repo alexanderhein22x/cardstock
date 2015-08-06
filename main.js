@@ -78,7 +78,7 @@ App.Views.TabView = Backbone.View.extend({
     }
   },
   resizeContent: function(e) {
-    if (typeof e === "number") {
+    if (typeof e === "number" || typeof e === "string") {
       var tabIndex = e;
     } else {
       tabIndex = this.$tabs.index( $(e.target).parents("li").find("a") );
@@ -138,6 +138,12 @@ App.Views.GalleryView = Backbone.View.extend({
     this.model.set("visible", $visibleOptions.map(function() {
       return $(this).attr("id");
     }));
+  },
+  selectedItem: function() {
+    return this.$("input:checked").parents(".gallery-cell").index();
+  },
+  select: function(itemIndex) {
+    this.flkty.select(itemIndex);
   },
   resize: function() {
     this.flkty.resize();
@@ -373,6 +379,10 @@ App.Router = Backbone.Router.extend({
     ':tab(/:subTab)': 'viewTab'
   },
 
+  initialize: function(options) {
+    this.appView = options.appView;
+  },
+
   viewTab: function(tab, subTab) {
     var tabIndex = window.locatePosByHref('#' + tab);
     // open subtab if appropriate
@@ -380,28 +390,23 @@ App.Router = Backbone.Router.extend({
       if (subTab === "selected") {
         // find subtab with checked input
         subtabEl = $('[data-tab-id=' + tab + ']').find("input:checked").parents("section");
-        window.tabsList[tabIndex]._show(subtabEl.index());
+        this.appView.tabViews[tabIndex].show(subtabEl.index());
       } else {
         var subtabEl = $('[data-tab-id=' + tab + ']').find("section")[subTab];
-        window.tabsList[tabIndex]._show(subTab);
+        this.appView.tabViews[tabIndex].show(subTab);
       }
       // scroll selected element into view
-      var flickityElement = $(subtabEl).find(".gallery")[0];
-      var flickity = _.findWhere(window.flickityList, { element: flickityElement });
-      var itemIndex = $(subtabEl).find("input:checked").parents(".gallery-cell").index();
+      var galleryView = this.appView.galleryViews[$(subtabEl).attr("id")];
+      var itemIndex = galleryView.selectedItem();
       setTimeout(function() {
-        flickity.resize();
-        flickity.select(itemIndex);
+        galleryView.resize();
+        galleryView.select(itemIndex);
       }, 100);
     }
     // navigate to selected tab
     navigate(tabIndex);
   }
 });
-var router = new App.Router();
-
-// start routing
-Backbone.history.start();
 
 function falseIfEmpty(data) {
   // we consider a data object empty if it has nothing but
@@ -416,7 +421,11 @@ var defaults = _.object(
 
 var config = new App.Models.Configuration();
 var view = new App.Views.AppView({model: config});
+var router = new App.Router({appView: view});
 
 // set defaults after initializing event listeners
 config.set(defaults);
 view.render();
+
+// start routing
+Backbone.history.start();
