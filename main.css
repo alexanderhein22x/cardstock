@@ -253,6 +253,7 @@ display: none !important;
   float: left;
   width: 100%;
   padding: 24px;
+  display: none;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -280,6 +281,7 @@ display: none !important;
   float: left;
   width: 100%;
   height: 140px;
+  display: none;
   font-size: 13px;
   font-weight: normal;
   overflow-y: scroll;
@@ -1020,8 +1022,8 @@ background-size: cover;
 .p1345{background-color:#ffd691;}
 .p135{background-color:#fcc963;}
 .p1355{background-color:#fcce87;}
-.p328{background-color:#fcbf49;}
-.p3285{background-color:#fcba5e;}
+.p136{background-color:#fcbf49;}
+.p1365{background-color:#fcba5e;}
 .p137{background-color:#fca311;}
 .p1375{background-color:#f99b0c;}
 .p138{background-color:#d88c02;}
@@ -1096,7 +1098,7 @@ background-size: cover;
 .p1785{background-color:#fc4f59;}
 .p1787{background-color:#f43f4f;}
 .p1788{background-color:#ef2b2d;}
-.p1788-2x{background-color:#d6280;}
+.p1788-2x{background-color:#d62100;}
 .p179{background-color:#e23d28;}
 .p1795{background-color:#d62828;}
 .p1797{background-color:#cc2d30;}
@@ -1138,7 +1140,7 @@ background-size: cover;
 .p204{background-color:#ed7a9e;}
 .p205{background-color:#e54c7c;}
 .p206{background-color:#d30547;}
-.p207{background-color:#baaa9e;}
+.p207{background-color:#c0004e;}
 .p208{background-color:#8e2344;}
 .p209{background-color:#75263d;}
 .p210{background-color:#ffa0bf;}
@@ -1515,7 +1517,6 @@ background-size: cover;
 .p451{background-color:#ada07a;}
 .p4515{background-color:#bcad75;}
 .p452{background-color:#c4b796;}
-.p452-2x{background-color:#009944;}
 .p4525{background-color:#ccbf8e;}
 .p453{background-color:#d6ccaf;}
 .p4535{background-color:#dbcea5;}
@@ -1576,6 +1577,7 @@ background-size: cover;
 .p490{background-color:#5b2626;}
 .p491{background-color:#752828;}
 .p492{background-color:#913338;}
+.p493{background-color:#db828c;}
 .p494{background-color:#f2adb2;}
 .p495{background-color:#f4bcbf;}
 .p496{background-color:#f7c9c6;}
@@ -2265,7 +2267,7 @@ background-size: cover;
 
 .gallery-cell {
   height: 230px;
-  min-width: 200px;
+  min-width: 87px;
   margin-right: 24px;
   margin-bottom: 15px;
   margin-top: 5px;
