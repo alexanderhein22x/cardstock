@@ -1,4 +1,3 @@
-
 Handlebars.registerHelper("checkedIf", function(condition) {
   return (condition) ? "checked" : "";
 });

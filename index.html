@@ -24,8 +24,7 @@
 <div class="container feinleinen-visual">
 
 
-    <div class="header">
-    </div>
+<div class="header"></div>
 
 
   <nav class="navigation">
@@ -162,6 +161,14 @@
               <a href="#tab3/0" title="link to checked radio button" class="link">{{size.name}}</a>
           </div>
 
+
+
+          {{#if print-outside}}
+          <div class="examplecontainer">
+            <span class="title">Druck außen</span>
+            <a href="#tab5/2" title="link to checked radio button" class="link">{{print-outside.name}}</a>
+          </div>
+          {{/if}}
 
           {{#if lamination}}
           <div class="examplecontainer">
@@ -379,7 +386,6 @@
 
     <!-- TAB 1 -->
     <div data-tab-id="tab1" class="tab tab--current">
-
       <div class="tab__content">
 
         <div class="subnav">
@@ -1059,8 +1065,6 @@
 
                 </div>
               </section>
-
-
 
               <section id="taschen-mappen">
                 <div class="gallery">
@@ -2198,7 +2202,7 @@
           </div>
 
 
-            <div class="content-wrap">
+    <div class="content-wrap">
 
               <section id="color-inside">
                 <div class="gallery">
@@ -3102,6 +3106,7 @@
               </section>
 
               <section id="print-outside">
+
                 <div class="gallery">
 
                   <div class="gallery-cell">
@@ -3111,6 +3116,10 @@
                       <span class="img print-image-visual"></span>
                     </label>
                   </div>
+
+                  </div>
+
+                <div class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p100" type="radio" data-name="Pantone 100 C" data-price="0" data-date="0" data-visual="p100" name="print-outside" value="" />
@@ -3249,9 +3258,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p116-2x" type="radio" data-name="Pantone 116 2X C" data-price="0" data-date="0" data-visual="p116-2x" name="print-outside" value="" />
+                    <input id="po-p116-2x" type="radio" data-name="Pantone 116 C 2X" data-price="0" data-date="0" data-visual="p116-2x" name="print-outside" value="" />
                     <label for="po-p116-2x">
-                      <span class="title">116 2X C</span>
+                      <span class="title">116 C 2X</span>
                       <span class="img p116-2x"></span>
                     </label>
                   </div>
@@ -4359,6 +4368,10 @@
                       <span class="img p199"></span>
                     </label>
                   </div>
+
+                  </div>
+
+                  <div class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p200" type="radio" data-name="Pantone 200 C" data-price="0" data-date="0" data-visual="p200" name="print-outside" value="" />
@@ -5752,6 +5765,10 @@
                     </label>
                   </div>
 
+                  </div>
+
+                  <div class="gallery">
+
                   <div class="gallery-cell">
                     <input id="po-p300" type="radio" data-name="Pantone 300 C" data-price="0" data-date="0" data-visual="p300" name="print-outside" value="" />
                     <label for="po-p300">
@@ -6017,9 +6034,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p320-2x" type="radio" data-name="Pantone 320 2X C" data-price="0" data-date="0" data-visual="p320-2x" name="print-outside" value="" />
+                    <input id="po-p320-2x" type="radio" data-name="Pantone 320 C 2X" data-price="0" data-date="0" data-visual="p320-2x" name="print-outside" value="" />
                     <label for="po-p320-2x">
-                      <span class="title">320 2X C</span>
+                      <span class="title">320 C 2X</span>
                       <span class="img p320-2x"></span>
                     </label>
                   </div>
@@ -6153,9 +6170,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p327-2x" type="radio" data-name="Pantone 327 2X C" data-price="0" data-date="0" data-visual="p327-2x" name="print-outside" value="" />
+                    <input id="po-p327-2x" type="radio" data-name="Pantone 327 C 2X" data-price="0" data-date="0" data-visual="p327-2x" name="print-outside" value="" />
                     <label for="po-p327-2x">
-                      <span class="title">327 2X C</span>
+                      <span class="title">327 C 2X</span>
                       <span class="img p327-2x"></span>
                     </label>
                   </div>
@@ -6641,9 +6658,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p368-2x" type="radio" data-name="Pantone 368 2X C" data-price="0" data-date="0" data-visual="p368-2x" name="print-outside" value="" />
+                    <input id="po-p368-2x" type="radio" data-name="Pantone 368 C 2X" data-price="0" data-date="0" data-visual="p368-2x" name="print-outside" value="" />
                     <label for="po-p368-2x">
-                      <span class="title">368 2X C</span>
+                      <span class="title">368 C 2X</span>
                       <span class="img p368-2x"></span>
                     </label>
                   </div>
@@ -6705,9 +6722,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p375-2x" type="radio" data-name="Pantone 375 2X C" data-price="0" data-date="0" data-visual="p375-2x" name="print-outside" value="" />
+                    <input id="po-p375-2x" type="radio" data-name="Pantone 375 C 2X" data-price="0" data-date="0" data-visual="p375-2x" name="print-outside" value="" />
                     <label for="po-p375-2x">
-                      <span class="title">375 2X C</span>
+                      <span class="title">375 C 2X</span>
                       <span class="img p375-2x"></span>
                     </label>
                   </div>
@@ -6769,9 +6786,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p382-2x" type="radio" data-name="Pantone 382 2X C" data-price="0" data-date="0" data-visual="p382-2x" name="print-outside" value="" />
+                    <input id="po-p382-2x" type="radio" data-name="Pantone 382 C 2X" data-price="0" data-date="0" data-visual="p382-2x" name="print-outside" value="" />
                     <label for="po-p382-2x">
-                      <span class="title">382 2X C</span>
+                      <span class="title">382 C 2X</span>
                       <span class="img p382-2x"></span>
                     </label>
                   </div>
@@ -6967,6 +6984,10 @@
                       <span class="img p3995"></span>
                     </label>
                   </div>
+
+                  </div>
+
+                  <div class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p400" type="radio" data-name="Pantone 400 C" data-price="0" data-date="0" data-visual="p400" name="print-outside" value="" />
@@ -7241,9 +7262,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p433-2x" type="radio" data-name="Pantone 433 2X C" data-price="0" data-date="0" data-visual="p433-2x" name="print-outside" value="" />
+                    <input id="po-p433-2x" type="radio" data-name="Pantone 433 C 2X" data-price="0" data-date="0" data-visual="p433-2x" name="print-outside" value="" />
                     <label for="po-p433-2x">
-                      <span class="title">433 2X C</span>
+                      <span class="title">433 C 2X</span>
                       <span class="img p433-2x"></span>
                     </label>
                   </div>
@@ -7569,9 +7590,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p464-2x" type="radio" data-name="Pantone 464 2X C" data-price="0" data-date="0" data-visual="p464-2x" name="print-outside" value="" />
+                    <input id="po-p464-2x" type="radio" data-name="Pantone 464 C 2X" data-price="0" data-date="0" data-visual="p464-2x" name="print-outside" value="" />
                     <label for="po-p464-2x">
-                      <span class="title">464 2X C</span>
+                      <span class="title">464 C 2X</span>
                       <span class="img p464-2x"></span>
                     </label>
                   </div>
@@ -7689,9 +7710,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p471-2x" type="radio" data-name="Pantone 471 2X C" data-price="0" data-date="0" data-visual="p471-2x" name="print-outside" value="" />
+                    <input id="po-p471-2x" type="radio" data-name="Pantone 471 C 2X" data-price="0" data-date="0" data-visual="p471-2x" name="print-outside" value="" />
                     <label for="po-p471-2x">
-                      <span class="title">471 2X C</span>
+                      <span class="title">471 C 2X</span>
                       <span class="img p471-2x"></span>
                     </label>
                   </div>
@@ -7841,9 +7862,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p485-2x" type="radio" data-name="Pantone 485 2X C" data-price="0" data-date="0" data-visual="p485-2x" name="print-outside" value="" />
+                    <input id="po-p485-2x" type="radio" data-name="Pantone 485 C 2X" data-price="0" data-date="0" data-visual="p485-2x" name="print-outside" value="" />
                     <label for="po-p485-2x">
-                      <span class="title">485 2X C</span>
+                      <span class="title">485 C 2X</span>
                       <span class="img p485-2x"></span>
                     </label>
                   </div>
@@ -7983,6 +8004,10 @@
                       <span class="img p4995"></span>
                     </label>
                   </div>
+
+                  </div>
+
+                  <div class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p500" type="radio" data-name="Pantone 500 C" data-price="0" data-date="0" data-visual="p500" name="print-outside" value="" />
@@ -9329,6 +9354,10 @@
                     </label>
                   </div>
 
+                  </div>
+
+                  <div class="gallery">
+
                   <div class="gallery-cell">
                     <input id="po-p600" type="radio" data-name="Pantone 600 C" data-price="0" data-date="0" data-visual="p600" name="print-outside" value="" />
                     <label for="po-p600">
@@ -10129,6 +10158,10 @@
                     </label>
                   </div>
 
+                  </div>
+
+                  <div class="gallery">
+
                   <div class="gallery-cell">
                     <input id="po-p700" type="radio" data-name="Pantone 700 C" data-price="0" data-date="0" data-visual="p700" name="print-outside" value="" />
                     <label for="po-p700">
@@ -10393,6 +10426,10 @@
                     </label>
                   </div>
 
+                  </div>
+
+                  <div class="gallery">
+
                   <div class="gallery-cell">
                     <input id="po-p801" type="radio" data-name="Pantone 801 C" data-price="0" data-date="0" data-visual="p801" name="print-outside" value="" />
                     <label for="po-p801">
@@ -10402,9 +10439,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p801-2x" type="radio" data-name="Pantone 801 2X C" data-price="0" data-date="0" data-visual="p801-2x" name="print-outside" value="" />
+                    <input id="po-p801-2x" type="radio" data-name="Pantone 801 C 2X" data-price="0" data-date="0" data-visual="p801-2x" name="print-outside" value="" />
                     <label for="po-p801-2x">
-                      <span class="title">801 2X C</span>
+                      <span class="title">801 C 2X</span>
                       <span class="img p801-2x"></span>
                     </label>
                   </div>
@@ -10418,9 +10455,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p802-2x" type="radio" data-name="Pantone 802 2X C" data-price="0" data-date="0" data-visual="p802-2x" name="print-outside" value="" />
+                    <input id="po-p802-2x" type="radio" data-name="Pantone 802 C 2X" data-price="0" data-date="0" data-visual="p802-2x" name="print-outside" value="" />
                     <label for="po-p802-2x">
-                      <span class="title">802 2X C</span>
+                      <span class="title">802 C 2X</span>
                       <span class="img p802-2x"></span>
                     </label>
                   </div>
@@ -10434,9 +10471,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p803-2x" type="radio" data-name="Pantone 803 2X C" data-price="0" data-date="0" data-visual="p803-2x" name="print-outside" value="" />
+                    <input id="po-p803-2x" type="radio" data-name="Pantone 803 C 2X" data-price="0" data-date="0" data-visual="p803-2x" name="print-outside" value="" />
                     <label for="po-p803-2x">
-                      <span class="title">803 2X C</span>
+                      <span class="title">803 C 2X</span>
                       <span class="img p803-2x"></span>
                     </label>
                   </div>
@@ -10450,9 +10487,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p804-2x" type="radio" data-name="Pantone 804 2X C" data-price="0" data-date="0" data-visual="p804-2x" name="print-outside" value="" />
+                    <input id="po-p804-2x" type="radio" data-name="Pantone 804 C 2X" data-price="0" data-date="0" data-visual="p804-2x" name="print-outside" value="" />
                     <label for="po-p804-2x">
-                      <span class="title">804 2X C</span>
+                      <span class="title">804 C 2X</span>
                       <span class="img p804-2x"></span>
                     </label>
                   </div>
@@ -10466,9 +10503,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p805-2x" type="radio" data-name="Pantone 805 2X C" data-price="0" data-date="0" data-visual="p805-2x" name="print-outside" value="" />
+                    <input id="po-p805-2x" type="radio" data-name="Pantone 805 C 2X" data-price="0" data-date="0" data-visual="p805-2x" name="print-outside" value="" />
                     <label for="po-p805-2x">
-                      <span class="title">805 2X C</span>
+                      <span class="title">805 C 2X</span>
                       <span class="img p805-2x"></span>
                     </label>
                   </div>
@@ -10482,9 +10519,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p806-2x" type="radio" data-name="Pantone 806 2X C" data-price="0" data-date="0" data-visual="p806-2x" name="print-outside" value="" />
+                    <input id="po-p806-2x" type="radio" data-name="Pantone 806 C 2X" data-price="0" data-date="0" data-visual="p806-2x" name="print-outside" value="" />
                     <label for="po-p806-2x">
-                      <span class="title">806 2X C</span>
+                      <span class="title">806 C 2X</span>
                       <span class="img p806-2x"></span>
                     </label>
                   </div>
@@ -10498,9 +10535,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p807-2x" type="radio" data-name="Pantone 807 2X C" data-price="0" data-date="0" data-visual="p807-2x" name="print-outside" value="" />
+                    <input id="po-p807-2x" type="radio" data-name="Pantone 807 C 2X" data-price="0" data-date="0" data-visual="p807-2x" name="print-outside" value="" />
                     <label for="po-p807-2x">
-                      <span class="title">807 2X C</span>
+                      <span class="title">807 C 2X</span>
                       <span class="img p807-2x"></span>
                     </label>
                   </div>
@@ -10514,9 +10551,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p808-2x" type="radio" data-name="Pantone 808 2X C" data-price="0" data-date="0" data-visual="p808-2x" name="print-outside" value="" />
+                    <input id="po-p808-2x" type="radio" data-name="Pantone 808 C 2X" data-price="0" data-date="0" data-visual="p808-2x" name="print-outside" value="" />
                     <label for="po-p808-2x">
-                      <span class="title">808 2X C</span>
+                      <span class="title">808 C 2X</span>
                       <span class="img p808-2x"></span>
                     </label>
                   </div>
@@ -10530,9 +10567,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p809-2x" type="radio" data-name="Pantone 809 2X C" data-price="0" data-date="0" data-visual="p809-2x" name="print-outside" value="" />
+                    <input id="po-p809-2x" type="radio" data-name="Pantone 809 C 2X" data-price="0" data-date="0" data-visual="p809-2x" name="print-outside" value="" />
                     <label for="po-p809-2x">
-                      <span class="title">809 2X</span>
+                      <span class="title">809 C 2X</span>
                       <span class="img p809-2x"></span>
                     </label>
                   </div>
@@ -10546,9 +10583,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p810-2x" type="radio" data-name="Pantone 810 2X C" data-price="0" data-date="0" data-visual="p810-2x" name="print-outside" value="" />
+                    <input id="po-p810-2x" type="radio" data-name="Pantone 810 C 2X" data-price="0" data-date="0" data-visual="p810-2x" name="print-outside" value="" />
                     <label for="po-p810-2x">
-                      <span class="title">810 2X C</span>
+                      <span class="title">810 C 2X</span>
                       <span class="img p810-2x"></span>
                     </label>
                   </div>
@@ -10562,9 +10599,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p811-2x" type="radio" data-name="Pantone 811 2X C" data-price="0" data-date="0" data-visual="p811-2x" name="print-outside" value="" />
+                    <input id="po-p811-2x" type="radio" data-name="Pantone 811 C 2X" data-price="0" data-date="0" data-visual="p811-2x" name="print-outside" value="" />
                     <label for="po-p811-2x">
-                      <span class="title">811 2X</span>
+                      <span class="title">811 C 2X</span>
                       <span class="img p811-2x"></span>
                     </label>
                   </div>
@@ -10578,9 +10615,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p812-2x" type="radio" data-name="Pantone 812 2X C" data-price="0" data-date="0" data-visual="p812-2x" name="print-outside" value="" />
+                    <input id="po-p812-2x" type="radio" data-name="Pantone 812 C 2X" data-price="0" data-date="0" data-visual="p812-2x" name="print-outside" value="" />
                     <label for="po-p812-2x">
-                      <span class="title">812 2X</span>
+                      <span class="title">812 C 2X</span>
                       <span class="img p812-2x"></span>
                     </label>
                   </div>
@@ -10594,9 +10631,9 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p813-2x" type="radio" data-name="Pantone 813 2X C" data-price="0" data-date="0" data-visual="p813-2x" name="print-outside" value="" />
+                    <input id="po-p813-2x" type="radio" data-name="Pantone 813 C 2X" data-price="0" data-date="0" data-visual="p813-2x" name="print-outside" value="" />
                     <label for="po-p813-2x">
-                      <span class="title">813 2X C</span>
+                      <span class="title">813 C 2X</span>
                       <span class="img p813-2x"></span>
                     </label>
                   </div>
@@ -10610,16 +10647,15 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="po-p814-2x" type="radio" data-name="Pantone 814 2X C" data-price="0" data-date="0" data-visual="p814-2x" name="print-outside" value="" />
+                    <input id="po-p814-2x" type="radio" data-name="Pantone 814 C 2X" data-price="0" data-date="0" data-visual="p814-2x" name="print-outside" value="" />
                     <label for="po-p814-2x">
-                      <span class="title">814 2X C</span>
+                      <span class="title">814 C 2X</span>
                       <span class="img p814-2x"></span>
                     </label>
                   </div>
 
-
-
                 </div>
+
               </section>
 
               <section id="print-inside">
@@ -10874,7 +10910,6 @@
     <!-- TAB 6 END -->
 
 
-
     <!-- TAB 7 -->
     <div data-tab-id="tab7" class="tab">
         <div class="tab__content">
@@ -10910,6 +10945,7 @@
         </div>
       </div>
     <!-- TAB 7 END -->
+
 
   </div>
 
