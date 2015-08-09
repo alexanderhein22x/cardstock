@@ -170,6 +170,7 @@ display: none !important;
   font-weight: bold;
   cursor: pointer;
   padding: 0 12px;
+  overflow: hidden;
   width: 180px;
   height: 30px;
   line-height: 30px;
@@ -253,7 +254,6 @@ display: none !important;
   float: left;
   width: 100%;
   padding: 24px;
-  display: none;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -281,7 +281,6 @@ display: none !important;
   float: left;
   width: 100%;
   height: 140px;
-  display: none;
   font-size: 13px;
   font-weight: normal;
   overflow-y: scroll;
@@ -500,7 +499,7 @@ a.btn-zoomout {
   width: 0;
   height: 0;
   left: 0px;
-  top: 12px;
+  top: 11px;
   border-style: solid;
   border-width: 15px 20px 15px 0;
   border-color: transparent #fff transparent transparent;
@@ -525,6 +524,34 @@ a.btn-zoomout {
 
 .tip:hover{
   background-color: #f5f5f5;
+}
+
+.tipcomment{
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+  color: #323232;
+  padding: 12px 10px;
+  position: absolute;
+  z-index: 1;
+  top: -148px;
+  left: 105px;
+  width: 580px;
+  line-height: 20px;
+  height: 60px;
+  border-radius: 4px;
+  display: none;
+}
+.tipcomment::after {
+  content: '';
+  position: absolute;
+  left: -7px;
+  width: 0;
+  height: 0;
+  top: 25px;
+  border-style: solid;
+  border-width: 7px 8px 7px 0;
+  border-color: transparent #fff transparent transparent;
 }
 
 #preview {
@@ -2274,6 +2301,7 @@ background-size: cover;
   border-radius: 5px;
   counter-increment: gallery-cell;
   transition: transform 0.2s;
+  background: #f5f5f5;
 }
 
 .gallery-cell:first-child {
@@ -2320,18 +2348,9 @@ background-size: cover;
   width: 100%;
   display: block;
   font-size: 13px;
-  height: 50px;
-  line-height: 50px;
-  font-weight: bold;
-  padding-left: 12px;
-  background-color: #f5f5f5;
-  color: #343434;
+  text-align: center;
+  padding: 12px;
   border-radius: 3px 3px 0px 0px;
-}
-
-.gallery-cell input:checked + label .title {
-  color: #fff;
-  background-color: #343434;
 }
 
 .tab__content nav ul {
@@ -2845,9 +2864,56 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 
 
 
+/* buttons */
+
+.buttonicon{
+  float: left;
+  width: 270px;
+}
+
+.sizeicon{
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  color: #343434;
+  border-radius: 1px;
+}
+
+.gallery-cell input:checked + label .sizeicon {
+  background-color:#fff;
+  border-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.dina4-hoch{width: 80px; height: 100px; line-height: 100px; margin-top: 20px;}
+.dina4-quer{width: 100px; height: 80px; line-height: 80px; margin-top: 20px;}
+.dina5-hoch{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.dina5-quer{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.dina3-hoch{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.dina3-quer{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.dina2-hoch{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.dina2-quer{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.quadrat-21{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+.quadrat-32{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
+
+
+
+/* buttons */
+
+.gallery-cell input:checked + label{
+  color: #fff;
+}
+
 /* THEMES */
 
 .feinleinen-visual .header  {background-color: #00bcd4;}
+.feinleinen-visual .gallery-cell label:hover  {color: #00bcd4;}
+.feinleinen-visual .gallery-cell input:checked + label  {color: #fff; background-color: #00bcd4;}
 .feinleinen-visual .navigation li.navigation-current a:before  {background-color: #00bcd4;}
 .feinleinen-visual .navigation li:last-child::before {background-color: #00bcd4;}
 .feinleinen-visual .navigation li.navigation-current a {color: #00bcd4;}
@@ -2858,6 +2924,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .feinleinen-visual .quantity input[type="radio"]:checked + label { background-color: #00bcd4; }
 
 .bilderdruck-visual .header  {background-color: #03a9f4;}
+.bilderdruck-visual .gallery-cell label:hover  {color: #03a9f4;}
+.bilderdruck-visual .gallery-cell input:checked + label  {color: #fff; background-color: #03a9f4;}
 .bilderdruck-visual .navigation li.navigation-current a:before  {background-color: #03a9f4;}
 .bilderdruck-visual .navigation li:last-child::before  {background-color: #03a9f4;}
 .bilderdruck-visual .navigation li.navigation-current a {color: #03a9f4;}
@@ -2868,6 +2936,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .bilderdruck-visual .quantity input[type="radio"]:checked + label { background-color: #03a9f4; }
 
 .lederfaser-visual .header  {background-color: #9c27b0;}
+.lederfaser-visual .gallery-cell label:hover  {color: #9c27b0;}
+.lederfaser-visual .gallery-cell input:checked + label  {color: #fff; background-color: #9c27b0;}
 .lederfaser-visual .navigation li.navigation-current a:before  {background-color: #9c27b0;}
 .lederfaser-visual .navigation li:last-child::before {background-color: #9c27b0;}
 .lederfaser-visual .navigation li.navigation-current a {color: #9c27b0;}
@@ -2878,6 +2948,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .lederfaser-visual .quantity input[type="radio"]:checked + label { background-color: #9c27b0; }
 
 .chromokarton-visual .header  {background-color: #ff9800;}
+.chromokarton-visual .gallery-cell label:hover  {color: #ff9800;}
+.chromokarton-visual .gallery-cell input:checked + label  {color: #fff; background-color: #ff9800;}
 .chromokarton-visual .navigation li.navigation-current a:before  {background-color: #ff9800;}
 .chromokarton-visual .navigation li:last-child::before  {background-color: #ff9800;}
 .chromokarton-visual .navigation li.navigation-current a {color: #ff9800;}
@@ -2888,6 +2960,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .chromokarton-visual .quantity input[type="radio"]:checked + label { background-color: #ff9800; }
 
 .metallic-visual .header  {background-color: #009688;}
+.metallic-visual .gallery-cell label:hover  {color: #009688;}
+.metallic-visual .gallery-cell input:checked + label  {color: #fff; background-color: #009688;}
 .metallic-visual .navigation li.navigation-current a:before  {background-color: #009688;}
 .metallic-visual .navigation li:last-child::before {background-color: #009688;}
 .metallic-visual .navigation li.navigation-current a {color: #009688;}
@@ -2898,6 +2972,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .metallic-visual .quantity input[type="radio"]:checked + label { background-color: #009688; }
 
 .transparent-visual .header  {background-color: #c2185b;}
+.transparent-visual .gallery-cell label:hover  {color: #c2185b;}
+.transparent-visual .gallery-cell input:checked + label  {color: #fff; background-color: #c2185b;}
 .transparent-visual .navigation li.navigation-current a:before  {background-color: #c2185b;}
 .transparent-visual .navigation li:last-child::before  {background-color: #c2185b;}
 .transparent-visual .navigation li.navigation-current a {color: #c2185b;}
@@ -2908,6 +2984,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .transparent-visual .quantity input[type="radio"]:checked + label { background-color: #c2185b; }
 
 .liniar-visual .header  {background-color: #3f51b5;}
+.liniar-visual .gallery-cell label:hover  {color: #3f51b5;}
+.liniar-visual .gallery-cell input:checked + label  {color: #fff; background-color: #3f51b5;}
 .liniar-visual .navigation li.navigation-current a:before  {background-color: #3f51b5;}
 .liniar-visual .navigation li:last-child::before  {background-color: #3f51b5;}
 .liniar-visual .navigation li.navigation-current a {color: #3f51b5;}

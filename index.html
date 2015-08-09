@@ -283,6 +283,14 @@
             </div>
             {{/if}}
 
+            {{#if rado}}
+            <div class="examplecontainer">
+              <span class="title">Raumsparschlitze</span>
+              <a href="#tab4/7" title="link to checked radio button" class="link">{{rado.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="rado">x</a>
+            </div>
+            {{/if}}
+
             {{#if closure}}
             <div class="examplecontainer">
               <span class="title">Extra</span>
@@ -588,7 +596,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="armin" type="radio" data-name="Armin" data-price="16.95" data-date="2" data-visual="clamp-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" checked="checked" />
+                    <input id="armin" type="radio" data-name="Armin" data-price="16.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":["filling-height-2ring-16","filling-height-2ring-20","filling-height-2ring-25","filling-height-2ring-30","filling-height-2ring-40","filling-height-2ring-50"], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" checked="checked" />
                     <label for="armin">
                       <span class="title">Armin</span>
                       <img alt="test" src="/products/armin.jpg">
@@ -596,7 +604,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="arnold" type="radio" data-name="Arnold" data-price="17.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="arnold" type="radio" data-name="Arnold" data-price="17.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":["filling-height-2ring-16","filling-height-2ring-20","filling-height-2ring-25","filling-height-2ring-30","filling-height-2ring-40","filling-height-2ring-50"], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="arnold">
                       <span class="title">Arnold</span>
                       <img alt="test" src="/products/arnold.jpg">
@@ -604,7 +612,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="artur" type="radio" data-name="Artur" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="artur" type="radio" data-name="Artur" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":["filling-height-2ring-16","filling-height-2ring-20","filling-height-2ring-25","filling-height-2ring-30","filling-height-2ring-40","filling-height-2ring-50"], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="artur">
                       <span class="title">Artur</span>
                       <img alt="test" src="/products/artur.jpg">
@@ -612,7 +620,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="baldur" type="radio" data-name="Baldur" data-price="18.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="baldur" type="radio" data-name="Baldur" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":["filling-height-2ring-16","filling-height-2ring-20","filling-height-2ring-25","filling-height-2ring-30","filling-height-2ring-40","filling-height-2ring-50"], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="baldur">
                       <span class="title">Baldur</span>
                       <img alt="test" src="/products/baldur.jpg">
@@ -620,7 +628,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="baldwin" type="radio" data-name="Baldwin" data-price="17.45" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="baldwin" type="radio" data-name="Baldwin" data-price="17.45" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":["filling-height-4ring-16","filling-height-4ring-20","filling-height-4ring-25","filling-height-4ring-30","filling-height-4ring-40","filling-height-4ring-50"], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="baldwin">
                       <span class="title">Baldwin</span>
                       <img alt="test" src="/products/baldwin.jpg">
@@ -628,7 +636,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="bernhard" type="radio" data-name="Bernhard" data-price="18.45" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="bernhard" type="radio" data-name="Bernhard" data-price="18.45" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":["filling-height-4ring-16","filling-height-4ring-20","filling-height-4ring-25","filling-height-4ring-30","filling-height-4ring-40","filling-height-4ring-50"], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="bernhard">
                       <span class="title">Bernhard</span>
                       <img alt="test" src="/products/bernhard.jpg">
@@ -636,7 +644,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dagobert" type="radio" data-name="Dagobert" data-price="19.25" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="dagobert" type="radio" data-name="Dagobert" data-price="19.25" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":["filling-height-4ring-16","filling-height-4ring-20","filling-height-4ring-25","filling-height-4ring-30","filling-height-4ring-40","filling-height-4ring-50"], "filling-height-lever-mechanism":[], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="dagobert">
                       <span class="title">Dagobert</span>
                       <img alt="test" src="/products/dagobert.jpg">
@@ -644,7 +652,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="detlef" type="radio" data-name="Detlef" data-price="19.25" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="detlef" type="radio" data-name="Detlef" data-price="19.25" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":["filling-height-4ring-16","filling-height-4ring-20","filling-height-4ring-25","filling-height-4ring-30","filling-height-4ring-40","filling-height-4ring-50"], "filling-height-lever-mechanism":[], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="detlef">
                       <span class="title">Detlef</span>
                       <img alt="test" src="/products/detlef.jpg">
@@ -652,7 +660,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dietmar" type="radio" data-name="Dietmar" data-price="16.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="dietmar" type="radio" data-name="Dietmar" data-price="16.95" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":["filling-height-lever-mechanism-30", "filling-height-lever-mechanism-55"], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="dietmar">
                       <span class="title">Dietmar</span>
                       <img alt="test" src="/products/dietmar.jpg">
@@ -660,7 +668,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dietrich" type="radio" data-name="Dietrich" data-price="17.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="dietrich" type="radio" data-name="Dietrich" data-price="17.95" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":["filling-height-lever-mechanism-30", "filling-height-lever-mechanism-55"], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="dietrich">
                       <span class="title">Dietrich</span>
                       <img alt="test" src="/products/dietrich.jpg">
@@ -668,7 +676,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="eckart" type="radio" data-name="Eckart" data-price="19.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="eckart" type="radio" data-name="Eckart" data-price="19.75" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":["filling-height-lever-mechanism-30", "filling-height-lever-mechanism-55"], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="eckart">
                       <span class="title">Eckart</span>
                       <img alt="test" src="/products/eckart.jpg">
@@ -676,7 +684,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="egmont" type="radio" data-name="Egmont" data-price="19.75" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch"]}' name="model" value="" />
+                    <input id="egmont" type="radio" data-name="Egmont" data-price="19.75" data-date="2" data-visual="four-ring-visual" data-available-options='{"size":["dina4-hoch"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":["filling-height-lever-mechanism-30", "filling-height-lever-mechanism-55"], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":["no-transparent-folder-bag", "standard-transparent-folder-bag"], "fingerhole":["no-fingerhole", "standard-fingerhole"], "rado":[], "closure":["no-closure", "deluxe-magnetic-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="egmont">
                       <span class="title">Egmont</span>
                       <img alt="test" src="/products/egmont.jpg">
@@ -690,7 +698,7 @@
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="einar" type="radio" data-name="Einar" data-price="14.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="einar" type="radio" data-name="Einar" data-price="14.95" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="einar">
                       <span class="title">Einar</span>
                       <img alt="test" src="/products/einar.jpg">
@@ -698,7 +706,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="elmar" type="radio" data-name="Elmar" data-price="15.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="elmar" type="radio" data-name="Elmar" data-price="15.95" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="elmar">
                       <span class="title">Elmar</span>
                       <img alt="test" src="/products/elmar.jpg">
@@ -706,7 +714,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="erwin" type="radio" data-name="Erwin" data-price="14.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="erwin" type="radio" data-name="Erwin" data-price="14.95" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="erwin">
                       <span class="title">Erwin</span>
                       <img alt="test" src="/products/erwin.jpg">
@@ -714,7 +722,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="falko" type="radio" data-name="Falko" data-price="13.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="falko" type="radio" data-name="Falko" data-price="13.95" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="falko">
                       <span class="title">Falko</span>
                       <img alt="test" src="/products/falko.jpg">
@@ -722,7 +730,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="gustav" type="radio" data-name="Gustav" data-price="15.95" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="gustav" type="radio" data-name="Gustav" data-price="15.95" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="gustav">
                       <span class="title">Gustav</span>
                       <img alt="test" src="/products/gustav.jpg">
@@ -730,7 +738,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="peter" type="radio" data-name="Peter" data-price="18.45" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="peter" type="radio" data-name="Peter" data-price="18.45" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":["filling-height-1", "filling-height-5", "filling-height-10", "filling-height-15"], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":[], "business-card-holder":["no-business-card", "business-card-punch", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="peter">
                       <span class="title">Peter</span>
                       <img alt="test" src="/products/peter.jpg">
@@ -738,7 +746,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="harald" type="radio" data-name="Harald" data-price="18.45" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="harald" type="radio" data-name="Harald" data-price="18.45" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":["filling-height-10", "filling-height-15", "filling-height-20", "filling-height-25", "filling-height-30", "filling-height-35", "filling-height-40", "filling-height-45", "filling-height-50"], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="harald">
                       <span class="title">Harald</span>
                       <img alt="test" src="/products/harald.jpg">
@@ -746,7 +754,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="helmut" type="radio" data-name="Helmut" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "dina2-hoch", "dina2-quer", "quadrat-21", "quadrat-32"]}' name="model" value="" />
+                    <input id="helmut" type="radio" data-name="Helmut" data-price="18" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":["filling-height-10", "filling-height-15", "filling-height-20", "filling-height-25", "filling-height-30", "filling-height-35", "filling-height-40", "filling-height-45", "filling-height-50"], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="helmut">
                       <span class="title">Helmut</span>
                       <img alt="test" src="/products/helmut.jpg">
@@ -754,7 +762,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="joachim" type="radio" data-name="Joachim" data-price="18.75" data-date="2" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "dina3-hoch", "dina3-quer", "dina2-hoch", "dina2-quer", "quadrat-21", "quadrat-32"]]}' name="model" value="" />
+                    <input id="joachim" type="radio" data-name="Joachim" data-price="18.45" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":["filling-height-10", "filling-height-15", "filling-height-20", "filling-height-25", "filling-height-30", "filling-height-35", "filling-height-40", "filling-height-45", "filling-height-50"], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":[], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="joachim">
                       <span class="title">Joachim</span>
                       <img alt="test" src="/products/joachim.jpg">
@@ -762,7 +770,7 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="holger" type="radio" data-name="Holger" data-price="18.95" data-date="0" data-visual="two-ring-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"]}' name="model" value="" />
+                    <input id="holger" type="radio" data-name="Holger" data-price="18.45" data-date="2" data-visual="no-visual" data-available-options='{"size":["dina4-hoch", "dina4-quer", "dina5-hoch", "dina5-quer", "quadrat-21"], "filling-height":[], "filling-height-2ring":[], "filling-height-4ring":[], "filling-height-lever-mechanism":[], "filling-height-bag":["filling-height-bag-5", "filling-height-bag-10", "filling-height-bag-15", "filling-height-bag-20"], "usb-holder":["no-usb-holder", "felxible-usb-stick-holder", "felxible-usb-card-holder"], "pen-holder":["no-pen-holder", "standard-pen-holder", "metal-pen-holder"], "cd-holder":["no-cd-holder", "foam-cd-holder"], "business-card-holder":["no-business-card", "business-card-pocket-horizontal", "business-card-pocket-vertical", "business-card-bag-horizontal", "business-card-bag-vertical"], "triangle-bag":[], "metal-protector":["no-metal-protector", "silver-metal-protector", "gold-metal-protector", "black-metal-protector"], "transparent-folder-bag":[], "fingerhole":[], "rado":[], "closure":["no-closure", "elastic-closure"], "window-punch":[]}' name="model" value="" />
                     <label for="holger">
                       <span class="title">Holger</span>
                       <img alt="test" src="/products/holger.jpg">
@@ -1290,85 +1298,89 @@
             <div class="content-wrap">
 
               <section id="size">
+              <div class="tipcomment">
+                Jede Mappe beginnt mit einer Grundplatte, die du drehen kannst. Probiere es mal aus.
+              </div>
+
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="dina4-hoch" type="radio" data-name="DIN A4 hoch" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="size" value="" checked="checked" />
+                    <input id="dina4-hoch" type="radio" data-name="Für DIN A4 hoch" data-price="0" data-date="0" data-visual="dina4-hoch-visual" name="size" value="" checked="checked" />
                     <label for="dina4-hoch">
-                      <span class="title">DIN A4 hoch (21 x 29,7 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">passend für DIN A4<br>(21 x 29,7 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina4-hoch">DIN A4</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina4-quer" type="radio" data-name="DIN A4 quer" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="size" value="" />
+                    <input id="dina4-quer" type="radio" data-name="Für DIN A4 quer" data-price="0" data-date="0" data-visual="dina4-quer-visual" name="size" value="" />
                     <label for="dina4-quer">
-                      <span class="title">DIN A4 quer (29,7 x 21 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A4 quer<br>(29,7 x 21 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina4-quer">DIN A4</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina5-hoch" type="radio" data-name="DIN A5 hoch" data-price="-1" data-date="0" data-visual="dina5-hoch-visual" name="size" value="" />
+                    <input id="dina5-hoch" type="radio" data-name="Für DIN A5 hoch" data-price="-1" data-date="0" data-visual="dina5-hoch-visual" name="size" value="" />
                     <label for="dina5-hoch">
-                      <span class="title">DIN A5 hoch (14,8 x 21 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A5 hoch<br>(14,8 x 21 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina5-hoch">DIN A5</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina5-quer" type="radio" data-name="DIN A5 quer" data-price="-1" data-date="0" data-visual="dina5-quer-visual" name="size" value="" />
+                    <input id="dina5-quer" type="radio" data-name="Für DIN A5 quer" data-price="-1" data-date="0" data-visual="dina5-quer-visual" name="size" value="" />
                     <label for="dina5-quer">
-                      <span class="title">DIN A5 quer (21 x 14,8 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A5 quer<br>(21 x 14,8 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina5-quer">DIN A5</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina3-hoch" type="radio" data-name="DIN A3 hoch" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="size" value="" />
+                    <input id="dina3-hoch" type="radio" data-name="Für DIN A3 hoch" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="size" value="" />
                     <label for="dina3-hoch">
-                      <span class="title">DIN A3 hoch (29,7 x 42 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A3 hoch<br>(29,7 x 42 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina3-hoch">DIN A3</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina3-quer" type="radio" data-name="DIN A3 quer" data-price="0" data-date="0" data-visual="dina3-quer-visual" name="size" value="" />
+                    <input id="dina3-quer" type="radio" data-name="Für DIN A3 quer" data-price="0" data-date="0" data-visual="dina3-quer-visual" name="size" value="" />
                     <label for="dina3-quer">
-                      <span class="title">DIN A3 quer (42 x 29,7 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A3 quer<br>(42 x 29,7 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina3-quer">DIN A3</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina2-hoch" type="radio" data-name="DIN A2 hoch" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="size" value="" />
+                    <input id="dina2-hoch" type="radio" data-name="Für DIN A2 hoch" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="size" value="" />
                     <label for="dina2-hoch">
-                      <span class="title">DIN A2 hoch (42 x 59,4  cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A2 hoch<br>(42 x 59,4  cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina2-hoch">DIN A2</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="dina2-quer" type="radio" data-name="DIN A2 quer" data-price="0" data-date="0" data-visual="dina3-quer-visual" name="size" value="" />
+                    <input id="dina2-quer" type="radio" data-name="Für DIN A2 quer" data-price="0" data-date="0" data-visual="dina3-quer-visual" name="size" value="" />
                     <label for="dina2-quer">
-                      <span class="title">DIN A2 quer (59,4 x 42 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Für DIN A2 quer<br>(59,4 x 42 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon dina2-quer">DIN A2</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
                     <input id="quadrat-21" type="radio" data-name="Quadrat (21 x 21 cm)" data-price="-1" data-date="0" data-visual="quadrat-21-visual" name="size" value="" />
                     <label for="quadrat-21">
-                      <span class="title">Quadrat (21 x 21 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Quadrat<br>(21 x 21 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon quadrat-21">Quadrat</span></span>
                     </label>
                   </div>
 
                   <div class="gallery-cell">
                     <input id="quadrat-32" type="radio" data-name="Quadrat (32 x 32 cm)" data-price="-1" data-date="0" data-visual="quadrat-32-visual" name="size" value="" />
                     <label for="quadrat-32">
-                      <span class="title">Quadrat (32 x 32 cm)</span>
-                      <img alt="test" src="/img/icon.png">
+                      <span class="title">Quadrat<br>(32 x 32 cm)</span>
+                      <span class="img buttonicon"><span class="sizeicon quadrat-32">Quadrat</span></span>
                     </label>
                   </div>
 
@@ -1414,6 +1426,54 @@
                     <input id="filling-height-20" type="radio" data-name="20 mm (max. 200 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
                     <label for="filling-height-20">
                       <span class="title">20 mm (max. 200 Blatt)</span>
+                      <img alt="test" src="/img/icon.png">
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-25" type="radio" data-name="25 mm (max. 250 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-25">
+                      <span class="title">25 mm (max. 250 Blatt)</span>
+                      <img alt="test" src="/img/icon.png">
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-30" type="radio" data-name="30 mm (max. 300 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-30">
+                      <span class="title">30 mm (max. 300 Blatt)</span>
+                      <img alt="test" src="/img/icon.png">
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-35" type="radio" data-name="35 mm (max. 350 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-35">
+                      <span class="title">35 mm (max. 350 Blatt)</span>
+                      <img alt="test" src="/img/icon.png">
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-40" type="radio" data-name="40 mm (max. 400 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-40">
+                      <span class="title">40 mm (max. 400 Blatt)</span>
+                      <img alt="test" src="/img/icon.png">
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-45" type="radio" data-name="45 mm (max. 450 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-45">
+                      <span class="title">45 mm (max. 450 Blatt)</span>
+                      <img alt="test" src="/img/icon.png">
+                    </label>
+                  </div>
+
+                  <div class="gallery-cell">
+                    <input id="filling-height-50" type="radio" data-name="50 mm (max. 500 Blatt)" data-price="0" data-date="0" data-visual="dina3-hoch-visual" name="filling-height" value="" />
+                    <label for="filling-height-50">
+                      <span class="title">50 mm (max. 500 Blatt)</span>
                       <img alt="test" src="/img/icon.png">
                     </label>
                   </div>
@@ -1686,12 +1746,12 @@
                   </div>
                 </li>
 
-                <li><a href="#edge-protector">Kantenschoner</a>
+                <li><a href="#rado">Raumsparschlitze (Rado)</a>
                   <div class="tooltip">
                     <span class="tooltip-item"></span>
                     <span class="tooltip-content">
                         <span class="tooltip-text">
-                          <span class="strong">Kantenschoner</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
+                          <span class="strong">Raumsparschlitze (Rado)</span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                     </span>
                   </div>
                 </li>
@@ -1848,14 +1908,6 @@
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="business-card-slots" type="radio" data-name="Visitenkartenschlitze" data-price="2.35" data-date="0" data-visual="extra3a-visual" name="business-card-holder" value="" />
-                    <label for="business-card-slots">
-                      <span class="title">Visitenkartenschlitze</span>
-                      <img alt="test" src="/img/icon.png">
-                    </label>
-                  </div>
-
-                  <div class="gallery-cell">
                     <input id="business-card-punch" type="radio" data-name="Stanzung für Visitenkarte" data-price="2.35" data-date="0" data-visual="extra3a-visual" name="business-card-holder" value="" />
                     <label for="business-card-punch">
                       <span class="title">Stanzung für Visitenkarte</span>
@@ -2003,21 +2055,21 @@
                 </div>
               </section>
 
-              <section id="edge-protector">
+              <section id="rado">
                 <div class="gallery">
 
                   <div class="gallery-cell">
-                    <input id="no-edge-protector" type="radio" name="edge-protector" value="none" checked="checked" />
-                    <label for="no-edge-protector">
-                      <span class="title">Ohne Kantenschoner</span>
+                    <input id="no-rado" type="radio" name="rado" value="none" checked="checked" />
+                    <label for="no-rado">
+                      <span class="title">Ohne Raumsparschlitze (Rado)</span>
                       <img alt="test" src="/img/icon.png">
                     </label>
                   </div>
 
                   <div class="gallery-cell">
-                    <input id="standard-edge-protector" type="radio" data-name="Kantenschoner" data-price="2.5" data-date="0" data-visual="extra3a-visual" name="edge-protector" value="" />
-                    <label for="standard-edge-protector">
-                      <span class="title">Mit Kantenschoner</span>
+                    <input id="standard-rado" type="radio" data-name="Ja" data-price="0.2" data-date="0" data-visual="extra3a-visual" name="rado" value="" />
+                    <label for="standard-rado">
+                      <span class="title">Raumsparschlitze (Rado)</span>
                       <img alt="test" src="/img/icon.png">
                     </label>
                   </div>
@@ -2202,7 +2254,7 @@
           </div>
 
 
-    <div class="content-wrap">
+            <div class="content-wrap">
 
               <section id="color-inside">
                 <div class="gallery">
@@ -3107,7 +3159,7 @@
 
               <section id="print-outside">
 
-                <div class="gallery">
+                <div id="subtab-1" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-image" type="radio" data-name="Schwarz" data-price="0" data-date="0" data-visual="print-image-visual" name="print-outside" value="" checked="checked" />
@@ -3119,7 +3171,7 @@
 
                   </div>
 
-                <div class="gallery">
+                <div id="subtab-2" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p100" type="radio" data-name="Pantone 100 C" data-price="0" data-date="0" data-visual="p100" name="print-outside" value="" />
@@ -4371,7 +4423,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-3" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p200" type="radio" data-name="Pantone 200 C" data-price="0" data-date="0" data-visual="p200" name="print-outside" value="" />
@@ -5767,7 +5819,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-4" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p300" type="radio" data-name="Pantone 300 C" data-price="0" data-date="0" data-visual="p300" name="print-outside" value="" />
@@ -6987,7 +7039,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-5" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p400" type="radio" data-name="Pantone 400 C" data-price="0" data-date="0" data-visual="p400" name="print-outside" value="" />
@@ -8007,7 +8059,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-6" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p500" type="radio" data-name="Pantone 500 C" data-price="0" data-date="0" data-visual="p500" name="print-outside" value="" />
@@ -9356,7 +9408,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-7" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p600" type="radio" data-name="Pantone 600 C" data-price="0" data-date="0" data-visual="p600" name="print-outside" value="" />
@@ -10160,7 +10212,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-8" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p700" type="radio" data-name="Pantone 700 C" data-price="0" data-date="0" data-visual="p700" name="print-outside" value="" />
@@ -10428,7 +10480,7 @@
 
                   </div>
 
-                  <div class="gallery">
+                  <div id="subtab-9" class="gallery">
 
                   <div class="gallery-cell">
                     <input id="po-p801" type="radio" data-name="Pantone 801 C" data-price="0" data-date="0" data-visual="p801" name="print-outside" value="" />
