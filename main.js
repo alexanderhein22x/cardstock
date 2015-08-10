@@ -44,7 +44,7 @@ App.Views.TabView = Backbone.View.extend({
   initialize: function() {
     this.tab = new CBPFWTabs(this.el);
 
-    this.$tabs = this.$("nav li a");
+    this.$tabs = this.$(this.tab.tabs);
 
     // create model and listen for changes
     this.model = new Backbone.Model({
@@ -61,10 +61,10 @@ App.Views.TabView = Backbone.View.extend({
   render: function() {
     var available = this.model.get("available"), first;
     this.$tabs.each(function() {
-      if (available.indexOf($(this).attr("href")) < 0) {
-        $(this).parent().addClass("hide");
+      if (available.indexOf($(this).find("a").attr("href")) < 0) {
+        $(this).addClass("hide");
       } else {
-        $(this).parent().removeClass("hide");
+        $(this).removeClass("hide");
         if (!first) first = this;
       }
     });
@@ -80,7 +80,7 @@ App.Views.TabView = Backbone.View.extend({
     var tabIndex = _.reduce(this.collection, function(tabIndex, view, index) {
       return view.model == model ? index : tabIndex;
     }, null);
-    var tabId = $(this.$tabs[tabIndex]).attr("href");
+    var tabId = $(this.$tabs[tabIndex]).find("a").attr("href");
 
     if (visibleOptions.length === 0) {
       this.model.set("available", _.without(available, tabId));
@@ -92,7 +92,7 @@ App.Views.TabView = Backbone.View.extend({
     if (typeof e === "number" || typeof e === "string") {
       var tabIndex = e;
     } else {
-      tabIndex = this.$tabs.index( $(e.target).parents("li").find("a") );
+      tabIndex = this.$tabs.index( $(e.target).parents("li") );
     }
 
     this.collection[tabIndex].resize();
@@ -321,7 +321,7 @@ App.Views.AppView = Backbone.View.extend({
       })
     );
     this.tabViews = this.$(".tab__content").map(function() {
-      var contentViews = $(this).find("section").map(function() {
+      var contentViews = $(this).find(".content-wrap > section").map(function() {
         return self.galleryViews[$(this).attr("id")];
       });
       return new App.Views.TabView({el: this, collection: contentViews});
