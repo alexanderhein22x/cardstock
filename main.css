@@ -254,6 +254,7 @@ display: none !important;
   float: left;
   width: 100%;
   padding: 24px;
+  display: none;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -280,6 +281,7 @@ display: none !important;
 .quantity {
   float: left;
   width: 100%;
+  display: none;
   height: 140px;
   font-size: 13px;
   font-weight: normal;
@@ -2345,9 +2347,7 @@ background-size: cover;
   height: 100%;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1), inset 0 2px 0 0 rgba(255,255,255,.20), inset 0 -2px 0 0 rgba(0,0,0,.20);
 }
 
 .gallery-cell label img {
@@ -2887,26 +2887,45 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 
 /* buttons */
 
-.sizeicon{
-  font-size: 36px;
+
+.head{
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #444;
+  transform: translateY(40%);
+  text-shadow: 0px 1px 3px rgba(155, 100, 55, 0.2);
+}
+
+.subline{
+  position: absolute;
+  bottom: 20px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  line-height: 18px;
   text-align: center;
   font-weight: bold;
   display: block;
-  width: 100%;
-  margin-top: 40px;
+  color: rgba(0,0,0,0.55);
 }
 
-.gallery-cell input:checked + label .sizeicon {
-
+.gallery-cell input:checked + label .head {
+  color: #fff;
 }
 
-
+.gallery-cell input:checked + label .subline {
+  color: rgba(255,255,255,0.8);
+}
 
 /* buttons */
 
-.gallery-cell input:checked + label{
-  color: #fff;
-}
 
 /* THEMES */
 
