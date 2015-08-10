@@ -467,6 +467,21 @@ a.btn-zoomout {
 .icon-plus:before{content: "\e615";}
 .icon-minus:before{content: "\e616";}
 
+.perspective .icon-tooltip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.perspective .icon-tooltip:before {
+  display: none;
+}
+
 .perspective .tooltip-text {
   float: left;
   width: 100%;
@@ -2294,9 +2309,9 @@ background-size: cover;
 
 .gallery-cell {
   height: 230px;
-  min-width: 200px;
+  min-width: 230px;
   margin-right: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   margin-top: 5px;
   border-radius: 5px;
   counter-increment: gallery-cell;
@@ -2330,6 +2345,9 @@ background-size: cover;
   height: 100%;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .gallery-cell label img {
@@ -2338,18 +2356,15 @@ background-size: cover;
   border-radius: 0px 0px 3px 3px;
 }
 
-.gallery-cell label .img {
-  height: 180px;
-  display: block;
-  border-radius: 0px 0px 3px 3px;
-}
-
 .gallery-cell label .title{
   width: 100%;
+  max-width: 230px;
   display: block;
   font-size: 13px;
   text-align: center;
-  padding: 12px;
+  margin: 0 auto;
+  min-height: 50px;
+  padding: 12px 40px;
   border-radius: 3px 3px 0px 0px;
 }
 
@@ -2405,16 +2420,23 @@ background-size: cover;
   z-index: 999;
 }
 
-.tooltip-item {
-  cursor: pointer;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  position: absolute;
+.icon-tooltip {
+  position:absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 18px;
+  color: #333333;
 }
 
-.tooltip-item::after {
+.gallery-cell input:checked + label .icon-tooltip{
+  color: #fff;
+}
+
+.icon-tooltip:before {
+  content: "\e61c";
+}
+
+.icon-tooltip::after {
   content: '';
   position: absolute;
   width: 360px;
@@ -2422,11 +2444,11 @@ background-size: cover;
   bottom: 100%;
   left: 50%;
   pointer-events: none;
-  -webkit-transform: translatex(-50%);
-  transform: translatex(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
-.tooltip:hover .tooltip-item::after {
+.tooltip:hover .icon-tooltip::after {
   pointer-events: auto;
 }
 
@@ -2435,8 +2457,8 @@ background-size: cover;
   z-index: 1000;
   width: 360px;
   max-height: 500px;
-  left: 50%;
-  margin: 0 0 20px -180px;
+  right: -156px;
+  margin: 0 0 20px 0;
   bottom: 100%;
   text-align: left;
   font-size: 13px;
@@ -2733,7 +2755,6 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 }
 
 .flickity-viewport {
-  overflow: hidden;
   position: relative;
 }
 
@@ -2866,40 +2887,18 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 
 /* buttons */
 
-.buttonicon{
-  float: left;
-  width: 270px;
-}
-
 .sizeicon{
-  background: #fff;
-  border: 1px solid #ccc;
-  font-size: 18px;
+  font-size: 36px;
   text-align: center;
   font-weight: bold;
   display: block;
-  margin: 0 auto;
-  color: #343434;
-  border-radius: 1px;
+  width: 100%;
+  margin-top: 40px;
 }
 
 .gallery-cell input:checked + label .sizeicon {
-  background-color:#fff;
-  border-color: #fff;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
 }
-
-
-.dina4-hoch{width: 80px; height: 100px; line-height: 100px; margin-top: 20px;}
-.dina4-quer{width: 100px; height: 80px; line-height: 80px; margin-top: 20px;}
-.dina5-hoch{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.dina5-quer{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.dina3-hoch{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.dina3-quer{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.dina2-hoch{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.dina2-quer{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.quadrat-21{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
-.quadrat-32{width: 100px; height: 140px; line-height: 140px; margin-top: 20px;}
 
 
 
