@@ -24,6 +24,7 @@ App.Models.Configuration = Backbone.Model.extend({
     quantity: "300"
   },
   initialize: function() {
+    this.on("change", this.attributeChanged);
     this.on("change:material", this.materialChanged);
   },
   materialChanged: function() {
@@ -34,6 +35,27 @@ App.Models.Configuration = Backbone.Model.extend({
     if (quantities.indexOf(quantity) < 0) {
       this.set("quantity", quantities[0]);
     }
+  },
+  attributeChanged: function() {
+    _.each(this.changedAttributes(), function(selected, attribute) {
+        if (_.has(selected, "availableOptions")) {
+          this.availableOptionsChanged(attribute, selected);
+        }
+    }, this);
+  },
+  availableOptionsChanged: function(attribute, selected) {
+    _.each(selected.availableOptions, function(available, option) {
+      var current = this.get(option);
+      if (!current || _.indexOf(available, current.id) < 0) {
+        if (available.length > 0) {
+          var $input = $("input#" + available[0]);
+          var newValue = _.extend($input.data(), {id: $input.attr("id")});
+        } else {
+          newValue = false;
+        }
+        this.set(option, falseIfEmpty(newValue));
+      }
+    }, this);
   }
 });
 
@@ -41,10 +63,16 @@ App.Views.TabView = Backbone.View.extend({
   events: {
     "click nav li": "resizeContent"
   },
-  initialize: function() {
-    this.tab = new CBPFWTabs(this.el);
-
+  initialize: function(options) {
+    this.tab = new CBPFWTabs(this.el, options);
     this.$tabs = this.$(this.tab.tabs);
+
+    this.contentViews = this.$(".gallery").map(function() {
+      return new App.Views.GalleryView({el: this, model: this.model});
+    });
+    _.each(this.contentViews, function(contentView) {
+      this.listenTo(contentView.model, "change:visible", this.visibleChanged);
+    }, this);
 
     // create model and listen for changes
     this.model = new Backbone.Model({
@@ -53,10 +81,6 @@ App.Views.TabView = Backbone.View.extend({
       })
     });
     this.listenTo(this.model, "change:available", this.render);
-
-    _.each(this.collection, function(contentView) {
-      this.listenTo(contentView.model, "change:visible", this.visibleChanged);
-    }, this);
   },
   render: function() {
     var available = this.model.get("available"), first;
@@ -77,7 +101,7 @@ App.Views.TabView = Backbone.View.extend({
   },
   visibleChanged: function(model, visibleOptions) {
     var available = this.model.get("available");
-    var tabIndex = _.reduce(this.collection, function(tabIndex, view, index) {
+    var tabIndex = _.reduce(this.contentViews, function(tabIndex, view, index) {
       return view.model == model ? index : tabIndex;
     }, null);
     var tabId = $(this.$tabs[tabIndex]).find("a").attr("href");
@@ -95,7 +119,27 @@ App.Views.TabView = Backbone.View.extend({
       tabIndex = this.$tabs.index( $(e.target).parents("li") );
     }
 
-    this.collection[tabIndex].resize();
+    this.contentViews[tabIndex].resize();
+  }
+});
+
+App.Models.GalleryModel = Backbone.Model.extend({
+  defaults: {},
+  initialize: function(attributes, options) {
+    this.listenTo(this.options.model, "change:" + this.attribute, this.selectionChanged);
+    this.listenTo(this.options.model, "change", this.availableOptionsChanged);
+  },
+  selectionChanged: function(model, value) {
+    var newValue = _.has(value, "id") ? value.id : false;
+    this.set("selected", newValue);
+  },
+  availableOptionsChanged: function() {
+    _.each(this.model.changedAttributes(), function(selected, attribute) {
+      if (_.has(selected, "availableOptions" &&
+          _.has(selected.availableOptions, this.attribute))) {
+        this.set("available", selected.availableOptions);
+      }
+    });
   }
 });
 
@@ -125,12 +169,15 @@ App.Views.GalleryView = Backbone.View.extend({
     this.name = this.$options.attr("name");
 
     // create model and listen to changes
-    this.model = new Backbone.Model({
+    this.model = new App.Models.GalleryModel({
       available: this.$options.map(function() {
         return $(this).attr("id");
-      })
-    });
+      }),
+      selected: null
+    }, { model: this.model });
+
     this.listenTo(this.model, "change:available", this.render);
+    this.listenTo(this.model, "change:selected", this.updateSelection);
   },
   render: function() {
     var available = this.model.get("available");
@@ -149,6 +196,17 @@ App.Views.GalleryView = Backbone.View.extend({
     this.model.set("visible", $visibleOptions.map(function() {
       return $(this).attr("id");
     }));
+  },
+  updateSelection: function() {
+    var selected = this.model.get("selected");
+    var $inputs = this.$("input");
+    // check selected option
+    $inputs.prop("checked", false);
+    if (selected) {
+      $inputs.filter("#"+selected.id).prop("checked", true);
+    } else {
+      $inputs.filter("[value='none']").prop("checked", true);
+    }
   },
   selectedItem: function() {
     return this.$("input:checked").parents(".gallery-cell").index();
@@ -300,9 +358,6 @@ App.Views.DeliveryTimeView = Backbone.View.extend({
 
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
-  events: {
-    'click .gallery-cell': 'handleSelection'
-  },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
     var self = this;
@@ -311,59 +366,11 @@ App.Views.AppView = Backbone.View.extend({
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
     this.deliveryTimeView = new App.Views.DeliveryTimeView({model: this.model});
-
-    this.galleryViews = _.object(
-      this.$("section").map(function() {
-        return $(this).attr("id");
-      }),
-      this.$(".gallery").map(function() {
-        return new App.Views.GalleryView({el: this});
-      })
-    );
     this.tabViews = this.$(".tab__content").map(function() {
-      var contentViews = $(this).find(".content-wrap > section").map(function() {
-        return self.galleryViews[$(this).attr("id")];
-      });
-      return new App.Views.TabView({el: this, collection: contentViews});
+      return new App.Views.TabView({el: this, model: self.model});
     });
 
     this.listenTo(this.model, "change", this.updateSelection);
-  },
-
-  updateSelection: function() {
-    _.each(this.model.keys(), function(attribute) {
-      if (this.model.hasChanged(attribute) && attribute !== "quantity") {
-        var selected = this.model.get(attribute);
-        var $inputs = $("input[name='"+ attribute +"']");
-        // check selected option
-        $inputs.prop("checked", false);
-        if (selected) {
-          $inputs.filter("#"+selected.id).prop("checked", true);
-        } else {
-          $inputs.filter("[value='none']").prop("checked", true);
-        }
-        //  show/hide available options
-        if (_.has(selected, "availableOptions")) {
-          var self = this;
-          _.each(_.keys(selected.availableOptions), function(option) {
-            var available = selected.availableOptions[option];
-            _.each(_.where(self.galleryViews, {name: option}), function(view) {
-              view.model.set("available", available);
-            });
-            var current = self.model.get(option);
-            if (!current || _.indexOf(available, current.id) < 0) {
-              if (available.length > 0) {
-                var $input = $("input#" + available[0]);
-                var newValue = _.extend($input.data(), {id: $input.attr("id")});
-              } else {
-                newValue = false;
-              }
-              self.model.set(option, falseIfEmpty(newValue));
-            }
-          });
-        }
-      }
-    }.bind(this));
   },
 
   render: function() {
