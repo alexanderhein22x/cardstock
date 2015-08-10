@@ -2356,6 +2356,12 @@ background-size: cover;
   border-radius: 0px 0px 3px 3px;
 }
 
+.gallery-cell label .img {
+  height: 180px;
+  display: block;
+  border-radius: 0px 0px 3px 3px;
+}
+
 .gallery-cell label .title{
   width: 100%;
   max-width: 230px;
@@ -2363,8 +2369,8 @@ background-size: cover;
   font-size: 13px;
   text-align: center;
   margin: 0 auto;
-  min-height: 50px;
-  padding: 12px 40px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 3px 3px 0px 0px;
 }
 
