@@ -85,10 +85,10 @@ App.Views.TabView = Backbone.View.extend({
   render: function() {
     var available = this.model.get("available"), first;
     this.$tabs.each(function() {
-      if (available.indexOf($(this).find("a").attr("href")) < 0) {
-        $(this).addClass("hide");
+      if (available.indexOf($(this).attr("href")) < 0) {
+        $(this).parent().addClass("hide");
       } else {
-        $(this).removeClass("hide");
+        $(this).parent().removeClass("hide");
         if (!first) first = this;
       }
     });
@@ -104,7 +104,7 @@ App.Views.TabView = Backbone.View.extend({
     var tabIndex = _.reduce(this.contentViews, function(tabIndex, view, index) {
       return view.model == model ? index : tabIndex;
     }, null);
-    var tabId = $(this.$tabs[tabIndex]).find("a").attr("href");
+    var tabId = $(this.$tabs[tabIndex]).attr("href");
 
     if (visibleOptions.length === 0) {
       this.model.set("available", _.without(available, tabId));
@@ -116,7 +116,7 @@ App.Views.TabView = Backbone.View.extend({
     if (typeof e === "number" || typeof e === "string") {
       var tabIndex = e;
     } else {
-      tabIndex = this.$tabs.index( $(e.target).parents("li") );
+      tabIndex = this.$tabs.index( $(e.target).parents("li").find("a") );
     }
 
     this.contentViews[tabIndex].resize();
