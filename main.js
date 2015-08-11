@@ -66,9 +66,10 @@ App.Views.TabView = Backbone.View.extend({
   initialize: function(options) {
     this.tab = new CBPFWTabs(this.el, options);
     this.$tabs = this.$(this.tab.tabs);
+    var self = this;
 
     this.contentViews = this.$(".gallery").map(function() {
-      return new App.Views.GalleryView({el: this, model: this.model});
+      return new App.Views.GalleryView({el: this, model: self.model});
     });
     _.each(this.contentViews, function(contentView) {
       this.listenTo(contentView.model, "change:visible", this.visibleChanged);
@@ -85,10 +86,10 @@ App.Views.TabView = Backbone.View.extend({
   render: function() {
     var available = this.model.get("available"), first;
     this.$tabs.each(function() {
-      if (available.indexOf($(this).attr("href")) < 0) {
-        $(this).parent().addClass("hide");
+      if (available.indexOf($(this).find("a").attr("href")) < 0) {
+        $(this).addClass("hide");
       } else {
-        $(this).parent().removeClass("hide");
+        $(this).removeClass("hide");
         if (!first) first = this;
       }
     });
@@ -104,7 +105,7 @@ App.Views.TabView = Backbone.View.extend({
     var tabIndex = _.reduce(this.contentViews, function(tabIndex, view, index) {
       return view.model == model ? index : tabIndex;
     }, null);
-    var tabId = $(this.$tabs[tabIndex]).attr("href");
+    var tabId = $(this.$tabs[tabIndex]).find("a").attr("href");
 
     if (visibleOptions.length === 0) {
       this.model.set("available", _.without(available, tabId));
@@ -116,7 +117,7 @@ App.Views.TabView = Backbone.View.extend({
     if (typeof e === "number" || typeof e === "string") {
       var tabIndex = e;
     } else {
-      tabIndex = this.$tabs.index( $(e.target).parents("li").find("a") );
+      tabIndex = this.$tabs.index( $(e.target).parents("li") );
     }
 
     this.contentViews[tabIndex].resize();
@@ -126,20 +127,21 @@ App.Views.TabView = Backbone.View.extend({
 App.Models.GalleryModel = Backbone.Model.extend({
   defaults: {},
   initialize: function(attributes, options) {
-    this.listenTo(this.options.model, "change:" + this.attribute, this.selectionChanged);
-    this.listenTo(this.options.model, "change", this.availableOptionsChanged);
+    this.name = options.name;
+    this.listenTo(options.model, "change:" + this.name, this.selectionChanged);
+    this.listenTo(options.model, "change", this.availableOptionsChanged);
   },
   selectionChanged: function(model, value) {
     var newValue = _.has(value, "id") ? value.id : false;
     this.set("selected", newValue);
   },
-  availableOptionsChanged: function() {
-    _.each(this.model.changedAttributes(), function(selected, attribute) {
-      if (_.has(selected, "availableOptions" &&
-          _.has(selected.availableOptions, this.attribute))) {
-        this.set("available", selected.availableOptions);
+  availableOptionsChanged: function(model) {
+    _.each(model.changedAttributes(), function(selected, attribute) {
+      if (_.has(selected, "availableOptions") &&
+          _.has(selected.availableOptions, this.name)) {
+        this.set("available", selected.availableOptions[this.name]);
       }
-    });
+    }, this);
   }
 });
 
@@ -174,7 +176,10 @@ App.Views.GalleryView = Backbone.View.extend({
         return $(this).attr("id");
       }),
       selected: null
-    }, { model: this.model });
+    }, {
+      name: this.name,
+      model: this.model
+    });
 
     this.listenTo(this.model, "change:available", this.render);
     this.listenTo(this.model, "change:selected", this.updateSelection);
@@ -182,7 +187,7 @@ App.Views.GalleryView = Backbone.View.extend({
   render: function() {
     var available = this.model.get("available");
     var $visibleOptions = this.$options.filter(function() {
-      return available.indexOf($(this).attr("id")) >= 0;
+      return _.indexOf(available, $(this).attr("id")) >= 0;
     });
     this.$options.each(function() {
       $(this).parent().addClass("hide");
@@ -203,7 +208,7 @@ App.Views.GalleryView = Backbone.View.extend({
     // check selected option
     $inputs.prop("checked", false);
     if (selected) {
-      $inputs.filter("#"+selected.id).prop("checked", true);
+      $inputs.filter("#"+selected).prop("checked", true);
     } else {
       $inputs.filter("[value='none']").prop("checked", true);
     }
@@ -358,6 +363,9 @@ App.Views.DeliveryTimeView = Backbone.View.extend({
 
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
+  events: {
+    "click .gallery-cell": "handleSelection"
+  },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
     var self = this;
