@@ -387,6 +387,9 @@ App.Views.DeliveryTimeView = Backbone.View.extend({
 
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
+  events: {
+    "click a.link": "showTab"
+  },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
     var self = this;
@@ -406,33 +409,25 @@ App.Views.AppView = Backbone.View.extend({
     this.optionsView.render();
     this.costView.render();
     this.deliveryTimeView.render();
-  }
-});
-
-App.Router = Backbone.Router.extend({
-  routes: {
-    ':tab(/:subTab)': 'viewTab'
   },
-
-  initialize: function(options) {
-    this.appView = options.appView;
-  },
-
-  viewTab: function(tab, subTab) {
+  showTab: function(e) {
+    var href = $(e.target).attr("href").split("/");
+    var tab = href[0].substring(1), subTab = href[1];
     var tabIndex = window.locatePosByHref('#' + tab);
     // open subtab if appropriate
     if (subTab) {
       if (subTab === "selected") {
         // find subtab with checked input
         subtabEl = $('[data-tab-id=' + tab + ']').find("input:checked").parents("section");
-        this.appView.tabViews[tabIndex].show(subtabEl.index());
+        this.tabViews[tabIndex].show(subtabEl.index());
       } else {
         var subtabEl = $('[data-tab-id=' + tab + ']').find("section")[subTab];
-        this.appView.tabViews[tabIndex].show(subTab);
+        this.tabViews[tabIndex].show(subTab);
       }
     }
     // navigate to selected tab
     navigate(tabIndex);
+    e.preventDefault();
   }
 });
 
@@ -449,11 +444,7 @@ var defaults = _.object(
 
 var config = new App.Models.Configuration();
 var view = new App.Views.AppView({model: config});
-var router = new App.Router({appView: view});
 
 // set defaults after initializing event listeners
 config.set(defaults);
 view.render();
-
-// start routing
-Backbone.history.start();

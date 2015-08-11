@@ -89,8 +89,7 @@
   function activateTabByHref(href){
     if(!href) return;
     href = href[0] === '#' ? href : '#' + href;
-		window.location.hash = href;
-
+		
     links.forEach(function(link, pos){
       if(link.getAttribute('href') === href){
         classie.add(link.parentNode, 'navigation-current');
