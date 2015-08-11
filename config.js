@@ -1,0 +1,1 @@
+_.reduce($("input"), function(result, input) { var name = $(input).attr("name"), data = _.extend($(input).data(), {id: $(input).attr("id") }); console.log(input); if (_.has(result, name))  { result[name].push(data) } else { result[name] = [data]}; return result }, {})
