@@ -98,6 +98,8 @@ App.Views.TabView = Backbone.View.extend({
   },
   show: function(tabIndex) {
     this.tab._show(tabIndex);
+    // scroll selected element into view
+    this.contentViews[tabIndex].showSelectedItem();
     this.resizeContent(tabIndex);
   },
   visibleChanged: function(model, visibleOptions) {
@@ -226,7 +228,7 @@ App.Views.GalleryView = Backbone.View.extend({
       this.supermodel.set(this.name, falseIfEmpty(data));
     }
   },
-  selectedItem: function() {
+  selectedItemIndex: function() {
     return this.$("input:checked").parents(".gallery-cell").index();
   },
   select: function(itemIndex) {
@@ -234,6 +236,15 @@ App.Views.GalleryView = Backbone.View.extend({
   },
   resize: function() {
     this.flkty.resize();
+  },
+  showSelectedItem() {
+    var itemIndex = this.selectedItemIndex(),
+        galleryView = this;
+
+    setTimeout(function() {
+      galleryView.resize();
+      galleryView.select(itemIndex);
+    }, 100);
   }
 });
 
@@ -419,13 +430,6 @@ App.Router = Backbone.Router.extend({
         var subtabEl = $('[data-tab-id=' + tab + ']').find("section")[subTab];
         this.appView.tabViews[tabIndex].show(subTab);
       }
-      // scroll selected element into view
-      var galleryView = this.appView.galleryViews[$(subtabEl).attr("id")];
-      var itemIndex = galleryView.selectedItem();
-      setTimeout(function() {
-        galleryView.resize();
-        galleryView.select(itemIndex);
-      }, 100);
     }
     // navigate to selected tab
     navigate(tabIndex);
