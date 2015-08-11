@@ -146,6 +146,9 @@ App.Models.GalleryModel = Backbone.Model.extend({
 });
 
 App.Views.GalleryView = Backbone.View.extend({
+  events: {
+    "click .gallery-cell": "handleSelection"
+  },
   initialize: function() {
     var flkty = this.flkty = new Flickity(this.el, {
       // options
@@ -170,6 +173,7 @@ App.Views.GalleryView = Backbone.View.extend({
     this.$options = this.$("input");
     this.name = this.$options.attr("name");
 
+    this.supermodel = this.model;
     // create model and listen to changes
     this.model = new App.Models.GalleryModel({
       available: this.$options.map(function() {
@@ -178,7 +182,7 @@ App.Views.GalleryView = Backbone.View.extend({
       selected: null
     }, {
       name: this.name,
-      model: this.model
+      model: this.supermodel
     });
 
     this.listenTo(this.model, "change:available", this.render);
@@ -211,6 +215,15 @@ App.Views.GalleryView = Backbone.View.extend({
       $inputs.filter("#"+selected).prop("checked", true);
     } else {
       $inputs.filter("[value='none']").prop("checked", true);
+    }
+  },
+  handleSelection: function(e) {
+    //console.log(e);
+    var $target = $(e.target);
+    if ($target.prop("tagName") == "INPUT") {
+      var data = _.extend($target.data(), {id: $target.attr("id")});
+      console.log(data);
+      this.supermodel.set(this.name, falseIfEmpty(data));
     }
   },
   selectedItem: function() {
@@ -363,9 +376,6 @@ App.Views.DeliveryTimeView = Backbone.View.extend({
 
 App.Views.AppView = Backbone.View.extend({
   el: 'body',
-  events: {
-    "click .gallery-cell": "handleSelection"
-  },
   initialize: function() {
     console.log("created AppView ", this.el, this.model);
     var self = this;
@@ -380,23 +390,11 @@ App.Views.AppView = Backbone.View.extend({
 
     this.listenTo(this.model, "change", this.updateSelection);
   },
-
   render: function() {
     this.previewView.update();
     this.optionsView.render();
     this.costView.render();
     this.deliveryTimeView.render();
-  },
-
-  handleSelection: function(e) {
-    //console.log(e);
-    var $target = $(e.target);
-    if ($target.prop("tagName") == "INPUT") {
-      var name = $target.attr("name");
-      var data = _.extend($target.data(), {id: $target.attr("id")});
-      console.log(data);
-      this.model.set(name, falseIfEmpty(data));
-    }
   }
 });
 
