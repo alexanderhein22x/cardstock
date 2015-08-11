@@ -332,7 +332,7 @@ text-align: right;
 }
 
 .quantity input[type="radio"]:checked + label {
-  background-color: #00bcd4;
+  background-color: #4787f2;
   color: #fff;
 }
 
@@ -362,7 +362,7 @@ text-align: right;
   font-weight: bold;
   -webkit-transition: color 200ms;
   transition: color 200ms;
-  color: #00bcd4;
+  color: #4787f2;
 }
 
 .mwst {
@@ -2160,6 +2160,36 @@ background-size: cover;
   z-index: 100;
 }
 
+.icon-mappen:before {
+content:"\e61e";
+font-size: 34px;
+height: 64px;
+line-height: 64px;
+margin-right: 10px;
+float: left;
+width: 100%;
+}
+
+.icon-ordner:before  {
+content:"\e61e";
+font-size: 34px;
+height: 64px;
+line-height: 64px;
+margin-right: 10px;
+float: left;
+width: 100%;
+}
+
+.icon-klemmbretter:before  {
+content:"\e61e";
+font-size: 34px;
+height: 64px;
+line-height: 64px;
+margin-right: 10px;
+float: left;
+width: 100%;
+}
+
 .subnav {
   width: 100%;
   float: left;
@@ -2216,7 +2246,8 @@ background-size: cover;
 }
 
 .nav button.navnext {
-  background: #00bcd4;
+  background: #4787f2;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1), inset 0 -2px 0 0 rgba(0,0,0,.20);
 }
 
 .nav button.navnext:after {
@@ -2318,7 +2349,6 @@ background-size: cover;
   border-radius: 5px;
   counter-increment: gallery-cell;
   transition: transform 0.2s;
-  background: #f5f5f5;
 }
 
 .gallery-cell:first-child {
@@ -2345,20 +2375,42 @@ background-size: cover;
   float: left;
   width: 100%;
   height: 100%;
+  color: #555;
+}
+
+.gallery-cell label:hover  {
+  color: #333;
+}
+
+.gallery-cell .button {
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  color: #555;
-  box-shadow: 0px 1px 4px rgba(0,0,0,0.1), inset 0 2px 0 0 rgba(255,255,255,.20), inset 0 -2px 0 0 rgba(0,0,0,.20);
+  background: #f5f5f5;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1), inset 0 -2px 0 0 rgba(0,0,0,.20);
+}
+
+.gallery-cell .button:hover  {
+  background-color: #fafafa;
+}
+
+.gallery-cell input:checked + .button  {
+  color: #fff;
+  background: #4787f2;
+}
+
+.gallery-cell input:checked + .button .head {
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
 }
 
 .head{
   font-size: 26px;
-  text-align: center;
   font-weight: bold;
+  position: absolute;
   width: 100%;
-  height: 100%;
-  display: block;
-  transform: translateY(40%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .subline{
@@ -2385,24 +2437,18 @@ background-size: cover;
   text-align: center;
 }
 
-.gallery-cell label:hover  {
-  color: #333;
-  background-color: #fafafa;
-}
-
-.gallery-cell input:checked + label  {
-  color: #fff;
-  background-color: #00bcd4;
-}
-
-.gallery-cell input:checked + label .head {
-  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+.gallery-cell input:checked + .product  {
+  color: #4787f2 !important;
 }
 
 .gallery-cell label img {
-  height: 180px;
+  height: 200px;
   display: block;
-  border-radius: 0px 0px 3px 3px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
 }
 
 .gallery-cell label .img {
@@ -2419,8 +2465,8 @@ background-size: cover;
   text-align: center;
   margin: 0 auto;
   height: 50px;
+  font-weight: bold;
   line-height: 50px;
-  border-radius: 3px 3px 0px 0px;
 }
 
 .tab__content nav ul {
@@ -2467,7 +2513,7 @@ background-size: cover;
 }
 
 .tab__content nav li.tab-current a {
-  color: #00bcd4;
+  color: #4787f2;
 }
 
 .tooltip {
@@ -2616,11 +2662,11 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   float: left;
   width: 100%;
   height: 60px;
-  background-color: #00bcd4;
+  background-color: #4787f2;
   -webkit-transition: background 200ms;
   transition: background 200ms;
 }
-
+5987dc
 .navigation {
   position: relative;
   float: left;
@@ -2743,11 +2789,11 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 }
 
 .navigation li.navigation-current a:before {
-  background-color: #00bcd4;
+  background-color: #4787f2;
 }
 
 .navigation li.navigation-current a {
-  color: #00bcd4;
+  color: #4787f2;
 }
 
 .navigation li:last-child::before {
@@ -2757,7 +2803,7 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   width: 100%;
   height: 4px;
   content: '';
-  background-color: #00bcd4;
+  background-color: #4787f2;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
@@ -2924,7 +2970,7 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   color: #212121;
 }
 
-.footer a:active {color: #00bcd4;}
+.footer a:active {color: #4787f2;}
 
 .fsl{
   float: left;
