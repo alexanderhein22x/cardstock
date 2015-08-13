@@ -244,7 +244,7 @@ App.Views.GalleryView = Backbone.View.extend({
     setTimeout(function() {
       galleryView.resize();
       galleryView.select(itemIndex);
-    }, 100);
+    }, 0);
   }
 });
 
