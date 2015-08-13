@@ -170,7 +170,7 @@ App.Views.GalleryView = Backbone.View.extend({
 
     setTimeout(function() {
       flkty.resize();
-    }, 100);
+    }, 0);
 
     this.$options = this.$("input");
     this.name = this.$options.attr("name");
