@@ -422,7 +422,7 @@ text-align: right;
   position: relative;
   width: 100%;
   float: left;
-  background-color: #dae1e6;
+  background-color: #eeeeee;
 }
 
 .perspective{
@@ -2183,18 +2183,22 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   position: relative;
   height: 200px;
   display: block;
+  border-radius: 1px;
   background-color: #eeeeee;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: background .1s ease-out;
+  transition: background .1s ease-out;
 }
 
-.thumbS1{
-  width: 285px;
-}
+.thumbS1{width: 283px;}
+.thumbS2{width: 426px;}
+.thumbS3{width: 291px;}
+.thumbS4{width: 362px;}
+.thumbS5{width: 446px;}
 
-.thumbS2{
-  width: 430px;
-}
+.thumbh1{width:5px; height:200px; float: left;}
+.thumbh2{width:9px; height:200px; float: left;}
 
 .thumb .paper:before{
   position: absolute;
@@ -2238,13 +2242,49 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   overflow: hidden;
 }
 
-.thumbMiddle{
-  width: 5px;
+/* Full thumb size */
+.thumb.thumbF1{width: 291px;}
+.thumb.thumbF2{width: 380px;}
+.thumb.thumbF3{width: 446px;}
+
+/* Singe page size */
+.page{
+  width: 140px;
+  height: 200px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.page.S1{width: 140px;}
+.page.S2{width: 78px;}
+
+
+/* Falzhöhe */
+.pageSX{
+  width: 3px;
   height: 200px;
   float: left;
   background-color: rgba(0,0,0,0.14);
   position: relative;
 }
 
-.st0{fill:#666666;}
-.st1{fill:#505050;}
+/* Rückenhöhe */
+.pageSA1{width:5px; height:200px; float: left;}
+.pageSA2{width:9px; height:200px; float: left;}
+
+
+/* colors */
+.st0{fill:#666666; transition: fill .1s ease;}
+.st1{fill:#505050; transition: fill .2s ease;}
+.st2{fill:#4A4A4A; transition: fill .3s ease;}
+.st3{fill:#ffffff; transition: fill .4s ease;}
+.st4{fill:#222222; transition: fill .4s ease;}
+.st5{fill:#eeeeee; transition: fill .4s ease;}
+.st6{fill: rgba(0,0,0,0.14); transition: fill .4s ease;}
+.st7{fill: rgba(0,0,0,0.24); transition: fill .4s ease;}
+
+.gallery-cell input:checked + label .thumb  {background: #4787f2;}
+.gallery-cell input:checked + label .st0  {fill: #4787f2;}
+.gallery-cell input:checked + label .st1  {fill: #3e75d0;}
+.gallery-cell input:checked + label .st2  {fill: #3869be;}
