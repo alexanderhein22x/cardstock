@@ -1661,13 +1661,8 @@ width: 100%;
 }
 
 .gallery-cell label img {
-  height: 200px;
+  height: 100%;
   display: block;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -webkit-border-radius: 1px;
-  border-radius: 1px;
 }
 
 .gallery-cell label .img {
@@ -2183,33 +2178,11 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   position: relative;
   height: 200px;
   display: block;
-  border-radius: 1px;
-  background-color: #eeeeee;
+  background-color: #666;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-transition: background .1s ease-out;
   transition: background .1s ease-out;
-}
-
-.thumbS1{width: 283px;}
-.thumbS2{width: 426px;}
-.thumbS3{width: 291px;}
-.thumbS4{width: 362px;}
-.thumbS5{width: 446px;}
-
-.thumbh1{width:5px; height:200px; float: left;}
-.thumbh2{width:9px; height:200px; float: left;}
-
-.thumb .paper:before{
-  position: absolute;
-  content:"";
-  left: 5px;
-  top: 5px;
-  right: 5px;
-  bottom: 5px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .thumbsvg{
@@ -2218,34 +2191,16 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   height: 100%;
 }
 
-.thumbA{
-  width: 140px;
-  height: 200px;
-  float: left;
-  position: relative;
-  overflow: hidden;
-}
-
-.thumbB{
-  width: 140px;
-  height: 200px;
-  float: left;
-  position: relative;
-  overflow: hidden;
-}
-
-.thumbC{
-  width: 140px;
-  height: 200px;
-  float: left;
-  position: relative;
-  overflow: hidden;
-}
-
 /* Full thumb size */
-.thumb.thumbF1{width: 291px;}
-.thumb.thumbF2{width: 380px;}
-.thumb.thumbF3{width: 446px;}
+.thumb.thumbF1{width: 311px;}
+.thumb.thumbF2{width: 400px;}
+.thumb.thumbF3{width: 476px;}
+.thumb.thumbF4{width: 342px;}
+.thumb.thumbF5{width: 358px;}
+.thumb.thumbF6{width: 150px;}
+.thumb.thumbF7{width: 315px;}
+.thumb.thumbF8 {width: 487px;}
+.thumb.thumbF9 {width: 658px;}
 
 /* Singe page size */
 .page{
@@ -2253,12 +2208,49 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   height: 200px;
   float: left;
   position: relative;
-  overflow: hidden;
 }
 
-.page.S1{width: 140px;}
+.page.S1{width: 150px;}
 .page.S2{width: 78px;}
+.page.S3{width: 160px;}
+.page.S4{width: 165px;}
 
+/* Papier */
+.thumb .paper:before{
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.S1.paper:before{
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+}
+
+.S2.paper:before{
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+}
+
+.S3.paper:before{
+  top: 11px;
+  left: 7px;
+  right: 22px;
+  bottom: 11px;
+}
+
+.S4.paper:before{
+  top: 11px;
+  left: 7px;
+  right: 22px;
+  bottom: 11px;
+}
 
 /* Falzhöhe */
 .pageSX{
@@ -2272,6 +2264,18 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 /* Rückenhöhe */
 .pageSA1{width:5px; height:200px; float: left;}
 .pageSA2{width:9px; height:200px; float: left;}
+.pageSA3{width:16px; height:200px; float: left;}
+.pageSA4{width:22px; height:200px; float: left;}
+
+
+/* Schaumstoff */
+.foam{
+  margin: 2%;
+  width: 96%;
+  height: 96% !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.43), 0 10px 40px rgba(0, 0, 0, 0.39);
+  border: 1px solid #111;
+}
 
 
 /* colors */
