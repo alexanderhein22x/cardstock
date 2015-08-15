@@ -1566,7 +1566,7 @@ width: 100%;
 .gallery-cell {
   height: 230px;
   min-width: 230px;
-  margin-right: 24px;
+  margin-right: 50px;
   margin-bottom: 5px;
   margin-top: 5px;
   border-radius: 5px;
@@ -1576,7 +1576,7 @@ width: 100%;
 
 .gallery-cell:first-child {
   left: 24px !important;
-  margin-right: 44px;
+  margin-right: 80px;
 }
 
 .gallery-cell:active {
@@ -2171,6 +2171,10 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 /* footer */
 
 
+
+
+
+
 /* Product thumbs */
 
 
@@ -2178,7 +2182,7 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
   position: relative;
   height: 200px;
   display: block;
-  background-color: #666;
+  background-color: #666666;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-transition: background .1s ease-out;
@@ -2201,6 +2205,8 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .thumb.thumbF7{width: 315px;}
 .thumb.thumbF8 {width: 487px;}
 .thumb.thumbF9 {width: 658px;}
+.thumb.thumbF10 {width: 291px;}
+.thumb.thumbF11 {width: 438px;}
 
 /* Singe page size */
 .page{
@@ -2214,11 +2220,17 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .page.S2{width: 78px;}
 .page.S3{width: 160px;}
 .page.S4{width: 165px;}
+.page.S5{width: 144px;}
 
 /* Papier */
 .thumb .paper:before{
   position: absolute;
   content: "";
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  z-index: 0;
   background-color: #fff;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -2288,7 +2300,11 @@ nav.tab__title ul li:nth-child(2) .tooltip-content::after {
 .st6{fill: rgba(0,0,0,0.14); transition: fill .4s ease;}
 .st7{fill: rgba(0,0,0,0.24); transition: fill .4s ease;}
 
+
+
+
+
 .gallery-cell input:checked + label .thumb  {background: #4787f2;}
-.gallery-cell input:checked + label .st0  {fill: #4787f2;}
+.gallery-cell input:checked + label .st0  {fill: #3869be;}
 .gallery-cell input:checked + label .st1  {fill: #3e75d0;}
 .gallery-cell input:checked + label .st2  {fill: #3869be;}
