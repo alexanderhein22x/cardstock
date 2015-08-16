@@ -310,7 +310,7 @@ App.Views.OptionsView = Backbone.View.extend({
 });
 
 App.Views.CostView = Backbone.View.extend({
-  el: '.calculation .price',
+  el: '.price',
   events: {
     'click label': 'updateQuantity'
   },
@@ -371,7 +371,7 @@ App.Views.CostView = Backbone.View.extend({
 });
 
 App.Views.DeliveryTimeView = Backbone.View.extend({
-  el: '.calculation .time',
+  el: '.time',
   initialize: function() {
     this.listenTo(this.model, 'change', this.render);
   },
