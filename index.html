@@ -17,16 +17,14 @@
 <script src='js/lodash.min.js'></script>
 <script src='js/modernizr.min.js'></script>
 
+
 </head>
 
 <body>
 
 
 
-
-
 <div class="container">
-
 
 
 <div class="header"></div>
@@ -102,24 +100,9 @@
     <div id="preview">
 
 
-      <div class="scene" style="-webkit-transform: rotateX(-32deg) rotateY(50deg); -moz-transform: rotateX(-32deg) rotateY(50deg); -ms-transform: rotateX(-32deg) rotateY(50deg); transform: rotateX(-32deg) rotateY(50deg); ">
-        <div class="shape cuboid-1 cub-1">
-          <div class="face ft"></div>
-          <div class="face bk"></div>
-          <div class="face rt"></div>
-          <div class="face lt"></div>
-          <div class="face bm"></div>
-          <div class="face tp"></div>
-        </div>
-        <div class="shape cuboid-2 cub-2">
-          <div class="face ft"></div>
-          <div class="face bk"></div>
-          <div class="face rt"></div>
-          <div class="face lt"></div>
-          <div class="face bm"></div>
-          <div class="face tp"></div>
-        </div>
-      </div>
+
+
+
     </div>
 
 
@@ -153,27 +136,209 @@
 
 
     <div class="summary">
+      <img alt="test" src="/configurator/image.jpg">
+
 
       <div class="headline">
-
           <span class="producttitle">Einar</span>
           <span class="collectiontitle">Kollektion Feinleinen</span>
 
       </div>
 
+      <div class="selected-options">
+        <div id="options">
 
-      <div id="cardtabs" class="cardtabs">
-        <nav>
-          <ul>
-            <li><a href="#section-1">Übersicht</a></li>
-            <li><a href="#section-2">Meine Konfiguration</a></li>
-          </ul>
-        </nav>
+        <template id="optionsTpl">
+          <!--summary list of selected options -->
 
 
-        <div class="cardcontent">
+          <div class="examplecontainer">
+            <span class="title">Produkttyp</span>
+              <a href="#tab1/selected" title="link to checked radio button" class="link">{{model.name}}</a>
+          </div>
 
-          <section id="section-1">
+          <div class="examplecontainer">
+            <span class="title">Material</span>
+              <a href="#tab2" title="link to checked radio button" class="link">{{material.name}}</a>
+          </div>
+
+          <div class="examplecontainer">
+            <span class="title">Format</span>
+              <a href="#tab3" title="link to checked radio button" class="link">{{size.name}}</a>
+          </div>
+
+          {{#if filling-height}}
+          <div class="examplecontainer">
+            <span class="title">Füllhöhe</span>
+            <a href="#tab3/1" title="link to checked radio button" class="link">{{filling-height.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-2ring}}
+          <div class="examplecontainer">
+            <span class="title">2-Ring Mechanik</span>
+            <a href="#tab3/2" title="link to checked radio button" class="link">{{filling-height-2ring.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-4ring}}
+          <div class="examplecontainer">
+            <span class="title">4-Ring Mechanik</span>
+            <a href="#tab3/3" title="link to checked radio button" class="link">{{filling-height-4ring.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-lever-mechanism}}
+          <div class="examplecontainer">
+            <span class="title">Hebelmechanik</span>
+            <a href="#tab3/4" title="link to checked radio button" class="link">{{filling-height-lever-mechanism.name}}</a>
+          </div>
+          {{/if}}
+
+          {{#if filling-height-bag}}
+          <div class="examplecontainer">
+            <span class="title">Ablagefach</span>
+            <a href="#tab3/4" title="link to checked radio button" class="link">{{filling-height-bag.name}}</a>
+          </div>
+          {{/if}}
+
+            {{#if usb-holder}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/0" title="link to checked radio button" class="link">{{usb-holder.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="usb-holder">x</a>
+            </div>
+            {{/if}}
+
+            {{#if pen-holder}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/1" title="link to checked radio button" class="link">{{pen-holder.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="pen-holder">x</a>
+            </div>
+            {{/if}}
+
+            {{#if cd-holder}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/2" title="link to checked radio button" class="link">{{cd-holder.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="cd-holder">x</a>
+            </div>
+            {{/if}}
+
+            {{#if business-card-holder}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/3" title="link to checked radio button" class="link">{{business-card-holder.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="business-card-holder">x</a>
+            </div>
+            {{/if}}
+
+            {{#if triangle-bag}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/4" title="link to checked radio button" class="link">{{triangle-bag.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="triangle-bag">x</a>
+            </div>
+            {{/if}}
+
+            {{#if metal-protector}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/5" title="link to checked radio button" class="link">{{metal-protector.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="metal-protector">x</a>
+            </div>
+            {{/if}}
+
+            {{#if transparent-folder-bag}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/6" title="link to checked radio button" class="link">{{transparent-folder-bag.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="transparent-folder-bag">x</a>
+            </div>
+            {{/if}}
+
+            {{#if fingerhole}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/7" title="link to checked radio button" class="link">{{fingerhole.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="fingerhole">x</a>
+            </div>
+            {{/if}}
+
+            {{#if rado}}
+            <div class="examplecontainer">
+              <span class="title">Raumsparschlitze</span>
+              <a href="#tab4/7" title="link to checked radio button" class="link">{{rado.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="rado">x</a>
+            </div>
+            {{/if}}
+
+            {{#if closure}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/8" title="link to checked radio button" class="link">{{closure.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="closure">x</a>
+            </div>
+            {{/if}}
+
+            {{#if window-punch}}
+            <div class="examplecontainer">
+              <span class="title">Extra</span>
+              <a href="#tab4/9" title="link to checked radio button" class="link">{{window-punch.name}}</a>
+              <a href="/" title="remove option from summary list" class="remove" data-item="window-punch">x</a>
+            </div>
+            {{/if}}
+
+            {{#if color-inside}}
+            <div class="examplecontainer">
+              <span class="title">Innenfarbe</span>
+              <a href="#tab5/0" title="link to checked radio button" class="link">{{color-inside.name}}</a>
+            </div>
+            {{/if}}
+
+            {{#if color-outside}}
+            <div class="examplecontainer">
+              <span class="title">Außenfarbe</span>
+              <a href="#tab5/1" title="link to checked radio button" class="link">{{color-outside.name}}</a>
+            </div>
+            {{/if}}
+
+            {{#if print}}
+            <div class="examplecontainer">
+              <span class="title">Druck</span>
+              <a href="#tab5/2" title="link to checked radio button" class="link">{{print.name}}</a>
+            </div>
+            {{/if}}
+
+            {{#if color}}
+            <div class="examplecontainer">
+              <span class="title">Farbe</span>
+              <a href="#tab5/3" title="link to checked radio button" class="link">{{color.name}}</a>
+            </div>
+            {{/if}}
+
+            {{#if lamination}}
+            <div class="examplecontainer">
+              <span class="title">Veredelung</span>
+              <a href="#tab5/4" title="link to checked radio button" class="link">{{lamination.name}}</a>
+            </div>
+            {{/if}}
+
+            {{#if embossing}}
+            <div class="examplecontainer">
+              <span class="title">Logoprägung</span>
+              <a href="#tab5/5" title="link to checked radio button" class="link">{{embossing.name}}</a>
+            </div>
+            {{/if}}
+
+          </template>
+
+        </div>
+
+      </div>
+
+
 
 
               <div class="price">
@@ -215,213 +380,12 @@
                 </template>
               </div>
 
-                <div class="time"><span class="day">Lieferbar</span> innerhalb von <span id="day">4</span> Werktagen</div>
-
-          </section>
-
-          <section id="section-2">
-            <div class="selected-options">
-              <div id="options">
-
-              <template id="optionsTpl">
-                <!--summary list of selected options -->
+            <div class="time"><span class="day">Lieferbar</span> innerhalb von <span id="day">4</span> Werktagen</div>
 
 
-                <div class="examplecontainer">
-                  <span class="title">Produkttyp</span>
-                    <a href="#tab1/selected" title="link to checked radio button" class="link">{{model.name}}</a>
-                </div>
-
-                <div class="examplecontainer">
-                  <span class="title">Material</span>
-                    <a href="#tab2" title="link to checked radio button" class="link">{{material.name}}</a>
-                </div>
-
-                <div class="examplecontainer">
-                  <span class="title">Format</span>
-                    <a href="#tab3" title="link to checked radio button" class="link">{{size.name}}</a>
-                </div>
-
-                {{#if filling-height}}
-                <div class="examplecontainer">
-                  <span class="title">Füllhöhe</span>
-                  <a href="#tab3/1" title="link to checked radio button" class="link">{{filling-height.name}}</a>
-                </div>
-                {{/if}}
-
-                {{#if filling-height-2ring}}
-                <div class="examplecontainer">
-                  <span class="title">2-Ring Mechanik</span>
-                  <a href="#tab3/2" title="link to checked radio button" class="link">{{filling-height-2ring.name}}</a>
-                </div>
-                {{/if}}
-
-                {{#if filling-height-4ring}}
-                <div class="examplecontainer">
-                  <span class="title">4-Ring Mechanik</span>
-                  <a href="#tab3/3" title="link to checked radio button" class="link">{{filling-height-4ring.name}}</a>
-                </div>
-                {{/if}}
-
-                {{#if filling-height-lever-mechanism}}
-                <div class="examplecontainer">
-                  <span class="title">Hebelmechanik</span>
-                  <a href="#tab3/4" title="link to checked radio button" class="link">{{filling-height-lever-mechanism.name}}</a>
-                </div>
-                {{/if}}
-
-                {{#if filling-height-bag}}
-                <div class="examplecontainer">
-                  <span class="title">Ablagefach</span>
-                  <a href="#tab3/4" title="link to checked radio button" class="link">{{filling-height-bag.name}}</a>
-                </div>
-                {{/if}}
-
-                  {{#if usb-holder}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/0" title="link to checked radio button" class="link">{{usb-holder.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="usb-holder">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if pen-holder}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/1" title="link to checked radio button" class="link">{{pen-holder.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="pen-holder">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if cd-holder}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/2" title="link to checked radio button" class="link">{{cd-holder.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="cd-holder">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if business-card-holder}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/3" title="link to checked radio button" class="link">{{business-card-holder.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="business-card-holder">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if triangle-bag}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/4" title="link to checked radio button" class="link">{{triangle-bag.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="triangle-bag">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if metal-protector}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/5" title="link to checked radio button" class="link">{{metal-protector.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="metal-protector">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if transparent-folder-bag}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/6" title="link to checked radio button" class="link">{{transparent-folder-bag.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="transparent-folder-bag">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if fingerhole}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/7" title="link to checked radio button" class="link">{{fingerhole.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="fingerhole">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if rado}}
-                  <div class="examplecontainer">
-                    <span class="title">Raumsparschlitze</span>
-                    <a href="#tab4/7" title="link to checked radio button" class="link">{{rado.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="rado">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if closure}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/8" title="link to checked radio button" class="link">{{closure.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="closure">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if window-punch}}
-                  <div class="examplecontainer">
-                    <span class="title">Extra</span>
-                    <a href="#tab4/9" title="link to checked radio button" class="link">{{window-punch.name}}</a>
-                    <a href="/" title="remove option from summary list" class="remove" data-item="window-punch">x</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if color-inside}}
-                  <div class="examplecontainer">
-                    <span class="title">Innenfarbe</span>
-                    <a href="#tab5/0" title="link to checked radio button" class="link">{{color-inside.name}}</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if color-outside}}
-                  <div class="examplecontainer">
-                    <span class="title">Außenfarbe</span>
-                    <a href="#tab5/1" title="link to checked radio button" class="link">{{color-outside.name}}</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if print}}
-                  <div class="examplecontainer">
-                    <span class="title">Druck</span>
-                    <a href="#tab5/2" title="link to checked radio button" class="link">{{print.name}}</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if color}}
-                  <div class="examplecontainer">
-                    <span class="title">Farbe</span>
-                    <a href="#tab5/3" title="link to checked radio button" class="link">{{color.name}}</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if lamination}}
-                  <div class="examplecontainer">
-                    <span class="title">Veredelung</span>
-                    <a href="#tab5/4" title="link to checked radio button" class="link">{{lamination.name}}</a>
-                  </div>
-                  {{/if}}
-
-                  {{#if embossing}}
-                  <div class="examplecontainer">
-                    <span class="title">Logoprägung</span>
-                    <a href="#tab5/5" title="link to checked radio button" class="link">{{embossing.name}}</a>
-                  </div>
-                  {{/if}}
-
-                </template>
-
-              </div>
-            </div>
-          </section>
-
-        </div>
 
 
-      </div>
 
-    <div class="action">
-      <a href="/" class="btn checkout">Jetzt Bestellen</a>
-      <a href="/" class="btn offer">Angebot laden</a>
-    </div>
 
       <div class="progressbar">
         <div><span></span></div>
@@ -429,10 +393,6 @@
 
 
     </div>
-
-
-
-
 
   </div>
 
@@ -4565,6 +4525,7 @@
 
     </footer>
 
+
 </div>
 
 
@@ -4581,7 +4542,6 @@
     <script src='js/dynamics.min.js'></script>
     <script src='js/configurator.js'></script>
     <script src='js/flickity.pkgd.js'></script>
-    <script src='js/cardtabs.js'></script>
 
 
     <script src='js/jquery.min.js'></script>
@@ -4590,7 +4550,9 @@
     <script src='js/accounting.min.js'></script>
 
     <script src="main.js"></script>
-    <script>new CardTabs( document.getElementById( 'cardtabs' ) );</script>
+
+
+
 
 </body>
 
