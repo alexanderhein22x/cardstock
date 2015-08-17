@@ -4566,6 +4566,7 @@
  <script src="js/OrbitControls.js"></script>
  <script src="js/CTMLoader.js"></script>
  <script src="js/Detector.js"></script>
+ <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
  <script>
 
@@ -4577,7 +4578,7 @@
 
    var container;
 
-   var camera, scene, controls;
+   var camera, scene, controls, renderer, particles, geometry, materials = [], parameters, i, h, color, size;
    var renderer;
 
    var mesh;
@@ -4611,6 +4612,7 @@
      // SCENE
 
      scene = new THREE.Scene();
+	  	scene.fog = new THREE.FogExp2( 0x000000, 0.0007 );
 
      // SKYBOX
 
@@ -4655,6 +4657,48 @@
      scene.add( light );
 
      scene.add( new THREE.AmbientLight( 0x050505 ) );
+
+
+     // Particle
+
+     geometry = new THREE.Geometry();
+
+     for ( i = 0; i < 20000; i ++ ) {
+
+       var vertex = new THREE.Vector3();
+       vertex.x = Math.random() * 2000 - 1000;
+       vertex.y = Math.random() * 2000 - 1000;
+       vertex.z = Math.random() * 2000 - 1000;
+
+       geometry.vertices.push( vertex );
+
+     }
+
+     parameters = [
+       [ [1, 1, 0.5], 5 ],
+       [ [0.95, 1, 0.5], 4 ],
+       [ [0.90, 1, 0.5], 3 ],
+       [ [0.85, 1, 0.5], 2 ],
+       [ [0.80, 1, 0.5], 1 ]
+     ];
+
+     for ( i = 0; i < parameters.length; i ++ ) {
+
+       color = parameters[i][0];
+       size  = parameters[i][1];
+
+       materials[i] = new THREE.PointCloudMaterial( { size: size } );
+
+       particles = new THREE.PointCloud( geometry, materials[i] );
+
+       particles.rotation.x = Math.random() * 6;
+       particles.rotation.y = Math.random() * 6;
+       particles.rotation.z = Math.random() * 6;
+
+       scene.add( particles );
+
+     }
+
 
      // RENDERER
 
@@ -4830,13 +4874,32 @@
 
      controls.update();
 
-     cameraCube.rotation.copy( camera.rotation );
+
+     var time = Date.now() * 0.00001;
+
+
+
+     				for ( i = 0; i < scene.children.length; i ++ ) {
+
+     					var object = scene.children[ i ];
+
+     					if ( object instanceof THREE.PointCloud ) {
+
+     						object.rotation.y = time * ( i < 4 ? i + 1 : - ( i + 1 ) );
+
+     					}
+
+     				}
+
 
      renderer.clear();
      renderer.render( sceneCube, cameraCube );
      renderer.render( scene, camera );
 
    }
+
+
+
 
  </script>
 
