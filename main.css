@@ -472,7 +472,12 @@ text-align: right;
   background-color: #eeeeee;
 }
 
-
+#preview {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  background-color: #dae1e7;
+}
 
 
 /* Zoom rotate */

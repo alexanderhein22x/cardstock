@@ -4593,11 +4593,13 @@
    var windowHalfX = window.innerWidth / 2;
    var windowHalfY = window.innerHeight / 2;
 
+
    init();
    animate();
 
    function init() {
 
+     var previewDiv = document.getElementById("preview");
 
      // CAMERA
 
@@ -4612,7 +4614,7 @@
      // SCENE
 
      scene = new THREE.Scene();
-	  	scene.fog = new THREE.FogExp2( 0x000000, 0.0007 );
+	   scene.fog = new THREE.FogExp2( 0x000000, 0.0007 );
 
      // SKYBOX
 
@@ -4708,8 +4710,6 @@
      renderer.domElement.style.position = "relative";
 
      renderer.autoClear = false;
-
-     var previewDiv = document.getElementById("preview");
      previewDiv.appendChild (renderer.domElement);
 
      //
@@ -4859,6 +4859,8 @@
      mouseY = ( event.clientY - windowHalfY );
 
    }
+
+
 
    //
 
