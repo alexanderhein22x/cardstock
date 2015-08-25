@@ -487,9 +487,11 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	}
 
+/* Disable mous wheel zoom here, change to: scope.enabled === true */
+
 	function onMouseWheel( event ) {
 
-		if ( scope.enabled === true || scope.noZoom === true || state !== STATE.NONE ) return;
+		if ( scope.enabled === false || scope.noZoom === true || state !== STATE.NONE ) return;
 
 		event.preventDefault();
 		event.stopPropagation();
