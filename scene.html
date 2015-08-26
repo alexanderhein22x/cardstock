@@ -4685,6 +4685,29 @@
     //       scene.add( mesh );
     //   }
 
+
+
+    // 4 Ring
+     var loader = new THREE.JSONLoader();
+     loader.load('/models/4ring.js', function(geo, mat){
+
+         var mesh = new THREE.Mesh(geo, chrome);
+
+         mesh.position.set( -0.015, 0.005, -0.2 );
+         mesh.rotation.set( 0, - Math.PI / 0.67, 0 );
+         mesh.scale.set( 0.095, 0.095, 0.095 );
+         mesh.castShadow = true;
+         mesh.receiveShadow = true;
+
+         loadJson(mesh );
+     });
+
+      function loadJson(mesh){
+          scene.add( mesh );
+      }
+
+
+
       // // Hebelmechanik
       //  var loader = new THREE.JSONLoader();
       //  loader.load('/models/hebelmechanik.js', function(geo, mat){
@@ -4705,24 +4728,24 @@
       //   }
 
 
-        // Schnellheftung
-         var loader = new THREE.JSONLoader();
-         loader.load('/models/schnellheftung.js', function(geo, mat){
-
-             var mesh = new THREE.Mesh(geo, chrome);
-
-             mesh.position.set( 0, 0.012, -0.2 );
-             mesh.rotation.set( 0, - Math.PI / 0.67, 0 );
-             mesh.scale.set( 0.15, 0.15, 0.15 );
-             mesh.castShadow = true;
-             mesh.receiveShadow = true;
-
-             loadJson(mesh );
-         });
-
-          function loadJson(mesh){
-              scene.add( mesh );
-          }
+        // // Schnellheftung
+        //  var loader = new THREE.JSONLoader();
+        //  loader.load('/models/schnellheftung.js', function(geo, mat){
+        //
+        //      var mesh = new THREE.Mesh(geo, chrome);
+        //
+        //      mesh.position.set( 0, 0.012, -0.2 );
+        //      mesh.rotation.set( 0, - Math.PI / 0.67, 0 );
+        //      mesh.scale.set( 0.15, 0.15, 0.15 );
+        //      mesh.castShadow = true;
+        //      mesh.receiveShadow = true;
+        //
+        //      loadJson(mesh );
+        //  });
+        //
+        //   function loadJson(mesh){
+        //       scene.add( mesh );
+        //   }
 
 
           // // Klemmmechanik
