@@ -15,6 +15,8 @@ body {
   box-sizing: border-box;
 }
 
+canvas { width: 100%; height: 100%; display: block; background-color: #eaeaec; }
+
 button {
   font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
@@ -88,9 +90,6 @@ display: none !important;
   font-size: 13px;
   background-color: #fff;
   border-radius: 3px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -106,10 +105,9 @@ display: none !important;
 #options {
   float: left;
   width: 100%;
-  height: 300px;
   font-size: 13px;
   font-weight: normal;
-  display: none;
+  padding: 24px;
 }
 
 
@@ -120,24 +118,8 @@ display: none !important;
   position: relative;
   float: left;
   width: 100%;
-  background: #fff;
 }
 
-.headline {
-  position: relative;
-  float: left;
-  width: 100%;
-  padding: 24px;
-  color: #333;
-  text-align: center;
-  background-color: #fff;
-}
-
-.summary img {
-  float: left;
-  width: 100%;
-  border-radius: 3px 3px 0px 0px;
-}
 
 .action {
   position: relative;
@@ -222,7 +204,7 @@ display: none !important;
 .examplecontainer {
   float: left;
   width: 100%;
-  padding: 12px 24px;
+  padding-bottom: 24px;
   position: relative;
 }
 
@@ -278,7 +260,6 @@ display: none !important;
 /* Progressbar */
 
 .progressbar {
-  display: none;
   float: left;
   width: 100%;
   padding: 24px;
@@ -312,6 +293,12 @@ display: none !important;
   width: 100%;
 }
 
+.quantityselect {
+  float: left;
+  width: 100%;
+  padding: 24px;
+}
+
 .quantity-headline {
   float: left;
   width: 100%;
@@ -323,7 +310,6 @@ display: none !important;
   float: left;
   width: 100%;
   font-size: 13px;
-  padding: 24px;
   font-weight: normal;
 }
 
@@ -388,6 +374,7 @@ text-align: right;
   width: 100%;
   float: left;
   padding: 24px;
+  border-top: 1px solid #f5f5f5;
 }
 
 .total span {
@@ -452,7 +439,6 @@ text-align: right;
   padding: 24px;
   background-color: #f5f5f5;
   border-radius: 0px 0px 3px 3px;
-  display: none;
 }
 
 .time .day {
@@ -467,16 +453,8 @@ text-align: right;
   position: relative;
   width: 100%;
   float: left;
-  background-color: #eeeeee;
+  background-color: #eaeaec;
 }
-
-#preview {
-  position: relative;
-  width: 100%;
-  height: 650px;
-  background-color: #dae1e7;
-}
-
 
 /* Zoom rotate */
 
@@ -709,25 +687,6 @@ a.zoomin:hover, a.zoomout:hover {
   border-color: transparent #2a3035 transparent transparent;
 }
 
-.tip-right {
-  bottom: -100%;
-  right: 370px;
-  padding: 0px;
-}
-
-.tip-right::before {
-  top: 0;
-  width: 10%;
-  left: 100%;
-  height: 100%;
-}
-
-.tip-right::after {
-  top: 50%;
-  left: 100%;
-  border-width: 7px 0 7px 8px;
-  border-color: transparent transparent transparent #2a3035;
-}
 
 /* icon */
 
@@ -1491,7 +1450,6 @@ width: 100%;
 
 .nav button.navnext {
   background: #FD5B18;
-  box-shadow: 0px 1px 4px rgba(0,0,0,0.1), inset 0 -2px 0 0 rgba(0,0,0,.20);
 }
 
 .nav button.navnext:after {
@@ -1577,7 +1535,7 @@ width: 100%;
   float: left;
   width: 100%;
   z-index: 1000;
-  padding: 22px 0px;
+  padding: 24px;
 }
 
 .gallery-cell {
@@ -1591,9 +1549,9 @@ width: 100%;
   transition: transform 0.2s;
 }
 
-.gallery-cell:first-child {
-  left: 24px !important;
-  margin-right: 80px;
+#color-inside .gallery-cell,
+#color-outside .gallery-cell {
+  min-width: 130px !important;
 }
 
 .gallery-cell:active {
@@ -2171,3 +2129,45 @@ width: 100%;
 .gallery-cell input:checked + label .st0  {fill: #4787f2;}
 .gallery-cell input:checked + label .st1  {fill: #3e75d0;}
 .gallery-cell input:checked + label .st2  {fill: #3869be;}
+
+
+
+
+
+ul.tabs{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.tabs li{
+  color: #555;
+  background-color: #f5f5f5;
+  float: left;
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
+}
+
+ul.tabs li:hover{
+  color: #333;
+}
+
+ul.tabs li.current{
+  background-color: #fff;
+  color: #222;
+}
+
+.tab-content{
+  display: none;
+}
+
+.tab-content.current{
+  display: inherit;
+}

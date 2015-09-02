@@ -248,45 +248,6 @@ App.Views.GalleryView = Backbone.View.extend({
   }
 });
 
-App.Views.Preview = Backbone.View.extend({
-  el: "#preview",
-  initialize: function() {
-    this.listenTo(this.model, "change", this.update);
-  },
-  update: function() {
-    var
-      format   = [this.model.get("size"), this.model.get("color-outside")],
-      color    = [this.model.get("color-inside")],
-      material = [this.model.get('material')],
-      lamination = [this.model.get('lamination')],
-      logo = [this.model.get('embossing')],
-      cleft    = [this.model.get('ablagefach'), this.model.get('color-outside')],
-      cright    = [this.model.get('model')];
-
-    this._updateParagraph(material, 'container');
-    this._updateParagraph(format, 'front');
-    this._updateParagraph(format, 'back');
-    this._updateParagraph(lamination, 'kit-front');
-    this._updateParagraph(lamination, 'kit-back');
-    this._updateParagraph(logo, 'embossing');
-    this._updateParagraph(color, 'colorinner');
-    this._updateParagraph(cleft, 'cleft');
-    this._updateParagraph(cright, 'mechanik');
-  },
-  _updateParagraph: function(settings, className) {
-    var paragraph = document.querySelector('.' + className);
-    paragraph.className = className;
-    this._updateParagraphClasslist(settings, paragraph);
-  },
-  _updateParagraphClasslist: function(settings, paragraph) {
-    _.each(settings, function(setting) {
-      if (_.has(setting, "visual")) {
-        paragraph.classList.add(setting.visual);
-      }
-    });
-  }
-});
-
 App.Views.OptionsView = Backbone.View.extend({
   el: '#options',
   events: {
@@ -394,7 +355,6 @@ App.Views.AppView = Backbone.View.extend({
     console.log("created AppView ", this.el, this.model);
     var self = this;
 
-    this.previewView = new App.Views.Preview({model: this.model});
     this.optionsView = new App.Views.OptionsView({model: this.model});
     this.costView = new App.Views.CostView({model: this.model});
     this.deliveryTimeView = new App.Views.DeliveryTimeView({model: this.model});
@@ -405,7 +365,6 @@ App.Views.AppView = Backbone.View.extend({
     this.listenTo(this.model, "change", this.updateSelection);
   },
   render: function() {
-    this.previewView.update();
     this.optionsView.render();
     this.costView.render();
     this.deliveryTimeView.render();
@@ -448,3 +407,25 @@ var view = new App.Views.AppView({model: config});
 // set defaults after initializing event listeners
 config.set(defaults);
 view.render();
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+$(document).ready(function(){
+
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
