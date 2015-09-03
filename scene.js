@@ -3,8 +3,8 @@ if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 var container;
 
-var WIDTH = window.innerWidth;
-var HEIGHT = 700;
+var WIDTH = 1590;
+var HEIGHT = 755;
 
 // camera
 var VIEW_ANGLE = 20;

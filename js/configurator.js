@@ -30,6 +30,7 @@
 		scrollContainer = document.querySelector('.container'),
 		// the main slider and its items
 		sliderEl = document.querySelector('.configuration'),
+		navbuttonEl = document.querySelector('.nav'),
     navigationEl = scrollContainer.querySelector('.navigation'),
 		items = [].slice.call(sliderEl.querySelectorAll('.tab')),
     links = [].slice.call(navigationEl.querySelectorAll('a')),
@@ -37,8 +38,8 @@
 		itemsTotal = items.length,
  		linksTotal = links.length,
 		// navigation controls/arrows
-		navRightCtrl = sliderEl.querySelector('.navnext'),
-		navLeftCtrl = sliderEl.querySelector('.navback'),
+		navRightCtrl = navbuttonEl.querySelector('.navnext'),
+		navLeftCtrl = navbuttonEl.querySelector('.navback'),
 		// index of current item
 		current = 0;
 
@@ -89,7 +90,7 @@
   function activateTabByHref(href){
     if(!href) return;
     href = href[0] === '#' ? href : '#' + href;
-		
+
     links.forEach(function(link, pos){
       if(link.getAttribute('href') === href){
         classie.add(link.parentNode, 'navigation-current');
