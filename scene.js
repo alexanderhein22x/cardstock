@@ -7,7 +7,7 @@ var WIDTH = 1590;
 var HEIGHT = 755;
 
 // camera
-var VIEW_ANGLE = 20;
+var VIEW_ANGLE = 30;
 var ASPECT = WIDTH / HEIGHT;
 var NEAR = 1;
 var FAR = 20;
@@ -36,8 +36,8 @@ function init() {
   controls = new THREE.OrbitControls( camera, previewDiv );
   controls.maxPolarAngle = Math.PI / 2.2;
   controls.minDistance = 3;
-  controls.maxDistance = 6;
-  controls.noPan = true;
+  controls.maxDistance = 7;
+  controls.noPan = false;
 
   scene = new THREE.Scene();
 

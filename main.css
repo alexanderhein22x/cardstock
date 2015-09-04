@@ -87,12 +87,13 @@ p {
     overflow: hidden;
 }
 .summary {
-    position: relative;
-    width: 20%;
-    height: 100%;
-    padding-top: 56px;
-    float: right;
-    font-size: 13px;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  float: right;
+  font-size: 13px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.10), 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+  z-index: 100;
 }
 
 .container {
@@ -134,7 +135,6 @@ p {
     width: 100%;
     float: left;
     padding: 24px;
-    display: none;
 }
 
 .btn {
@@ -153,9 +153,9 @@ p {
 .checkout {
     -webkit-transition: all .3s ease-out;
     transition: all .3s ease-out;
-    height: 34px;
-    line-height: 34px;
-    font-size: 14px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
     background-color: #ff6e40;
     color: #fff;
     margin-bottom: 10px;
@@ -168,6 +168,7 @@ p {
     line-height: 34px;
     background-color: #ececec;
     color: #404040;
+    margin-bottom: 24px;
 }
 .offer:hover {
     background-color: #d4d4d4;
@@ -437,13 +438,65 @@ p {
     position: relative;
     float: left;
     width: 100%;
-    padding: 24px 24px 18px 24px;
+    padding: 12px;
+    background-color: #f5f5f5;
+    margin-bottom: 24px;
+}
+
+.time p{
+  float: right;
+  margin: 0px;
+  width: 80%;
+  line-height: 20px;
 }
 
 .time .day {
     font-weight: bold;
     color: #090;
 }
+
+.icon-delivery {
+  width: 17%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  color: #999999;
+}
+
+.icon-delivery:before {
+    content: "\e606";
+    font-size: 24px;
+}
+
+.icon-check:before {
+    content: "\e602";
+    font-size: 11px;
+    margin-right: 4px;
+}
+
+.teaser {
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+.teaser ul {
+    width: 100%;
+    float: left;
+    list-style: none;
+}
+
+.teaser ul li {
+    width: 50%;
+    float: left;
+}
+
+.teaser ul li p {
+    margin: 0px;
+    font-size: 11px;
+}
+
 /* Deliver time */
 
 
@@ -661,7 +714,7 @@ a.zoomout:hover {
     line-height: 50px;
     text-align: center;
     font-size: 18px;
-    color: #333333;
+    color: #777;
 }
 .icon-tip:before {
     content: "\e61c";
@@ -987,7 +1040,7 @@ a.zoomout:hover {
 .configuration {
     z-index: 40;
     position: absolute;
-    bottom: 40px;
+    bottom: 0;
     width: 100%;
     background-color: #fff;
 }
@@ -1033,41 +1086,39 @@ a.zoomout:hover {
     display: none;
 }
 .nav {
-    position: absolute;
-    bottom: 55px;
-    padding: 24px;
-    width: 100%;
+  position: absolute;
+  bottom: 330px;
+  right: 24px;
 }
 .nav button {
     float: right;
-    color: #fff;
     border: 0;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
     outline: none;
-    height: 80px;
-    line-height: 80px;
-    width: 50%;
-    margin-top: 11px;
+    height: 60px;
+    line-height: 60px;
     position: relative;
     text-align: center;
     padding: 0px 20px;
     text-transform: uppercase;
-    -webkit-transition: background 200ms;
-    transition: background 200ms;
-}
-.nav button:hover {
-    opacity: 0.8;
+    background-color: #4787f2;
+    border-radius: 3px;
 }
 .nav button.navnext {
-    background: #ff6e40;
+    background: #4787f2;
+    color: #fff;
+}
+.nav button.navnext:hover {
+    background-color: #5098ff;
 }
 .nav button.navnext:after {
-    padding-left: 12px;
     float: right;
-    height: 44px;
+    padding-left: 20px;
     font-size: 22px;
+    position: relative;
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -1079,8 +1130,12 @@ a.zoomout:hover {
     content: "\e605";
 }
 .nav button.navback {
-    background: #ccc;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
+    margin-right: 20px;
+}
+.nav button.navback:hover {
+    background-color: #f7f7f7;
 }
 .nav button.navback:before {
     padding-left: 12px;
@@ -1225,15 +1280,6 @@ a.zoomout:hover {
     text-align: center;
     display: block;
 }
-.icon-none:before {
-    content: "\e61d";
-    width: 100%;
-    height: 160px;
-    line-height: 160px;
-    display: block;
-    font-size: 35px;
-    text-align: center;
-}
 .gallery-cell input:checked + .product {
     color: #4787f2 !important;
 }
@@ -1261,7 +1307,6 @@ a.zoomout:hover {
     -webkit-border-radius: 3px;
     border-radius: 3px;
     background: #f5f5f5;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 0 0 rgba(0, 0, 0, .20);
 }
 .gallery-cell .color:hover {
     background-color: #fafafa;
@@ -1297,7 +1342,7 @@ a.zoomout:hover {
     float: left;
     height: 100%;
     color: #777;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     -webkit-transition: color 0.1s;
     transition: color 0.1s;
@@ -1332,21 +1377,34 @@ a.zoomout:hover {
     height: 56px;
     top: 0;
     background-color: #4787f2;
-    box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 3px 0px;
     z-index: 10;
 }
 .header img {
     float: left;
-    height: 32px;
-    margin-top: 14px;
+    height: 24px;
+    margin-top: 18px;
     margin-left: 24px;
 }
+
+.mainbtn {
+    float: right;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 24px;
+    margin-right: 24px;
+    margin-top: 10px;
+    color: #fff;
+    border-radius: 2px;
+    display: none;
+}
+
+
 .navigation {
     position: absolute;
     top: 56px;
     width: 100%;
     z-index: 1;
     background: #f5f5f5;
+    background: rgba(245, 245, 245, 0.95);
 }
 .navigation ul {
     position: relative;
@@ -1402,16 +1460,17 @@ a.zoomout:hover {
     color: #333;
 }
 .navigation a:before {
-    background-color: #555;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    margin: 20px auto;
-    border-radius: 50%;
-    color: #fff;
-    -webkit-transition: background-color 0.3s;
-    transition: background-color 0.3s;
-    display: none;
+  background-color: #555;
+  width: 20px;
+  height: 20px;
+  line-height: 19px;
+  font-size: 12px;
+  margin: 15px auto;
+  border-radius: 50%;
+  color: #fff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  display: none;
 }
 .navigation a:hover:before {
     background-color: #333;
@@ -1452,7 +1511,7 @@ a.zoomout:hover {
 }
 
 .navigation li.navigation-current a:before {
-    background-color: #4787f2;
+    background-color: #ff6e40;
     font-weight: 500;
 }
 
@@ -1500,13 +1559,12 @@ a.zoomout:hover {
 /* footer */
 
 .footer {
-    position: fixed;
+    position: relative;
     width: 100%;
-    z-index: 60;
-    bottom: 0;
+    float: left;
     height: 40px;
     line-height: 40px;
-    padding: 0px 23px;
+    padding: 0px 30px;
     background-color: #f5f5f5;
 }
 .footer a {
@@ -1525,13 +1583,13 @@ a.zoomout:hover {
     float: left;
 }
 .fsl a {
-    padding-right: 27px;
+    padding-right: 30px;
 }
 .fsr {
     float: right;
 }
 .fsr a {
-    padding-left: 27px;
+    padding-left: 30px;
 }
 /* footer */
 /* Product thumbs */
@@ -1711,33 +1769,31 @@ a.zoomout:hover {
 }
 .gallery-cell input:checked + label .thumb {
     background-color: #4d90fe;
-    background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: -moz-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: linear-gradient(top, #4d90fe, #4787ed);
 }
 .gallery-cell input:checked + label .st0 {
-    fill: #4787f2;
+    fill: #4d90fe;
 }
 .gallery-cell input:checked + label .st1 {
-    fill: #3e75d0;
+    fill: #4d90fe;
 }
 .gallery-cell input:checked + label .st2 {
-    fill: #3869be;
+    fill: #4d90fe;
 }
 ul.tabs {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
+  width: 100%;
+  float: left;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
 }
 ul.tabs li {
     color: #555;
-    background-color: #f5f5f5;
+    background: #f5f5f5;
     float: left;
     width: 50%;
-    height: 50px;
-    line-height: 50px;
+    height: 56px;
+    line-height: 56px;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
@@ -1745,9 +1801,11 @@ ul.tabs li {
     -webkit-transition: color 0.1s;
     transition: color 0.1s;
 }
+
 ul.tabs li:hover {
     color: #333;
 }
+
 ul.tabs li.current {
   background: #fff;
   color: #333;

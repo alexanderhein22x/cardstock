@@ -27,19 +27,12 @@
 <div class="container">
 
 
-<div class="header"></div>
+
 
 
 
 
 <div class="summary">
-
-
-  <div class="action">
-  <button class="btn checkout">Jetzt bestellen</button>
-  <button class="btn offer">Angebot anfordern</button>
-  </div>
-
 
 
   <ul class="tabs">
@@ -354,17 +347,50 @@
           </div>
         </div>
 
-        <!-- <div class="time"><span class="day">Kostenlose Lieferung</span> innerhalb von <span id="day">4</span> Werktagen</div> -->
 
-        <div class="nav">
-              <button class="navnext" title="Klicken Sie um fortzufahren.">Weiter</button>
-              <button class="navback navigation-disabled" disabled="">Zurück</button>
-            </div>
+
+        <div class="action">
+
+        <div class="time">
+        <span class="icon-delivery"></span>
+        <p><span class="day">Kostenloser Versand</span>
+        <br>Lieferung innerhalb von <span id="day">4</span> Werktagen</p>
+        </div>
+
+        <button class="btn checkout">Jetzt bestellen</button>
+        <button class="btn offer">Angebot anfordern</button>
+
+        <div class="teaser">
+        <ul>
+        <li><p><span class="icon-check"></span>Schnelle Lieferzeiten</p></li>
+        <li><p><span class="icon-check"></span>Kostenlose Lieferung</p></li>
+        <li><p><span class="icon-check"></span>Zahlung auf Rechnung</p></li>
+        <li><p><span class="icon-check"></span>Professionelle Beratung</p></li>
+        <li><p><span class="icon-check"></span>Kostenloser Datenservice</p></li>
+        <li><p><span class="icon-check"></span>Datenschutz</p></li>
+        </ul>
+        </div>
+        </div>
+
+
+
+
+
 
 </div>
 
 
 <div class="configview">
+
+<div class="header">
+<img src="/img/logo.png">
+<a class="mainbtn" href="/">Produktmuster</a>
+<a class="mainbtn" href="/">FAQ</a>
+<a class="mainbtn" href="/">Druckdaten</a>
+<a class="mainbtn" href="/">Kontakt</a>
+</div>
+
+
     <nav class="navigation">
         <ul>
             <li>
@@ -431,16 +457,14 @@
 
             <canvas id="canvas"></canvas>
 
+            <div class="nav">
+                  <button class="navnext" title="Klicken Sie um fortzufahren.">Weiter</button>
+                  <button class="navback navigation-disabled" disabled="">Zurück</button>
+            </div>
+
 
 
   <div class="configuration">
-
-    <!-- <div class="nav">
-      <button class="navnext" title="Klicken Sie um fortzufahren.">Weiter</button>
-      <button class="navback">Zurück</button>
-    </div> -->
-
-
 
 
 
@@ -2852,7 +2876,7 @@
                   <div class="gallery-cell">
                     <input id="no-usb-holder" type="radio" name="usb-holder" value="none" checked="checked" />
                     <label class="button" for="no-usb-holder">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne USB Halterung</span>
                     </label>
                   </div>
@@ -2918,7 +2942,7 @@
                   <div class="gallery-cell">
                     <input id="no-pen-holder" type="radio" name="pen-holder" value="none" checked="checked" />
                     <label class="button" for="no-pen-holder">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Stiftehalter</span>
                     </label>
                   </div>
@@ -2958,7 +2982,7 @@
                   <div class="gallery-cell">
                     <input id="no-cd-holder" type="radio" name="cd-holder" value="none" checked="checked" />
                     <label class="button" for="no-cd-holder">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne CD Halterung</span>
                     </label>
                   </div>
@@ -3011,7 +3035,7 @@
                   <div class="gallery-cell">
                     <input id="no-business-card" type="radio" name="business-card-holder" value="none" checked="checked" />
                     <label class="button" for="no-business-card">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Visitenkartenfach</span>
                     </label>
                   </div>
@@ -3091,7 +3115,7 @@
                   <div class="gallery-cell">
                     <input id="no-triangle-bag" type="radio" name="triangle-bag" value="none" checked="checked" />
                     <label class="button" for="no-triangle-bag">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Dreiecktasche</span>
                     </label>
                   </div>
@@ -3118,7 +3142,7 @@
                   <div class="gallery-cell">
                     <input id="no-metal-protector" type="radio" name="metal-protector" value="none" checked="checked" />
                     <label class="button" for="no-metal-protector">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Metallecken</span>
                     </label>
                   </div>
@@ -3171,7 +3195,7 @@
                   <div class="gallery-cell">
                     <input id="no-transparent-folder-bag" type="radio" name="transparent-folder-bag" value="none" checked="checked" />
                     <label class="button" for="no-transparent-folder-bag">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Rückenschildtasche</span>
                     </label>
                   </div>
@@ -3198,7 +3222,7 @@
                   <div class="gallery-cell">
                     <input id="no-fingerhole" type="radio" name="fingerhole" value="none" checked="checked" />
                     <label class="button" for="no-fingerhole">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Griffloch</span>
                     </label>
                   </div>
@@ -3225,7 +3249,7 @@
                   <div class="gallery-cell">
                     <input id="no-rado" type="radio" name="rado" value="none" checked="checked" />
                     <label class="button" for="no-rado">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Raumsparschlitze (Rado)</span>
                     </label>
                   </div>
@@ -3252,7 +3276,7 @@
                   <div class="gallery-cell">
                     <input id="no-closure" type="radio" name="closure" value="none" checked="checked" />
                     <label class="button" for="no-closure">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Verschluss</span>
                     </label>
                   </div>
@@ -3344,7 +3368,7 @@
                   <div class="gallery-cell">
                     <input id="no-window-punch" type="radio" name="window-punch" value="none" checked="checked" />
                     <label class="button" for="no-window-punch">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Fensterstanzung</span>
                     </label>
                   </div>
@@ -4395,7 +4419,7 @@
                   <div class="gallery-cell">
                     <input id="no-lamination" type="radio" name="lamination" value="none" checked="checked" />
                     <label class="button" for="no-lamination">
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Veredelung</span>
                     </label>
                   </div>
@@ -4453,7 +4477,7 @@
                       <span class="strong">Feinleinen</span>
                       <span>Lorem ipsum dolor sit amet, consetetur sadipscing elit</span>
                       </span>
-                      <span class="icon-none"></span>
+                      <span class="head">Ohne</span>
                       <span class="subline">Ohne Logoprägung</span>
                     </label>
                   </div>
@@ -4581,11 +4605,6 @@
       </div>
     <!-- TAB 7 END -->
 
-  </div>
-
-  </div>
-
-
     <footer class="footer">
 
       <span class="fsl">
@@ -4601,6 +4620,10 @@
       </span>
 
     </footer>
+
+  </div>
+
+  </div>
 
   </div>
 
