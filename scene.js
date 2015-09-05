@@ -4,10 +4,10 @@ if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 var container;
 
 var WIDTH = 1590;
-var HEIGHT = 755;
+var HEIGHT = 580;
 
 // camera
-var VIEW_ANGLE = 30;
+var VIEW_ANGLE = 10;
 var ASPECT = WIDTH / HEIGHT;
 var NEAR = 1;
 var FAR = 20;
@@ -273,7 +273,7 @@ function fillScene() {
          closed.rotation.set( 0, - Math.PI / 0.67, 0 );
          closed.scale.set( 0.085, 0.085, 0.085 );
          closed.castShadow = true;
-         closed.receiveShadow = false;
+         closed.receiveShadow = true;
          closed.name = "color-outside";
          group.add( closed );
        });
