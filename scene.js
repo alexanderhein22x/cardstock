@@ -37,7 +37,7 @@ function init() {
   controls.maxPolarAngle = Math.PI / 2.2;
   controls.minDistance = 3;
   controls.maxDistance = 7;
-  controls.noPan = false;
+  controls.noPan = true;
 
   scene = new THREE.Scene();
 
@@ -72,6 +72,8 @@ function init() {
   }
 
 }
+
+
 
 function addShadowedLight( x, y, z, color, intensity ) {
 
@@ -379,9 +381,18 @@ function animate() {
   renderer.render(scene, camera);
 
 }
+var radius = 600;
+var theta = 0;
 
 
 function render() {
+
+
+  theta += 0.15;
+
+  camera.position.x = radius * Math.sin( theta * Math.PI / 360 );
+  camera.position.y = radius * Math.sin( theta * Math.PI / 360 );
+  camera.position.z = radius * Math.cos( theta * Math.PI / 360 );
 
   // groundMirror.render();
   camera.lookAt( cameraTarget );
