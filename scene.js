@@ -241,14 +241,14 @@ function fillScene() {
 
   // Basis - mirror effect
 
-  var mirror = new THREE.PlaneBufferGeometry( 40, 40 );
-
-  groundMirror = new THREE.Mirror( renderer, camera, { clipBias: 0.003, textureWidth: WIDTH * 2, textureHeight: HEIGHT * 2, color: 0x858588 } );
-
-  var mirrorMesh = new THREE.Mesh( mirror, groundMirror.material );
-  mirrorMesh.add( groundMirror );
-  mirrorMesh.rotateX( - Math.PI / 2 );
-  scene.add( mirrorMesh );
+  // var mirror = new THREE.PlaneBufferGeometry( 40, 40 );
+  //
+  // groundMirror = new THREE.Mirror( renderer, camera, { clipBias: 0.003, textureWidth: WIDTH * 2, textureHeight: HEIGHT * 2, color: 0x858588 } );
+  //
+  // var mirrorMesh = new THREE.Mesh( mirror, groundMirror.material );
+  // mirrorMesh.add( groundMirror );
+  // mirrorMesh.rotateX( - Math.PI / 2 );
+  // scene.add( mirrorMesh );
 
 
 
@@ -383,7 +383,7 @@ function animate() {
 
 function render() {
 
-  groundMirror.render();
+  // groundMirror.render();
   camera.lookAt( cameraTarget );
   controls.update();
   renderer.render( scene, camera );
