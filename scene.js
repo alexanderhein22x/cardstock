@@ -1,5 +1,4 @@
 
-if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 var container;
 
@@ -106,6 +105,29 @@ function addShadowedLight( x, y, z, color, intensity ) {
 function fillScene() {
 
 
+  /* Chrome reflection */
+
+  var path = "textures/reflection/";
+  var format = '.jpg';
+
+  var urls = [
+      path + 'px' + format, path + 'nx' + format,
+      path + 'py' + format, path + 'ny' + format,
+      path + 'pz' + format, path + 'nz' + format
+  ];
+
+  var envMap = THREE.ImageUtils.loadTextureCube( urls, THREE.CubeReflectionMapping );
+
+  var chrome = new THREE.MeshPhongMaterial( {
+      color: 0xffffff,
+      specular:0xffffff,
+      envMap: envMap,
+      combine: THREE.MultiplyOperation,
+      shininess: 50,
+      reflectivity: 1.0
+  } );
+
+
   /* liniarMAP */
 
   var liniarBumpMap =  THREE.ImageUtils.loadTexture('textures/liniar.png', {}, function(){});
@@ -143,7 +165,20 @@ function fillScene() {
   feinleinenMap.repeat.set( 8, 8 );
 
 
+  // rückenschild
+
+  var rueckenschildMap = THREE.ImageUtils.loadTexture( 'textures/rueckenschild.jpg' );
+
   var material = {
+
+  /* plastik */
+  "plastik": 	new THREE.MeshPhongMaterial( { color: 0x222222 } ),
+
+  /* transparente folie */
+  "transparent": 	new THREE.MeshPhongMaterial( { transparent: true, opacity: 0.3, color: 0xffffff, envMap: envMap, combine: THREE.MultiplyOperation, shininess: 0, reflectivity: 0.5 }),
+
+  /* Rückenschild */
+  "rueckenschild": 	new THREE.MeshPhongMaterial( { color: 0xffffff, map: rueckenschildMap, combine: THREE.MixOperation } ),
 
   /* feinleinen */
   "feinleinen-schwarz": 	new THREE.MeshPhongMaterial( { color: 0x222222, map: feinleinenMap, combine: THREE.MixOperation} ),
@@ -219,27 +254,6 @@ function fillScene() {
 
   }
 
-  /* Chrome reflection */
-
-  var path = "textures/reflection/";
-  var format = '.jpg';
-
-  var urls = [
-      path + 'px' + format, path + 'nx' + format,
-      path + 'py' + format, path + 'ny' + format,
-      path + 'pz' + format, path + 'nz' + format
-  ];
-
-  var envMap = THREE.ImageUtils.loadTextureCube( urls, THREE.CubeReflectionMapping );
-
-  var chrome = new THREE.MeshPhongMaterial( {
-      color: 0xffffff,
-      specular:0xffffff,
-      envMap: envMap,
-      combine: THREE.MultiplyOperation,
-      shininess: 50,
-      reflectivity: 1.0
-  } );
 
   // Basis - mirror effect
 
@@ -265,82 +279,179 @@ function fillScene() {
 
 
 
-  var group = new THREE.Group();
+  var group = new THREE.Object3D;
 
 
       // Geschlossen
-       loader.load('/models/closed.js', function(geometry){
-         var closed = new THREE.Mesh(geometry, material[ "feinleinen-schwarz" ]);
-         closed.position.set( 0, 0.002, 0 );
-         closed.rotation.set( 0, - Math.PI / 0.67, 0 );
-         closed.scale.set( 0.085, 0.085, 0.085 );
-         closed.castShadow = true;
-         closed.receiveShadow = true;
-         closed.name = "color-outside";
-         group.add( closed );
+       loader.load('/models/basis/geschlossen.js', function(geometry){
+         var geschlossen = new THREE.Mesh(geometry, material[ "feinleinen-schwarz" ]);
+         geschlossen.position.set( 0, 0.002, 0 );
+         geschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
+         geschlossen.scale.set( 0.085, 0.085, 0.085 );
+         geschlossen.castShadow = true;
+         geschlossen.receiveShadow = true;
+         geschlossen.name = "color-outside";
+         group.add( geschlossen );
        });
 
        // Geschlossen Innenfarbe
-        loader.load('/models/closedinside.js', function(geometry){
-          var closedinside = new THREE.Mesh(geometry, material[ "feinleinen-schiefergrau" ]);
-          closedinside.position.set( 0, 0.002, 0 );
-          closedinside.rotation.set( 0, - Math.PI / 0.67, 0 );
-          closedinside.scale.set( 0.085, 0.085, 0.085 );
-          closedinside.castShadow = true;
-          closedinside.receiveShadow = false;
-          closedinside.name = "color-inside";
-          group.add( closedinside );
+        loader.load('/models/basis/geschlossen-innen.js', function(geometry){
+          var geschlosseninnen = new THREE.Mesh(geometry, material[ "feinleinen-schiefergrau" ]);
+          geschlosseninnen.position.set( 0, 0.002, 0 );
+          geschlosseninnen.rotation.set( 0, - Math.PI / 0.67, 0 );
+          geschlosseninnen.scale.set( 0.085, 0.085, 0.085 );
+          geschlosseninnen.castShadow = true;
+          geschlosseninnen.receiveShadow = true;
+          geschlosseninnen.name = "color-inside";
+          group.add( geschlosseninnen );
         });
 
 
         // Basis
-         loader.load('/models/basis.js', function(geometry){
-           var basis = new THREE.Mesh(geometry, material[ "feinleinen-schwarz" ]);
-           basis.position.set( 0, 0.002, 0 );
-           basis.rotation.set( 0, - Math.PI / 0.67, 0 );
-           basis.scale.set( 0.085, 0.085, 0.085 );
-           basis.castShadow = true;
-           basis.receiveShadow = true;
-           basis.name = "color-outside";
-           group.add( basis );
+         loader.load('/models/basis/offen.js', function(geometry){
+           var offen = new THREE.Mesh(geometry, material[ "feinleinen-schwarz" ]);
+           offen.position.set( 0, 0.002, 0 );
+           offen.rotation.set( 0, - Math.PI / 0.67, 0 );
+           offen.scale.set( 0.085, 0.085, 0.085 );
+           offen.castShadow = true;
+           offen.receiveShadow = true;
+           offen.name = "color-outside";
+           group.add( offen );
          });
 
          // Innenfarbe
-          loader.load('/models/inside.js', function(geometry){
-            var basisinside = new THREE.Mesh(geometry, material[ "feinleinen-schiefergrau" ]);
-            basisinside.position.set( 0, 0.002, 0 );
-            basisinside.rotation.set( 0, - Math.PI / 0.67, 0 );
-            basisinside.scale.set( 0.085, 0.085, 0.085 );
-            basisinside.castShadow = true;
-            basisinside.receiveShadow = true;
-            basisinside.name = "color-inside";
-            group.add( basisinside );
+         loader.load('/models/basis/offen-innenfarbe.js', function(geometry){
+            var offeninnen = new THREE.Mesh(geometry, material[ "feinleinen-schiefergrau" ]);
+            offeninnen.position.set( 0, 0.002, 0 );
+            offeninnen.rotation.set( 0, - Math.PI / 0.67, 0 );
+            offeninnen.scale.set( 0.085, 0.085, 0.085 );
+            offeninnen.castShadow = true;
+            offeninnen.receiveShadow = true;
+            offeninnen.name = "color-inside";
+            group.add( offeninnen );
           });
 
-          // 2 Ring
-           loader.load('/models/2ring.js', function(geometry){
-             var ring = new THREE.Mesh(geometry, chrome);
-             ring.position.set( 0, 0.002, 0 );
-             ring.rotation.set( 0, - Math.PI / 0.67, 0 );
-             ring.scale.set( 0.085, 0.085, 0.085 );
-             ring.castShadow = true;
-             ring.receiveShadow = true;
-             ring.name = "ring";
-             group.add( ring );
+          // Hebelmechanik offen
+          loader.load('/models/basis/hebelmechanik-offen.js', function(geometry){
+             var hebelmechanikoffen = new THREE.Mesh(geometry, chrome);
+             hebelmechanikoffen.position.set( 0, 0.002, 0 );
+             hebelmechanikoffen.rotation.set( 0, - Math.PI / 0.67, 0 );
+             hebelmechanikoffen.scale.set( 0.085, 0.085, 0.085 );
+             hebelmechanikoffen.castShadow = true;
+             hebelmechanikoffen.receiveShadow = true;
+             hebelmechanikoffen.name = "mechanik-detail";
+             group.add( hebelmechanikoffen );
            });
 
+           // Hebelmechanik offen Detail
+           loader.load('/models/basis/hebelmechanik-offen-detail.js', function(geometry){
+              var hebelmechanikoffendetail = new THREE.Mesh(geometry, material[ "plastik" ]);
+              hebelmechanikoffendetail.position.set( 0, 0.002, 0 );
+              hebelmechanikoffendetail.rotation.set( 0, - Math.PI / 0.67, 0 );
+              hebelmechanikoffendetail.scale.set( 0.085, 0.085, 0.085 );
+              hebelmechanikoffendetail.castShadow = true;
+              hebelmechanikoffendetail.receiveShadow = true;
+              hebelmechanikoffendetail.name = "mechanik-detail";
+              group.add( hebelmechanikoffendetail );
+            });
 
-         // metallecken
-          loader.load('/models/metallecken.js', function(geometry){
-            var metallecken = new THREE.Mesh(geometry, chrome);
-            metallecken.position.set( 0, 0.002, 0 );
-            metallecken.rotation.set( 0, - Math.PI / 0.67, 0 );
-            metallecken.scale.set( 0.085, 0.085, 0.085 );
-            metallecken.castShadow = true;
-            metallecken.receiveShadow = true;
-            metallecken.name = "metallecken";
-            group.add( metallecken );
-          });
+          // Hebelmechanik geschlossen
+           loader.load('/models/basis/hebelmechanik-geschlossen.js', function(geometry){
+              var hebelmechanikgeschlossen = new THREE.Mesh(geometry, chrome);
+              hebelmechanikgeschlossen.position.set( 0, 0.002, 0 );
+              hebelmechanikgeschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
+              hebelmechanikgeschlossen.scale.set( 0.085, 0.085, 0.085 );
+              hebelmechanikgeschlossen.castShadow = true;
+              hebelmechanikgeschlossen.receiveShadow = true;
+              hebelmechanikgeschlossen.name = "mechanik";
+              group.add( hebelmechanikgeschlossen );
+            });
+
+            // Hebelmechanik geschlossen detail
+             loader.load('/models/basis/hebelmechanik-geschlossen-detail.js', function(geometry){
+                var hebelmechanikgeschlossendetail = new THREE.Mesh(geometry, material[ "plastik" ]);
+                hebelmechanikgeschlossendetail.position.set( 0, 0.002, 0 );
+                hebelmechanikgeschlossendetail.rotation.set( 0, - Math.PI / 0.67, 0 );
+                hebelmechanikgeschlossendetail.scale.set( 0.085, 0.085, 0.085 );
+                hebelmechanikgeschlossendetail.castShadow = true;
+                hebelmechanikgeschlossendetail.receiveShadow = true;
+                hebelmechanikgeschlossendetail.name = "mechanik";
+                group.add( hebelmechanikgeschlossendetail );
+              });
+
+              // Rado geschlossen
+              loader.load('/models/basis/rado-geschlossen.js', function(geometry){
+                 var radogeschlossen = new THREE.Mesh(geometry, chrome);
+                 radogeschlossen.position.set( 0, 0.002, 0 );
+                 radogeschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
+                 radogeschlossen.scale.set( 0.085, 0.085, 0.085 );
+                 radogeschlossen.castShadow = true;
+                 radogeschlossen.receiveShadow = true;
+                 radogeschlossen.name = "rado";
+                 group.add( radogeschlossen );
+               });
+
+               // Rado offen
+               loader.load('/models/basis/rado-offen.js', function(geometry){
+                  var radooffen = new THREE.Mesh(geometry, chrome);
+                  radooffen.position.set( 0, 0.002, 0 );
+                  radooffen.rotation.set( 0, - Math.PI / 0.67, 0 );
+                  radooffen.scale.set( 0.085, 0.085, 0.085 );
+                  radooffen.castShadow = true;
+                  radooffen.receiveShadow = true;
+                  radooffen.name = "rado";
+                  group.add( radooffen );
+                });
+
+
+          // Griffloch geschlossen
+           loader.load('/models/basis/griffloch-geschlossen.js', function(geometry){
+             var grifflochgeschlossen = new THREE.Mesh(geometry, chrome);
+             grifflochgeschlossen.position.set( 0, 0.002, 0 );
+             grifflochgeschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
+             grifflochgeschlossen.scale.set( 0.085, 0.085, 0.085 );
+             grifflochgeschlossen.castShadow = true;
+             grifflochgeschlossen.receiveShadow = true;
+             grifflochgeschlossen.name = "griffloch";
+             group.add( grifflochgeschlossen );
+           });
+
+           // Griffloch offen
+            loader.load('/models/basis/griffloch-offen.js', function(geometry){
+              var grifflochoffen = new THREE.Mesh(geometry, chrome);
+              grifflochoffen.position.set( 0, 0.002, 0 );
+              grifflochoffen.rotation.set( 0, - Math.PI / 0.67, 0 );
+              grifflochoffen.scale.set( 0.085, 0.085, 0.085 );
+              grifflochoffen.castShadow = true;
+              grifflochoffen.receiveShadow = true;
+              grifflochoffen.name = "griffloch";
+              group.add( grifflochoffen );
+            });
+
+           // Rückenschild folie
+            loader.load('/models/basis/rueckenschild-tasche.js', function(geometry){
+              var rueckenschildtasche = new THREE.Mesh(geometry, material[ "transparent" ]);
+              rueckenschildtasche.position.set( 0, 0.002, 0 );
+              rueckenschildtasche.rotation.set( 0, - Math.PI / 0.67, 0 );
+              rueckenschildtasche.scale.set( 0.085, 0.085, 0.085 );
+              rueckenschildtasche.castShadow = true;
+              rueckenschildtasche.receiveShadow = true;
+              rueckenschildtasche.name = "rueckenschildtasche";
+              group.add( rueckenschildtasche );
+            });
+
+
+            // Rückenschild papier
+             loader.load('/models/basis/rueckenschild-einlage.js', function(geometry){
+               var rueckenschild = new THREE.Mesh(geometry, material[ "rueckenschild" ]);
+               rueckenschild.position.set( 0, 0.002, 0 );
+               rueckenschild.rotation.set( 0, - Math.PI / 0.67, 0 );
+               rueckenschild.scale.set( 0.085, 0.085, 0.085 );
+               rueckenschild.castShadow = true;
+               rueckenschild.receiveShadow = true;
+               rueckenschild.name = "rueckenschild";
+               group.add( rueckenschild );
+             });
 
 
   scene.add( group );
@@ -381,18 +492,21 @@ function animate() {
   renderer.render(scene, camera);
 
 }
-var radius = 600;
-var theta = 0;
+
+
+// var radius = 600;
+// var theta = 0;
+
 
 
 function render() {
 
 
-  theta += 0.15;
-
-  camera.position.x = radius * Math.sin( theta * Math.PI / 360 );
-  camera.position.y = radius * Math.sin( theta * Math.PI / 360 );
-  camera.position.z = radius * Math.cos( theta * Math.PI / 360 );
+  // theta += 0.15;
+  //
+  // camera.position.x = radius * Math.sin( theta * Math.PI / 360 );
+  // camera.position.y = radius * Math.sin( theta * Math.PI / 360 );
+  // camera.position.z = radius * Math.cos( theta * Math.PI / 360 );
 
   // groundMirror.render();
   camera.lookAt( cameraTarget );
@@ -407,7 +521,3 @@ function update() {
   render();
 
 }
-
-
-
-/* jQuery */

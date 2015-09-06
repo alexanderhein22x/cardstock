@@ -14,6 +14,8 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="main.css" />
 
+
+
 <script src='js/lodash.min.js'></script>
 <script src='js/modernizr.min.js'></script>
 
@@ -429,28 +431,30 @@
             </li>
         </ul>
     </nav>
-        <div class="perspective">
-            <div class="rotate">
-                <div class="build-rotate">
-                    <a data-rotate="315" href="#rotate315"></a>
-                    <a data-rotate="45" href="#rotate0"></a>
-                    <a data-rotate="225" href="#rotate225"></a>
-                    <a data-rotate="135" href="#rotate135"></a>
-                    <a class="rotate-free" href="#"></a>
-                    <img src="/img/rotate.png" style="transform: rotate(77.3493023426611deg);">
-                    </div>
-                </div>
-                <a href="#" id="in" class="zoomin">
-                    <i class="icon-plus"></i>
-                    <span class="tip"></span>
-                    <span class="tip-content tip-left">Heranzoomen</span>
-                </a>
-                <a href="#" id="out" class="zoomout">
-                    <i class="icon-minus"></i>
-                    <span class="tip"></span>
-                    <span class="tip-content tip-left">Herauszoomen</span>
-                </a>
-          </div>
+    <div class="perspective">
+        <div class="rotate">
+            <div class="build-rotate">
+                <a data-rotate="315" href="#rotate315"></a>
+                <a data-rotate="45" href="#rotate0"></a>
+                <a data-rotate="225" href="#rotate225"></a>
+                <a data-rotate="135" href="#rotate135"></a>
+                <a class="rotate-free" href="#"></a>
+                <img src="/img/rotate.png" style="transform: rotate(77.3493023426611deg);">
+            </div>
+        </div>
+
+
+            <a href="#" onclick="zoomin();" class="zoomin">
+                <i class="icon-plus"></i>
+                <span class="tip"></span>
+                <span class="tip-content tip-left">Heranzoomen</span>
+            </a>
+            <a href="#" onclick="zoomout();" class="zoomout">
+                <i class="icon-minus"></i>
+                <span class="tip"></span>
+                <span class="tip-content tip-left">Herauszoomen</span>
+            </a>
+      </div>
 
             <a href="#" class="message">Tipps</a>
 
@@ -4642,6 +4646,9 @@
     <script src='js/handlebars.js'></script>
     <script src='js/accounting.min.js'></script>
 
+
+
+
     <script src="main.js"></script>
 
 
@@ -4649,9 +4656,7 @@
     <script src="js/three.min.js"></script>
     <script src="js/tween.min.js"></script>
     <script src="js/Mirror.js"></script>
-
     <script src="js/OrbitControls.js"></script>
-    <script src="js/Detector.js"></script>
     <script src="scene.js"></script>
 
 
