@@ -142,7 +142,8 @@ THREE.OrbitControls = function ( object, domElement ) {
 
   };
 
-  this.rotateLeftToDegrees = function ( newAngleDegrees ) {
+  this.rotateLeftToDegrees = function ( newAngleDegrees, options ) {
+    options = options || {};
     var newTheta = newAngleDegrees * Math.PI / 180.0 - Math.PI;
 
     var shortestDiff = Math.atan2(
@@ -150,19 +151,23 @@ THREE.OrbitControls = function ( object, domElement ) {
       Math.cos(newTheta - theta)
     );
 
-    var from = { angle: theta };
-    var to = { angle: theta + shortestDiff };
+    if (options.animated) {
+      var from = { angle: theta };
+      var to = { angle: theta + shortestDiff };
 
-    var rotationTween = new TWEEN.Tween(from)
-      .to(to, 500)
-      .easing(TWEEN.Easing.Cubic.InOut)
-      .onUpdate(function() {
-        animatedTheta = this.angle % (Math.PI * 2);
-      })
-      .onComplete(function() {
-        animatedTheta = newTheta;
-      })
-      .start();
+      var rotationTween = new TWEEN.Tween(from)
+        .to(to, 500)
+        .easing(TWEEN.Easing.Cubic.InOut)
+        .onUpdate(function() {
+          animatedTheta = this.angle % (Math.PI * 2);
+        })
+        .onComplete(function() {
+          animatedTheta = newTheta;
+        })
+        .start();
+    } else {
+      animatedTheta = newTheta;
+    }
   };
 
   this.rotateUp = function ( angle ) {
