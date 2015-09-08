@@ -23,15 +23,15 @@ chromeSpecMap.wrapS = chromeSpecMap.wrapT = THREE.RepeatWrapping;
 chromeSpecMap.repeat.set( 8, 8 );
 
 // Material Liniar
-var liniarBumpMap =  THREE.ImageUtils.loadTexture('textures/liniar.png', {}, function(){});
-liniarBumpMap.anisotropy = 16;
-liniarBumpMap.wrapS = liniarBumpMap.wrapT = THREE.RepeatWrapping;
-liniarBumpMap.repeat.set( 5, 5 );
-
-var liniarMap = THREE.ImageUtils.loadTexture( 'textures/liniar.jpg' );
-liniarMap.anisotropy = 16;
-liniarMap.wrapS = liniarMap.wrapT = THREE.RepeatWrapping;
-liniarMap.repeat.set( 5, 5 );
+// var liniarBumpMap =  THREE.ImageUtils.loadTexture('textures/liniar.png', {}, function(){});
+// liniarBumpMap.anisotropy = 16;
+// liniarBumpMap.wrapS = liniarBumpMap.wrapT = THREE.RepeatWrapping;
+// liniarBumpMap.repeat.set( 5, 5 );
+//
+// var liniarMap = THREE.ImageUtils.loadTexture( 'textures/liniar.jpg' );
+// liniarMap.anisotropy = 16;
+// liniarMap.wrapS = liniarMap.wrapT = THREE.RepeatWrapping;
+// liniarMap.repeat.set( 5, 5 );
 
 // Material Metallic
 var metallicMap = THREE.ImageUtils.loadTexture( 'textures/metallic.jpg' );
@@ -40,12 +40,10 @@ metallicMap.wrapS = metallicMap.wrapT = THREE.RepeatWrapping;
 metallicMap.repeat.set( 5, 5 );
 
 // Material Lederfaser
-var lederfaserMap = THREE.ImageUtils.loadTexture( 'textures/lederfaser.jpg' );
+var lederfaserMap = THREE.ImageUtils.loadTexture( 'textures/leather/leather.jpg' );
 lederfaserMap.anisotropy = 16;
 lederfaserMap.wrapS = lederfaserMap.wrapT = THREE.RepeatWrapping;
-lederfaserMap.repeat.set( 10, 10 );
-
-
+lederfaserMap.repeat.set( 20, 20 );
 
 // Material Feinleinen
 var feinleinenMap = THREE.ImageUtils.loadTexture( 'textures/feinleinen.jpg' );
@@ -82,7 +80,7 @@ function init() {
 
 
    // Lights
-   scene.add( new THREE.AmbientLight( 0x777777 ) );
+   scene.add( new THREE.AmbientLight( 0xffffff ) );
    addShadowedLight( 1, 1, 1, 0xffffff, 1 );
    addShadowedLight( 0.5, 1, -1, 0xffffff, 1 );
 
@@ -170,16 +168,16 @@ function init() {
   "feinleinen-dunkelgruen": 	new THREE.MeshPhongMaterial( { color: 0x234F42, map: feinleinenMap, combine: THREE.MixOperation } ),
 
   /* liniar */
-  "liniar-schwarz": 	new THREE.MeshPhongMaterial( {color: 0x222222, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
-  "liniar-polarweiss": 	new THREE.MeshPhongMaterial( {color: 0xffffff, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
-  "liniar-silber": 	new THREE.MeshPhongMaterial( {color: 0xf5f5f5, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
-  "liniar-ultramarin": 	new THREE.MeshPhongMaterial( {color: 0x3A4595, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
+  // "liniar-schwarz": 	new THREE.MeshPhongMaterial( {color: 0x222222, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
+  // "liniar-polarweiss": 	new THREE.MeshPhongMaterial( {color: 0xffffff, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
+  // "liniar-silber": 	new THREE.MeshPhongMaterial( {color: 0xf5f5f5, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
+  // "liniar-ultramarin": 	new THREE.MeshPhongMaterial( {color: 0x3A4595, emissive: 0x222222, specular: 0x222222, shininess: 20, bumpMap: liniarBumpMap, map: liniarMap } ),
 
   /* motivdruck */
   "motivdruck-weiss": 	new THREE.MeshPhongMaterial( {color: 0xffffff, specular:0xffffff, shininess: 50 } ),
 
   /* lederfaser */
-  "lederfaser-schwarz": 	new THREE.MeshPhongMaterial( {color: 0x222222, map: lederfaserMap } ),
+  "lederfaser-schwarz": 	new THREE.MeshPhongMaterial( {color: 0x222222, map: lederfaserMap, reflectivity: 0.05 } ),
   "lederfaser-weiss": 	new THREE.MeshPhongMaterial( {color: 0xf8f8f8, map: lederfaserMap } ),
   "lederfaser-chamois": 	new THREE.MeshPhongMaterial( {color: 0xEDE6D4, map: lederfaserMap } ),
   "lederfaser-dunkelbraun": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: lederfaserMap } ),
@@ -222,7 +220,7 @@ function init() {
            geschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
            geschlossen.scale.set( 0.085, 0.085, 0.085 );
            geschlossen.castShadow = true;
-           geschlossen.receiveShadow = true;
+           geschlossen.receiveShadow = false;
            geschlossen.name = "color-outside";
            group.add( geschlossen );
          });
@@ -234,7 +232,7 @@ function init() {
             geschlosseninnen.rotation.set( 0, - Math.PI / 0.67, 0 );
             geschlosseninnen.scale.set( 0.085, 0.085, 0.085 );
             geschlosseninnen.castShadow = true;
-            geschlosseninnen.receiveShadow = true;
+            geschlosseninnen.receiveShadow = false;
             geschlosseninnen.name = "color-inside";
             group.add( geschlosseninnen );
           });
@@ -265,7 +263,7 @@ function init() {
             });
 
             // Hebelmechanik offen
-            loader.load('/models/basis/hebelmechanik-offen.js', function(geometry){
+            loader.load('/models/basis/hebelmechanik-offen.js', function ( geometry ){
                var hebelmechanikoffen = new THREE.Mesh(geometry, material[ "chrome" ]);
                hebelmechanikoffen.position.set( 0, 0.002, 0 );
                hebelmechanikoffen.rotation.set( 0, - Math.PI / 0.67, 0 );
@@ -275,6 +273,7 @@ function init() {
                hebelmechanikoffen.name = "mechanik-detail";
                group.add( hebelmechanikoffen );
              });
+
 
              // Hebelmechanik offen Detail
              loader.load('/models/basis/hebelmechanik-offen-detail.js', function(geometry){
@@ -294,8 +293,8 @@ function init() {
                 hebelmechanikgeschlossen.position.set( 0, 0.002, 0 );
                 hebelmechanikgeschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
                 hebelmechanikgeschlossen.scale.set( 0.085, 0.085, 0.085 );
-                hebelmechanikgeschlossen.castShadow = true;
-                hebelmechanikgeschlossen.receiveShadow = true;
+                hebelmechanikgeschlossen.castShadow = false;
+                hebelmechanikgeschlossen.receiveShadow = false;
                 hebelmechanikgeschlossen.name = "mechanik";
                 group.add( hebelmechanikgeschlossen );
               });
@@ -306,8 +305,8 @@ function init() {
                   hebelmechanikgeschlossendetail.position.set( 0, 0.002, 0 );
                   hebelmechanikgeschlossendetail.rotation.set( 0, - Math.PI / 0.67, 0 );
                   hebelmechanikgeschlossendetail.scale.set( 0.085, 0.085, 0.085 );
-                  hebelmechanikgeschlossendetail.castShadow = true;
-                  hebelmechanikgeschlossendetail.receiveShadow = true;
+                  hebelmechanikgeschlossendetail.castShadow = false;
+                  hebelmechanikgeschlossendetail.receiveShadow = false;
                   hebelmechanikgeschlossendetail.name = "mechanik";
                   group.add( hebelmechanikgeschlossendetail );
                 });
@@ -318,8 +317,8 @@ function init() {
                    radogeschlossen.position.set( 0, 0.002, 0 );
                    radogeschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
                    radogeschlossen.scale.set( 0.085, 0.085, 0.085 );
-                   radogeschlossen.castShadow = true;
-                   radogeschlossen.receiveShadow = true;
+                   radogeschlossen.castShadow = false;
+                   radogeschlossen.receiveShadow = false;
                    radogeschlossen.name = "rado";
                    group.add( radogeschlossen );
                  });
@@ -343,8 +342,8 @@ function init() {
                grifflochgeschlossen.position.set( 0, 0.002, 0 );
                grifflochgeschlossen.rotation.set( 0, - Math.PI / 0.67, 0 );
                grifflochgeschlossen.scale.set( 0.085, 0.085, 0.085 );
-               grifflochgeschlossen.castShadow = true;
-               grifflochgeschlossen.receiveShadow = true;
+               grifflochgeschlossen.castShadow = false;
+               grifflochgeschlossen.receiveShadow = false;
                grifflochgeschlossen.name = "griffloch";
                group.add( grifflochgeschlossen );
              });
@@ -355,8 +354,8 @@ function init() {
                 grifflochoffen.position.set( 0, 0.002, 0 );
                 grifflochoffen.rotation.set( 0, - Math.PI / 0.67, 0 );
                 grifflochoffen.scale.set( 0.085, 0.085, 0.085 );
-                grifflochoffen.castShadow = true;
-                grifflochoffen.receiveShadow = true;
+                grifflochoffen.castShadow = false;
+                grifflochoffen.receiveShadow = false;
                 grifflochoffen.name = "griffloch";
                 group.add( grifflochoffen );
               });
@@ -367,8 +366,8 @@ function init() {
                 rueckenschildtasche.position.set( 0, 0.002, 0 );
                 rueckenschildtasche.rotation.set( 0, - Math.PI / 0.67, 0 );
                 rueckenschildtasche.scale.set( 0.085, 0.085, 0.085 );
-                rueckenschildtasche.castShadow = true;
-                rueckenschildtasche.receiveShadow = true;
+                rueckenschildtasche.castShadow = false;
+                rueckenschildtasche.receiveShadow = false;
                 rueckenschildtasche.name = "rueckenschildtasche";
                 group.add( rueckenschildtasche );
               });
@@ -380,19 +379,19 @@ function init() {
                  rueckenschild.position.set( 0, 0.002, 0 );
                  rueckenschild.rotation.set( 0, - Math.PI / 0.67, 0 );
                  rueckenschild.scale.set( 0.085, 0.085, 0.085 );
-                 rueckenschild.castShadow = true;
-                 rueckenschild.receiveShadow = true;
+                 rueckenschild.castShadow = false;
+                 rueckenschild.receiveShadow = false;
                  rueckenschild.name = "rueckenschild";
                  group.add( rueckenschild );
                });
 
-               // Rückenschild papier
+               // Metallecken
                 loader.load('/models/basis/metallecken.js', function(geometry){
                   var rueckenschild = new THREE.Mesh(geometry, material[ "chrome" ]);
                   rueckenschild.position.set( 0, 0.002, 0 );
                   rueckenschild.rotation.set( 0, - Math.PI / 0.67, 0 );
                   rueckenschild.scale.set( 0.085, 0.085, 0.085 );
-                  rueckenschild.castShadow = true;
+                  rueckenschild.castShadow = false;
                   rueckenschild.receiveShadow = true;
                   rueckenschild.name = "rueckenschild";
                   group.add( rueckenschild );
@@ -455,8 +454,8 @@ function addShadowedLight( x, y, z, color, intensity ) {
   directionalLight.shadowCameraNear = 0.01;
   directionalLight.shadowCameraFar = 4;
 
-  directionalLight.shadowMapWidth = 2048;
-  directionalLight.shadowMapHeight = 2048;
+  directionalLight.shadowMapWidth = 512;
+  directionalLight.shadowMapHeight = 512;
 
   directionalLight.shadowBias = -0.005;
   directionalLight.shadowDarkness = 0.15;
@@ -525,6 +524,37 @@ function setupControls() {
     var btn = $(e.target);
 
     var angle = parseInt(btn.data('rotate'));
-    controls.rotateLeftToDegrees(angle);
+    controls.rotateLeftToDegrees(angle, { animated: true });
+    setRotationCircleAngle(angle);
+    $('.rotate-free').css('transform', 'rotate(' + angle + 'deg)')
   });
+
+  $('a.rotate-free').on('mousedown.rotate', function(e) {
+    $(document).on('mousemove.rotate', rotateFree);
+    $(document).on('mouseup.rotate', function(e) {
+      $(document).off('mousemove.rotate');
+      $(document).off('mouseup.rotate');
+      return false;
+    });
+    return false;
+  });
+
+  function rotateFree(e) {
+    var controller = $('.build-rotate') ;
+    var mouseX = e.pageX;
+    var mouseY = e.pageY;
+    var controllerX = controller.offset().left + controller.outerWidth()/2;
+    var controllerY = controller.offset().top + controller.outerHeight()/2;
+
+    var degrees = (Math.round(180/Math.PI * Math.atan2((mouseY-controllerY),(mouseX-controllerX)))+180+360) % 360;
+
+    var radians = degrees * Math.PI / 180.0;
+    controls.rotateLeftToDegrees(degrees);
+    setRotationCircleAngle(degrees);
+  }
+
+  function setRotationCircleAngle(degrees) {
+    $('.build-rotate img').css('transform', 'rotate(' + degrees + 'deg)')
+  }
+
 }
