@@ -525,6 +525,30 @@ function setupControls() {
     var btn = $(e.target);
 
     var angle = parseInt(btn.data('rotate'));
-    controls.rotateLeftToDegrees(angle);
+    controls.rotateLeftToDegrees(angle, { animated: true });
   });
+
+  $('a.rotate-free').on('mousedown.rotate', function(e) {
+    $(document).on('mousemove.rotate', rotateFree);
+    $(document).on('mouseup.rotate', function(e) {
+      $(document).off('mousemove.rotate');
+      $(document).off('mouseup.rotate');
+      return false;
+    });
+    return false;
+  });
+
+  function rotateFree(e) {
+    var controller = $('.build-rotate') ;
+    var mouseX = e.pageX;
+    var mouseY = e.pageY;
+    var controllerX = controller.offset().left + controller.outerWidth()/2;
+    var controllerY = controller.offset().top + controller.outerHeight()/2;
+
+    var degrees = (Math.round(180/Math.PI * Math.atan2((mouseY-controllerY),(mouseX-controllerX)))+180+360) % 360;
+
+    var radians = degrees * Math.PI / 180.0;
+    controls.rotateLeftToDegrees(degrees);
+  }
+
 }
