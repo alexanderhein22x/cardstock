@@ -40,10 +40,23 @@ metallicMap.wrapS = metallicMap.wrapT = THREE.RepeatWrapping;
 metallicMap.repeat.set( 5, 5 );
 
 // Material Lederfaser
-var lederfaserMap = THREE.ImageUtils.loadTexture( 'textures/leather/leather.jpg' );
-lederfaserMap.anisotropy = 16;
-lederfaserMap.wrapS = lederfaserMap.wrapT = THREE.RepeatWrapping;
-lederfaserMap.repeat.set( 20, 20 );
+
+var leatherMap = THREE.ImageUtils.loadTexture( 'textures/leather/leather-diffuse.png' );
+leatherMap.anisotropy = 16;
+leatherMap.wrapS = leatherMap.wrapT = THREE.RepeatWrapping;
+leatherMap.repeat.set( 2, 2 );
+
+var leatherNormalMap = THREE.ImageUtils.loadTexture( 'textures/leather/leather-normal.png' );
+leatherNormalMap.anisotropy = 16;
+leatherNormalMap.wrapS = leatherNormalMap.wrapT = THREE.RepeatWrapping;
+leatherNormalMap.repeat.set( 2, 2 );
+
+var leatherSpecularMap = THREE.ImageUtils.loadTexture( 'textures/leather/leather-specular.png' );
+leatherSpecularMap.anisotropy = 16;
+leatherSpecularMap.wrapS = leatherSpecularMap.wrapT = THREE.RepeatWrapping;
+leatherSpecularMap.repeat.set( 2, 2 );
+
+
 
 // Material Feinleinen
 var feinleinenMap = THREE.ImageUtils.loadTexture( 'textures/feinleinen.jpg' );
@@ -73,16 +86,19 @@ function init() {
   controls = new THREE.OrbitControls( camera, previewDiv );
   controls.maxPolarAngle = Math.PI / 2.2;
   controls.minDistance = 3;
-  controls.maxDistance = 7;
-  controls.noPan = true;
+  controls.maxDistance = 10;
+  controls.noPan = false;
 
   scene = new THREE.Scene();
 
+  // LIGHTS
 
-   // Lights
-   scene.add( new THREE.AmbientLight( 0xffffff ) );
-   addShadowedLight( 1, 1, 1, 0xffffff, 1 );
-   addShadowedLight( 0.5, 1, -1, 0xffffff, 1 );
+  ambientLight = new THREE.AmbientLight( 0xcccccc );
+  scene.add( ambientLight );
+
+  var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.475 );
+  directionalLight.position.set( 100, 100, -100 );
+  scene.add( directionalLight );
 
 
    var mesh = new THREE.Mesh( new THREE.SphereGeometry( 200, 60, 40 ), new THREE.MeshBasicMaterial( { map: chromeMap } ) );
@@ -124,7 +140,7 @@ function init() {
   "rueckenschild": 	new THREE.MeshPhongMaterial( { color: 0xffffff, map: rueckenschildMap, combine: THREE.MixOperation } ),
 
   /* feinleinen */
-  "feinleinen-schwarz": 	new THREE.MeshPhongMaterial( { color: 0x222222, map: feinleinenMap, combine: THREE.MixOperation} ),
+  "feinleinen-schwarz": 	new THREE.MeshPhongMaterial( { color: 0x111111, map: feinleinenMap, combine: THREE.MixOperation} ),
   "feinleinen-weiss": 	new THREE.MeshPhongMaterial( { color: 0xffffff, map: feinleinenMap, combine: THREE.MixOperation } ),
   "feinleinen-chamois": 	new THREE.MeshPhongMaterial( { color: 0xEDE6D4, map: feinleinenMap, combine: THREE.MixOperation } ),
   "feinleinen-beige": 	new THREE.MeshPhongMaterial( { color: 0xE1D3B9, map: feinleinenMap, combine: THREE.MixOperation } ),
@@ -177,13 +193,13 @@ function init() {
   "motivdruck-weiss": 	new THREE.MeshPhongMaterial( {color: 0xffffff, specular:0xffffff, shininess: 50 } ),
 
   /* lederfaser */
-  "lederfaser-schwarz": 	new THREE.MeshPhongMaterial( {color: 0x222222, map: lederfaserMap, reflectivity: 0.05 } ),
-  "lederfaser-weiss": 	new THREE.MeshPhongMaterial( {color: 0xf8f8f8, map: lederfaserMap } ),
-  "lederfaser-chamois": 	new THREE.MeshPhongMaterial( {color: 0xEDE6D4, map: lederfaserMap } ),
-  "lederfaser-dunkelbraun": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: lederfaserMap } ),
-  "lederfaser-dunkelrot": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: lederfaserMap } ),
-  "lederfaser-dunkelgruen": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: lederfaserMap } ),
-  "lederfaser-dunkelblau": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: lederfaserMap } ),
+  "lederfaser-schwarz": 	new THREE.MeshPhongMaterial( {color: 0x111111, emissive: 0x111111, specular: 0x111111, shininess: 35, map: leatherMap, specularMap: leatherSpecularMap, normalMap: leatherNormalMap, combine: THREE.MixOperation } ),
+  "lederfaser-weiss": 	new THREE.MeshPhongMaterial( {color: 0xf8f8f8, map: leatherNormalMap } ),
+  "lederfaser-chamois": 	new THREE.MeshPhongMaterial( {color: 0xEDE6D4, map: leatherNormalMap } ),
+  "lederfaser-dunkelbraun": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: leatherNormalMap } ),
+  "lederfaser-dunkelrot": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: leatherNormalMap } ),
+  "lederfaser-dunkelgruen": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: leatherNormalMap } ),
+  "lederfaser-dunkelblau": 	new THREE.MeshPhongMaterial( {color: 0xffffff, map: leatherNormalMap } ),
 
   /* metallic */
   "metallic-kristall": 	new THREE.MeshPhongMaterial( {color: 0xfbfbfd, emissive: 0x222222, specular: 0x222222, shininess: 20, map: metallicMap } ),
@@ -431,35 +447,6 @@ function init() {
       renderer.setSize( window.innerWidth, window.innerHeight );
 
   }
-
-}
-
-
-
-function addShadowedLight( x, y, z, color, intensity ) {
-
-  var directionalLight = new THREE.DirectionalLight( color, intensity );
-  directionalLight.position.set( x, y, z )
-  scene.add( directionalLight );
-
-  directionalLight.castShadow = true;
-  // directionalLight.shadowCameraVisible = true;
-
-  var d = 2;
-  directionalLight.shadowCameraLeft = -d;
-  directionalLight.shadowCameraRight = d;
-  directionalLight.shadowCameraTop = d;
-  directionalLight.shadowCameraBottom = -d;
-
-  directionalLight.shadowCameraNear = 0.01;
-  directionalLight.shadowCameraFar = 4;
-
-  directionalLight.shadowMapWidth = 512;
-  directionalLight.shadowMapHeight = 512;
-
-  directionalLight.shadowBias = -0.005;
-  directionalLight.shadowDarkness = 0.15;
-
 }
 
 
@@ -525,8 +512,6 @@ function setupControls() {
 
     var angle = parseInt(btn.data('rotate'));
     controls.rotateLeftToDegrees(angle, { animated: true });
-    setRotationCircleAngle(angle);
-    $('.rotate-free').css('transform', 'rotate(' + angle + 'deg)')
   });
 
   $('a.rotate-free').on('mousedown.rotate', function(e) {
@@ -550,11 +535,6 @@ function setupControls() {
 
     var radians = degrees * Math.PI / 180.0;
     controls.rotateLeftToDegrees(degrees);
-    setRotationCircleAngle(degrees);
-  }
-
-  function setRotationCircleAngle(degrees) {
-    $('.build-rotate img').css('transform', 'rotate(' + degrees + 'deg)')
   }
 
 }

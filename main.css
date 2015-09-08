@@ -19,7 +19,13 @@ canvas {
     height: 100%;
     display: block;
     background-color: #eaeaec;
+    cursor: url(img/move.png), auto;
 }
+
+canvas:active {
+    cursor: url(img/move_down.png), auto;
+}
+
 button {
     font-family: 'Roboto', sans-serif;
     -webkit-appearance: none;
