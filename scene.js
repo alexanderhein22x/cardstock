@@ -526,8 +526,6 @@ function setupControls() {
 
     var angle = parseInt(btn.data('rotate'));
     controls.rotateLeftToDegrees(angle, { animated: true });
-    setRotationCircleAngle(angle);
-    $('.rotate-free').css('transform', 'rotate(' + angle + 'deg)')
   });
 
   $('a.rotate-free').on('mousedown.rotate', function(e) {
@@ -551,11 +549,6 @@ function setupControls() {
 
     var radians = degrees * Math.PI / 180.0;
     controls.rotateLeftToDegrees(degrees);
-    setRotationCircleAngle(degrees);
-  }
-
-  function setRotationCircleAngle(degrees) {
-    $('.build-rotate img').css('transform', 'rotate(' + degrees + 'deg)')
   }
 
 }

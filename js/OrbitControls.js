@@ -353,6 +353,8 @@ THREE.OrbitControls = function ( object, domElement ) {
     position.copy( this.target ).add( offset );
 
     this.object.lookAt( this.target );
+    var thetaDegrees = theta * 180 / Math.PI;
+    $('.build-rotate img').css('transform', 'rotate(' + (thetaDegrees - 180) + 'deg)');
 
     thetaDelta = 0;
     phiDelta = 0;
